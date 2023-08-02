@@ -1,0 +1,133 @@
+.completedProjects{
+
+    background: #fef6ee;
+    padding: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+
+    .cpContentWrap{
+        position: relative;
+        padding-left: 140px;
+        min-height: 120px;
+        @include lg-down{
+            padding-left: 115px;
+            min-height: 100px;
+        }
+        @include md-down{
+            margin-bottom: 15px;
+        }
+        .cpImage{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 120px;
+            height: 120px;
+            border:1px solid #eee;
+            background: #ccc;
+            @include lg-down{
+                width: 100px;
+                height: 100px;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .cpContentInner{
+            padding-top: 20px;
+            span{
+                display: block;
+                font-size: 12px;
+                &.cpId{
+                    color: #99b393;
+                    margin-bottom: 5px;
+                    font-weight: 600;
+                }
+                &.cpStartDate{
+                    color: #8f5c62;
+                    font-weight: 600;
+                }
+            }
+            strong{
+                display: block;
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    .cpReviewBox{
+        padding-top: 20px;
+        @include md-down{
+            margin-bottom: 10px;
+            padding-top: 0;
+        }
+        .cpStarRating{
+            font-size: 12px;
+            display: block;
+            margin-bottom: 5px;
+            @include md-down{
+                text-align: center;
+            }
+        }
+        p{
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 18px;
+            @include md-down{
+                text-align: center;
+            }
+        }
+        a.addReview{
+            margin-top: 20px;
+            display: block;
+            font-size: 16px;
+            color: #000;
+            text-decoration: underline;
+            @include md-down{
+                margin-top: 0;
+                text-align: center;
+            }
+        }
+    }
+    .cpActionsBtns{
+        text-align: right;
+        padding-top: 34px;
+        @include lg-down{
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        div{
+            display: inline-block;
+            @include md-down{
+                display: block;
+                padding-top: 10px;
+            }
+        }
+
+        a{
+            width: auto;
+            display: inline-block;
+            margin-left: 10px;
+            @include xl-down{
+                
+                padding: 15px 10px;
+                margin-left: 5px;
+
+                &:first-child{
+                     &:after{
+                        display:block;
+                        clear: both;
+                        content: "";
+                     }
+                }
+            }
+
+        }
+    }
+}
+

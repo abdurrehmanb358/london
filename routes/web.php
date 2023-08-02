@@ -1,0 +1,91 @@
+<?php
+
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\FlightController;
+use App\Http\Controllers\showImageScrollerController;
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('hotal', function () {
+    return view('layouts.hotal');
+});
+Route::get('holiday', function () {
+    return view('layouts.holilday');
+});
+Route::get('aboutus', function () {
+    return view('layouts.Aboutus');
+});
+Route::get('personal', function () {
+    return view('layouts.personal');
+});
+
+//img controller
+// routes/web.php
+
+
+Route::get('/image-scroller', [showImageScrollerController::class, 'showImageScroller'])->name('image.scroller');
+
+
+
+Route::get('/home', [FlightController:: class , 'getFlights']);
+
+Route::get('add-roles', function () {
+    $roles = [
+     [ 'name'=>'Admin' , 'guard_name'=>'web'],
+     [ 'name'=>'Data Enter' , 'guard_name'=>'web'],
+     [ 'name'=>'Mangner' , 'guard_name'=>'web'],
+    ];
+    $role = Role::insert($roles);
+    return 'success';
+});
+
+// Users Curd//
+Route::get('back-panel/users', [userController ::class, 'index'])->name('user.index');
+Route::get('back-panel/user', [userController ::class, 'create'])->name('user.create');
+Route::post('back-panel/users/create', [userController ::class, 'store'])->name('user.store');
+Route::get('back-panel/users/{user}/edit', [userController ::class, 'edit'])->name('user.edit');
+Route::put('back-panel/users/{user}/edit', [userController ::class, 'update'])->name('user.update');
+Route::delete('back-panel/users/{user}/delete', [userController ::class, 'destroy'])->name('user.destroy');
+
+
+/// Flight curds
+Route::get('back-panel/flight', [FlightController ::class, 'index'])->name('flight.index');
+Route::get('back-panel/user1', [FlightController ::class, 'create'])->name('flight.create');
+Route::post('back-panel/flight/create', [FlightController ::class, 'store'])->name('flight.store');
+Route::get('back-panel/flight/{flight}/edit', [FlightController ::class, 'edit'])->name('flight.edit');
+Route::put('back-panel/flight/{flight}/edit', [FlightController ::class, 'update'])->name('flight.update');
+Route::delete('back-panel/flight/{flight}/delete', [FlightController ::class, 'destroy'])->name('flight.destroy');
+
+
+
+
+
+
+// Route::get('/flight', [FlightController:: class , 'getFlights']);
+
+
+
+Route::get('flightdetail', function () {
+    return view('layouts.flightdetail');
+});
+
+
+
+
+Route::get('/flightdetail/{flight}', [FlightController::class, 'show1'])->name('flights.show');
+
+
+
+require('admin.php');

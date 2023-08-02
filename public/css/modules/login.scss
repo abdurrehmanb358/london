@@ -1,0 +1,199 @@
+ 
+.loginWrapper{
+    display: table;
+    width: 100%;
+    position: relative;
+    background: $lightBg;
+    padding: 72px 0 40px 0;
+    height: 100vh !important;
+
+    @include md-down{
+        padding-top: 30px ;
+    }
+
+    .container{
+        display: table-cell;
+        vertical-align: middle;
+    }  
+}
+
+.loginTitleBar{
+    text-align: center;
+    margin-bottom: 24px;
+
+	h1, h2{
+        display: block;
+        font-size: 28px;
+        line-height: 32px;
+        color: #000000;
+        margin:0 0 10px 0;
+        padding-bottom: 15px;
+        font-weight: 400;
+        position: relative;
+        @include md-down{
+            font-size: 20px;
+            br{
+                display: none;
+            }
+        }
+	    &:before{
+	        transform: translate(-50%, 0);
+	        display:block;
+	        content: "";
+	        position:absolute;
+	        left: 50%;
+	        bottom: 0;
+	        width: 40px;
+	        height: 1px;
+	        background: #F2C68F;
+	    } 
+	}
+     
+    span{
+        font-size: 14px;
+        color: #606060;
+        font-weight: 400;
+        display: inline-block;
+        max-width: 680px;
+
+        @include md-down{
+            br{
+                display: none;
+            }
+        }
+    }
+}
+
+
+.loginInputForm{
+    max-width: 412px;
+    margin: 0 auto;
+    text-align: center;
+
+    input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="tel"], input[type="password"], input[type="file"], select, textarea{
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #CCCCCC;
+        height:52px;
+        padding: 5px 19px; 
+        font-size: 14px;
+        font-weight: 300;
+        color:#4D4D4C;
+        outline:none;
+        @include border-radius(4px);
+        box-shadow:0 1px 3px rgba(0, 0, 0, .16); 
+        ::placeholder{
+            opacity: 1 !important;
+            color: #606060 !important;
+        }
+        &:hover{
+            border:1px solid #4D4D4C;
+             &::placeholder{
+                opacity: 1 !important;
+                color: #4D4D4C !important;
+            }
+        }
+        &:focus{
+            border:1px solid #4D4D4C;
+            &::placeholder{
+                opacity: 1 !important;
+                color: #C9C9C9 !important;
+            }
+        }
+    }
+
+    .form-group{
+        margin-bottom: 30px;
+    }  
+
+    span.alreadyAccount{
+        display: block;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #606060;
+        font-weight: 400;
+        a{
+            color: #4D4D4C;
+            text-decoration: underline;
+            &:hover, &:focus{
+                color:#000;
+            }
+        }
+    }
+
+    .termsAndConditions{
+        text-align: left;
+        font-size: 14px;
+        color: #606060;
+        font-weight: 400;
+        margin-bottom: 30px;
+        a{
+            color: #4D4D4C;
+            text-decoration: underline;
+            &:hover, &:focus{
+                color:#000;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .inputSeparator{
+        font-size: 14px;
+        font-weight: 300;
+        color: #606060;
+        margin-bottom: 17px;
+    }
+    
+    .lgoinBtn{
+        width: 100%;
+        color: #fff;
+        background: $btnBg;
+        font-size: 14px;
+        &:hover, &:focus{
+            background:$btnBgHover;
+        }
+    }
+
+    .lgoinFbBtn{
+        width: 100%;
+        color: #fff;
+        background: #3A5998;
+        font-size: 14px;
+        border: 1px solid #3A5998;
+        &:hover, &:focus{
+            background:#293f6e;
+        }
+    }
+
+    .signInBtnWrap{
+        margin-bottom: 22px !important;
+    }
+}
+
+
+
+
+.pageCloseBtn{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: 99;
+    @include md-down{
+        top: 20px;
+        right: 20px;
+    }
+    a{
+        display: block;
+        img{
+            width: 32px;
+            height: 32px;
+            @include md-down{
+                width: 22px;
+                height: 22px;
+            }
+        }
+        &:hover, &:focus{
+            opacity: .8;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+/*Bootstrap Breakpoints*/
+
+$xlWidth:1200px;
+$lgWidth:992px;
+$mdWidth:768px;
+$smWidth:576px;
+
+
+/*Bootstrap Media Min Width*/
+
+@mixin xl-up {
+    @media (min-width: #{$xlWidth}) { 
+        @content;
+    }
+}
+@mixin lg-up {
+    @media (min-width: #{$lgWidth}) { 
+        @content;
+    }
+}
+@mixin md-up {
+    @media (min-width: #{$mdWidth}) { 
+        @content;
+    }
+}
+@mixin sm-up {
+    @media (min-width: #{$smWidth}) { 
+        @content;
+    }
+}
+
+/*Bootstrap Media Max Width*/
+
+
+@mixin xl-down {
+    @media (max-width: #{$xlWidth  - 0.2px}) { 
+        @content;
+    }
+}
+@mixin lg-down {
+    @media (max-width: #{$lgWidth  - 0.2px}) { 
+        @content;
+    }
+}
+@mixin md-down {
+    @media (max-width: #{$mdWidth  - 0.2px}) { 
+        @content;
+    }
+}
+@mixin sm-down {
+    @media (max-width: #{$smWidth - 0.2px}) { 
+        @content;
+    }
+}
+ 
+/*Bootstrap Media Only ( Min and Max ) Width*/
+
+
+@mixin xl-only {
+   @media (min-width: #{$xlWidth}) {
+        @content;
+    }
+}
+@mixin lg-only {
+  @media (min-width: #{$lgWidth}) and (max-width: #{$xlWidth - 0.2px}) {
+        @content;
+    }
+}
+@mixin md-only {
+    @media (min-width: #{$mdWidth}) and (max-width: #{$lgWidth - 0.2px}) {
+        @content;
+    }
+}
+@mixin sm-only {
+    @media (min-width: #{$smWidth}) and (max-width: #{$mdWidth - 0.2px}) {
+        @content;
+    }
+}
+@mixin xs-only{
+    @media (max-width: #{$smWidth}) { 
+         @content;
+    }
+}

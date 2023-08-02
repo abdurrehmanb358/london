@@ -1,0 +1,900 @@
+
+
+/* Owl Nav and Dots CSS Starts Here */
+.owl-dots{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0 !important;
+    width: 100%;
+    
+    .owl-dot{
+        vertical-align: middle;
+        span{
+            width: 12px !important;
+            height: 12px !important;
+            border-radius: 50% !important;
+            margin: 0 2px !important;
+        }
+        &.active, &:hover{
+            span{
+                background: #d02027 !important; 
+            }
+        }
+        
+    }
+    &:after{
+        display: block;
+        clear: both;
+        content: "";
+    } 
+}
+
+
+.owl-nav{
+    width: 90px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: -26px;
+
+    .owl-prev, .owl-next {
+        background: #f6f6f6 !important;
+        width: 40px;
+        height: 40px;
+        transform: translate(0, -50%);
+        font-size: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: 99;
+        opacity:1 !important;
+
+    }
+
+    .owl-prev {
+   
+        margin-right: 5px !important;
+        border-radius: 0 !important;
+        &:before{
+            width: 15px;
+            height: 15px;
+            border-top:2px solid #F2C68F;
+            border-left:2px solid #F2C68F;
+            content: "";
+            display: block; 
+            @include rotate(-45deg);
+            position: absolute;
+            left: 15px;
+            top: 12px;
+        }
+        &:hover{
+            &:before{
+                border-top:2px solid #E6B77C;
+                border-left:2px solid #E6B77C;
+            }
+        } 
+        
+    }
+    .owl-next {
+       
+        margin-right: 5px !important;
+        border-radius: 0 !important;
+        &:before{
+            width: 15px;
+            height: 15px;
+            border-top:2px solid #F2C68F;
+            border-right:2px solid #F2C68F;
+            content: "";
+            display: block; 
+            @include rotate(45deg);
+            position: absolute;
+            right: 15px;
+            top: 12px;
+        }
+        &:hover{
+            &:before{
+                border-top:2px solid #E6B77C;
+                border-right:2px solid #E6B77C;
+            }
+        } 
+    }
+
+}
+/* Owl Nav and Dots CSS Ends Here */
+
+/* General Css Starts Here */
+main{
+    padding-top: 120px;
+
+    @include md-down{
+        padding-top: 100px;
+    }
+}
+::-webkit-input-placeholder { /* Edge */
+    color:#999999;
+    font-size:14px;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:#999999;
+    font-size:14px;
+  }
+  
+  ::placeholder {
+    color:#999999;
+    font-size:14px;
+  }
+h2.section_main_heading{
+    font-size: 48px;
+    font-weight: 400;
+    color: #11344f;
+    margin: 0 0 40px 0;
+    text-align: center;
+    @include md-down{
+        margin: 0 0 30px 0;
+    }
+
+    &:after {
+        content: "";
+        width: 200px;
+        height: 2px;
+        background-color: #11344f;
+        display: block;
+        margin: 15px auto;
+    }
+}
+
+h3.heading{
+    font-size: 48px;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #11344f;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    &:before{
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        opacity: 1;
+        width: 210px;
+        height: 1px;
+        background: #11344f;
+        display: inline-block;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+    }
+    
+}
+a.view_all_link {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* General Css Ends Here */
+
+/* Topbar Css starts Here */
+
+.topbar{
+    background-color:#000654;
+    position:fixed;
+    top:0;
+    height:40px;
+    width:100%;
+    text-align:right;
+    padding: 8px 30px;
+    z-index: 999;
+
+    @include md-down{
+        text-align:center;
+    }
+
+    p{
+        color: #fff;
+        margin-bottom: 5px;
+        font-size: 14px;
+        display:inline-block;
+
+        a{
+            font-size: 14px;
+            color: #fff;
+            &:hover{
+                text-decoration: underline;
+            }
+
+            .fa-phone{
+                transform:rotate(100deg);
+            }
+        }  
+      
+    }
+    span{
+        padding:0 10px;
+        color:#fff;
+    }
+}
+/* Topbar Css Ends Here */
+
+/* Home Page */
+
+/* Banner Section Starts Here */
+
+section.banner{
+    position:relative;
+
+    .content_wrapper{
+        position: absolute;
+        top: 30px;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+
+        @include lg-down{
+            position:relative;
+        }
+
+        .container{
+            height:100%;
+
+            .row{
+                align-items: center;
+                height:100%;
+
+                .left_col{
+                    .nav-link{
+                        background-color:#d42729;
+                        border:none;
+                        border-radius:0;
+                        margin:0 5px;
+                        color:#fff;
+                        padding: 8px 30px;
+                    }
+                    .nav-link.active{
+                        background-color: #000654;
+                    }
+                    .tab-content {
+                        background-color: #000654;
+                        padding: 15px;
+
+                        form{
+                            color:#fff;
+                            .custom-control.custom-radio {
+                                display: inline-block;
+                                margin-right: 15px;  
+                            }
+                            .custom-radio .custom-control-input:checked~.custom-control-label::before{
+                                background-color:#d42729;
+                            }
+                            label{
+                                font-size:14px;
+                            }
+                            .form-control{
+                                border-radius:0;
+                            }
+                            .btn_submit_inquiry{
+                                background-color:#d42729;
+                                color:#fff;
+                                text-transform: uppercase;
+                                display:inline-block;
+                                width:200px;
+                                padding:8px 15px;
+                                text-align:center;
+                                font-size:14px;
+                                border:none;
+                                margin-top:10px;
+                            }
+                        }
+
+                       
+                    }
+                    
+                }
+                .right_col{
+                   text-align:center;
+                   margin-bottom: 30px;
+                   p.title {
+                        color: #fff;
+                        font-size: 30px;
+                        font-weight:bold;
+                        margin-bottom: 0;
+                    }
+                    p.subtitle{
+                        color: #fff;
+                        font-size: 30px;
+                        text-transform: uppercase;
+                        font-weight:bold;
+                        margin-bottom: 10px;
+                    }
+                    p.phone_no{
+                        background-color:#fe0000;
+                        color: #fff;
+                        font-size: 38px;
+                        text-align:center;
+                        line-height:1.5;
+                        max-width: 360px;
+                        padding: 0 15px 6px;
+                        margin: 0px auto 10px;
+                        
+
+                        .fa-phone{
+                            color:#fe0000;
+                            background-color:#fff;
+                            border-radius:3px;
+                            width:40px;
+                            height:40px;
+                            transform: rotate(90deg);
+                            font-size: 28px;
+                            line-height: 1.5;
+                        }
+                    }
+                    span{
+                        color:#fff;
+                        display:block;
+                        font-size:20px;
+                        text-transform: uppercase;
+                        font-weight:bold;
+                    }
+                }
+
+               
+            }
+        }
+
+      
+    }
+
+    .mobile_caption{
+        position:absolute;
+        top: 30px;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        text-align:center;
+        margin-bottom: 30px;
+        p.title {
+             color: #fff;
+             font-size: 20px;
+             font-weight:bold;
+             margin-bottom: 0;
+         }
+         p.subtitle{
+             color: #fff;
+             font-size: 20px;
+             text-transform: uppercase;
+             font-weight:bold;
+             margin-bottom: 10px;
+         }
+         p.phone_no{
+             background-color:#fe0000;
+             color: #fff;
+             font-size: 20px;
+             text-align:center;
+             line-height:1.5;
+             max-width: 360px;
+             padding: 0 15px 6px;
+             margin: 0px auto 10px;
+             
+
+             .fa-phone{
+                 color:#fe0000;
+                 background-color:#fff;
+                 border-radius:3px;
+                 width:30px;
+                 height:30px;
+                 transform: rotate(90deg);
+                 font-size: 18px;
+                 line-height: 1.5;
+             }
+         }
+         span{
+             color:#fff;
+             display:block;
+             font-size:14px;
+             text-transform: uppercase;
+             font-weight:bold;
+         }
+    }
+}
+
+/* Banner Section Ends Here */
+
+/* Section Latest Offer Starts Here */
+section.latest_offers{
+    padding:40px 0;
+    .latest_offer_slider{
+        position: relative;
+    
+        .item{
+            position: relative;
+            margin-bottom: 25px;
+            img{
+                width: 100%;
+                height: auto;
+            }
+            .offerHover{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+        .offertop{
+            position: absolute;
+            right: 20px;
+            color: #fff;
+            top: 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .offerBottom{
+            position: absolute;
+            bottom: 20px;
+            color: #fff;
+            left: 20px;
+            
+                title{
+                    display: block;
+                    font-size:26px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                }
+                price{
+                    display: block;
+                    font-size:18px;
+                    line-height: 1.2;
+                }
+                span{
+                    display: block;
+                    font-size:14px;
+                }
+            }
+        }
+    
+    }
+        .owl-nav{
+            left: auto;
+            top: -60px;
+            right: 0;
+         }
+        
+    }
+
+    .special_offer{
+        margin-top:40px;
+        position:relative;
+        border:2px solid #fff;
+        -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+        -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+        box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+
+        .content_wrapper{
+            position: absolute;
+            top:0;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+        
+
+            title{
+                display:block;
+                font-size:36px;
+                font-weight: bold;
+                color:#fff;
+                text-transform:uppercase;
+            }
+            span{
+                font-size:36px;
+                display:block;
+                color:#f2da0b;
+                font-weight: bold;
+            }
+
+            .btn_link{
+                display:inline-block;
+                background-color: rgba(239,54,54,0.88);
+                color: #fff;
+                border-radius: 0;
+                text-transform: uppercase;
+                font-size: 14px;
+                width: 150px;
+                padding: 8px;
+                margin-top: 15px;
+            }
+        }
+
+        .img-fluid{
+            object-fit:cover;
+            width:100%;
+        }
+    }
+}
+ 
+/* Section Latest Offer Ends Here */
+
+/* Section Featured Offer Starts Here */
+section.featured_offers{
+    margin:40px 0;
+    
+    .wrapper {
+        position: relative;
+        overflow: hidden;
+        border:2px solid #fff;
+            -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+            -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+            box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+
+            @include lg-down{
+                margin-bottom:30px;
+            }
+            
+
+        img.img-fluid {
+            width: 100%;
+            max-height: 170px;
+            object-fit: cover;
+            
+        }
+
+        .content_wrap {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            a.btn.btn_link {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                background-color: rgba(239, 54, 54, 0.88);
+                color: #fff;
+                border-radius: 0;
+                text-transform: uppercase;
+                font-size: 14px;
+
+                &:hover{
+                    background-color:rgba(0, 0, 0, 0.69);
+                }
+            }
+        }
+
+        .red_circle{
+            background:url("../images/red_circle.png") no-repeat left center;
+            height: 100%;
+            padding: 35px 20px;
+
+            span {
+                display: block;
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            
+            title {
+                display: block;
+                font-size: 36px;
+                font-weight: bold;
+                color: #fff;
+                line-height: 1.2;
+            }
+            
+            price {
+                display: block;
+                color: #fff;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+/* Section Featured Offer Ends Here */
+
+/* Section Holidays Starts Here */
+section.holidays{
+    background: #d9e7f2 url(../images/bg-blue.jpg);
+    padding:40px 0;
+
+        .heading{
+            font-size: 48px;
+            font-weight: 300;
+            text-transform: capitalize;
+            color: #11344f;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            &:before{
+                -webkit-transition: 1s;
+                -moz-transition: 1s;
+                -o-transition: 1s;
+                transition: 1s;
+                opacity: 1;
+                width: 180px;
+                height: 1px;
+                background: #11344f;
+                display: inline-block;
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+            }
+            
+        }
+        p.detail{
+            font-size:14px;
+            color:#11344f;
+        }
+        a.btn_link{
+            text-transform: uppercase;
+            color:#000654;
+            font-weight:bold;
+            margin-bottom: 30px;
+            display: block;
+        }
+        .holidays_offer_slider{
+
+            .item{
+                border:2px solid #fff;
+                -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+                -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+                box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+            }
+
+            .offertop{
+                position: absolute;
+                right: 20px;
+                color: #fff;
+                top: 15px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .offerBottom{
+                position: absolute;
+                bottom: 20px;
+                color: #fff;
+                left: 20px;
+                
+                    title{
+                        display: block;
+                        font-size:26px;
+                        line-height: 1.2;
+                        font-weight: 600;
+                    }
+                    price{
+                        display: block;
+                        font-size:18px;
+                        line-height: 1.2;
+                    }
+                    span{
+                        display: block;
+                        font-size:14px;
+                    }
+                }
+        }    
+}
+
+/* Section Holidays Ends Here */
+
+/* Section Flights Hotels Ends Here */
+.flights_hotels{
+    background:#d9e7f2 url("../images/bg-blue.jpg");
+    padding: 40px 0;
+
+   
+
+        .item{
+            position: relative;
+            margin-bottom: 25px;
+            img{
+                width: 100%;
+                height: auto;
+            }
+            .offerHover{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            .offertop{
+                position: absolute;
+                right: 15px;
+                color: #fff;
+                top: 10px;
+                font-size: 14px;
+                font-weight: 600;
+
+                .fa-star.active{
+                    color: #ff0;
+                }
+            }
+
+            .offerBottom{
+                position: absolute;
+                bottom: 10px;
+                color: #fff;
+                left: 15px;
+                
+                    title{
+                        display: block;
+                        font-size:20px;
+                        line-height: 1.2;
+                    }
+                   
+                    span{
+                        display: block;
+                        font-size:14px;
+                    }
+                }
+        }
+    }
+
+    .flights_widget{
+        .nav-tabs{
+            border: 0px;
+    
+            .nav-item{
+                margin-right: 10px;
+            }
+        .nav-link{
+                border: 0px;
+                padding: 12px 15px;
+                background: #73b4da;
+                color: #fff;
+                border-radius: 0px;
+                font-size: 16px;
+                text-transform: uppercase;
+                &.active{
+                    background: #11344f; 
+                }
+            }
+    
+           
+        }
+        .flights-items-holder{
+            padding: 20px;
+            background: #fff;
+            margin-bottom:30px;
+            
+        .flight-item{
+            padding: 7px 10px;
+            border: 1px solid #ebebeb;
+            span{
+                display: block;
+                font-size:16px;
+    
+                &.class{
+                    color:#37991c;
+                }
+                &.fare{
+                    color:#d02027;
+                }
+            }
+    
+            .btn-small{
+                color:#5694b9;
+                font-size: 12px;
+                text-transform: uppercase;
+                border:1px solid #ddd;
+                width:100px;
+                padding:8px 10px;
+                margin-top: 6px;
+                border-radius:0;
+            }
+        }
+    }
+ 
+}
+    
+}
+/* Section Flights Hotels Ends Here */
+
+
+/* Section Subscribe Starts Here */
+section.subscribe {
+    background-color: #000654;  
+    padding: 20px 30px 10px 30px;
+
+    h6{
+        color:#fff;
+        font-size:28px;
+    }
+    p{
+        color:#5694b9;
+        font-size:16px;
+    }
+
+    input.form-control {
+        border-radius: 0;
+        width: calc(100% - 120px);
+        height: 55px;
+    }
+    
+    button.btn.btn_subscribe {
+        border-radius: 0;
+        width: 120px;
+        height: 55px;
+        background-color:#d02027;
+        color:#fff;
+        font-size:16px;
+        text-transform:uppercase;
+    }
+    form{
+        height:100%;
+        .form-row {
+    
+            align-items: center;
+            height:100%;
+    
+            .form-group{
+                width: 100%;
+                display: inline-flex;
+            }
+        }
+    }
+   
+}
+/* Section Subscribe Ends Here */
+
+
+/* Section Travel Insurance Starts Here */
+section.travel_insurance{
+    margin:50px 0;
+    .img-fluid{
+        border:2px solid #fff;
+        -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+        -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+        box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.11);
+    }
+}
+/* Section Travel Insurance Ends Here */
+
+/* Section Testimonial Starts Here */
+section.testimonials{
+    margin-bottom: 80px;
+
+    .testimonial_slider{
+        .item{
+            background-color:#e0edf6;
+            border-left:5px solid #9fb9cb;
+
+            p{
+                font-size:14px;
+                color:#363636;
+                padding: 20px 20px 0 20px;
+            }
+
+            span{
+                color:#000654;
+                font-size:14px;
+                font-weight:bold;
+                display:block;
+                padding:0 20px 20px 20px;
+            }
+        }
+
+        .owl-dots{
+            bottom: -50px;
+        }
+    }
+}
+/* Section Testimonial Ends Here */
+
+/* Section Partners Starts Here */
+
+section.partners{
+    padding:40px 0;
+
+    .partners_list{
+        a{
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+}
+/* Section Partners Ends Here */
+
+/* Home Page */
+

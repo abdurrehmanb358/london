@@ -1,0 +1,565 @@
+/*checkout page css*/
+
+.checkoutPage{
+    .stepsHeader{
+        @include md-down{
+            background: $lightBg;
+            min-height: 77px;
+        }
+        .siteLogoSteps{
+            @include md-down{
+                margin-bottom: 0;
+            }
+        }
+    }
+     
+    .stepsContentWrapper{
+        padding-top: 15px;
+        @include md-down{
+            padding-top: 0;
+            padding-bottom: 180px;
+        }
+    }
+}
+
+.checkoutSecTop{
+    margin-bottom: 40px;
+    padding-top: 15px;
+
+    @include lg-down{
+        margin-bottom: 20px;
+    }
+
+    &.checkStaticSecMob{
+        display: none;
+        @include md-down{
+            display: block;
+        }
+    }
+
+    &.checkStaticSecWeb{
+        display: block;
+        @include md-down{
+            display: none;
+        }
+    }
+
+
+    .checkOutTitle{
+        position: relative;
+        
+        @include lg-down{
+            margin-bottom: 20px;
+        }
+
+        @include md-down{
+            text-align: center;
+        }
+        .checkOutIcon{
+            margin-bottom: 20px;
+            width: 17px;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            
+            @include md-down{
+                display: inline-block;
+                position: inherit;
+                top:auto;
+                right: auto;
+            }
+
+            img{
+                width: 17px;
+                height: auto;
+            }
+        }
+        h1{
+            display: block;
+            font-size: 22px;
+            line-height: 30px;
+            color: #000000;
+            margin: 0 0 15px 0;
+            font-weight: 400;
+            position: relative;
+            padding-left: 35px;
+            @include md-down{
+                padding-left: 0;
+            }
+        }
+        span{
+            font-size: 14px;
+            color: #606060;
+            font-weight: 400;
+            display: inline-block;
+             
+            line-height: 20px;
+        }
+    }
+}
+
+.hgCheckoutWrap{
+    text-align: right;
+
+    @include lg-down{
+        text-align: center;
+    }
+
+    .hgCheckout{
+        padding-top: 4px;
+        display: inline-block;
+        text-align: center;
+         
+         
+        @include lg-down{
+             margin-bottom: 15px;
+        }
+
+        .guaranteeLogo{
+            margin: 0 auto;
+            width: 40px;
+            margin-bottom: 4px;
+            img{
+                width: 40px;
+                height: auto;
+            }
+        }
+        strong {
+            display: block;
+            font-size: 14px;
+            color: #000000;
+            font-weight: 500;
+        }
+        
+    }
+}
+
+.paymentWrap{
+    h2{
+        font-size: 21px;
+        color: #000000;
+        display: block;
+        margin:0 0 30px 0;
+    }
+
+    .billingAddressWrap{
+        margin-bottom: 40px;
+    }
+
+    .paymentMethod{
+        margin-bottom: 0;
+    }
+
+    .cardsList{
+        margin-bottom: 15px;
+        li{
+            display: inline-block;
+            margin-right: 10px;
+            border: 2px solid #fff;
+            @include border-radius(5px);
+            img{
+                width: 48px;
+                height: auto;
+            }
+            &.active{
+                border: 2px solid rgba(61, 161, 228, .50);
+            }
+        }
+    }
+}
+
+/*.summaryToggleBtn{
+    text-align: center;
+    margin-bottom: 15px;
+    /*position: fixed;
+    top: 0;
+    right: 0;*//*
+    z-index: 99;
+    display: none;
+    @include md-down{
+        display: block;
+    }
+    a{
+        background: $btnBg;
+        display: inline-block;
+        padding:10px 10px;
+        font-weight: 400;
+        width: 130px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #fff;
+        border: 1px solid #eee;
+        &.active{
+            background: $btnBgHover;
+            i{
+                display: inline-block;
+            }
+        }
+
+        i{
+            display: none;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    }
+}*/
+
+.packageSummaryWrap{
+    text-align: right;
+    padding-top: 15px;
+    @include md-down{
+        padding-top: 0;
+    }
+}
+
+
+.packageSummaryContentwrap{
+    display: block;
+    @include md-down{
+        padding-top: 20px;
+    }
+} 
+
+.packageSummaryBox{
+    text-align: left;
+    position: relative;
+    background: #fff;
+    max-width: 410px;
+    float: right;
+    padding: 30px;
+    box-shadow:0 3px 6px rgba(0, 0, 0, .16);
+    @include md-down{
+        max-width: 100%;
+        margin: 0 auto;
+        float: none;
+         padding: 20px 30px;
+        margin-bottom: 30px;
+    }
+
+
+    .summaryTitleWeb{
+        display: block;
+        @include md-down{
+            display: none;
+        }
+    }
+    .summaryTitleMobile{
+        display: none;
+        @include md-down{
+            display: block;
+            margin-bottom: 0;
+        }
+        i{
+             
+            @include transition(1s);
+            float: right;
+            font-size: 20px;
+            margin-top: 4px;
+            color: #4D4D4C;
+            @include rotate(180deg);
+        }
+        &.active{
+            i{
+               @include rotate(0deg); 
+            }
+        }
+    }
+    h2{
+        font-size: 21px;
+        color: #000000;
+        font-weight: 400;
+        display: block;
+        margin:0 0 15px 0;
+    }
+
+    ul{
+        margin: 0;
+        li{
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #464646;
+            span{
+                float: right;
+                font-weight: 500;
+                a{
+                    display: inline-block;
+                    margin-left: 5px;
+                    img{
+                        width: 10px;
+                        height: auto;
+                        vertical-align: initial;
+                    }
+                }
+            }
+        }
+
+        &.total{
+            border-top: 1px solid #E2E2E2;
+            padding-top: 15px;
+            @include md-down{
+                display: none;
+            }
+            li{
+                font-size: 18px;
+                color: #000000;
+                font-weight: 500;
+            }
+            span{
+                font-size: 18px;
+                color: #000000;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .addAnotherRoomBtn{
+        display: block;
+        border: 1px solid #99B393;
+        padding: 8px 10px;
+        font-size: 15px;
+        color: #99B393;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .addPromo{
+        border-top: 1px solid #E2E2E2;
+        border-bottom: 1px solid #E2E2E2;
+        padding: 15px 0;
+        margin-bottom: 15px;
+
+        @include md-down{
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        span{
+            display: block;
+            font-size: 15px;
+            color: #464646;
+            a{
+                color: #99B393;
+                text-decoration: underline;
+            }
+            .promoCancelBtn{
+                display: none;
+                float: right;
+                font-size: 15px;
+                color: #eee;
+                text-decoration: none;
+                img{
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+            &.active{
+                .promoCancelBtn{
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .promocodeBar{
+        position: relative;
+        padding-right: 100px;
+        margin-top: 20px;
+        display: none;
+         
+        .promoApply{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 80px;
+            display: block;
+            background: #fff;
+            border: 1px solid #99B393;
+            padding: 4px 10px;
+            height: 50px;
+            font-size: 15px;
+            color: #99B393;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        &.open{
+            display: block;
+        }
+    }
+
+    button{
+        display: block;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .paymentTerms{
+        font-size: 12px;
+        color: #464646;
+        font-style: italic;
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        a{
+            text-decoration: underline;
+            color: #4D4D4C;
+        }
+    } 
+}
+
+
+.checkOutBottomSec{
+    @include md-down{
+        display: none;
+    }
+}
+
+.checkOutStickey{
+    display: none;
+    z-index: 9999;
+    padding: 20px 15px;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #E2E2E2;
+    @include md-down{
+        display:block;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    ul.totalStikey{
+        margin: 0;
+        border-top: none;
+        padding-top: 0;
+        li{
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #000000;
+            font-weight: 500;
+            span{
+                float: right;
+                font-size: 18px;
+                color: #000000;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .paymentTerms {
+        font-size: 12px;
+        color: #464646;
+        font-style: italic;
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        a{
+            text-decoration: underline;
+            color: #4D4D4C;
+        }
+    }
+}
+
+
+
+.addAnotherRoomBox{
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    padding: 30px 30px;
+    font-size: 15px;
+    color: #99B393;
+    overflow: auto;
+    @include md-down{
+        position: fixed;
+        z-index: 9999;
+    }
+    &.active{
+        display: block;
+    }
+
+    .aarBoxClose{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 22px;
+        height: 22px;
+        img{
+            width: 22px;
+            height: auto;
+        }
+    }
+
+    h2{
+        font-size: 21px;
+        color: #000000;
+        font-weight: 400;
+        display: block;
+        margin:0 0 30px 0;
+    }
+
+    .formCheckWrap{
+        margin-bottom: 20px;
+        .custom-radio{
+            margin-bottom: 5px;
+        }
+    }
+}
+
+
+/*common styles*/
+
+
+.checkoutFormStyle{
+    label{
+        font-size: 14px;
+        color: #464646;
+    }
+
+    input[type="text"], input[type="email"], input[type="url"], input[type="number"], input[type="tel"], input[type="password"], input[type="file"], select, textarea{
+        width: 100%;
+        background-color: #ffffff;
+        border: 1px solid #CCCCCC;
+        height:52px;
+        padding: 5px 15px; 
+        font-size: 14px;
+        font-weight: 300;
+        color:#606060;
+        outline:none;
+        @include border-radius(4px);
+        box-shadow:0 1px 3px rgba(0, 0, 0, .16); 
+        ::placeholder{
+            opacity: 1 !important;
+            color: #606060 !important;
+        }
+        &:hover{
+            border:1px solid #4D4D4C;
+             &::placeholder{
+                opacity: 1 !important;
+                color: #4D4D4C !important;
+            }
+        }
+        &:focus{
+            border:1px solid #4D4D4C;
+           &::placeholder{
+                opacity: 1 !important;
+                color: #C9C9C9 !important;
+            }
+        }
+    }
+}
