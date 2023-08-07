@@ -3,6 +3,7 @@
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\hotelController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\showImageScrollerController;
 
@@ -82,9 +83,20 @@ Route::get('flightdetail', function () {
 });
 
 
-
-
 Route::get('/flightdetail/{flight}', [FlightController::class, 'show1'])->name('flights.show');
+
+Route::get('/back-panel/hotel', [hotelController::class, 'index'])->name('hotel.index');
+Route::get('/back-panel/hotel/create', [hotelController::class, 'create'])->name('hotel.create');
+Route::post('/back-panel/hotel/store', [hotelController::class, 'store'])->name('hotel.store');
+Route::get('/back-panel/hotels/{id}/edit',[hotelController::class,'edit'])->name('hotel.edit');
+Route::put('/back-panel/hotel/{id}/update',[hotelController::class,'update'])->name('hotel.update');
+Route::get('/back-panel/hotel/{id}/delete',[hotelController::class,'destroy']);
+
+Route::get('Hotel_listing',[hotelController::class, 'Hotel_listing'])->name('hotel_listing');
+
+
+Route::get('/layouts/{id}/show',[hotelController::class,'show']);
+
 
 
 

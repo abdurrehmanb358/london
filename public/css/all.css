@@ -4015,6 +4015,7 @@ element.style {
     .card p {
       text-align: center;
     }
+}
 /* personal informatio */
 .text-align{
     text-align: center;
@@ -4105,5 +4106,9 @@ element.style {
 .additional-info {
   margin: 0;
 } */
+
+img.img-set{
+    width: 100%;
+}
 
     /*# sourceMappingURL=all.css.map
