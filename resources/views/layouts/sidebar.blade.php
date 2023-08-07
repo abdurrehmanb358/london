@@ -49,15 +49,31 @@ id="sidenav-main">
         <span class="nav-link-text ms-1">Flight detail</span>
       </a>
     </li>
+
     <li class="nav-item">
+<<<<<<< HEAD
       <a class="nav-link text-white " href="{{route('inquiry.index')}}">
+=======
+      <a class="nav-link text-white " href="{{route('hotel.index')}}">
+
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="fas fa-hotel"></i>
+        </div>
+
+        <span class="nav-link-text ms-1">Hotel detail</span>
+      </a>
+    </li>
+    
+    {{-- <li class="nav-item">
+      <a class="nav-link text-white " href="{{route('flight')}}">
+>>>>>>> 01a98bdfbe5ab9ca35b3723008201fa3d261145a
 
         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
           <i class="fas fa-plane"></i>    </div>
 
         <span class="nav-link-text ms-1">Flight inquiry</span>
       </a>
-    </li>
+    </li> --}}
 
   </ul>
 </div>

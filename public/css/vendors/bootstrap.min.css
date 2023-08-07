@@ -10002,5 +10002,67 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
-
+.img-set{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+.margin-set{
+    margin-top: 50px;
+}
+.select-set{
+    background:#FCFCFC;
+    border: 1px solid #F0F0F0;
+    text-align: center;
+    padding: 20px 10px;
+}
 /*# sourceMappingURL=bootstrap.min.css.map */
+
+
+
+
+
+.price-range {
+    position: relative;
+    width: 300px; /* Adjust the width as needed */
+    height: 2px;
+    background-color: #ccc; /* Color of the price range line */
+    margin: 20px 0; /* Adjust the margin as needed */
+}
+
+.price-range .line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f00; /* Color of the selected price range */
+}
+
+.price-range .min-marker,
+.price-range .max-marker {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f00; /* Color of the markers */
+    top: -4px; /* Adjust the vertical position of the markers */
+}
+
+.price-range .min-marker {
+    left: 0;
+}
+
+.price-range .max-marker {
+    right: 0;
+}
+.wrapper{
+    margin: 30px;
+    padding: 30px 10px;
+    /* text-align: center; */
+    border: 1px solid #F0F0F0;
+}
+.wrapper input{
+    width: -webkit-fill-available;
+    border: #F0F0F0;
+    outline: none;
+}
+
