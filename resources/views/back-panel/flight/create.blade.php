@@ -20,6 +20,10 @@
         @csrf
         <div class="form-row">
           <div class="form-group col-md-4">
+            <label for="flying_from">Airline image:</label>
+            <input type="file" class="form-control" id="images" name="images" placeholder="Enter departure city">
+          </div> 
+          <div class="form-group col-md-4">
             <label for="flying_from">Flying from:</label>
             <input type="text" class="form-control" id="flying_from" name="flying_from" placeholder="Enter departure city">
           </div>
@@ -37,12 +41,12 @@
             <label for="class">Type:</label>
             <select class="form-control" id="class" name="type">
               <option>Domestic</option>
-              <option>International</option>
+              <option>Inter</option>
             </select>
           </div>
           <div class="form-group col-md-6">
             <label for="departing">Departing:</label>
-            <input type="calendar" class="form-control" id="departing" name="departing">
+            <input type="date" class="form-control" id="departing" name="departing">
             <i class="bi bi-calendar"></i>
 
           </div>
@@ -52,19 +56,7 @@
             <label for="returning">Ariving::</label>
             <input type="date" class="form-control" id="returning" name="returning">
           </div>
-          <div class="form-group col-md-4">
-            <label for="adults">Adults:</label>
-            <input type="number" class="form-control" id="adults" name="adults" min="1">
-          </div>
-          <div class="form-group col-md-4">
-            <label for="children">Children:</label>
-            <input type="number" class="form-control" id="children" name="children" min="0">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="infants">Infants:</label>
-          <input type="number" class="form-control" id="infants" name="infants" min="0">
-        </div>
+          
         <div class="form-group">
           <label for="class">Class:</label>
           <select class="form-control" id="class" name="class">
@@ -73,9 +65,19 @@
             <option>First Class</option>
           </select>
         </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
+        <div>
+        <textarea name="message" id=""
+        style="width: 174%; height: 169px; margin-top: -11px;  border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
+        rows="30" cols="50" placeholder="message"></textarea>
         </div>
+        
+        <div>
+           <div class="text-center from-control" >
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div> 
+        </div>
+        
+    
       </form>
     </div>
   </div>

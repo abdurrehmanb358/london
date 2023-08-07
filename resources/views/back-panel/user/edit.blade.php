@@ -29,6 +29,7 @@
             @foreach($roles as $role)
             <option class="text-uppercase" value="{{ $role->id }}" @if ($role->id === optional($user)->role_id) selected @endif>
                 {{ strtoupper($role->name) }}
+                
             </option>
             @endforeach
         </select>

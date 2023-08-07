@@ -2079,7 +2079,10 @@ pre code {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border: none;
+    border-bottom:red;
+
 }
 
 @media screen and (prefers-reduced-motion:reduce) {
@@ -2584,7 +2587,7 @@ textarea.form-control {
     }
 }
 
-.btn {
+/* .btn {
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -2600,7 +2603,7 @@ textarea.form-control {
     line-height: 1.5;
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
+} */
 
 @media screen and (prefers-reduced-motion:reduce) {
     .btn {
@@ -2608,7 +2611,7 @@ textarea.form-control {
     }
 }
 
-.btn:focus,
+/* .btn:focus,
 .btn:hover {
     text-decoration: none
 }
@@ -2622,22 +2625,22 @@ textarea.form-control {
 .btn.disabled,
 .btn:disabled {
     opacity: .65
-}
+} */
 
-.btn:not(:disabled):not(.disabled) {
+/* .btn:not(:disabled):not(.disabled) {
     cursor: pointer
-}
+} */
 
 a.btn.disabled,
 fieldset:disabled a.btn {
     pointer-events: none
 }
 
-.btn-primary {
+/* .btn-primary {
     color: #fff;
     background-color: #007bff;
-    border-color: #007bff
-}
+
+} */
 
 .btn-primary:hover {
     color: #fff;

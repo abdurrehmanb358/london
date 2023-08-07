@@ -8,6 +8,7 @@
                 <img src="{{ asset('images/hotal.png') }}" alt="Bangkok" style="height: 320px;" class="img-fluid">
 
             </div>
+      
             <div class="col-md-5 mt-4">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <div class="card-body bg-gray">

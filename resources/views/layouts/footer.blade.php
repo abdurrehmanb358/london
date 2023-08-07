@@ -147,7 +147,7 @@
           <div class="col-12 col-lg-4 socialIcons">
             <h3 style="color: white;">Contact Details</h3>
             <p style="color: white;"><i class="fas fa-envelope"></i> Info@londontravel.com</p>
-            <p ><i class="fas fa-phone"></i> 021738929383</p>
+            <p style="color: white;"><i class="fas fa-phone"></i> 021738929383</p>
           </div>
       
           <div class="col-sm-6 col-lg-3 socialIcons">
@@ -161,7 +161,8 @@
       
           <div class="col-sm-6 col-lg-3 socialIcons">
             <h3 style="color: white;">Payments</h3>
-            <img src="images/payment_icons.jpg" alt="Payments Methods">
+            <img src="{{ asset('images/payment_icons.jpg') }}" alt="Payments Methods">
+
           </div>
         </div>
       </div>

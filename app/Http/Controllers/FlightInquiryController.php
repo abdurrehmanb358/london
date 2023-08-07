@@ -2,32 +2,62 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inquiry;
 use Illuminate\Http\Request;
-use App\Models\FlightInquiry;
 
 class FlightInquiryController extends Controller
 {
-    public function submit(Request $request)
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+{
+    $inquiries = Inquiry::all();
+    return view('back-panel.flightinquery.index', compact('inquiries'));
+}
+
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $flight = FlightInquiry::create([
-            'first_name' => $request->input('first_name'),
-            'last_name' => $request->input('last_name'),
-            'email' => $request->input('email'),
-            'Email' => $request->input('Email'),
-            'phhone_nu,mber' => $request->input('phone_number'),
-            'destination' => $request->input('destination'),
-              'date of departure' => $request->input('date of departure'),
-            'date of arrivel' => $request->input('date of arrivel'),
-            'airline' => $request->input('airline'),
-            'number of passenger' => $request->input('number of passenger'),
-            'class' => $request->input('class'),
-            'message' => $request->input('message'),
-            'form' => $request->input('form'),
-            'form' => $request->input('form'),
-          
-
-        ]);
-
-
+        //
     }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $inquiry = Inquiry::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+           
+'phone_number' => $request->phone_number,
+            'destination' => $request->destination,
+            'form' => $request->form,
+            'date_of_departure' => $request->date_of_departure,
+            'date_of_arrival' => $request->date_of_arrivel,
+            'airline' => $request->airline,
+            'number_of_passenger' => $request->number_of_passenger,
+            'class' => $request->class,
+            'message' => $request->message,
+            'flight_id' => $request->flight_id,
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+  
 }

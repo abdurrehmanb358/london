@@ -36,6 +36,7 @@
         <select name="role_id" id="roles" class="form-control">
             @foreach($roles as $role)
             <option class="text-uppercase" value="{{ $role->id }}">{{ strtoupper($role->name) }}</option>
+            
             @endforeach
         </select>
     </div>

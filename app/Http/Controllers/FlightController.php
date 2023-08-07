@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Flight;
 use Illuminate\Http\Request;
-use App\Models\FlightInquiry;
+
 use Illuminate\Routing\Controller;
 
 class FlightController extends Controller
@@ -32,14 +32,15 @@ class FlightController extends Controller
     public function store(Request $request)
     {
         $flight = Flight::create([
+            'images' => $request->input('images'),
             'flying_from' => $request->input('flying_from'),
             'flying_to' => $request->input('flying_to'),
             'price' => $request->input('price'),
             'type' => $request->input('type'),
             'departing' => $request->input('departing'),
             'returning' => $request->input('returning'),
-          
-            'class' => $request->input('class'),
+          'class' => $request->input('class'),
+            'message' => $request->input('message'),
           
 
         ]);
@@ -72,8 +73,8 @@ class FlightController extends Controller
      */
     public function update(Request $request, Flight $flight)
     {
+        // $flight->update($request->all());
         $flight->update($request->all());
-      
         return redirect()->route('flight.index')->with('success', ' updated Successfully');
     }
 

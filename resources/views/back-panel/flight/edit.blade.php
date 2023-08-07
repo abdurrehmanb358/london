@@ -32,28 +32,16 @@
         <input type="text" id="email" class="form-control" name="Returing" placeholder="Enter Returing"
             value="{{ $flight->returning }}" required>
     </div>
-    <div class="form-group">
-        <label for="email">Adults</label>
-        <input type="text" id="email" class="form-control" name="Adults" placeholder="Enter Adults"
-            value="{{ $flight->adults }}" required>
-    </div>
-    <div class="form-group">
-        <label for="email">children</label>
-        <input type="text" id="email" class="form-control" name="children" placeholder="Enter children"
-            value="{{ $flight->children}}" required>
-    </div>
-    <div class="form-group">
-        <label for="email">infants</label>
-        <input type="text" id="email" class="form-control" name="infants" placeholder="Enter infants"
-            value="{{ $flight->infants }}" required>
-    </div>
+   
+    
     <div class="form-group">
         <label for="class">Type:</label>
         <select class="form-control" id="class" name="type">
           <option>Domestic</option>
-          <option>International</option>
+          <option>Inter</option>
         </select>
       </div>
+      
 
 
 
@@ -65,7 +53,10 @@
           <option>First Class</option>
         </select>
       </div>
-
+      <textarea name="message" id=""
+      style="width: 174%; height: 169px; margin-top: -11px;  border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
+      rows="30" cols="50" placeholder="message">{{ $flight->message}}</textarea>
+      </div>
 
  
 

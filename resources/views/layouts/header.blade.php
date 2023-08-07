@@ -10,8 +10,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
         <link href="{{ asset('css/vendors/owl.carousel.min.css') }}" rel="stylesheet">
         <link href="{{ asset( "css/vendors/owl.theme.default.min.css") }}" rel="stylesheet">
-       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="{{ asset("css/vendors/slick.css") }}"  rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/flightdatail.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
        
        
         <link href="{{ asset( "css/vendors/slick-theme.css") }}" rel="stylesheet">

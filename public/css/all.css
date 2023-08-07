@@ -3543,7 +3543,7 @@ textarea {
     
 }
 
-button {
+/* button {
     padding:;
     border: none;
     border-radius: 5px;
@@ -3551,7 +3551,7 @@ button {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-}
+} */
 .input-group {
     display: flex;
     gap: 18px;
@@ -3560,17 +3560,17 @@ button {
     border-bottom:rgb(126, 29, 29) ;
     
 }
-button {
+/* button {
     padding:13px 48px 11px;
     border: none;
     
-    background-color: #D52729; /* Set the background color to red */
+    background-color: #D52729;
     color: #fff;
     font-size: 16px;
   
     
 font-size: 11px;
-}
+} */
 .text1{
     float: left;
 }

@@ -1,4 +1,4 @@
- @include('layouts.header')
+@include('layouts.header')
 
 
 
@@ -113,16 +113,87 @@
     </div>
 </section>
 
-<div class="contanier">
+<div class="container">
+    <div class="col-12">
+        <h2>internatinal flight</h2>
+        {{-- <hr> --}}
+        <p>Travelling internationally can be stressful because of high ticket price.Vist our website to find some of the best internatonal flight deals on internet.</p>    
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card1">
+                <h3>
+                    <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                </h3>
+                <p class="bb">Best Prices Guranteed</p>
+                <p>we always Guranteed you travel for less with then best price on flight,Hotal & vacation</p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card1">
+                <h3>
+                    <div class="icon">&#128722;</div>
+                </h3>
+                <p class="bb">Statisfied Customers</p>
+                <p >we hold our values tight we have Millons of Satatfied Costomer worldwide</p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card1">
+                <h3>
+                    <div class="icon">&#128722;</div>
+                </h3>
+                <p class="bb">Exculsive Deals</p>
+                <p>Exculsive Airfare Content , and insider Consolider Deals which no one else can offer. </p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card1">
+                <h3>
+                    <div class="icon">&#128722;</div>
+                </h3>
+                <p class="bb">Customer service</p>
+
+                <p>Our trip Experts are well versed and committed to provide you the base-in-class service in the quickest way.</p>
+            </div>
+        </div>
+    </div>
     
-        <div class="row">
-            <div class="col-4"></div>
+
+        
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="row">
+            <div class="col-3"></div>
            
            
            
            
-            <div class="col-8">
-                 <h2>Flight Detail</h2>
+            <div class="col-9 mt-7" style="margin-top: 78px">
+                 <h2>
+                    Popular Flight
+                    <hr class="h2">
+                 </h2>
+             
 
                 <table style="width: 80%; border-collapse: collapse; border: 1px solid #ddd;">
                     <tr>
@@ -143,10 +214,10 @@
                             Fare</th>
                     </tr>
                     <tr>
-                        <td style="padding: 8px;  text-align: center;">  <img src="{{ asset('images/' . $flight->images) }}" alt="Flight Image" style="height:69px; width: 126px;"></td>
+                        <td style="padding: 8px;  text-align: center;"> </td>
                         <td style="padding: 8px;  text-align: center;">
-                                             {{$flight->flying_from}}
-                                             <p style="margin: 0; font-size: 12px;"><?php echo date('F j, Y', strtotime($flight->departing)); ?></p>
+                                         
+                                             <p style="margin: 0; font-size: 12px;"></p>
 
 
                             </p>
@@ -155,80 +226,16 @@
                             <i class="fas fa-exchange-alt" id="directionIcon"></i>
                         </td>
                         <td style="padding: 8px;  text-align: center;">
-                          {{$flight->flying_to}}                            <p style="margin: 0; font-size: 12px;"> <?php echo date('F j, Y', strtotime( $flight->returning )); ?></p>
+                                             <p style="margin: 0; font-size: 12px;"> </p>
                         </td>
-                        <td style="padding: 8px;  text-align: center;">{{$flight->price}}</td>
+                        <td style="padding: 8px;  text-align: center;"></td>
                     </tr>
                 </table>
-                <p style="width: 78%;">{{$flight->message}} </p>
+                <p style="width: 78%;"> </p>
                 <div>
 
-                    <h5>Flight Inquery</h5>
+        
 
-                    <form action="{{route('inquiry.store')}}" method="post" >
-                       @csrf
-                        <div class="">
-                            <div style="margin-bottom: 20px;">
-                                <input type="text" name="first_name"
-                                    style="width: 240px; height: 47px; margin-right: 10px; margin-bottom: 10px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="First Name">
-                                <input type="text" name="last_name" id=""
-                                    style="width: 240px; height: 47px; margin-left: 20px; margin-bottom: 10px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Last Name">
-                                <input type="email" name="email" id=""
-                                    style="width: 240px; height: 47px; margin-bottom: 10px;  margin-left: 20px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Email">
-                            </div>
-
-                            <div style="margin-bottom: 20px;">
-                               
-                                <input type="text" name="phone_number" id=""
-                                    style="width: 240px; height: 47px; margin-bottom: 10px;  margin-left: -4px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Phone Number">
-                                <input type="text" name="destination" id=""
-                                    style="width: 240px; height: 47px; margin-bottom: 10px;  margin-left: 20px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Destination">
-                            </div>
-                            <div style="margin-bottom: 20px;">
-                                <input type="text" name="form"
-                                    style="width: 240px; height: 47px; margin-right: 10px; margin-bottom: 10px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Form">
-                                <input type="date" name="date_of_departure" id=""
-                                    style="width: 240px; height: 47px; margin-left: 20px; margin-bottom: 10px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Date of Departure">
-                                <input type="date" name="date_of_arrivel" id=""
-                                    style="width: 240px; height: 47px; margin-bottom: 10px;  margin-left: 20px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Date ofArrivel">
-
-
-                            </div>
-                            <div style="margin-bottom: 20px;">
-                                <input type="text" name="airline"
-                                    style="width: 240px; height: 47px; margin-right: 10px; margin-bottom: 10px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Airline">
-                                <input type="text" name="number of passenger" id=""
-                                    style="width: 240px; height: 47px; margin-left: 20px; margin-bottom: 10px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="number_of_passenger">
-                                <input type="text" name="class" id=""
-                                    style="width: 240px; height: 47px; margin-bottom: 10px;  margin-left: 20px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    placeholder="Class">
-
-
-                            </div>
-                            <div>
-                                <textarea name="message" id=""
-                                    style="width: 79%; height: 139px; margin-top: -11px;  border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                                    rows="30" cols="50" placeholder="message"></textarea>
-
-                            </div>
-                            <div class="button-group">
-                                <button>SUBMIT</button>
-
-                            </div>
-
-
-
-                    </form>
 
                 </div>
             </div>

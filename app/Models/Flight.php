@@ -9,13 +9,16 @@ class Flight extends Model
 {
     use HasFactory;
     protected $fillable = [
+        
+        'images',
         'flying_from',
         'flying_to',
         'price',
         'type', // Make sure 'type' is included in $fillable
         'departing',
         'returning',
-          'class',
+         'class',
+         'message',
       
        
     ];

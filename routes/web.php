@@ -4,6 +4,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\FlightController;
+use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
 
 
@@ -18,6 +19,9 @@ use App\Http\Controllers\showImageScrollerController;
 |
 */
 
+Route::get('flihgtlisting', function () {
+    return view('layouts.flihgtlisting');
+});
 Route::get('hotal', function () {
     return view('layouts.hotal');
 });
@@ -60,31 +64,32 @@ Route::put('back-panel/users/{user}/edit', [userController ::class, 'update'])->
 Route::delete('back-panel/users/{user}/delete', [userController ::class, 'destroy'])->name('user.destroy');
 
 
-/// Flight curds
+/// Flight curd\\\
 Route::get('back-panel/flight', [FlightController ::class, 'index'])->name('flight.index');
 Route::get('back-panel/user1', [FlightController ::class, 'create'])->name('flight.create');
 Route::post('back-panel/flight/create', [FlightController ::class, 'store'])->name('flight.store');
 Route::get('back-panel/flight/{flight}/edit', [FlightController ::class, 'edit'])->name('flight.edit');
 Route::put('back-panel/flight/{flight}/edit', [FlightController ::class, 'update'])->name('flight.update');
 Route::delete('back-panel/flight/{flight}/delete', [FlightController ::class, 'destroy'])->name('flight.destroy');
-
-
-
-
-
-
-// Route::get('/flight', [FlightController:: class , 'getFlights']);
-
-
-
 Route::get('flightdetail', function () {
     return view('layouts.flightdetail');
 });
-
-
-
-
 Route::get('/flightdetail/{flight}', [FlightController::class, 'show1'])->name('flights.show');
+
+// flight inquery route//
+
+Route::get('back-panel/inquery', [FlightInquiryController ::class, 'index'])->name('inquiry.index');
+
+Route::post('back-panel/inquiry/create', [FlightInquiryController ::class, 'store'])->name('inquiry.store');
+
+
+
+
+
+
+
+
+
 
 
 
