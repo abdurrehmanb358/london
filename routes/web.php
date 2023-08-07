@@ -75,23 +75,6 @@ Route::delete('back-panel/flight/{flight}/delete', [FlightController ::class, 'd
 Route::get('flightdetail', function () {
     return view('layouts.flightdetail');
 });
-<<<<<<< HEAD
-Route::get('/flightdetail/{flight}', [FlightController::class, 'show1'])->name('flights.show');
-
-// flight inquery route//
-
-Route::get('back-panel/inquery', [FlightInquiryController ::class, 'index'])->name('inquiry.index');
-
-Route::post('back-panel/inquiry/create', [FlightInquiryController ::class, 'store'])->name('inquiry.store');
-
-
-
-
-
-
-
-
-=======
 
 
 Route::get('/flightdetail/{flight}', [FlightController::class, 'show1'])->name('flights.show');
@@ -107,7 +90,6 @@ Route::get('Hotel_listing',[hotelController::class, 'Hotel_listing'])->name('hot
 
 
 Route::get('/layouts/{id}/show',[hotelController::class,'show']);
->>>>>>> 01a98bdfbe5ab9ca35b3723008201fa3d261145a
 
 
 

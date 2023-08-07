@@ -188,7 +188,8 @@
            
            
            
-            <div class="col-9 mt-7" style="margin-top: 78px">
+            <div class="col-9 mt-7" style="margin-top: 78px
+            ">
                  <h2>
                     Popular Flight
                     <hr class="h2">
@@ -212,6 +213,9 @@
                         <th
                             style="width: 30%; padding-left: -3px; text-align: center; background-color: rgb(0,6,84); color: white;">
                             Fare</th>
+                            <th
+                            style="width: 20%; padding-left: -3px; text-align: center; background-color: rgb(0,6,84); color: white;">
+                            <button>book Now</button></th>
                     </tr>
                     <tr>
                         <td style="padding: 8px;  text-align: center;"> </td>
