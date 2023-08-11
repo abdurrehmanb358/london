@@ -4,28 +4,25 @@
 
 
 <main class="home">
-  
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7 mt-4">
+            <div class="col-md-12">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-                <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 320px;" class="img-fluid">
-
+                <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 320px; width: 100%;" class="img-fluid">
             </div>
         </div>
     </div>
    
-
-      <div class="content_wrapper">
+    <div class="content_wrapper ">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 left_col">
+                <div class="col-lg-12">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#flight" style="background-color:#000654; color:white;     margin: -1px -17px -2px 24px;
-                        border: none;
-                    }">Search Flights</a>
+                        <a class="nav-link active" data-toggle="tab" href="#flight" style="background-color:#000654; color:white;    
+                        border: none; margin-top:-194px;    margin-left: 15px;
+                    ">Search Flights</a>
                     </li>
                
                   
@@ -34,8 +31,8 @@
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                    <div class="tab-pane container active" id="flight">
-                        <form action="">
+                    <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
+                        <form action="{{route('flight.search')}}">
                             <div class="form-row">
                                 <div class="form-group">
                                     <div class="custom-control custom-radio">
@@ -48,26 +45,7 @@
                                        
                                     </div>
 
-                                    <script>
-                                        document.addEventListener("DOMContentLoaded", function() {
-                                            const oneWayRadio = document.getElementById("oneWayRadio");
-                                            const roundTripRadio = document.getElementById("roundTripRadio");
-                                            const directionIcon = document.getElementById("directionIcon");
-                                
-                                            function updateDirectionIcon() {
-                                                if (oneWayRadio.checked) {
-                                                    directionIcon.classList.remove("fa-exchange-alt");
-                                                    directionIcon.classList.add("fa-long-arrow-alt-right");
-                                                } else if (roundTripRadio.checked) {
-                                                    directionIcon.classList.remove("fa-long-arrow-alt-right");
-                                                    directionIcon.classList.add("fa-exchange-alt");
-                                                }
-                                            }
-                                
-                                            oneWayRadio.addEventListener("change", updateDirectionIcon);
-                                            roundTripRadio.addEventListener("change", updateDirectionIcon);
-                                        });
-                                    </script>
+                       
                                     
                                     
                                 </div>
@@ -76,18 +54,19 @@
                                 <div class="row">
                                     <div class="form-group col-sm-3">
                                         <label for="" class="label">Flying from</label>
-                                        <input type="text" class="form-control" value="" name="" placeholder="City / Airport">
+                                        <input type="text"  name="search" class="form-control" value="" name="" placeholder="City / Airport">
                                     </div>
                                     <div class="form-group col-sm-3">
                                         <label for="" class="label">Flying to</label>
-                                        <input type="text" class="form-control" value="" name="" placeholder="City / Airport" >
+                                        <input type="text"  name="search" class="form-control" value="" name="" placeholder="City / Airport" >
                                     </div>
                                     <div class="form-group col-sm-3">
                                         <label for="" class="label">Departing</label>
-                                        <input type="text" class="form-control" value="" name="" placeholder="City / Airport">
+                                        <input type="text"  name="search" class="form-control" value="" name="" placeholder="City / Airport">
                                     </div>
                                     <div class="form-group col-sm-3">
-                                        <button class="controle">Search</button>
+                                       
+                                        <button class="controle" type="submit">Search</button>
                                     </div>
                                 </div>
                                 
@@ -113,10 +92,11 @@
     </div>
 </section>
 
-<div class="container">
-    <div class="col-12">
-        <h2>internatinal flight</h2>
-        {{-- <hr> --}}
+<div class="container ">
+    <div class="col-12 ">
+        <h2 class="gg">Internatinal flight</h2>
+<hr>
+
         <p>Travelling internationally can be stressful because of high ticket price.Vist our website to find some of the best internatonal flight deals on internet.</p>    
     </div>
     <div class="row">
@@ -183,7 +163,12 @@
     
     
     <div class="row">
-            <div class="col-3"></div>
+            <div class="col-3">
+
+
+                <img src="{{ asset('images/logo2.png') }}" alt="Bangkok" style="height: 664px;float:right;margin-top:153px; " class="img-fluid" >
+
+            </div>
            
            
            
@@ -192,65 +177,82 @@
             ">
                  <h2>
                     Popular Flight
-                    <hr class="h2">
+                    {{-- <hr class="h2"> --}}
                  </h2>
              
-
-                <table style="width: 80%; border-collapse: collapse; border: 1px solid #ddd;">
+            
+                <table style="width: 90%; border-collapse: collapse; border: 1px solid #ddd;">
                     <tr>
-                        <th
-                            style="width: 20%; padding: 8px; text-align: center; background-color: rgb(0,6,84); color: white;">
-                            Airline</th>
-                        <th
-                            style="width: 20%; padding: 8px; text-align: center; background-color: rgb(0,6,84); color: white;">
-                            Departure</th>
-                        <th
-                            style="width: 21%; padding: 8px; text-align: center; background-color: rgb(0,6,84); color: white;">
-                        </th>
-                        <th
-                            style="width: 20%; padding: 8px; text-align: center; background-color: rgb(0,6,84); color: white;">
-                            Arrive</th>
-                        <th
-                            style="width: 30%; padding-left: -3px; text-align: center; background-color: rgb(0,6,84); color: white;">
-                            Fare</th>
-                            <th
+                        <th class="th1">Airline</th> 
+                        <th  class="th2">Departure</th>
+                        <th  class="th3"></th>
+                        <th class="th4"> Arrive</th>
+                        <th class="th5">Fare</th>
+                            <th class="th5">Book online</th>
+
+                            {{-- <th
                             style="width: 20%; padding-left: -3px; text-align: center; background-color: rgb(0,6,84); color: white;">
-                            <button>book Now</button></th>
-                    </tr>
-                    <tr>
-                        <td style="padding: 8px;  text-align: center;"> </td>
-                        <td style="padding: 8px;  text-align: center;">
-                                         
-                                             <p style="margin: 0; font-size: 12px;"></p>
-
-
-                            </p>
-                        </td>
-                        <td style="padding: 8px;  text-align: center;">
-                            <i class="fas fa-exchange-alt" id="directionIcon"></i>
-                        </td>
-                        <td style="padding: 8px;  text-align: center;">
-                                             <p style="margin: 0; font-size: 12px;"> </p>
-                        </td>
-                        <td style="padding: 8px;  text-align: center;"></td>
-                    </tr>
-                </table>
+                            <button>Book Now</button></th> --}}
+                         
+                            <tr>
+                                <td style="padding: 8px; text-align: center;">
+                                    <img src="{{ asset('images/' . $flight->images) }}" alt="Flight Image"
+                                    style="height:69px; width: 126px;">
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                 
+                                    <p style="margin: 0; font-size: 12px;"></p>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <i class="fas fa-exchange-alt" id="directionIcon"></i>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                                     <p style="margin: 0; font-size: 12px;">  ?></p>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                <td style="padding: 8px; text-align: center;">
+                                    <a href="" target="_blank">Book Now</a>
+                                </td>
+                            </tr>
+                         
+                
                 <p style="width: 78%;"> </p>
                 <div>
 
         
 
-
+ 
                 </div>
             </div>
 
             </div>
         </div>
-
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const oneWayRadio = document.getElementById("oneWayRadio");
+                const roundTripRadio = document.getElementById("roundTripRadio");
+                const directionIcon = document.getElementById("directionIcon");
+        
+                function updateDirectionIcon() {
+                    if (oneWayRadio.checked) {
+                        directionIcon.classList.remove("fa-exchange-alt");
+                        directionIcon.classList.add("fa-long-arrow-alt-right");
+                    } else if (roundTripRadio.checked) {
+                        directionIcon.classList.remove("fa-long-arrow-alt-right");
+                        directionIcon.classList.add("fa-exchange-alt");
+                    }
+                }
+        
+                oneWayRadio.addEventListener("change", updateDirectionIcon);
+                roundTripRadio.addEventListener("change", updateDirectionIcon);
+            });
+        </script>
     
 
 </main>
-@include('layouts.footer')
+
+
+{{-- @include('layouts.footer') --}}
 
 
 

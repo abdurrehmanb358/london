@@ -37,14 +37,22 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
             <label for="class">Type:</label>
             <select class="form-control" id="class" name="type">
               <option>Domestic</option>
               <option>Inter</option>
             </select>
           </div>
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
+          <label for="class">roundtrip:</label>
+          <select class="form-control" id="class" name="round_trip">
+            <option>oneway</option>
+            <option>roundtrip</option>
+          </select>
+        </div>
+
+          <div class="form-group col-md-4">
             <label for="departing">Departing:</label>
             <input type="date" class="form-control" id="departing" name="departing">
             <i class="bi bi-calendar"></i>

@@ -75,10 +75,23 @@ Route::delete('back-panel/flight/{flight}/delete', [FlightController ::class, 'd
 Route::get('flightdetail', function () {
     return view('layouts.flightdetail');
 });
-
-
 Route::get('/flightdetail/{flight}', [FlightController::class, 'show1'])->name('flights.show');
 
+Route ::POST('/flightlisting', [FlightController::class, 'search'])->name('flight.search');
+
+Route::get('/get-flights', [FlightController::class, 'get'])->name('get.flights');
+// Route::post('/flight/search', [FlightController::class, 'search'])->name('flight.search');
+
+
+
+
+
+
+
+
+
+
+/// Hotals///
 Route::get('/back-panel/hotel', [hotelController::class, 'index'])->name('hotel.index');
 Route::get('/back-panel/hotel/create', [hotelController::class, 'create'])->name('hotel.create');
 Route::post('/back-panel/hotel/store', [hotelController::class, 'store'])->name('hotel.store');

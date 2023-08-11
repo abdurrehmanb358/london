@@ -91,7 +91,7 @@
     
         <div class="headerContainer clearfix">
             <div class="siteLogo"> 
-                <a href="index.php"> <img src="{{ asset('images/logo.png') }}" alt="London Travel"> </a>
+                <a href="index.php"> <img src="{{ asset('images/logo1.png') }}" alt="London Travel"> </a>
             </div>
 
             @include('layouts.mainbar')            

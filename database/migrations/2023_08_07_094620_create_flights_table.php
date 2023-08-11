@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('flying_to');
             $table->decimal('price', 8, 2);
             $table->string('type');
+            $table->string('trip_type')->nullable()->after('type');
             $table->date('departing');
             $table->date('returning');
             $table->string('class');
@@ -32,5 +33,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('flights');
+      
     }
 };

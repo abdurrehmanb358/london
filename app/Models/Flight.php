@@ -15,6 +15,7 @@ class Flight extends Model
         'flying_to',
         'price',
         'type', // Make sure 'type' is included in $fillable
+       'trip_type',
         'departing',
         'returning',
          'class',

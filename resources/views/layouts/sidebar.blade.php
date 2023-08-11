@@ -8,7 +8,7 @@ id="sidenav-main">
     aria-hidden="true" id="iconSidenav"></i>
   <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
     target="_blank">
-    <img src="{{ asset('images/logo.png') }}"  class="navbar-brand-img h-150" alt="main_logo">
+    <img src="{{ asset('images/logo1.png') }}"  class="navbar-brand-img h-150" alt="main_logo">
 
     <span class="ms-1 font-weight-bold text-white"></span>
   </a>

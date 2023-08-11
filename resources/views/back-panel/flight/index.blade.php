@@ -22,6 +22,7 @@
                 <th>Flying To</th>
                 <th>Price</th>
                 <th>Type</th>
+                <th>trip_type</th>
                 <th>Departing</th>
                 <th>Arriving</th>
                 <th>Class</th>
@@ -40,6 +41,7 @@
                 <td>{{ $flight->flying_to }}</td>
                 <td>{{ $flight->price }}</td>
                 <td>{{ $flight->type }}</td>
+                <td>{{$flight->trip_type}}  </td>
                 <td>{{ $flight->departing }}</td>
                 <td>{{ $flight->returning }}</td>
                 <td>{{ $flight->class }}</td>
