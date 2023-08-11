@@ -132,113 +132,35 @@
                                     </div>
                                 </form>
                             </div>
+                        
                             <div class="tab-pane container fade" id="hotels">
-
+                                <form action="{{ route('layouts.Hotel_listing') }}">
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="">Country</label>
-                                        <input type="text" class="form-control" value="" name="" placeholder="Country ">
+                                        <input type="text" class="form-control" value="" name="country" placeholder="Country ">
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="">City</label>
-                                        <input type="text" class="form-control" value="" name="" placeholder="City ">
+                                        <input type="text" class="form-control" value="" name="city" placeholder="City ">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="">check in</label>
-                                        <input type="text" class="form-control" value="" name="" placeholder="Check in">
+                                        <input type="date" class="form-control" value="" name="" placeholder="Check in">
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="">check out</label>
-                                        <input type="text" class="form-control" value="" name="" placeholder="checkout">
+                                        <input type="date" class="form-control" value="" name="" placeholder="checkout">
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-sm-6">
-                                        <div class="row">
-                                            <div class="col-lg-4 pr-lg-1">
-                                                <label for="">Adults</label>
-                                                <select name="adults" id="adults" class="form-control">
-                                                    <option value="17">17</option>
-                                                    <!-- Add more options if needed -->
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-4 pl-lg-1 pr-lg-1">
-                                                <label for="">Children</label>
-                                                <select name="children" id="children" class="form-control">
-                                                    <option value="Age">age</option> <!-- This acts as the placeholder -->
-                                                    <option value="0">1</option>
-                                                    <option value="1">2</option>
-                                                    <option value="2">3</option>
-                                                    <option value="0">4</option>
-                                                    <option value="1">5</option>
-                                                    <option value="2">6</option>
-                                                    <option value="0">7</option>
-                                                    <option value="1">8</option>
-                                                    <option value="2">9</option>
-                                                        <option value="0">10</option>
-                                                        <option value="0">11</option>
-                                                    <option value="1">12</option>
-                                                    <option value="2">13</option>
-                                                    <option value="0">14</option>
-                                                    <option value="1">15</option>
-                                                    <option value="2">16</option>
-                                                 
-                                                    <!-- Add more options if needed -->
-                                                </select>
-                                            </div>
-                                         
-                                            
-                                            
-                                            
-                                            
-                                            <div class="col-lg-4 pl-lg-1">
-                                                <label for="">infants</label>
-                                                <select name="" id="" class="form-control">
-                                                    <option value="">0</option>
-                                                    <option value="">0</option>
-                                                    <option value="">0</option>
-                                                    
-                                                
-                                                </select>
-                                            </div>
-                                        </div>
-                                      
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <div class="row">
-                                            <div class="col-lg-6 pr-lg-1">
-                                                <label for="">Room</label>
-                                                <select name="" id="room"  class="form-control" type ="number">
-                                                   
-                                                    <script>
-                                                        $(document).ready(function() {
-                                                            var selectElement = $('#room'); // Get the <select> element by its ID
-                                                    
-                                                            // Define the range of options you want (for example, 1 to 10)
-                                                            var minOption = 1;
-                                                            var maxOption = 10;
-                                                    
-                                                            // Loop to generate the options
-                                                            for (var i = minOption; i <= maxOption; i++) {
-                                                                var option = $('<option>').val(i).text(i); // Create a new <option> element
-                                                                selectElement.append(option); // Add the option to the <select> element
-                                                            }
-                                                        });
-                                                    </script>
-                                                </select>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-
+                                
                                 <div class="controls">
                                     <button type="submit" class="btn_submit_inquiry">Submit Your Inquiry</button>
                                 </div>
 
-
+                            </form>
 
                             </div>
                         
@@ -367,24 +289,10 @@
 
 
 
-
-
-
-
-
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-                              
-                              
-                              
-                              
-                              
-                              
-                              
-                              
-                              
-                              
+                            
                                  <div class="flights-items-holder">
 
                                  @foreach($domesticFlights as $flight)
@@ -418,6 +326,8 @@
                 <div class="col-lg-6">
                     <h3 class="heading">Hotels Highlights</h3>
                     <div class="row">
+                        
+                        @foreach ($hotels as $hotel)
                         <div class="col-sm-6">
                             <div class="item">
                                 <div class="offerHover">
@@ -429,72 +339,19 @@
                                         <i class="far fa-star active"></i>
                                     </div>
                                     <div class="offerBottom">
-                                    <title>Barut Lara Istanbul</title>
-                                    <span>USD 180 / Person / Night</span>
+                                    <title>{{ $hotel->name }}</title>
+                                    <span></span>
                                 </div>
                                 </div>
-                                <img src="images/bankok.jpg">
+                                <img src="../hotels/{{ $hotel->image }}">
                             </div>
                         </div>
-
-                        <div class="col-sm-6">
-                            <div class="item">
-                                <div class="offerHover">
-                                    <div class="offertop">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star active"></i>
-                                        <i class="far fa-star active"></i>
-                                        <i class="far fa-star active"></i>
-                                    </div>
-                                    <div class="offerBottom">
-                                    <title>Barut Lara Istanbul</title>
-                                    <span>USD 180 / Person / Night</span>
-                                </div>
-                                </div>
-                                <img src="images/bankok.jpg">
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="item">
-                                <div class="offerHover">
-                                    <div class="offertop">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star active"></i>
-                                        <i class="far fa-star active"></i>
-                                        <i class="far fa-star active"></i>
-                                    </div>
-                                    <div class="offerBottom">
-                                    <title>Barut Lara Istanbul</title>
-                                    <span>USD 180 / Person / Night</span>
-                                </div>
-                                </div>
-                                <img src="images/bankok.jpg">
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="item">
-                            <div class="offerHover">
-                                    <div class="offertop">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star active"></i>
-                                        <i class="far fa-star active"></i>
-                                        <i class="far fa-star active"></i>
-                                    </div>
-                                <div class="offerBottom">
-                                <title>Barut Lara Istanbul</title>
-                                    <span>USD 180 / Person / Night</span>
-                                </div>
-                            </div>
-                                <img src="images/bankok.jpg">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-                    <a href="" class="view_all_link">View All</a>
+                    <a href="Hotel_listing" class="view_all_link">View All</a>
+                        
+                
+                   
 
                 </div>
             </div>

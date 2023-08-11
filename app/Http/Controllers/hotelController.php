@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\hotel;
 use Illuminate\Http\Request;
+use DB;
 
 class hotelController extends Controller
 {
@@ -19,10 +20,11 @@ class hotelController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpeg,pgp,png,gif|max:10000',
+            'image' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
             'price' => 'required',
             'notes' => 'required',
-            'location' => 'required'
+            'city' => 'required',
+            'country' => 'required'
         ]);
 
         // upload Image
@@ -35,6 +37,8 @@ class hotelController extends Controller
         $hotel->description = $request->description;
         $hotel->price = $request->price;
         $hotel->notes = $request->notes;
+        $hotel->city = $request->city;
+        $hotel->country = $request->country;
         
         $hotel->save();
        
@@ -54,7 +58,9 @@ class hotelController extends Controller
         'description' => 'required',
         'image' => 'nullable|mimes:jpeg,pgp,png,gif|max:10000',
         'price' => 'required',
-        'notes' => 'required'
+        'notes' => 'required',
+        'city' => 'required',
+        'country' => 'required'
         ]);
 
         $hotel = hotel::where('id',$id)->first();
@@ -70,6 +76,8 @@ class hotelController extends Controller
         $hotel->description = $request->description;
         $hotel->price = $request->price;
         $hotel->notes = $request->notes;
+        $hotel->city = $request->city;
+        $hotel->country = $request->country;
         
         $hotel->save();
     
@@ -82,11 +90,49 @@ class hotelController extends Controller
         return back()->withsuccess('hotel Deleted !!!');
     }
     public function Hotel_listing() {
-        return view('layouts.Hotel_Listing',['hotels'=> hotel::get()]);
+        return view('layouts.Hotel_Listing',['hotels'=> hotel::simplePaginate(10)]);
     }
 
     public function show($id){
         $hotel = hotel::where('id',$id)->first();
-        return view('layouts.show', ['hotel'=> $hotel]);
+        return view('layouts.show', ['hotels'=> $hotel]);
     }
+
+    // search Function
+    public function search(Request $request){
+
+        $priceSearch = $request->input('newSearch');
+        $nameSearch = $request['inputSearch'];
+        
+        list($minPrice, $maxPrice) = explode(' - ', str_replace('$', '', $priceSearch));
+
+      
+        if($priceSearch){
+            $hotels = hotel::where('name','Like','%'.$nameSearch.'%')->whereBetween('price', [$minPrice, $maxPrice])->get();
+        }else{
+            $hotels = hotel::where('name','Like','%'.$nameSearch.'%')->get();
+        }
+
+        echo $hotels;
+        
+    }
+
+    public function Home(){
+        return view('layouts.index');
+    }
+
+    public function searchHotels(Request $request)
+    {
+        $city = $request->input('city');
+        $country = $request->input('country');
+        
+        // dd($city);
+        
+        $hotels = Hotel::where('city', $city)
+                       ->where('country', $country)
+                       ->simplePaginate(10);
+        
+        return view('layouts.Hotel_listing', compact('hotels'));
+    }
+
 }

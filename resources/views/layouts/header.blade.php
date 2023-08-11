@@ -36,6 +36,12 @@
         <script src="{{ asset('js/stickey/theia-sticky-sidebar.js') }}"></script>
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        {{-- <script
+            src="https://code.jquery.com/jquery-3.7.0.js"
+            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+            crossorigin="anonymous">
+        </script> --}}
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         
         
         
@@ -70,6 +76,7 @@
              <ul>
                 <li> <a href="login.php">LOG IN </a> </li>
                 <li> <a class="scrollNav" href="#howItsWorkSec">HOW IT WORKS  </a></li>
+                <li> <a href="designers.php">DESIGNERS</a></li>
                 <li> <a href="designers.php">DESIGNERS</a></li>
                 <li> <a href="projects.php">PROJECTS</a></li>
                 <li> <a class="scrollNav" href="#pricingSec">PRICING </a></li>

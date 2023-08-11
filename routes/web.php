@@ -44,7 +44,7 @@ Route::get('/image-scroller', [showImageScrollerController::class, 'showImageScr
 
 
 
-Route::get('/home', [FlightController:: class , 'getFlights']);
+Route::get('/', [FlightController:: class , 'getFlights'])->name('homepage');
 
 Route::get('add-roles', function () {
     $roles = [
@@ -91,7 +91,11 @@ Route::get('Hotel_listing',[hotelController::class, 'Hotel_listing'])->name('hot
 
 Route::get('/layouts/{id}/show',[hotelController::class,'show']);
 
+// search rout
+Route::post('/search', [hotelController::class, 'search']);
 
+Route::get('/Home',[hotelController::class, 'Home'])->name('layouts.index');
 
+Route::get('Inquairy',[hotelController::class, 'searchHotels'])->name('layouts.Hotel_listing');
 
 require('admin.php');

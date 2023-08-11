@@ -10066,3 +10066,44 @@ a.text-dark:hover {
     outline: none;
 }
 
+
+
+/* .container {
+        justify-content: space-between;
+  } */
+  .left-container{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    float: left;
+  }
+.right-container{
+    display: flex;
+    flex-direction: column;
+    width: 74%;
+    margin-left: 10px;
+}
+#search-br{
+    background: #FCFCFC;
+    border: 1px solid #F0F0F0;
+    width: min-content;
+    padding: 19px;
+    margin-top: 30px;   
+}
+#slider3{
+    border-radius: 10px;
+}
+.cl-t{
+    color:#10175D;
+}
+.star{
+    border: 1px solid #F0F0F0;
+    width: max-content;
+    padding: 19px;
+    margin-top: 20px;
+    background: #FCFCFC;
+}
+
+#hotels-container{
+    min-height: 440px;
+}
