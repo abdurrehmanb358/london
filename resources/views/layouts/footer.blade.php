@@ -141,7 +141,7 @@
             </div>
         </div>
         </div> --}}
-<div class="footerBottom" style="background-color:#000654;">
+<div class="footerBottom" style="background-color:#000654;clear:unset">
     <div class="container">
         <div class="row">
           <div class="col-12 col-lg-4 socialIcons">

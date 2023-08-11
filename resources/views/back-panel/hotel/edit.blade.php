@@ -45,7 +45,7 @@
 
                     <div>
                         <label for="">Price</label>
-                            <input type="text" name="price" class="form-control set" value="{{ old('name',$hotel->price) }}">
+                            <input type="text" name="price" class="form-control set" value="{{ old('price',$hotel->price) }}">
                             @if ($errors->has('price'))
                                 <span class="text-danger">{{ $errors->first('price') }}</span>
                             @endif
@@ -58,6 +58,23 @@
                             <span class="text-danger">{{ $errors->first('notes') }}</span>
                         @endif
                     </div>
+
+                    <div>
+                        <label for="">City</label>
+                        <input type="text" placeholder="City" name="city" class="form-control set" value="{{ old('city',$hotel->city) }}">
+                        @if ($errors->has('city'))
+                            <span class="text-danger">{{ $errors->first('city') }}</span>
+                        @endif
+                    </div>
+
+                    <div>
+                        <label for="">Country</label>
+                        <input type="text" placeholder="Country" name="country" class="form-control set" value="{{ old('country',$hotel->country) }}">
+                        @if ($errors->has('country'))
+                            <span class="text-danger">{{ $errors->first('country') }}</span>
+                        @endif
+                    </div>
+
                     <button class="btn btn-dark sm" type="submit">Submit</button>
                 </form>
             </div>

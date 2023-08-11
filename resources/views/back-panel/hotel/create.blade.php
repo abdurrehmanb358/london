@@ -58,10 +58,18 @@
                     </div>
 
                     <div>
-                        <label for="">Location</label>
-                        <input type="text" name="location" placeholder="City,Country"  value="{{ old('location') }}">
-                        @if ($errors->has('location'))
-                            <span class="text-danger">{{ $errors->first('location') }}</span>
+                        <label for="">City</label>
+                        <input type="text" name="city" placeholder="City"  value="{{ old('city') }}">
+                        @if ($errors->has('city'))
+                            <span class="text-danger">{{ $errors->first('city') }}</span>
+                        @endif
+                    </div>
+
+                    <div>
+                        <label for="">Country</label>
+                        <input type="text" name="country" placeholder="Country"  value="{{ old('country') }}">
+                        @if ($errors->has('country'))
+                            <span class="text-danger">{{ $errors->first('country') }}</span>
                         @endif
                     </div>
 

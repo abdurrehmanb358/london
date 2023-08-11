@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-md-7 mt-4">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-                <img src="/hotels/{{ $hotel->image }}" alt="Bangkok" style="height: 320px;" class="img-fluid">
+                <img src="/hotels/{{ $hotels->image }}" alt="Bangkok" style="height: 320px;" class="img-fluid">
 
             </div>
             <div class="col-md-5 mt-4">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <div class="card-body bg-gray">
-                    <h6 class="card-title">{{$hotel->name}}</h6>
+                    <h6 class="card-title">{{$hotels->name}}</h6>
                     <div class="rating text-warning">
                         <!-- Rating stars -->
                         <i class="fas fa-star"></i>
@@ -41,7 +41,7 @@
                         <div>
                             <p class="starting-form">
                                 Rent Per Night <sup class="price-superscript">
-                                    <span class="starting-price">{{$hotel->price}}</span>.<span class="decimal">83</span>
+                                    <span class="starting-price">{{$hotels->price}}</span>.<span class="decimal">83</span>
                                 </sup>
                             </p>
                         </div>
@@ -81,7 +81,7 @@
           
         <div class="container bbbg-gray" >
             <div>
-                {!! $hotel->description !!}
+                {!! $hotels->description !!}
             </div>
             <p><b>Highlight:</b></p>
             <div>
@@ -100,7 +100,7 @@
              
             <p class="mt-4">important Notes</p>  
             <div class="custom-list ">
-              {!!  $hotel->notes  !!}
+              {!!  $hotels->notes  !!}
           </div>
         </div>
         

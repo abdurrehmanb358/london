@@ -22,6 +22,8 @@
             <th>Name</th>
             <th>Image</th>
             <th>Price</th>
+            <th>City</th>
+            <th>Country</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -39,6 +41,9 @@
 
                     <td>{{ $hotel->price }}</td>
                     
+                    <td>{{ $hotel->city }}</td>
+
+                    <td>{{ $hotel->country }}</td>
                     
                     <td>
                         <a href="/back-panel/hotels/{{ $hotel->id }}/edit" class="btn btn-dark btn-sm">Edit</a>

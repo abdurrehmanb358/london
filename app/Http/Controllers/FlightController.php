@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\hotel;
 use App\Models\Flight;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class FlightController extends Controller
 {
@@ -92,12 +94,16 @@ class FlightController extends Controller
 
     public function getFlights()
     {
+
+        $hotels = DB::table('hotels')->paginate(4);
         $domesticFlights = Flight::where('type', 'Domestic')->get();
         $interFlights = Flight::where('type', 'inter')->get();
-     return view('layouts.index', [
+    
+
+        return view('layouts.index', [
             'domesticFlights' => $domesticFlights,
             'interFlights' => $interFlights,
-            
+            'hotels' => $hotels
         ]);
     }
     public function show1(Flight $flight)
