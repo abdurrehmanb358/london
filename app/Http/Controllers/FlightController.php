@@ -91,6 +91,23 @@ class FlightController extends Controller
         return redirect()->route('flight.index')->with('success', ' deleted Successfully');
  
     }
+    public function getFlight() {
+        $flights = Flight::all();
+        return response()->json(['flights' => $flights]);
+    }
+    
+    public function getFlishtView($id) {
+        $flight = Flight::find($id);
+
+    if ($flight === null) {
+        // Flight not found, handle accordingly (e.g., show an error message or redirect)
+        return view('layouts.flihgtlisting');
+    }
+
+    // If flight data is found, pass it to the view for rendering
+    return view('layouts.flihgtlisting', ['flight' => $flight]);
+    }
+    
 
     public function getFlights()
     {
@@ -99,8 +116,7 @@ class FlightController extends Controller
         $domesticFlights = Flight::where('type', 'Domestic')->get();
         $interFlights = Flight::where('type', 'inter')->get();
     
-
-        return view('layouts.index', [
+      return view('layouts.index', [
             'domesticFlights' => $domesticFlights,
             'interFlights' => $interFlights,
             'hotels' => $hotels
@@ -112,17 +128,14 @@ class FlightController extends Controller
     }
   
 
-//     public function search(Request $request)
-//     {
+    public function search(Request $request)
+    {
       
     
-//         $searchTerm = $request->input('search');
+        $searchTerm = $request->input('search');
     
-        // Perform search query
-      
-    
-//         return view('layouts.flihgtlisting', compact('listings'));
-//     }
+        return view('layouts.flihgtlisting', compact('listings'));
+    }
     
 public function get(Request $request)
 {
@@ -136,26 +149,7 @@ public function get(Request $request)
 
 
 
-public function search(Request $request)
-{
-    // $tripType = $request->input('tripType');
-    $flyingFrom = $request->input('flying_from');
-    $flyingTo = $request->input('flying_to');
-    $departing = $request->input('departing');
 
-    // dd($flyingFrom);
-    
-    // Fetch flights based on input criteria
-    $flights = Flight::where('flying_from', 'LIKE', "%$flyingFrom%")
-                     ->where('flying_to', 'LIKE', "%$flyingTo%")
-                     ->get();
-
-    return view('layouts.flihgtlisting', compact('flights'));
-}
-
-
-
-    
 
 
 

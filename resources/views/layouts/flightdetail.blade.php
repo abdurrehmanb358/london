@@ -32,7 +32,7 @@
                    
                     <div class="tab-content">
                          <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
-                             <form action="{{ route('flight.search') }}" method="POST">
+                             <form action="" method="POST">
                                  @csrf
                                  <div class="form-row">
                                      <div class="form-group">
@@ -186,30 +186,29 @@
 
 
 $(document).ready(function () {
-            $('.custom-control-input').on('change', function () {
-                var tripType = $(this).val();
-        
-                $.ajax({
-                    url: "{{ route('get.flights') }}",
-                    method: "GET",
-                    data: { tripType: tripType },
-                    success: function (data) {
-                        // Output the received data to the browser console
-                        console.log(data);
-                        
-                        // Update the UI with fetched flight data (data)
-                        // Example: Update a table with flight information
-                    },
-                    
-                    error: function () {
-                        // Handle errors if needed
-                        console.log('An error occurred during the Ajax request.');
-                    }
-                });
-            });
-        });
-        
+    $('.custom-control-input').on('change', function () {
+        var tripType = $(this).val();
 
+        $.ajax({
+            url: "{{ route('get.flights') }}",
+            method: "GET",
+            data: { tripType: tripType },
+            success: function (data) {
+                // Output the received data to the browser console
+                console.log(data);
+
+                // Update the UI with fetched flight data (data)
+                updateFlightTable(data);
+            },
+
+            error: function () {
+                // Handle errors if needed
+                console.log('An error occurred during the Ajax request.');
+            }
+        });
+    });
+
+});
 
 
 

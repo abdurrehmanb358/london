@@ -77,11 +77,12 @@ Route::get('flightdetail', function () {
 });
 Route::get('/flightdetail/{flight}', [FlightController::class, 'show1'])->name('flights.show');
 
-Route ::POST('/flightlisting', [FlightController::class, 'search'])->name('flight.search');
+// Route ::POST('/flightlisting', [FlightController::class, 'search'])->name('flight.search');
 
 Route::get('/get-flights', [FlightController::class, 'get'])->name('get.flights');
-// Route::post('/flight/search', [FlightController::class, 'search'])->name('flight.search');
 
+Route::get('/flightlisting',[FlightController::class, 'getFlight'])->name('getflights');
+Route::get('/flightlistpage/{id}', [FlightController::class, 'getFlishtView'])->name('getListeview');
 
 
 
