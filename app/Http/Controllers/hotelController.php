@@ -129,7 +129,7 @@ class hotelController extends Controller
         // dd($city);
 
         $hotels = Hotel::where('city', $city)
-                       ->where('country', $country)
+                       ->orwhere('country', $country)
                        ->orderBy('created_at', 'desc')
                        ->simplePaginate(10);
 

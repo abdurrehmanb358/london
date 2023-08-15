@@ -10127,3 +10127,23 @@ a.text-dark:hover {
     }
   }
 
+/* Customize the slider track color */
+.ui-slider .ui-slider-range {
+    background-color: #FE0000; /* Change this to your desired color */
+    height: 10px !important;
+}
+
+/* Customize the slider handle color */
+.ui-slider .ui-slider-handle {
+    background-color: #FE0000 !important; /* Change this to your desired color */
+    border-radius: 10px;
+    width: 20px !important;
+    height: 20px !important;
+}
+#slider-3{
+    background-color: #323876;
+    height: 10px !important;
+}
+.ui-slider-handle ui-corner-all{
+    background: #FE0000;
+}
