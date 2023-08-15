@@ -99,10 +99,13 @@ class FlightController extends Controller
     public function getFlishtView($id) {
         $flight = Flight::find($id);
 
-    if ($flight === null) {
-        // Flight not found, handle accordingly (e.g., show an error message or redirect)
-        return view('layouts.flihgtlisting');
-    }
+
+
+        
+    // if ($flight === null) {
+    //     // Flight not found, handle accordingly (e.g., show an error message or redirect)
+    //     return view('layouts.flihgtlisting');
+    // }
 
     // If flight data is found, pass it to the view for rendering
     return view('layouts.flihgtlisting', ['flight' => $flight]);
@@ -130,22 +133,23 @@ class FlightController extends Controller
 
     public function search(Request $request)
     {
-      
-    
-        $searchTerm = $request->input('search');
-    
-        return view('layouts.flihgtlisting', compact('listings'));
-    }
-    
-public function get(Request $request)
-{
-    $tripType = $request->input('tripType');
-    
-    // Fetch flights based on $tripType (Round Trip or One Way)
-    $flights = Flight::where('trip_type', $tripType)->get();
+        $search = $request->input('search');
 
-    return response()->json($flights);
-}
+        $flights = Flight::where("flying_from" , 'like' , "%$search%");
+        return view('layouts.flihgtlisting', compact('flights'));
+    
+    
+    
+    }
+// // public function get(Request $request)
+// // {
+// //     $tripType = $request->input('tripType');
+    
+// //     // Fetch flights based on $tripType (Round Trip or One Way)
+// //     $flights = Flight::where('trip_type', $tripType)->get();
+
+// //     return response()->json($flights);
+// }
 
 
 public function showflight($id){

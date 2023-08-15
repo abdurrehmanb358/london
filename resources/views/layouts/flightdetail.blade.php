@@ -32,7 +32,7 @@
                    
                     <div class="tab-content">
                          <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
-                             <form action="" method="POST">
+                             <form action="{{route('flight.search')}}" method="POST">
                                  @csrf
                                  <div class="form-row">
                                      <div class="form-group">
@@ -67,7 +67,7 @@
                                                  name="" placeholder="City / Airport">
                                          </div>
                                          <div class="form-group col-sm-3">
-                                             <button type="search" class="controle">Search</button>
+                                             <button type="search" name ="search" class="controle">Search</button>
                                          </div>
                                      </div>
                                  </div>
@@ -210,28 +210,29 @@ $(document).ready(function () {
 
 });
 
+var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-arrow-right"></i>' : '<i class="fas fa-exchange-alt"></i>';
+            var imageUrl = '{{ asset("images") }}/' + flight.images;
 
 
+    //      document.addEventListener("DOMContentLoaded", function() {
+    //          const oneWayRadio = document.getElementById("oneWayRadio");
+    //          const roundTripRadio = document.getElementById("roundTripRadio");
+    //          const directionIcon = document.getElementById("directionIcon");
 
-         document.addEventListener("DOMContentLoaded", function() {
-             const oneWayRadio = document.getElementById("oneWayRadio");
-             const roundTripRadio = document.getElementById("roundTripRadio");
-             const directionIcon = document.getElementById("directionIcon");
+    //          function updateDirectionIcon() {
+    //              if (oneWayRadio.checked) {
+    //                  directionIcon.classList.remove("fa-exchange-alt");
+    //                  directionIcon.classList.add("fa-long-arrow-alt-right");
+    //              } else if (roundTripRadio.checked) {
+    //                  directionIcon.classList.remove("fa-long-arrow-alt-right");
+    //                  directionIcon.classList.add("fa-exchange-alt");
+    //              }
+    //          }
 
-             function updateDirectionIcon() {
-                 if (oneWayRadio.checked) {
-                     directionIcon.classList.remove("fa-exchange-alt");
-                     directionIcon.classList.add("fa-long-arrow-alt-right");
-                 } else if (roundTripRadio.checked) {
-                     directionIcon.classList.remove("fa-long-arrow-alt-right");
-                     directionIcon.classList.add("fa-exchange-alt");
-                 }
-             }
-
-             oneWayRadio.addEventListener("change", updateDirectionIcon);
-             roundTripRadio.addEventListener("change", updateDirectionIcon);
-         });
-     </script>
+    //          oneWayRadio.addEventListener("change", updateDirectionIcon);
+    //          roundTripRadio.addEventListener("change", updateDirectionIcon);
+    //      });
+    //  </script>
 
  </main>
  @include('layouts.footer')

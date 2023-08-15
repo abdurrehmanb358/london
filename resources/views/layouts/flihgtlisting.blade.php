@@ -33,7 +33,8 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
-                            <form action="">
+                            <form action="{{route('search')}}"  method="POST">
+                                @csrf
                                 <div class="form-row">
                                     <div class="form-group">
                                         <div class="custom-control custom-radio">
@@ -72,7 +73,7 @@
                                         </div>
                                         <div class="form-group col-sm-3">
 
-                                            <button class="controle" type="submit">Search</button>
+                                            <button class="controle" name="search" type="submit">Search</button>
                                         </div>
                                     </div>
 

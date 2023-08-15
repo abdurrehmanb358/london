@@ -8,7 +8,7 @@
         <div class="left-container">
             <div class="row">
                 <div class="col-12">
-                        <div  id="search-br">
+                        <div  id="search-br"></div>
                             <label class="cl-t">Search By Name</label>
                             <input type="text" name="search" id="search" style="border: inset; outline:#EDEDED;background:white" placeholder="Search">
                         </div>
