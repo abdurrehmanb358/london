@@ -45,14 +45,14 @@ class FlightController extends Controller
             'returning' => $request->input('returning'),
           'class' => $request->input('class'),
             'message' => $request->input('message'),
-          
+
 
         ]);
-   
+
 
         return redirect()->route('flight.index')->with('success', 'flight created successfully');
-       
-          
+
+
     }
 
     /**
@@ -60,7 +60,7 @@ class FlightController extends Controller
      */
     public function show()
     {
-       
+
     }
 
     /**
@@ -89,13 +89,13 @@ class FlightController extends Controller
     {
         $flight->delete();
         return redirect()->route('flight.index')->with('success', ' deleted Successfully');
- 
+
     }
     public function getFlight() {
         $flights = Flight::all();
         return response()->json(['flights' => $flights]);
     }
-    
+
     public function getFlishtView($id) {
         $flight = Flight::find($id);
 
@@ -107,15 +107,15 @@ class FlightController extends Controller
     // If flight data is found, pass it to the view for rendering
     return view('layouts.flihgtlisting', ['flight' => $flight]);
     }
-    
+
 
     public function getFlights()
     {
 
-        $hotels = DB::table('hotels')->paginate(4);
+        $hotels = DB::table('hotels')->orderBy('created_at', 'desc')->paginate(4);
         $domesticFlights = Flight::where('type', 'Domestic')->get();
         $interFlights = Flight::where('type', 'inter')->get();
-    
+
       return view('layouts.index', [
             'domesticFlights' => $domesticFlights,
             'interFlights' => $interFlights,
@@ -126,21 +126,21 @@ class FlightController extends Controller
     {
         return view('layouts.flightdetail', compact('flight'));
     }
-  
+
 
     public function search(Request $request)
     {
-      
-    
+
+
         $searchTerm = $request->input('search');
-    
+
         return view('layouts.flihgtlisting', compact('listings'));
     }
-    
+
 public function get(Request $request)
 {
     $tripType = $request->input('tripType');
-    
+
     // Fetch flights based on $tripType (Round Trip or One Way)
     $flights = Flight::where('trip_type', $tripType)->get();
 
@@ -158,7 +158,7 @@ public function showflight($id){
 }
 
 
-    
+
 
 
 
