@@ -160,14 +160,14 @@
 
 
 
-
+                 
             <div class="col-9 mt-7" style="margin-top: 78px
             ">
                 <h2>
                     Popular Flight
                     {{-- <hr class="h2"> --}}
                 </h2>
-                <table id="flight-table" style="width: 90%; border-collapse: collapse; border: 1px solid #ddd;">
+                <table id="flight-table" style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
                     <thead>
                         <tr>
                             <th class="th1">Airline</th>
@@ -227,9 +227,12 @@ $(document).ready(function() {
                     <td style="padding: 8px; text-align: center;">
                         ${flight.price}
                     </td>
-                    <td>
+                    <td style="padding: 8px; text-align: center;">
                       
-                        </td>
+                                                <a href="/layouts/${flight.id}/showflight" class="btn btn-small ">Book Now</a>
+                                            
+
+                    </td>
                 </tr>
                
                 <tr>
@@ -252,4 +255,4 @@ $(document).ready(function() {
 </main>
 
 
-{{-- @include('layouts.footer') --}}
+@include('layouts.footer')

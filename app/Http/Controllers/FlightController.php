@@ -148,8 +148,10 @@ public function get(Request $request)
 }
 
 
-
-
+public function showflight($id){
+    $flight = Flight::where('id',$id)->first();
+    return view('layouts.flightdetail', compact('flight'));
+}
 
 
 
