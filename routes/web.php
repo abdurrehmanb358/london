@@ -87,7 +87,7 @@ Route::get('/flightlistpage/{id}', [FlightController::class, 'getFlishtView'])->
 
 Route::get('/layouts/{id}/showflight',[FlightController::class,'showflight']);
 Route::get('/flightshow',[FlightController::class,'search'])->name('search');
-
+Route::get('flightlisting',[FlightController::class, 'flight_listing'])->name('flight_listing');
 
 
 

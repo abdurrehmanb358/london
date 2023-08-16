@@ -318,7 +318,7 @@
                             </div>
                         </div>
 
-                        <a href="" class="view_all_link">View All</a>
+                        <a href="flihgtlisting" class="view_all_link">View All</a>
 
                     </div>
 

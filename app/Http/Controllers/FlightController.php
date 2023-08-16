@@ -178,7 +178,9 @@ public function search(Request $request)
 
     return response()->json($results);
 }
-
+public function flight_listing() {
+    return view('layouts.flihgtlisting');
+}
 
 }
 
