@@ -131,37 +131,14 @@ class FlightController extends Controller
     }
 
 
-    public function search(Request $request)
+    public function searchflight(Request $request)
     {
 
 
         $searchTerm = $request->input('search');
 
-        return view('layouts.flihgtlisting', compact('listings'));
+        return view('layouts.flihgtlisting' );
     }
-
-public function get(Request $request)
-{
-    $tripType = $request->input('tripType');
-
-    // Fetch flights based on $tripType (Round Trip or One Way)
-    $flights = Flight::where('trip_type', $tripType)->get();
-
-        $flights = Flight::where("flying_from" , 'like' , "%$search%");
-        return view('layouts.flihgtlisting', compact('flights'));
-    
-    
-    
-    }
-// // public function get(Request $request)
-// // {
-// //     $tripType = $request->input('tripType');
-    
-// //     // Fetch flights based on $tripType (Round Trip or One Way)
-// //     $flights = Flight::where('trip_type', $tripType)->get();
-
-// //     return response()->json($flights);
-// }
 
 
 public function showflight($id){
@@ -170,8 +147,43 @@ public function showflight($id){
 }
 
 
+public function search(Request $request)
+{
+    $triptype = $request->input('triptype');
+    $search = $request->input('search');
+    $flyingfrom = $request->input('flying_from'); // Corrected variable name
+    $flyingto = $request->input('flying_to');
+    $departing = $request->input('departing');
+    
+    $query = Flight::query();
+
+    if ($triptype === 'roundtrip') {
+        $query->where('trip_type', 'roundtrip');
+    } elseif ($triptype === 'oneway') {
+        $query->where('trip_type', 'oneway');
+    }
+    
+    // Check if flying_from parameter is not empty
+    if ($flyingfrom !== '') {
+        $query->where('flying_from', 'like', "%$flyingfrom%");
+    }
+    if ($flyingto!== '') {
+        $query->where('flying_to', 'like', "%$flyingto%");
+    }
+    if ($departing!== '') {
+        $query->where('departing', 'like', "%$departing%");
+    }
+
+    $results = $query->get();
+
+    return response()->json($results);
+}
+
 
 }
+
+
+
 
 
 
