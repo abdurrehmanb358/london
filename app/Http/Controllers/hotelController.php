@@ -9,7 +9,7 @@ use DB;
 class hotelController extends Controller
 {
     public function index() {
-        return view('/back-panel/hotel/index',['hotels'=> hotel::get()]);
+        return view('/back-panel/hotel/index',['hotels'=> hotel::orderBy('created_at', 'desc')->get()]);
     }
     public function create(){
         return view('back-panel.hotel.create');
@@ -30,7 +30,7 @@ class hotelController extends Controller
         // upload Image
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('hotels'), $imageName);
-       
+
         $hotel = new hotel;
         $hotel->image = $imageName;
         $hotel->name = $request->name;
@@ -39,9 +39,9 @@ class hotelController extends Controller
         $hotel->notes = $request->notes;
         $hotel->city = $request->city;
         $hotel->country = $request->country;
-        
+
         $hotel->save();
-       
+
         return redirect('/back-panel/hotel')->with('success', 'Hotel Created !!!');
 
     }
@@ -78,9 +78,9 @@ class hotelController extends Controller
         $hotel->notes = $request->notes;
         $hotel->city = $request->city;
         $hotel->country = $request->country;
-        
+
         $hotel->save();
-    
+
         return redirect('/back-panel/hotel');
     }
 
@@ -90,7 +90,7 @@ class hotelController extends Controller
         return back()->withsuccess('hotel Deleted !!!');
     }
     public function Hotel_listing() {
-        return view('layouts.Hotel_Listing',['hotels'=> hotel::simplePaginate(10)]);
+        return view('layouts.Hotel_Listing',['hotels'=> hotel::orderBy('created_at', 'desc')->simplePaginate(10)]);
     }
 
     public function show($id){
@@ -103,18 +103,18 @@ class hotelController extends Controller
 
         $priceSearch = $request->input('newSearch');
         $nameSearch = $request['inputSearch'];
-        
+
         list($minPrice, $maxPrice) = explode(' - ', str_replace('$', '', $priceSearch));
 
-      
+
         if($priceSearch){
-            $hotels = hotel::where('name','Like','%'.$nameSearch.'%')->whereBetween('price', [$minPrice, $maxPrice])->get();
+            $hotels = hotel::where('name','Like','%'.$nameSearch.'%')->whereBetween('price', [$minPrice, $maxPrice])->orderBy('created_at', 'desc')->get();
         }else{
-            $hotels = hotel::where('name','Like','%'.$nameSearch.'%')->get();
+            $hotels = hotel::where('name','Like','%'.$nameSearch.'%')->orderBy('created_at', 'desc')->get();
         }
 
         echo $hotels;
-        
+
     }
 
     public function Home(){
@@ -125,13 +125,14 @@ class hotelController extends Controller
     {
         $city = $request->input('city');
         $country = $request->input('country');
-        
+
         // dd($city);
-        
+
         $hotels = Hotel::where('city', $city)
                        ->where('country', $country)
+                       ->orderBy('created_at', 'desc')
                        ->simplePaginate(10);
-        
+
         return view('layouts.Hotel_listing', compact('hotels'));
     }
 
