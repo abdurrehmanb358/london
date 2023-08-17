@@ -131,14 +131,23 @@ class FlightController extends Controller
     }
 
 
-    public function searchflight(Request $request)
-    {
+//     public function searchflights(Request $request)
+//     {
+//         $flyingfrom = $request->input('city');
+//         $flyingto = $request->input('country');
 
+  
 
-        $searchTerm = $request->input('search');
+//         $flights = Flight::where('flying_from', $city)
+//                        ->orwhere('flying_to', $country)
+//                        ->orwhere('deparding', $country)
+//                     //    ->orderBy('created_at', 'desc')
+//                        ->simplePaginate(10);
 
-        return view('layouts.flihgtlisting' );
-    }
+//         return view('layouts.flihgtlisting', compact('flights'));
+//     }
+
+// }
 
 
 public function showflight($id){
@@ -182,6 +191,43 @@ public function flight_listing() {
     return view('layouts.flihgtlisting');
 }
 
+
+public function searchflight(Request $request)
+{
+    $triptype = $request->input('triptype');
+    $search = $request->input('search');
+    $flyingfrom = $request->input('flying_from'); // Corrected variable name
+    $flyingto = $request->input('flying_to');
+    $departing = $request->input('departing');
+    
+    $query = Flight::query();
+
+    if ($triptype === 'roundtrip') {
+        $query->where('trip_type', 'roundtrip');
+    } elseif ($triptype === 'oneway') {
+        $query->where('trip_type', 'oneway');
+    }
+    
+    // Check if flying_from parameter is not empty
+    if ($flyingfrom !== '') {
+        $query->where('flying_from', 'like', "%$flyingfrom%");
+    }
+    if ($flyingto!== '') {
+        $query->where('flying_to', 'like', "%$flyingto%");
+    }
+    if ($departing!== '') {
+        $query->where('departing', 'like', "%$departing%");
+    }
+
+    $results = $query->get();
+
+    return view('flight.search_results', ['results' => $results]);
+}
+public function index1()
+{
+    $flight = Flight::all(); // Retrieve all flights
+    
+    return view('layouts.flightdetail', compact('flight'));
 }
 
 
@@ -190,5 +236,7 @@ public function flight_listing() {
 
 
 
+
+}
 
 

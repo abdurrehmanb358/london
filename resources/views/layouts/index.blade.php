@@ -53,7 +53,7 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                             <div class="tab-pane container active" id="flight">
-                                <form action="">
+                                <form action="{{ route('flightsearching') }}">
                                     <div class="form-row">
                                         <div class="form-group">
                                             <div class="custom-control custom-radio">
@@ -69,17 +69,17 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-6">
                                             <label for="">Flying from</label>
-                                            <input type="text" class="form-control" value="" name="" placeholder="City / Airport">
+                                            <input type="text" class="form-control" value="" name="flying_from" placeholder="City / Airport">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="">Flying to</label>
-                                            <input type="text" class="form-control" value="" name="" placeholder="City / Airport">
+                                            <input type="text" class="form-control" value="" name="flying_to" placeholder="City / Airport">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-sm-6">
                                             <label for="">Departing</label>
-                                            <input type="text" class="form-control" value="" name="" placeholder="City / Airport">
+                                            <input type="text" class="form-control" value="" name="departing" placeholder="City / Airport">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="">Returning</label>

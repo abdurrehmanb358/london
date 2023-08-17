@@ -4,7 +4,7 @@
 <main class="home">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 320px; width: 100%;"
                     class="img-fluid">
@@ -206,7 +206,7 @@
                             flightTableBody.empty();
 
                             $.each(flights, function(index, flight) {
-                                var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-arrow-right"></i>' :
+                                var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-long-arrow-alt-right"></i>' :
                                     '<i class="fas fa-exchange-alt"></i>';
                                 var imageUrl = '{{ asset('images') }}/' + flight.images;
 
@@ -272,6 +272,5 @@
 
 
 </main>
-
 
 @include('layouts.footer')

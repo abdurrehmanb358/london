@@ -19,7 +19,7 @@ use App\Http\Controllers\showImageScrollerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// simple view return
 Route::get('flihgtlisting', function () {
     return view('layouts.flihgtlisting');
 });
@@ -35,6 +35,12 @@ Route::get('aboutus', function () {
 Route::get('personal', function () {
     return view('layouts.personal');
 });
+Route::get('insurance', function () {
+    return view('layouts.insurance');
+});
+
+
+
 
 //img controller
 // routes/web.php
@@ -88,7 +94,7 @@ Route::get('/flightlistpage/{id}', [FlightController::class, 'getFlishtView'])->
 Route::get('/layouts/{id}/showflight',[FlightController::class,'showflight']);
 Route::get('/flightshow',[FlightController::class,'search'])->name('search');
 Route::get('flightlisting',[FlightController::class, 'flight_listing'])->name('flight_listing');
-
+Route::get('/inquairyflight', [FlightController::class, 'searchflight'])->name('flightsearching');
 
 
 

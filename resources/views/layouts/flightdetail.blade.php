@@ -32,7 +32,7 @@
                    
                     <div class="tab-content">
                          <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
-                             <form action="{{route('flight.search')}}" method="POST">
+                             <form action="" method="POST">
                                  @csrf
                                  <div class="form-row">
                                      <div class="form-group">
@@ -82,6 +82,8 @@
 
      </div>
      </section>
+
+     <div class="hidden" ></div>
      <div class="contanier">
          <div class="row">
              <div class="col-4">
@@ -109,9 +111,25 @@
                              {{ $flight->flying_from }}
                              <p style="margin: 0; font-size: 12px;"><?php echo date('F j, Y', strtotime($flight->departing)); ?></p>
                          </td>
-                         <td style="padding: 8px;  text-align: center;">
-                             <i class="fas fa-exchange-alt" id="directionIcon"></i>
-                         </td>
+
+                        
+                           <td style="padding: 8px; text-align: center;">
+                            @foreach ($flight as $flights)
+                               @if ($flights->trip_type == "oneway")
+                                 <i class="fas fa-long-arrow-alt-right"></i>
+                               
+                               @else
+                                 <i class="fas fa-exchange-alt"></i>
+                               
+                               @endif
+                           
+                             @endforeach
+                           </td>
+                     
+                        
+                          
+                          </td>
+                          
                          <td style="padding: 8px;  text-align: center;">
                              {{ $flight->flying_to }} <p style="margin: 0; font-size: 12px;"> <?php echo date('F j, Y', strtotime($flight->returning)); ?></p>
                          </td>
