@@ -42,15 +42,143 @@
 
         </div>
  </div>
+ <div class="container mt-5">
+    <h2>personal information</h2>
+    <hr>
 
 
- 
- <div class="container">
-    <h4>personal information</h4>
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-3 div-col">
+                <input type="text" placeholder="Constomer name:">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text"placeholder="CNIC:*" >
+            </div>
+            <div class="col-3 div-col"  >
+                <input type="text"placeholder="Date of Birth*">
+            </div>
+            <div class="col-3 div-col" >
+                <input type="text" placeholder="Father's Name">
+           
+        </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-3 div-col">
+                <input type="text" placeholder="Mobile Number*">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text" placeholder="Email*">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text" placeholder="Gender*">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text" placeholder="purpose of visit*:">
+           
+        </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-3 div-col">
+                <input type="text" placeholder="Adress*">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text" placeholder="passport*">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text"  placeholder="travel*:">
+            </div>
+            <div class="col-3 div-col ">
+                <input type="text" placeholder="Date of Birth*:">
+           
+        </div>
+        
+        </div>
+        <div class="row">
+            
+            <div class="col-3 div-col" >
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col ">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+           
+        </div>
+        
+        </div>
+    </div>
+ </div>
+ <div class="container mt-5">
+    <h2>Add Beneficiary</h2>
+    <hr>
+
+
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-3 div-col" >
+                <input type="text1" class="insurance-inputs">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text" class="insurance-inputs" >
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+           
+        </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-3 div-col">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+           
+        </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-3 div-col">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+            </div>
+            <div class="col-3 div-col">
+                <input type="text">
+           
+        </div>
+        
+        </div>
+        
+    </div>
  </div>
 
 
 
 
 
+
 </main>
+@include('layouts.footer')

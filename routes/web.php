@@ -38,6 +38,9 @@ Route::get('personal', function () {
 Route::get('insurance', function () {
     return view('layouts.insurance');
 });
+Route::get('insurancesearch', function () {
+    return view('layouts.insurancesearch');
+});
 
 
 
