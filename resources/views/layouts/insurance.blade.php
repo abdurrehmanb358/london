@@ -1,7 +1,7 @@
 @include('layouts.header')
 <main>
 
-    <div class="container-fluid">
+    <div class="container-fluid insur">
 
         <div class="container insutance">
             <div class="row">

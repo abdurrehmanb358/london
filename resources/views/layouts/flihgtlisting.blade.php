@@ -2,7 +2,7 @@
 
 
 <main class="home">
-    <div class="container-fluid">
+    <div class="container-fluid" style="display: contents">
         <div class="row">
             <div class="col-12">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->

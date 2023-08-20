@@ -41,6 +41,10 @@ Route::get('insurance', function () {
 Route::get('insurancesearch', function () {
     return view('layouts.insurancesearch');
 });
+Route::get('holidays', function () {
+    return view('layouts.holidays');
+});
+
 
 
 

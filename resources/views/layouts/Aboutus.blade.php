@@ -2,7 +2,7 @@
 
 <main class="home">
    
-    <div class="container-fluid image-container">
+    <div class="container-fluid " style="display: contents" >
         <img src="{{ asset('images/Untitled-1.png') }}" alt="Bangkok">
         <div class="text-layer">
           <h1>About Us</h1>
