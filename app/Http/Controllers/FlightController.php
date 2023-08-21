@@ -187,13 +187,19 @@ public function search(Request $request)
 
     return response()->json($results);
 }
-public function flight_listing() {
+public function flight_listing(Request $request) {
+
+    if($request->input('flying_from')){
+        $data = $request->all();
+        return view('layouts.flihgtlisting', array_diff_key(compact('data'), ['token' => '']));
+    }
     return view('layouts.flihgtlisting');
 }
 
 
 public function searchflight(Request $request)
 {
+  
     $triptype = $request->input('triptype');
     $search = $request->input('search');
     $flyingfrom = $request->input('flying_from'); // Corrected variable name

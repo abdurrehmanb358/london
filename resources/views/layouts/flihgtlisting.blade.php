@@ -39,12 +39,12 @@
                                     <div class="form-group">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" class="custom-control-input" id="roundtrip"
-                                                name="triptype" checked value="roundtrip">
+                                                name="triptype" value="roundtrip">
                                             <label class="custom-control-label" for="roundtrip">Round Trip</label>
                                         </div>
                                         <div class="custom-control custom-radio">
                                             <input type="radio" class="custom-control-input" id="oneway"
-                                                name="triptype" value="oneway">
+                                                name="triptype" checked value="oneway">
                                             <label class="custom-control-label" for="oneway">One Way</label>
                                         </div>
 
@@ -57,12 +57,15 @@
                                     <div class="row">
                                         <div class="form-group col-sm-3">
                                             <label for="" class="label">Flying from</label>
-                                            <input type="text" name="flying_from" class="form-control" value=""
-                                                name="" placeholder="City / Airport">
+                                            <input type="text" name="flying_from" class="form-control"
+                                                value="{{ isset($data['flying_from']) ? $data['flying_from'] : '' }}"
+                                                placeholder="City / Airport">
+
                                         </div>
                                         <div class="form-group col-sm-3">
                                             <label for="" class="label">Flying to</label>
-                                            <input type="text" name="flying_to" class="form-control" value=""
+                                            <input type="text" name="flying_to" class="form-control"
+                                                value="{{ isset($data['flying_to']) ? $data['flying_to'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
                                         <div class="form-group col-sm-3">
@@ -187,6 +190,8 @@
                 </table>
                 <script>
                     $(document).ready(function() {
+
+
                         function loadFlights() {
                             $.ajax({
                                 url: '{{ route('getflights') }}',
@@ -206,45 +211,72 @@
                             flightTableBody.empty();
 
                             $.each(flights, function(index, flight) {
-                                var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-long-arrow-alt-right"></i>' :
+                                var iconHtml = flight.trip_type === 'oneway' ?
+                                    '<i class="fas fa-long-arrow-alt-right"></i>' :
                                     '<i class="fas fa-exchange-alt"></i>';
                                 var imageUrl = '{{ asset('images') }}/' + flight.images;
 
                                 var flightHtml = `
-                    <tr>
-                        <td style="padding: 8px; text-align: center;">
-                            <img src="${imageUrl}" alt="Flight Image" style="height: 69px; width: 126px;">
-                        </td>
-                        <td style="padding: 8px; text-align: center;">
-                            ${flight.flying_from}
-                            <p style="margin: 0; font-size: 12px;">${flight.departing}</p>
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                        ${iconHtml}
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                        ${flight.flying_to}
-                        <p style="margin: 0; font-size: 12px;">${flight.returning}</p>
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                        ${flight.price}
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                      
-                                                <a href="/layouts/${flight.id}/showflight" class="btn btn-small ">Book Now</a>
-                                            
-                    </td>
-                </tr>
-                <tr>
-                </tr>
-    
-            `;
+                                        <tr>
+                                            <td style="padding: 8px; text-align: center;">
+                                                <img src="${imageUrl}" alt="Flight Image" style="height: 69px; width: 126px;">
+                                            </td>
+                                            <td style="padding: 8px; text-align: center;">
+                                                ${flight.flying_from}
+                                                <p style="margin: 0; font-size: 12px;">${flight.departing}</p>
+                                        </td>
+                                        <td style="padding: 8px; text-align: center;">
+                                            ${iconHtml}
+                                        </td>
+                                        <td style="padding: 8px; text-align: center;">
+                                            ${flight.flying_to}
+                                            <p style="margin: 0; font-size: 12px;">${flight.returning}</p>
+                                        </td>
+                                        <td style="padding: 8px; text-align: center;">
+                                            ${flight.price}
+                                        </td>
+                                        <td style="padding: 8px; text-align: center;">
+                                        
+                                                                    <a href="/layouts/${flight.id}/showflight" class="btn btn-small ">Book Now</a>
+                                                                
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                        
+                                `;
                                 flightTableBody.append(flightHtml);
                             });
                         }
 
                         loadFlights();
-                        $('#searchForm').submit(function(event) {
+
+
+
+                        @if(isset($data))
+                            var formData = $('#searchForm').serialize(); 
+
+                            // Send an AJAX request to the search route with serialized form data
+                            $.ajax({
+                                url: '{{ route('search') }}', // Replace with your search route
+                                method: 'GET',
+                                data: formData,
+                                dataType: 'json',
+                                success: function(response) {
+                                    updateFlightTable(
+                                    response); // Update the flight table with filtered results
+                                },
+                                error: function(xhr, status, error) {
+                                    console.log('AJAX Error:', status, error);
+                                }
+                            });
+                        @endif
+
+
+
+                        
+                        // Submit form using AJAX
+                        $('#searchForm').on('submit', function(event) {
                             event.preventDefault(); // Prevent the form from submitting normally
                             var formData = $(this).serialize(); // Serialize form data for sending
 
@@ -256,15 +288,13 @@
                                 dataType: 'json',
                                 success: function(response) {
                                     updateFlightTable(
-                                        response); // Update the flight table with filtered results
-
+                                    response); // Update the flight table with filtered results
                                 },
                                 error: function(xhr, status, error) {
                                     console.log('AJAX Error:', status, error);
                                 }
                             });
                         });
-
                     });
                 </script>
 

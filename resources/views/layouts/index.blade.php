@@ -53,11 +53,12 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                             <div class="tab-pane container active" id="flight">
-                                <form action="{{ route('flightsearching') }}">
+                                <form action="{{route('flight_listing')}}" id="searchForm"> 
+                                    @csrf
                                     <div class="form-row">
                                         <div class="form-group">
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input" id="roundTripRadio" name="tripType" value="customEx">
+                                                <input type="radio" class="custom-control-input" id="roundTripRadio" name="tripType" value="customEx" checked>
                                                 <label class="custom-control-label" for="roundTripRadio">Round Trip</label>
                                             </div>
                                             <div class="custom-control custom-radio">
