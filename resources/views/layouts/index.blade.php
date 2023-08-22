@@ -91,22 +91,22 @@
                                         <div class="form-group col-sm-6">
                                             <div class="row">
                                                 <div class="col-lg-4 pr-lg-1">
-                                                    <label for="">Adults</label>
+                                                    {{-- <label for="">Adults</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">0</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                                 <div class="col-lg-4 pl-lg-1 pr-lg-1">
-                                                    <label for="">Children</label>
+                                                    {{-- <label for="">Children</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">0</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                                 <div class="col-lg-4 pl-lg-1">
-                                                    <label for="">infants</label>
+                                                    {{-- <label for="">infants</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">0</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                             </div>
                                           
@@ -114,16 +114,16 @@
                                         <div class="form-group col-sm-6">
                                             <div class="row">
                                                 <div class="col-lg-6 pr-lg-1">
-                                                    <label for="">Class</label>
+                                                    {{-- <label for="">Class</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">Business</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                                 <div class="col-lg-6 pl-lg-1">
-                                                    <label for="">Prefered Airline</label>
+                                                    {{-- <label for="">Prefered Airline</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">ABC</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                             </div>
                                         </div>
