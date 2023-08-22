@@ -7,7 +7,7 @@
 <div class="container" id="hotels-container">
         <div class="left-container">
             <div class="row">
-                <div class="col-12 con-upper">
+                <div class="col-sm-12 con-upper">
                         <div  id="search-br">
                             <label class="cl-t">Search By Name</label>
                             <input type="text" name="search" id="search" style="border: #EDEDED; outline:none;background:#FFFFFF" placeholder="Search">
@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-12 pl-0" style="border: 1px solid #F0F0F0; margin-top:30px">
                         <div class="row">
-                            <div class="col-md-3  con-img" style="display: flex">
+                            <div class="col-md-3   con-img" style="display: flex">
                                 <img src="../hotels/{{ $hotel->image }}" style="width: inherit">
                             </div>
 

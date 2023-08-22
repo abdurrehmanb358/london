@@ -10111,6 +10111,7 @@ a.text-dark:hover {
 @media (max-width: 768px) {
     .con-img{
         margin-left: 60px ;
+        margin-top: 50px;
     }
     .con-part{
         text-align: left;
@@ -10124,6 +10125,7 @@ a.text-dark:hover {
     }
     .con-upper{
         text-align: left;
+        display: none;
     }
   }
 

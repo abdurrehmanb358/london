@@ -7,7 +7,7 @@ use App\Http\Controllers\hotelController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
-
+use App\Http\Controllers\umrah_pakages;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,5 +112,27 @@ Route::post('/search', [hotelController::class, 'search']);
 Route::get('/Home',[hotelController::class, 'Home'])->name('layouts.index');
 
 Route::get('Inquairy',[hotelController::class, 'searchHotels'])->name('layouts.Hotel_listing');
+
+
+// Umrah pakages
+
+Route::get('/back-panel/umrah_pakage', [umrah_pakages::class, 'index'])->name('umrah.index');
+Route::get('/back-panel/umrah_pakage/create', [umrah_pakages::class, 'create'])->name('hotel.create');
+Route::post('/back-panel/umrah_pakage/store', [umrah_pakages::class, 'store'])->name('umrah.store');
+Route::get('/back-panel/umrah_pakage/{id}/edit',[umrah_pakages::class,'edit'])->name('umrah.edit');
+Route::put('/back-panel/umrah_pakage/{id}/update',[umrah_pakages::class,'update'])->name('umrah.update');
+Route::get('/back-panel/umrah_pakage/{id}/delete',[umrah_pakages::class,'destroy']);
+
+Route::get('Umrah_listing',[umrah_pakages::class, 'Umrah_listing'])->name('Umrah_listing');
+
+
+Route::get('/layouts/{id}/Umrah_Detail',[umrah_pakages::class,'Umrah_Detail']);
+
+// // search rout
+// Route::post('/search', [umrah_pakages::class, 'search']);
+
+// Route::get('/Home',[umrah_pakages::class, 'Home'])->name('layouts.index');
+
+// Route::get('Inquairy',[umrah_pakages::class, 'searchHotels'])->name('layouts.Hotel_listing');
 
 require('admin.php');

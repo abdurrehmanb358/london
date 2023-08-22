@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="format-detection" content="telephone=no">
         <link rel="icon" href="images/favicon.png" type="image">
-        <link rel="stylesheet" href="{{asset('css/vendors/bootstrap.min.css')}}" integrity="" crossorigin="">
+        <link rel="stylesheet" href="{{asset('css/vendors/bootstrap.min.css')}}"
+        integrity="" crossorigin="">
+        <link rel="stylesheet" href="{{asset('css/umrah.css')}}"
+        integrity="" crossorigin="">
         <link href="{{ asset('css/all.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
         <link href="{{ asset('css/vendors/owl.carousel.min.css') }}" rel="stylesheet">

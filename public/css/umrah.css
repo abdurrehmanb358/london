@@ -1,0 +1,78 @@
+.align-center11{
+    text-align: center;
+    color: white;
+}
+.c-white{
+    color: white;
+}
+.dec1{
+    background: #06d793;
+    color: white;
+}
+.dec1:hover{
+    background: white;
+    color: #06d793;
+}
+.mt-25{
+    margin-top: 25px;
+}
+.img-set{
+    width: 100%;
+    height: 270px;
+    margin-top: 30px;
+}
+.time_zone{
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 8px;
+    background-color: #00d690;
+    padding: 0px 9px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-top: 7px;
+}
+.setting13{
+    text-align: left;
+    padding: 30px;
+}
+#set112{
+    text-align: left;
+    margin-bottom: 15px;
+    margin: 5px 0;
+}
+
+.umrah-bg{
+    background: #FAFAFA;
+    padding: 30px;
+}
+
+.umrah-bg h4{
+    text-align: left;
+    margin-bottom: 25px;
+}
+.set-input11{
+    width: 100%;
+    border: 1px solid #CED4DA;
+    padding: 8px 13px;
+    margin-bottom: 25px;
+    outline-color: #00D690;
+    font-size: 16px;
+}
+.umrah-h3{
+    color: black;
+}
+.umrah-btn:hover{
+    background: #211E3B ;
+    color: white;
+}
+.umrah-btn{
+    background: #00D690 ;
+    color: white;
+    border: none;
+}
+.umrah-date{
+    color: #00D690 ;
+}

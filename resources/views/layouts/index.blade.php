@@ -1,7 +1,7 @@
  @include('layouts.header')
 
 
-<main class="home">  
+<main class="home">
     <!-- Section Banner Starts Here -->
     <section class="banner">
             <div class="banner_slider owl-carousel owl-theme">
@@ -19,7 +19,7 @@
                 <div class="item">
                     <div class="bannerImage">
                         <img src= "{{asset('images/slider-1.jpg')}}" alt="image">
-                       
+
                     </div>
 
                 </div>
@@ -108,7 +108,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                          
+
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <div class="row">
@@ -132,7 +132,7 @@
                                     </div>
                                 </form>
                             </div>
-                        
+
                             <div class="tab-pane container fade" id="hotels">
                                 <form action="{{ route('layouts.Hotel_listing') }}">
                                 <div class="form-row">
@@ -155,7 +155,7 @@
                                         <input type="date" class="form-control" value="" name="" placeholder="checkout">
                                     </div>
                                 </div>
-                                
+
                                 <div class="controls">
                                     <button type="submit" class="btn_submit_inquiry">Submit Your Inquiry</button>
                                 </div>
@@ -163,13 +163,13 @@
                             </form>
 
                             </div>
-                        
-                               
+
+
 
 
                             <div class="tab-pane container fade" id="vacations">...</div>
                             </div>
-                            
+
                         </div>
                         <div class="col-lg-6 right_col d-none d-lg-block">
                             <p class="title">Exclusive Phone Only</p>
@@ -226,14 +226,14 @@
                             </div>
 
                         </div>
-                  
+
                 </div>
                 <div class="col-lg-4">
                     <div class="special_offer">
                         <div class="content_wrapper">
                             <title>Umra</title>
                             <span class="subtitle">Special Offer</span>
-                            <a class="btn_link" href="javascript:;">Book Now</a>
+                            <a class="btn_link" href="Umrah_listing">Book Now</a>
                         </div>
                         <img src="{{ asset('images/ummrah-offer.jpg') }}" alt="" class="img-fluid">
                     </div>
@@ -262,9 +262,9 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                              <div class="flights-items-holder">
-                               
+
   @foreach($interFlights as $flight)
-    
+
 
                                     <div class="flight-item">
                                         <div class="row">
@@ -285,14 +285,14 @@
                                     </div>
  @endforeach
 
-                                </div> 
+                                </div>
 
 
 
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-                            
+
                                  <div class="flights-items-holder">
 
                                  @foreach($domesticFlights as $flight)
@@ -313,7 +313,7 @@
                                     </div>
                                     @endforeach
 
-                                </div> 
+                                </div>
 
                             </div>
                         </div>
@@ -326,7 +326,7 @@
                 <div class="col-lg-6">
                     <h3 class="heading">Hotels Highlights</h3>
                     <div class="row">
-                        
+
                         @foreach ($hotels as $hotel)
                         <div class="col-sm-6">
                             <div class="item">
@@ -349,9 +349,9 @@
                         @endforeach
                     </div>
                     <a href="Hotel_listing" class="view_all_link">View All</a>
-                        
-                
-                   
+
+
+
 
                 </div>
             </div>
