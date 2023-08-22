@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Flight extends Model
+
+
 {
     use HasFactory;
     protected $fillable = [
@@ -24,7 +26,9 @@ class Flight extends Model
        
     ];
     protected $table = 'flights'; // Table name in the database
+ 
 
-    
 
 }
+$flight = Flight::all();
+

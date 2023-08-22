@@ -32,13 +32,13 @@
                    
                     <div class="tab-content">
                          <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
-                             <form action="" method="POST">
+                             <form action="{{route('flight_listing')}}">
                                  @csrf
                                  <div class="form-row">
                                      <div class="form-group">
                                          <div class="custom-control custom-radio">
                                              <input type="radio" class="custom-control-input" id="roundTripRadio"
-                                                 name="tripType" value="roundtrip">
+                                                 name="tripType" value="roundtrip" checked >
                                              <label class="custom-control-label" for="roundTripRadio">Round Trip</label>
                                          </div>
                                          <div class="custom-control custom-radio">
@@ -67,7 +67,7 @@
                                                  name="" placeholder="City / Airport">
                                          </div>
                                          <div class="form-group col-sm-3">
-                                             <button type="search" class="controle">Search</button>
+                                             <button type="search" name ="search" class="controle">Search</button>
                                          </div>
                                      </div>
                                  </div>
@@ -82,6 +82,8 @@
 
      </div>
      </section>
+
+     <div class="hidden" ></div>
      <div class="contanier">
          <div class="row">
              <div class="col-4">
@@ -109,9 +111,18 @@
                              {{ $flight->flying_from }}
                              <p style="margin: 0; font-size: 12px;"><?php echo date('F j, Y', strtotime($flight->departing)); ?></p>
                          </td>
-                         <td style="padding: 8px;  text-align: center;">
-                             <i class="fas fa-exchange-alt" id="directionIcon"></i>
-                         </td>
+
+                        
+                           <td style="padding: 8px; text-align: center;">
+                         
+                               
+                               
+                           </td>
+                     
+                        
+                          
+                          </td>
+                          
                          <td style="padding: 8px;  text-align: center;">
                              {{ $flight->flying_to }} <p style="margin: 0; font-size: 12px;"> <?php echo date('F j, Y', strtotime($flight->returning)); ?></p>
                          </td>
@@ -210,28 +221,29 @@ $(document).ready(function () {
 
 });
 
+var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-arrow-right"></i>' : '<i class="fas fa-exchange-alt"></i>';
+            var imageUrl = '{{ asset("images") }}/' + flight.images;
 
 
+    //      document.addEventListener("DOMContentLoaded", function() {
+    //          const oneWayRadio = document.getElementById("oneWayRadio");
+    //          const roundTripRadio = document.getElementById("roundTripRadio");
+    //          const directionIcon = document.getElementById("directionIcon");
 
-         document.addEventListener("DOMContentLoaded", function() {
-             const oneWayRadio = document.getElementById("oneWayRadio");
-             const roundTripRadio = document.getElementById("roundTripRadio");
-             const directionIcon = document.getElementById("directionIcon");
+    //          function updateDirectionIcon() {
+    //              if (oneWayRadio.checked) {
+    //                  directionIcon.classList.remove("fa-exchange-alt");
+    //                  directionIcon.classList.add("fa-long-arrow-alt-right");
+    //              } else if (roundTripRadio.checked) {
+    //                  directionIcon.classList.remove("fa-long-arrow-alt-right");
+    //                  directionIcon.classList.add("fa-exchange-alt");
+    //              }
+    //          }
 
-             function updateDirectionIcon() {
-                 if (oneWayRadio.checked) {
-                     directionIcon.classList.remove("fa-exchange-alt");
-                     directionIcon.classList.add("fa-long-arrow-alt-right");
-                 } else if (roundTripRadio.checked) {
-                     directionIcon.classList.remove("fa-long-arrow-alt-right");
-                     directionIcon.classList.add("fa-exchange-alt");
-                 }
-             }
-
-             oneWayRadio.addEventListener("change", updateDirectionIcon);
-             roundTripRadio.addEventListener("change", updateDirectionIcon);
-         });
-     </script>
+    //          oneWayRadio.addEventListener("change", updateDirectionIcon);
+    //          roundTripRadio.addEventListener("change", updateDirectionIcon);
+    //      });
+    //  </script>
 
  </main>
  @include('layouts.footer')

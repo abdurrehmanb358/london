@@ -19,7 +19,7 @@ use App\Http\Controllers\umrah_pakages;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// simple view return
 Route::get('flihgtlisting', function () {
     return view('layouts.flihgtlisting');
 });
@@ -35,6 +35,19 @@ Route::get('aboutus', function () {
 Route::get('personal', function () {
     return view('layouts.personal');
 });
+Route::get('insurance', function () {
+    return view('layouts.insurance');
+});
+Route::get('insurancesearch', function () {
+    return view('layouts.insurancesearch');
+});
+Route::get('holidays', function () {
+    return view('layouts.holidays');
+});
+
+
+
+
 
 //img controller
 // routes/web.php
@@ -77,18 +90,18 @@ Route::get('flightdetail', function () {
 });
 Route::get('/flightdetail/{flight}', [FlightController::class, 'show1'])->name('flights.show');
 
-// Route ::POST('/flightlisting', [FlightController::class, 'search'])->name('flight.search');
+Route::get('/flightlisting', [FlightController::class, 'searchflight'])->name('flight.search');
 
 Route::get('/get-flights', [FlightController::class, 'get'])->name('get.flights');
 
-Route::get('/flightlisting',[FlightController::class, 'getFlight'])->name('getflights');
+Route::get('/flightlistingpage',[FlightController::class, 'getFlight'])->name('getflights');
 Route::get('/flightlistpage/{id}', [FlightController::class, 'getFlishtView'])->name('getListeview');
 
 
 Route::get('/layouts/{id}/showflight',[FlightController::class,'showflight']);
-
-
-
+Route::get('/flightshow',[FlightController::class,'search'])->name('search');
+Route::get('flightlisting',[FlightController::class, 'flight_listing'])->name('flight_listing');
+Route::get('/inquairyflight', [FlightController::class, 'searchflight'])->name('flightsearching');
 
 
 

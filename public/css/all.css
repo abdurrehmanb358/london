@@ -3958,14 +3958,14 @@ element.style {
   .custom-container1{
     margin-top: 50px;
   }
-  h4 {
+  /* h4 {
     text-align: center;
-  }
-  hr {
+  } */
+  /* hr {
     margin: 0 auto;
     width: 12%;
     border: 0.9px solid black; 
-  }
+  } */
   .card-container {
     display: flex;
     justify-content: space-between;

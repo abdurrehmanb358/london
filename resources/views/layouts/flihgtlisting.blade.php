@@ -2,9 +2,9 @@
 
 
 <main class="home">
-    <div class="container-fluid">
+    <div class="container-fluid" style="display: contents">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 320px; width: 100%;"
                     class="img-fluid">
@@ -33,19 +33,19 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
-                            <form action="">
+                            <form id="searchForm">
+                                @csrf
                                 <div class="form-row">
                                     <div class="form-group">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="roundTripRadio"
-                                                name="tripType" value="">
-                                            <label class="custom-control-label" for="roundTripRadio">Round Trip</label>
+                                            <input type="radio" class="custom-control-input" id="roundtrip"
+                                                name="triptype" value="roundtrip">
+                                            <label class="custom-control-label" for="roundtrip">Round Trip</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" id="oneWayRadio"
-                                                name="tripType" value="customEx">
-                                            <label class="custom-control-label" for="oneWayRadio">One Way</label>
-
+                                            <input type="radio" class="custom-control-input" id="oneway"
+                                                name="triptype" checked value="oneway">
+                                            <label class="custom-control-label" for="oneway">One Way</label>
                                         </div>
 
 
@@ -57,22 +57,26 @@
                                     <div class="row">
                                         <div class="form-group col-sm-3">
                                             <label for="" class="label">Flying from</label>
-                                            <input type="text" name="search" class="form-control" value=""
-                                                name="" placeholder="City / Airport">
+                                            <input type="text" name="flying_from" class="form-control"
+                                                value="{{ isset($data['flying_from']) ? $data['flying_from'] : '' }}"
+                                                placeholder="City / Airport">
+
                                         </div>
                                         <div class="form-group col-sm-3">
                                             <label for="" class="label">Flying to</label>
-                                            <input type="text" name="search" class="form-control" value=""
+                                            <input type="text" name="flying_to" class="form-control"
+                                                value="{{ isset($data['flying_to']) ? $data['flying_to'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
                                         <div class="form-group col-sm-3">
                                             <label for="" class="label">Departing</label>
-                                            <input type="text" name="search" class="form-control" value=""
+                                            <input type="text" name="departing" class="form-control" value=""
                                                 name="" placeholder="City / Airport">
                                         </div>
                                         <div class="form-group col-sm-3">
 
-                                            <button class="controle" type="submit">Search</button>
+                                            <button class="controle" name="search" type="submit"
+                                                id="search">Search</button>
                                         </div>
                                     </div>
 
@@ -101,7 +105,7 @@
     <div class="container ">
         <div class="col-12 ">
             <h2 class="gg">Internatinal flight</h2>
-            <hr>
+
 
             <p>Travelling internationally can be stressful because of high ticket price.Vist our website to find some of
                 the best internatonal flight deals on internet.</p>
@@ -160,7 +164,7 @@
 
 
 
-                 
+
             <div class="col-9 mt-7" style="margin-top: 78px
             ">
                 <h2>
@@ -185,74 +189,118 @@
                 </tbody>
                 </table>
                 <script>
-$(document).ready(function() {
-    function loadFlights() {
-        $.ajax({
-            url: '{{ route("getflights") }}',
-            method: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                updateFlightTable(data.flights);
-            },
-            error: function(xhr, status, error) {
-                console.log('AJAX Error:', status, error);
-            }
-        });
-    }
+                    $(document).ready(function() {
 
-    function updateFlightTable(flights) {
-        var flightTableBody = $('#flight-table-body');
-        flightTableBody.empty();
 
-        $.each(flights, function(index, flight) {
-            var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-arrow-right"></i>' : '<i class="fas fa-exchange-alt"></i>';
-            var imageUrl = '{{ asset("images") }}/' + flight.images;
+                        function loadFlights() {
+                            $.ajax({
+                                url: '{{ route('getflights') }}',
+                                method: 'GET',
+                                dataType: 'json',
+                                success: function(data) {
+                                    updateFlightTable(data.flights);
+                                },
+                                error: function(xhr, status, error) {
+                                    console.log('AJAX Error:', status, error);
+                                }
+                            });
+                        }
 
-            var flightHtml = `
-                <tr>
-                    <td style="padding: 8px; text-align: center;">
-                        <img src="${imageUrl}" alt="Flight Image" style="height: 69px; width: 126px;">
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                        ${flight.flying_from}
-                        <p style="margin: 0; font-size: 12px;">${flight.departing}</p>
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                        ${iconHtml}
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                        ${flight.flying_to}
-                        <p style="margin: 0; font-size: 12px;">${flight.returning}</p>
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                        ${flight.price}
-                    </td>
-                    <td style="padding: 8px; text-align: center;">
-                      
-                                                <a href="/layouts/${flight.id}/showflight" class="btn btn-small ">Book Now</a>
-                                            
+                        function updateFlightTable(flights) {
+                            var flightTableBody = $('#flight-table-body');
+                            flightTableBody.empty();
 
-                    </td>
-                </tr>
-               
-                <tr>
-               
+                            $.each(flights, function(index, flight) {
+                                var iconHtml = flight.trip_type === 'oneway' ?
+                                    '<i class="fas fa-long-arrow-alt-right"></i>' :
+                                    '<i class="fas fa-exchange-alt"></i>';
+                                var imageUrl = '{{ asset('images') }}/' + flight.images;
 
-     </tr>
-    
-            `;
-            flightTableBody.append(flightHtml);
-        });
-    }
+                                var flightHtml = `
+                                        <tr>
+                                            <td style="padding: 8px; text-align: center;">
+                                                <img src="${imageUrl}" alt="Flight Image" style="height: 69px; width: 126px;">
+                                            </td>
+                                            <td style="padding: 8px; text-align: center;">
+                                                ${flight.flying_from}
+                                                <p style="margin: 0; font-size: 12px;">${flight.departing}</p>
+                                        </td>
+                                        <td style="padding: 8px; text-align: center;">
+                                            ${iconHtml}
+                                        </td>
+                                        <td style="padding: 8px; text-align: center;">
+                                            ${flight.flying_to}
+                                            <p style="margin: 0; font-size: 12px;">${flight.returning}</p>
+                                        </td>
+                                        <td style="padding: 8px; text-align: center;">
+                                            ${flight.price}
+                                        </td>
+                                        <td style="padding: 8px; text-align: center;">
+                                        
+                                                                    <a href="/layouts/${flight.id}/showflight" class="btn btn-small ">Book Now</a>
+                                                                
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                        
+                                `;
+                                flightTableBody.append(flightHtml);
+                            });
+                        }
 
-    loadFlights();
-});
-</script>
+                        loadFlights();
 
-                    
+
+
+                        @if(isset($data))
+                            var formData = $('#searchForm').serialize(); 
+
+                            // Send an AJAX request to the search route with serialized form data
+                            $.ajax({
+                                url: '{{ route('search') }}', // Replace with your search route
+                                method: 'GET',
+                                data: formData,
+                                dataType: 'json',
+                                success: function(response) {
+                                    updateFlightTable(
+                                    response); // Update the flight table with filtered results
+                                },
+                                error: function(xhr, status, error) {
+                                    console.log('AJAX Error:', status, error);
+                                }
+                            });
+                        @endif
+
+
+
+                        
+                        // Submit form using AJAX
+                        $('#searchForm').on('submit', function(event) {
+                            event.preventDefault(); // Prevent the form from submitting normally
+                            var formData = $(this).serialize(); // Serialize form data for sending
+
+                            // Send an AJAX request to the search route with serialized form data
+                            $.ajax({
+                                url: '{{ route('search') }}', // Replace with your search route
+                                method: 'GET',
+                                data: formData,
+                                dataType: 'json',
+                                success: function(response) {
+                                    updateFlightTable(
+                                    response); // Update the flight table with filtered results
+                                },
+                                error: function(xhr, status, error) {
+                                    console.log('AJAX Error:', status, error);
+                                }
+                            });
+                        });
+                    });
+                </script>
+
+
 
 
 </main>
-
 
 @include('layouts.footer')

@@ -53,11 +53,12 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                             <div class="tab-pane container active" id="flight">
-                                <form action="">
+                                <form action="{{route('flight_listing')}}" id="searchForm"> 
+                                    @csrf
                                     <div class="form-row">
                                         <div class="form-group">
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" class="custom-control-input" id="roundTripRadio" name="tripType" value="customEx">
+                                                <input type="radio" class="custom-control-input" id="roundTripRadio" name="tripType" value="customEx" checked>
                                                 <label class="custom-control-label" for="roundTripRadio">Round Trip</label>
                                             </div>
                                             <div class="custom-control custom-radio">
@@ -69,17 +70,17 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-6">
                                             <label for="">Flying from</label>
-                                            <input type="text" class="form-control" value="" name="" placeholder="City / Airport">
+                                            <input type="text" class="form-control" value="" name="flying_from" placeholder="City / Airport">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="">Flying to</label>
-                                            <input type="text" class="form-control" value="" name="" placeholder="City / Airport">
+                                            <input type="text" class="form-control" value="" name="flying_to" placeholder="City / Airport">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-sm-6">
                                             <label for="">Departing</label>
-                                            <input type="text" class="form-control" value="" name="" placeholder="City / Airport">
+                                            <input type="text" class="form-control" value="" name="departing" placeholder="City / Airport">
                                         </div>
                                         <div class="form-group col-sm-6">
                                             <label for="">Returning</label>
@@ -90,22 +91,22 @@
                                         <div class="form-group col-sm-6">
                                             <div class="row">
                                                 <div class="col-lg-4 pr-lg-1">
-                                                    <label for="">Adults</label>
+                                                    {{-- <label for="">Adults</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">0</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                                 <div class="col-lg-4 pl-lg-1 pr-lg-1">
-                                                    <label for="">Children</label>
+                                                    {{-- <label for="">Children</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">0</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                                 <div class="col-lg-4 pl-lg-1">
-                                                    <label for="">infants</label>
+                                                    {{-- <label for="">infants</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">0</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                             </div>
 
@@ -113,16 +114,16 @@
                                         <div class="form-group col-sm-6">
                                             <div class="row">
                                                 <div class="col-lg-6 pr-lg-1">
-                                                    <label for="">Class</label>
+                                                    {{-- <label for="">Class</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">Business</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                                 <div class="col-lg-6 pl-lg-1">
-                                                    <label for="">Prefered Airline</label>
+                                                    {{-- <label for="">Prefered Airline</label>
                                                     <select name="" id="" class="form-control">
                                                         <option value="">ABC</option>
-                                                    </select>
+                                                    </select> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -318,7 +319,7 @@
                             </div>
                         </div>
 
-                        <a href="" class="view_all_link">View All</a>
+                        <a href="flihgtlisting" class="view_all_link">View All</a>
 
                     </div>
 
