@@ -7,7 +7,7 @@
 </div>
 @endif
 
-<div class="d-flex justify-content-between">
+<div class="d-flex">
     <a href="{{ route('flight.create') }}" class="btn btn-primary rounded">Add Flights</a>
 </div>
 

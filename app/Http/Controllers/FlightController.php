@@ -154,6 +154,7 @@ class FlightController extends Controller
 
 public function showflight($id){
     $flight = Flight::where('id',$id)->first();
+  
     return view('layouts.flightdetail', compact('flight'));
 }
 
@@ -297,7 +298,7 @@ public function index1()
     public function flight_inquiry() {
         $show = DB::table('flight_inquiry as fi')
                 ->join('flights as f','fi.flightId','=','f.id')
-                ->select('f.flying_from','fi.fname','fi.lname','fi.email','fi.id','fi.phone','fi.destination','fi.form','fi.dateOfDeparture','fi.dateOfArival','fi.airline','fi.noOfPassenger','fi.class','fi.message','fi.created_at')
+                ->select('f.flying_from','f.flying_to','fi.fname','fi.lname','fi.email','fi.id','fi.phone','fi.destination','fi.form','fi.dateOfDeparture','fi.dateOfArival','fi.airline','fi.noOfPassenger','fi.class','fi.message','fi.created_at')
                 ->orderBy('created_at', 'desc')
                 ->get();
         return view('/back-panel/flight_inquiry',['flightInquiry'=> $show]);
