@@ -18,7 +18,7 @@
       
         </div>
       <div class="container mt-5 " style="margin-left: 79px">
-          <div class="row ">
+          <div cl   ass="row ">
             <div class="col-12 col-sm-6 col-md-3">
               <div class="row">
                 <div class="margin-top">

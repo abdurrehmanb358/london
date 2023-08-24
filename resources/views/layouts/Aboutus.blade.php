@@ -3,8 +3,7 @@
 <main class="home">
    
     <div class="container-fluid">
-        {{-- <img src="{{ asset('images/Untitled-1.png') }}" alt="Bangkok"> --}}
-        <img src="{{ asset('images/Untitled-1.png') }}" alt="Bangkok" style="height: 471px; width: 100%;"
+      <img src="{{ asset('images/Untitled-1.png') }}" alt="Bangkok" style="height: 471px; width: 100%;"
                     class="img-fluid">
         <div class="text-layer">
           <h1>About Us</h1>

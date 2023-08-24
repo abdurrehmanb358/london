@@ -2,13 +2,13 @@
 
 
 <main class="home">
-    <div class="container-fluid" style="display: contents">
-        <div class="row">
+    <div class="container-fluid">
+    
            
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-                <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 320px; width: 100%;"
+                <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 371px; width: 100%;"
                     class="img-fluid">
-            </div>
+           
         </div>
    
 
@@ -304,3 +304,4 @@
 </main>
 
 @include('layouts.footer')
+
