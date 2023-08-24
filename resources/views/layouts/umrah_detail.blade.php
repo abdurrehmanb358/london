@@ -45,20 +45,53 @@
                 </span>
             </div>
             <div class="col-lg-4 col-md-5 col-xs-12">
-                <form action="" class="umrah-bg" enctype="multipart/form-data">
+                <form action="{{ route('umrah.inquiries') }}" method="POST" class="umrah-bg" enctype="multipart/form-data">
                     @csrf
-                    <h4>Tour Booking</h4>
-                    <input class="set-input11" type="text"  placeholder="Name">
-                    <input class="set-input11" type="text"  placeholder="Email">
-                    <input class="set-input11" type="tel"  placeholder="Phone">
-                    <input class="set-input11" type="date" >
-                    <input class="set-input11" type="text"  placeholder="Number of Person">
+                    <h4>Submit Inquiry</h4>
+                    <div>
+                        <input class="set-input11" type="text"  placeholder="Name" name="name" value="{{ old('name') }}">
+                        @if ($errors->has('name'))
+                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                        @endif
+                    </div>
+
+                    <div>
+                        <input class="set-input11" type="text"  placeholder="Email" name="email" value="{{ old('email') }}">
+                        @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
+                    </div>
+
+                    <div>
+                        <input class="set-input11" type="tel"  placeholder="Phone" name="phone" value="{{ old('phone') }}">
+                        @if ($errors->has('phone'))
+                                <span class="text-danger">{{ $errors->first('phone') }}</span>
+                        @endif
+                    </div>
+
+                    <div>
+                        <input class="set-input11 datepicker" placeholder="Date" name="date" type="text" value="{{ old('date') }}" autocomplete="off">
+                        @if ($errors->has('date'))
+                                <span class="text-danger">{{ $errors->first('date') }}</span>
+                        @endif
+                    </div>
+                    <input type="hidden" value="{{ $hotel->id }}" name="packageId">
+                    {{-- <input type="hidden" value="umra" name="type"> --}}
+                    <div>
+                        <input class="set-input11" type="text"  placeholder="Number of Person" name="nop" value="{{ old('nop') }}">
+                        @if ($errors->has('nop'))
+                                <span class="text-danger">{{ $errors->first('nop') }}</span>
+                        @endif
+                    </div>
                     <button class="btn btn-primary btn-lg umrah-btn">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </section>
+
+
+
 
 @include("layouts.footer")
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\FlightController;
 use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
 use App\Http\Controllers\umrah_pakages;
+use App\Models\umrah_inquiries;
 
 /*
 |--------------------------------------------------------------------------
@@ -141,11 +142,22 @@ Route::get('Umrah_listing',[umrah_pakages::class, 'Umrah_listing'])->name('Umrah
 
 Route::get('/layouts/{id}/Umrah_Detail',[umrah_pakages::class,'Umrah_Detail']);
 
+
+Route::post('/register/inquiries',[umrah_pakages::class,'register'])->name('umrah.inquiries');
+Route::post('/hotel/inquiry',[umrah_pakages::class,'hotelInquiry'])->name('hotel.inquiries');
+Route::post('/flight/inquiry',[FlightController::class,'flightInquiries'])->name('flights.inquiry');
+
 // // search rout
 // Route::post('/search', [umrah_pakages::class, 'search']);
 
 // Route::get('/Home',[umrah_pakages::class, 'Home'])->name('layouts.index');
 
 // Route::get('Inquairy',[umrah_pakages::class, 'searchHotels'])->name('layouts.Hotel_listing');
+
+
+//inquiries
+Route::get('/back-panel/umrah_inquiry', [umrah_pakages::class, 'umrah_inquiry'])->name('umrah.inquiry');
+Route::get('/back-panel/hotel_inquiry', [umrah_pakages::class, 'hotel_inquiry'])->name('hotel.inquiry');
+Route::get('/back-panel/flight_inquiry', [FlightController::class, 'flight_inquiry'])->name('flight.inquiries');
 
 require('admin.php');

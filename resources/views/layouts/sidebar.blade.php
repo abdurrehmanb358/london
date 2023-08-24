@@ -51,6 +51,17 @@ id="sidenav-main">
     </li>
 
     <li class="nav-item">
+        <a class="nav-link text-white " href="{{route('flight.inquiries')}}">
+
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-plane"></i>
+          </div>
+
+          <span class="nav-link-text ms-1">Flight Inquiry</span>
+        </a>
+      </li>
+
+    <li class="nav-item">
       <a class="nav-link text-white " href="{{route('hotel.index')}}">
 
         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -62,6 +73,17 @@ id="sidenav-main">
     </li>
 
     <li class="nav-item">
+        <a class="nav-link text-white " href="{{route('hotel.inquiry')}}">
+
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-hotel"></i>
+          </div>
+
+          <span class="nav-link-text ms-1">Hotel Inquiry</span>
+        </a>
+      </li>
+
+    <li class="nav-item">
         <a class="nav-link text-white " href="{{route('umrah.index')}}">
 
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -69,6 +91,17 @@ id="sidenav-main">
           </div>
 
           <span class="nav-link-text ms-1">Umrah detail</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white " href="{{route('umrah.inquiry')}}">
+
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-kaaba"></i>
+          </div>
+
+          <span class="nav-link-text ms-1">Umrah Inquiry</span>
         </a>
       </li>
 

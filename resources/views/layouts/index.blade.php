@@ -53,7 +53,7 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                             <div class="tab-pane container active" id="flight">
-                                <form action="{{route('flight_listing')}}" id="searchForm"> 
+                                <form action="{{route('flight_listing')}}" id="searchForm">
                                     @csrf
                                     <div class="form-row">
                                         <div class="form-group">
@@ -149,11 +149,11 @@
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
                                         <label for="">check in</label>
-                                        <input type="date" class="form-control" value="" name="" placeholder="Check in">
+                                        <input type="text" class="form-control datepicker" value="" name="checkIn" placeholder="Check in">
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="">check out</label>
-                                        <input type="date" class="form-control" value="" name="" placeholder="checkout">
+                                        <input type="text" class="form-control datepicker" value="" name="checkout" placeholder="check Out">
                                     </div>
                                 </div>
 

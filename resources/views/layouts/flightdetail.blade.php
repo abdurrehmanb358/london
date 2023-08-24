@@ -17,19 +17,19 @@
                      <ul class="nav nav-tabs">
                          <li class="nav-item">
                              <a class="nav-link active" data-toggle="tab" href="#flight"
-                                 style="background-color:#000654; color:white;    
+                                 style="background-color:#000654; color:white;
                         border: none; margin-top:-194px;    margin-left: 15px;
                     ">Search
                                  Flights</a>
                          </li>
                      </ul>
-                   
-                   
-                   
-                   
-                   
-                   
-                   
+
+
+
+
+
+
+
                     <div class="tab-content">
                          <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
                              <form action="{{route('flight_listing')}}">
@@ -112,17 +112,17 @@
                              <p style="margin: 0; font-size: 12px;"><?php echo date('F j, Y', strtotime($flight->departing)); ?></p>
                          </td>
 
-                        
+
                            <td style="padding: 8px; text-align: center;">
-                         
-                               
-                               
+
+
+
                            </td>
-                     
-                        
-                          
+
+
+
                           </td>
-                          
+
                          <td style="padding: 8px;  text-align: center;">
                              {{ $flight->flying_to }} <p style="margin: 0; font-size: 12px;"> <?php echo date('F j, Y', strtotime($flight->returning)); ?></p>
                          </td>
@@ -134,10 +134,11 @@
 
                      <h3 class="top">Flight Inquery!</h3>
 
-                     <form action="" method="post">
+                     <form action="{{ route('flights.inquiry') }}" method="POST">
                          @csrf
                          <div class="">
                              <div style="margin-bottom: 20px;">
+                                <input type="hidden" value="{{ $flight->id }}" name="flightId">
                                  <input type="text" name="first_name" class="row1" placeholder="First Name">
                                  <input type="text" name="last_name" id="" class="row1"
                                      placeholder="Last Name">
@@ -146,21 +147,21 @@
                              </div>
 
                              <div style="margin-bottom: 20px;">
-                                 <input type="text" name="phone_number" id="" class="row2"
+                                 <input type="text" name="phone" id="" class="row2"
                                      placeholder="Phone Number">
                                  <input type="text" name="destination" id="" class="row2"
                                      placeholder="Destination">
                              </div>
                              <div style="margin-bottom: 20px;">
                                  <input type="text" name="form" class="row3" placeholder="Form">
-                                 <input type="date" name="date_of_departure" id="" class="row3"
+                                 <input type="text" name="date_of_departure" id="" class="row3 datepicker"
                                      placeholder="Date of Departure">
-                                 <input type="date" name="date_of_arrivel" id="" class="row3"
-                                     placeholder="DatofArrivel">
+                                 <input type="text" name="date_of_arrivel" id="" class="row3 datepicker"
+                                     placeholder="Date of Arrivel">
                              </div>
                              <div style="margin-bottom: 20px;">
                                  <input type="text" name="airline" class="row4"placeholder="Airline">
-                                 <input type="text" name="number of passenger" id="" class="row4"
+                                 <input type="text" name="noOfPassenger" id="" class="row4"
                                      placeholder="number_of_passenger">
                                  <input type="text" name="class" id="" class="row4"
                                      class="row4"placeholder="Class">

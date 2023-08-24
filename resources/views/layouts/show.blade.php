@@ -23,7 +23,7 @@
                         <span class="separator">|</span>
                         <span class="write-review"><u>Write a Review</u></span>
                     </div>
-        
+
                     <div class="rating text-warning mt-2">
                         <!-- Facilities -->
                         <div class="custom-card">
@@ -46,7 +46,7 @@
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Share icons -->
                     <p class="share-text">Share</p>
                     <div class="icon-container">
@@ -63,13 +63,13 @@
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
-                    
+
                     <!-- SELECT button -->
                     <button type="button" class="custom-button">SELECT</button>
                 </div>
             </div>
         </div>
-        
+
            </div>
            <div class="container mt-5">
             <div class="row">
@@ -78,7 +78,7 @@
             </div>
            </div>
         </div>
-          
+
         <div class="container bbbg-gray" >
             <div>
                 {!! $hotels->description !!}
@@ -88,65 +88,83 @@
                 <button type="button" class="ccustom-button">
                     <i class="fas fa-check"></i> Car Park
                 </button>
-        
+
                 <button type="button" class="ccustom-button" id="rr">
                     <i class="fas fa-check"></i> Restaurant
                 </button>
-        
+
                 <button type="button" class="ccustom-button" id="ii">
                     <i class="fas fa-check"></i> Wifi
                 </button>
             </div>
-             
-            <p class="mt-4">important Notes</p>  
+
+            <p class="mt-4">important Notes</p>
             <div class="custom-list ">
               {!!  $hotels->notes  !!}
           </div>
         </div>
-        
+
                           <div class="container">
                     <div class="ccontainer">
-                        <form action="">
+                        <form action="{{ route('hotel.inquiries') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <h1><span class="h2">Hotel Inquiry!</span></h1>
                             <div class="input-group">
-                                <input type="text" name="" id="" placeholder="Travelling From" class="red-bottom-border">
-                                <input type="text" name="" id="" placeholder="Travel Start Date*"
-                                class="red-bottom-border">
-                                <input type="text" name="" id="" placeholder="Travel End Date*"
-                                class="red-bottom-border">
+                                <div>
+                                    <input type="hidden" value="{{ $hotels->id }}" name="hotelId">
+
+                                    <input type="text" name="travFrom" id="" placeholder="Travelling From" class="red-bottom-border" value="{{ old('travFrom') }}" required>
+
+                                </div>
+
+
+                                <div>
+                                    <input type="text" name="startDate" id="" placeholder="Travel Start Date*"
+                                    class="red-bottom-border datepicker" value="{{ old('startDate') }}" required autocomplete="off">
+
+                                </div>
+
+                                <div>
+                                    <input type="text" name="endDate" id="" placeholder="Travel End Date*"
+                                    class="red-bottom-border datepicker" value="{{ old('endDate') }}" required autocomplete="off">
+
+                                </div>
                             </div>
                             <div class="input-group">
-                                <input type="text" name="" id="" placeholder="End text"
-                                class="red-bottom-border">
-                                <input type="text" name="" id="" placeholder="End text"
-                                class="red-bottom-border">
-                                <input type="text" name="" id="" placeholder="End text"
-                                class="red-bottom-border">
-                            </div>
-                            <div class="input-group">
-                                <input type="text" name="" id="" placeholder="End text"
-                                class="red-bottom-border">
-                                <input type="text" name="" id="" placeholder="End text"
-                                class="red-bottom-border">
-                                <input type="text" name="" id="" placeholder="End text"
-                                class="red-bottom-border">
+                                <div>
+                                    <input type="text" name="name" id="" placeholder="Name"
+                                    class="red-bottom-border" value="{{ old('name') }}" required>
+                                </div>
+
+                                <div>
+                                    <input type="tel" name="phone" id="" placeholder="Phone"
+                                    class="red-bottom-border" value="{{ old('phone') }}" required>
+                                </div>
+
+                                <div>
+                                    <input type="text" name="email" id="" placeholder="Email"
+                                    class="red-bottom-border">
+                                </div>
+
                             </div>
                             <div >
-                                <textarea  class="textarea1" name="" id="" cols="3" rows="7" placeholder="Share your requirment in details"></textarea>
+                                <textarea  class="textarea1" name="description" id="" cols="3" rows="7" placeholder="Share your requirment in details" required></textarea>
                             </div>
                             <div class="button-group">
-                                <button>SUBMIT APPLICATION</button>
-                                
+                                <button class="btn btn-danger">SUBMIT APPLICATION</button>
+
                             </div>
-                            
 
 
-                            
+
+
                         </form>
                         </div>
                         </div>
 
 
-                
+
+
+
 </main>
 @include('layouts.footer')

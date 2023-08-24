@@ -1,6 +1,6 @@
 <footer class="siteFooter">
     {{-- <div class="container">
-        <div class="footerTop">    
+        <div class="footerTop">
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
 
@@ -32,7 +32,7 @@
                     </nav>
                 </div>
 
-                
+
 
 
 
@@ -103,7 +103,7 @@
                     </nav>
                 </div>
 
-                
+
 
 
 
@@ -149,7 +149,7 @@
             <p style="color: white;"><i class="fas fa-envelope"></i> Info@londontravel.com</p>
             <p style="color: white;"><i class="fas fa-phone"></i> 021738929383</p>
           </div>
-      
+
           <div class="col-sm-6 col-lg-3 socialIcons">
             <h3 style="color: white;">KEEP IN TOUCH</h3>
             <ul>
@@ -158,7 +158,7 @@
               <li><a href="#" class="gmail"><i class="fab fa-google-plus-g"></i></a></li>
             </ul>
           </div>
-      
+
           <div class="col-sm-6 col-lg-3 socialIcons">
             <h3 style="color: white;">Payments</h3>
             <img src="{{ asset('images/payment_icons.jpg') }}" alt="Payments Methods">
@@ -166,7 +166,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="copyRight">
         <div class="container">
           <div class="row">
@@ -175,7 +175,7 @@
             </div>
             <div class="col-lg-6 text-lg-right">
               <p>
-                <a href="">Terms & Conditions</a> 
+                <a href="">Terms & Conditions</a>
                 <span>|</span>
                 <a href="">Privacy Policy</a>
               </p>
@@ -183,11 +183,23 @@
           </div>
         </div>
       </div>
-      
+
+
+
 </footer>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.11.0/js/bootstrap-datepicker.min.js"></script>
+                        <script>
+                          $(document).ready(function () {
+                            $('.datepicker').datepicker({
+                              format: 'dd-mm-yyyy', // Change the format as needed
+                              autoclose: true,
+                              todayHighlight: true
+                            });
+                          });
+                        </script>
 
 
 </body>

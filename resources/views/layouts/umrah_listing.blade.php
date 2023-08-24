@@ -58,10 +58,10 @@
     <div class="container con-dis1" id="book" >
         <div class="row">
             <div class="col-12">
-                <h3  style="color: #42D690;margin-top:25px">Populer Tour Pakage</h3>
+                <h3  style="color: #D42729;margin-top:25px">Populer Tour Pakage</h3>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <h1 style="margin-top: 25px">The best of aur all tour Pakages</h1>
+                <h1 style="margin-top: 25px">The best of aur all Umrah Pakages</h1>
             </div>
         </div>
     </div>
