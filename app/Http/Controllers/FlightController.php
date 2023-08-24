@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\hotel;
 use App\Models\Flight;
+use App\Models\flight_inquiry;
+use App\Models\Flightinquiry;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -101,7 +103,7 @@ class FlightController extends Controller
 
 
 
-        
+
     // if ($flight === null) {
     //     // Flight not found, handle accordingly (e.g., show an error message or redirect)
     //     return view('layouts.flihgtlisting');
@@ -136,7 +138,7 @@ class FlightController extends Controller
 //         $flyingfrom = $request->input('city');
 //         $flyingto = $request->input('country');
 
-  
+
 
 //         $flights = Flight::where('flying_from', $city)
 //                        ->orwhere('flying_to', $country)
@@ -163,7 +165,7 @@ public function search(Request $request)
     $flyingfrom = $request->input('flying_from'); // Corrected variable name
     $flyingto = $request->input('flying_to');
     $departing = $request->input('departing');
-    
+
     $query = Flight::query();
 
     if ($triptype === 'roundtrip') {
@@ -171,7 +173,7 @@ public function search(Request $request)
     } elseif ($triptype === 'oneway') {
         $query->where('trip_type', 'oneway');
     }
-    
+
     // Check if flying_from parameter is not empty
     if ($flyingfrom !== '') {
         $query->where('flying_from', 'like', "%$flyingfrom%");
@@ -199,13 +201,13 @@ public function flight_listing(Request $request) {
 
 public function searchflight(Request $request)
 {
-  
+
     $triptype = $request->input('triptype');
     $search = $request->input('search');
     $flyingfrom = $request->input('flying_from'); // Corrected variable name
     $flyingto = $request->input('flying_to');
     $departing = $request->input('departing');
-    
+
     $query = Flight::query();
 
     if ($triptype === 'roundtrip') {
@@ -213,7 +215,7 @@ public function searchflight(Request $request)
     } elseif ($triptype === 'oneway') {
         $query->where('trip_type', 'oneway');
     }
-    
+
     // Check if flying_from parameter is not empty
     if ($flyingfrom !== '') {
         $query->where('flying_from', 'like', "%$flyingfrom%");
@@ -232,10 +234,74 @@ public function searchflight(Request $request)
 public function index1()
 {
     $flight = Flight::all(); // Retrieve all flights
-    
+
     return view('layouts.flightdetail', compact('flight'));
 }
 
+    public function flightInquiries(Request $request )
+    {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'nullable|email', // Use 'nullable' instead of 'optional'
+            'phone' => 'required',
+            'destination' => 'required',
+            'form' => 'required',
+            'date_of_departure' => 'required',
+            'date_of_arrivel' => 'required',
+            'noOfPassenger' => 'required',
+            'class' => 'required',
+            'message' => 'required',
+            'airline' => 'required'
+        ]);
+        $fname = $request->input('first_name');
+        $lname = $request->input('last_name');
+        $email= $request->input('email');
+        $phone = $request->input('phone');
+        $destination = $request->input('destination');
+        $form = $request->input('form');
+        $startDate = $request->input('date_of_departure');
+        $endDate = $request->input('date_of_arrivel');
+        $noOfPassenger = $request->input('noOfPassenger');
+        $class = $request->input('class');
+        $message = $request->input('message');
+        $airline = $request->input('airline');
+        $flightId = $request->input('flightId');
+
+
+
+        $isInserSuccess = flight_inquiry::create([
+            'fname' => $fname,
+            'lname' => $lname,
+            'email' => $email,
+            'phone' => $phone,
+            'destination' => $destination,
+            'form' => $form,
+            'airline' => $airline,
+            'dateOfDeparture' => $startDate,
+            'dateOfArival' => $endDate,
+            'noOfPassenger' => $noOfPassenger,
+            'class' => $class,
+            'message' => $message,
+            'flightId' => $flightId,
+
+
+        ]);
+
+        if($isInserSuccess)
+            return redirect()->back();
+        else
+            echo '<h1>Insert failed</h1>';
+
+    }
+    public function flight_inquiry() {
+        $show = DB::table('flight_inquiry as fi')
+                ->join('flights as f','fi.flightId','=','f.id')
+                ->select('f.flying_from','fi.fname','fi.lname','fi.email','fi.id','fi.phone','fi.destination','fi.form','fi.dateOfDeparture','fi.dateOfArival','fi.airline','fi.noOfPassenger','fi.class','fi.message','fi.created_at')
+                ->orderBy('created_at', 'desc')
+                ->get();
+        return view('/back-panel/flight_inquiry',['flightInquiry'=> $show]);
+    }
 
 
 

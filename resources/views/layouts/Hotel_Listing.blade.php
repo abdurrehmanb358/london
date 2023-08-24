@@ -130,7 +130,7 @@ function myData() {
                                 <div class="col-3" style="display: flex">
                                     <img src="../hotels/${hotel.image}" style="width: inherit">
                                 </div>
-                                <div class="col-6">
+                                <div class="col-md-6 col-sm-7 con-part">
                                     <h2>
                                         <a href="/layouts/${hotel.id}/show" class="text-dark">${hotel.name}</a>
                                     </h2>
