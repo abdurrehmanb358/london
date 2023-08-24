@@ -1,8 +1,9 @@
 @include('layouts.header')
 <main>
-  <div class="container-fluid" style="" >
+  <div class="container-fluid">
     <img src="{{ asset('images/Untitled-1.png') }}" class="img-set" alt="Image" style="max-width: 100%;">
 </div>
+
 
 
 </div>
