@@ -1,14 +1,13 @@
  @include('layouts.header')
  <main class="home">
-     <div class="container-fluid">
-         <div class="row">
-             <div class="col-md-12">
-                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-                 <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 320px; width: 100%;"
-                     class="img-fluid">
-             </div>
-         </div>
-     </div>
+    <div class="container-fluid" style="display: contents">
+        <div class="row">
+           
+                <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
+                <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 320px; width: 100%;"
+                    class="img-fluid">
+            </div>
+        </div>
      <div class="content_wrapper ">
          <div class="container">
              <div class="row">

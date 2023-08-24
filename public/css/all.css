@@ -2003,9 +2003,11 @@ p {
     border-right: 2px solid #E6B77C
 }
 
-main {
-    padding-top: 120px
-}
+/* @media (max-width: 767px) {
+    .card {
+      text-align: center;
+    }
+  } */
 
 @media (max-width: 767.8px) {
     main {
@@ -3912,7 +3914,7 @@ table {
 element.style {
     position: relative;
 }
-.container-fluid {
+/* .container-fluid {
     width: 102%;
     padding-right: 15px;
     padding-left: 1px;
@@ -3920,7 +3922,7 @@ element.style {
     margin-left: auto;
     width: 102%;
     height: 258px;
-}
+} */
 /* public/css/styles.css */
 
 .image-container {
@@ -3934,10 +3936,10 @@ element.style {
   
   .text-layer {
     position: absolute;
-    bottom: -43px;
+    bottom: -41px;
     left: 34%;
-    transform: translateX(-50%);
-    background-color: transparent;
+  
+  
     color: white;
     padding: 10px;
     margin: 0 0px;
@@ -4107,8 +4109,6 @@ element.style {
   margin: 0;
 } */
 
-img.img-set{
-    width: 100%;
-}
+/*  */
 
     /*# sourceMappingURL=all.css.map
