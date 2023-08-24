@@ -115,7 +115,12 @@
 
                            <td style="padding: 8px; text-align: center;">
 
-
+                            @if ($flight->trip_type === 'oneway')
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        @elseif ($flight->trip_type === 'roundtrip')
+                            <i class="fas fa-exchange-alt"></i> 
+                        @endif
+                        
 
                            </td>
 
@@ -247,4 +252,4 @@ var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-arrow-right"></
     //  </script>
 
  </main>
- @include('layouts.footer')
+ {{-- @include('layouts.footer') --}}
