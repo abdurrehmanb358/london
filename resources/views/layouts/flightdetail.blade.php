@@ -1,17 +1,18 @@
  @include('layouts.header')
  <main class="home">
-    <div class="container-fluid" style="display: contents">
+    <div class="container-fluid">
         <div class="row">
            
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-                <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 320px; width: 100%;"
+               
+                    <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 371px; width: 100%;"
                     class="img-fluid">
             </div>
         </div>
      <div class="content_wrapper ">
          <div class="container">
              <div class="row">
-                 <div class="col-lg-12">
+                 <div class="col-sm-12">
                      <!-- Nav tabs -->
                      <ul class="nav nav-tabs">
                          <li class="nav-item">
@@ -114,7 +115,12 @@
 
                            <td style="padding: 8px; text-align: center;">
 
-
+                            @if ($flight->trip_type === 'oneway')
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        @elseif ($flight->trip_type === 'roundtrip')
+                            <i class="fas fa-exchange-alt"></i> 
+                        @endif
+                        
 
                            </td>
 
@@ -246,4 +252,4 @@ var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-arrow-right"></
     //  </script>
 
  </main>
- @include('layouts.footer')
+ {{-- @include('layouts.footer') --}}

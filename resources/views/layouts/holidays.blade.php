@@ -4,22 +4,28 @@
     <img src="{{ asset('images/Untitled-1.png') }}" class="img-set" alt="Image" style="max-width: 100%;">
 </div>
 
-    <div class="container mt-5 ">
-        <div class="row">
-            <div class="col">
-                <h5>Special vacation packeges</h5>
-            </div>
+
+
+</div>
+        <div class="container mt-5 ">
+          <div class="col-12">
+          <h5>Special vacation packeges</h5>
+          <hr>
+          <div class="viewall">
+<a href=""> VIEW ALL  </a>
+</div>
+      </div>
+
         </div>
+      <div class="container mt-5 " style="margin-left: 79px">
+          <div class="row ">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="row">
+                <div class="margin-top">
 
-        <a href=""> VIEW ALL  </a>
-
-        <div class="row">
-            <div class="col-3">
-                <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
-                <div class="text-img">
-                    Kuala Lumpur
-                </div>
-                <div class="text2">
+                  <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
+                  <div class="text-img">Kuala Lumpur</div>
+                  <div class="text2">
                     PKR 350000
                 </div>
                 <div class="background-color">

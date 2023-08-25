@@ -59,7 +59,7 @@
 
                     <td>{{ $hotel->message }}</td>
 
-                    <td>{{ $hotel->flying_from }}</td>
+                    <td>{{ $hotel->flying_from }} to {{ $hotel->flying_to }}</td>
 
                 </tr>
             @endforeach

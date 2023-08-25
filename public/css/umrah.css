@@ -2,6 +2,20 @@
     text-align: center;
     color: white;
 }
+
+@media (max-width: 919px) {
+    .align-center11 {
+        text-align: left; 
+        /* Adjust alignment as needed */
+        color: black;
+    }
+
+    /* Additional styling to move button below images */
+    .align-center11  {
+        text-align: center; /* Center align the button */
+        margin-top: 10px; /* Add some spacing between images and button */
+    }
+}
 .c-white{
     color: white;
 }
@@ -82,9 +96,9 @@
 /* @media (max-width:990px) {
     .align-center11{
         position: absolute;
-        /* z-index: 99; */
-        /* top: 300px; */
-        /* color: black;
+        z-index: 99;
+     top: 300px;
+     color: black
     }
-}  */
-
+} 
+ */
