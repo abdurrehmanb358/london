@@ -112,7 +112,7 @@ class umrah_pakages extends Controller
         ]);
 
         if($isInserSuccess)
-            return redirect()->back();
+            return redirect()->back()->with('success', 'Inquiry Submitted !!!');
         else
             echo '<h1>Insert failed</h1>';
 
@@ -155,7 +155,7 @@ class umrah_pakages extends Controller
             ]);
 
             if($isInserSuccess)
-                return redirect()->back();
+                return redirect()->back()->with('success', 'Inquiry Submitted !!!');
             else
                 echo '<h1>Insert failed</h1>';
 

@@ -8216,7 +8216,7 @@ button.bg-dark:hover {
 
 .mt-4,
 .my-4 {
-    margin-top: 1.5rem !important
+    margin-top: 8.5rem !important
 }
 
 .mr-4,
@@ -8741,10 +8741,12 @@ button.bg-dark:hover {
 }
 
 @media (min-width:768px) {
+    
     .m-md-0 {
         margin: 0 !important
     }
 
+    
     .mt-md-0,
     .my-md-0 {
         margin-top: 0 !important
@@ -10111,7 +10113,7 @@ a.text-dark:hover {
 @media (max-width: 768px) {
     .con-img{
         margin-left: 60px ;
-        margin-top: 50px;
+        margin-top: 50pxFmt;
     }
     .con-part{
         text-align: left;

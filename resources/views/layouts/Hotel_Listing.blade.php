@@ -49,7 +49,7 @@
 
                             <div class="col-md-6 col-sm-7 con-part">
                                 <h2>
-                                    <a href="/layouts/{{ $hotel->id}}/show" class="text-dark">{{ $hotel->name }}</a>
+                                    <a href="/Hotel_listing/{{ $hotel->id}}/Hotel_details" class="text-dark">{{ $hotel->name }}</a>
                                 </h2>
 
                                 <div class="rating text-warning">

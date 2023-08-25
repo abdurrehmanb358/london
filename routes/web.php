@@ -6,6 +6,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\hotelController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\FlightInquiryController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\showImageScrollerController;
 use App\Http\Controllers\umrah_pakages;
 use App\Models\umrah_inquiries;
@@ -118,7 +119,7 @@ Route::get('/back-panel/hotel/{id}/delete',[hotelController::class,'destroy']);
 Route::get('Hotel_listing',[hotelController::class, 'Hotel_listing'])->name('hotel_listing');
 
 
-Route::get('/layouts/{id}/show',[hotelController::class,'show']);
+Route::get('/Hotel_listing/{id}/Hotel_details',[hotelController::class,'show']);
 
 // search rout
 Route::post('/search', [hotelController::class, 'search']);
@@ -161,3 +162,9 @@ Route::get('/back-panel/hotel_inquiry', [umrah_pakages::class, 'hotel_inquiry'])
 Route::get('/back-panel/flight_inquiry', [FlightController::class, 'flight_inquiry'])->name('flight.inquiries');
 
 require('admin.php');
+
+
+
+
+// Email
+Route::POST('send-mail',[MailController::class,'index']);

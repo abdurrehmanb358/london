@@ -1,14 +1,23 @@
 @include('layouts.header')
 
-<main class="home">
+       
+
+<main class="home mt-4">
+    @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+             @endif
     <div class="container">
         <div class="row">
-            <div class="col-md-7 mt-4">
+            
+            <div class="col-md-7 ">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <img src="/hotels/{{ $hotels->image }}" alt="Bangkok" style="height: 320px;" class="img-fluid">
 
             </div>
-            <div class="col-md-5 mt-4">
+            
+            <div class="col-md-5">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <div class="card-body bg-gray">
                     <h6 class="card-title">{{$hotels->name}}</h6>
@@ -70,7 +79,9 @@
             </div>
         </div>
 
-           </div>
+
+    </div>
+    
            <div class="container mt-5">
             <div class="row">
             <div class="col-12">

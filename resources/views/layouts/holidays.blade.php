@@ -4,73 +4,93 @@
     <img src="{{ asset('images/Untitled-1.png') }}" class="img-set" alt="Image" style="max-width: 100%;">
 </div>
 
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="col">
+                <h5>Special vacation packeges</h5>
+            </div>
+        </div>
 
+        <a href=""> VIEW ALL  </a>
+
+        <div class="row">
+            <div class="col-3">
+                <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
+                <div class="text-img">
+                    Kuala Lumpur
+                </div>
+                <div class="text2">
+                    PKR 350000
+                </div>
+                <div class="background-color">
+                    <p class="paragrap-style">4 Nights stay,Private Car</p>
+                    <p class="paragrap-style2">Full Breakfast,Ticket Viza</p>
+                </div>
+                <div class="row " >
+                    <div class="col-6 background-color">
+                      <button class="button">BOOK NOW</button>
+                    </div>
+                    <div class="col-6 background-color">
+                      <div class="rating text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-3">
+                <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
+                <div class="text-img">
+                    Kuala Lumpur
+                </div>
+                <div class="text2">
+                    PKR 350000
+                </div>
+                <div class="background-color">
+                    <p class="paragrap-style">4 Nights stay,Private Car</p>
+                    <p class="paragrap-style2">Full Breakfast,Ticket Viza</p>
+                </div>
+                <div class="row " >
+                    <div class="col-6 background-color">
+                      <button class="button">BOOK NOW</button>
+                    </div>
+                    <div class="col-6 background-color">
+                      <div class="rating text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </div>
-        <div class="container mt-5 ">
-          <div class="col-12">
-          <h5>Special vacation packeges</h5>
-          <hr>
-          <div class="viewall">
-<a href=""> VIEW ALL  </a>  
-</div>  
-      </div>
-      
-        </div>
-      <div class="container mt-5 " style="margin-left: 79px">
-          <div class="row ">
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="row">
-                <div class="margin-top">
-                
-                  <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
-                  <div class="text-img">Kuala Lumpur</div>
-                  <div class="text2">
-                    PKR 350000
-                  </div>
-                 
-                 
-                 
-              
-                
-                </div>
-              </div>
-              <div class="background-color">
-                <p class="paragrap-style">4 Nights stay,Private Car</p>
-                <p class="paragrap-style2">Full Breakfast,Ticket Viza</p>
-              </div>
-              <div class="row " >
-                <div class="col-6 background-color">
-                  <button class="button">BOOK NOW</button>
-                </div>
-                <div class="col-6 background-color">
-                  <div class="rating text-warning">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                 
-                  
-                </div>
-                </div>
+
+
+
+
               </div>
             </div>
 
             <div class="col-12 col-sm-6 col-md-3"">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -88,8 +108,8 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                 
-                  
+
+
                 </div>
                 </div>
               </div>
@@ -97,17 +117,17 @@
             <div class="col-12 col-sm-6 col-md-3"">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -125,8 +145,8 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                 
-                  
+
+
                 </div>
                 </div>
               </div>
@@ -134,17 +154,17 @@
             <div class="col-12 col-sm-6 col-md-3"">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -162,8 +182,8 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                 
-                  
+
+
                 </div>
                 </div>
               </div>
@@ -174,26 +194,26 @@
           <h5>Romantic Vacation </h5>
           <hr>
           <div class="viewall">
-<a href=""> VIEW ALL  </a>    
+<a href=""> VIEW ALL  </a>
       </div>
-      
+
         </div>
         <div class="container mt-5 " style="margin-left: 79px">
           <div class="row ">
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -206,9 +226,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -217,17 +237,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -240,9 +260,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -250,17 +270,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -273,9 +293,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -283,17 +303,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -306,23 +326,23 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                    
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       
+
         <div class="container mt-5 ">
           <h3>Weekend Gatesway</h3>
           <hr>
           <div class="viewall">
-<a href=""> VIEW ALL  </a>    
+<a href=""> VIEW ALL  </a>
       </div>
-      
+
         </div>
         <div class="container mt-5">
          <div class="row">
@@ -351,32 +371,32 @@
                 <button class="button2">BOOK NOW</button>
           </div>
          </div>
-      
+
         </div>
         <div class="container mt-5 ">
           <h5>Cultural And Heritage </h5>
           <hr>
           <div class="viewall">
-<a href=""> VIEW ALL  </a>    
+<a href=""> VIEW ALL  </a>
       </div>
-      
+
         </div>
         <div class="container mt-5 " style="margin-left: 79px">
           <div class="row ">
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -389,9 +409,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -400,17 +420,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -423,9 +443,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -433,17 +453,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -456,9 +476,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -466,17 +486,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -489,9 +509,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                    
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -502,26 +522,26 @@
           <h5>Adventure Pakages </h5>
           <hr>
           <div class="viewall">
-<a href=""> VIEW ALL  </a>    
+<a href=""> VIEW ALL  </a>
       </div>
-      
+
         </div>
         <div class="container mt-5 " style="margin-left: 79px">
           <div class="row ">
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -534,9 +554,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -545,17 +565,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -568,9 +588,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -578,17 +598,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -601,9 +621,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                   
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -611,17 +631,17 @@
             <div class="col-3">
               <div class="row">
                 <div class="margin-top">
-                
+
                   <img src="{{ asset('images/Untitled-1.png') }}" alt="Flight Image" style="height:175px; width: 255px;">
                   <div class="text-img">Kuala Lumpur</div>
                   <div class="text2">
                     PKR 350000
                   </div>
-                 
-                 
-                 
-              
-                
+
+
+
+
+
                 </div>
               </div>
               <div class="background-color">
@@ -634,9 +654,9 @@
                 </div>
                 <div class="col-6 background-color">
                   <div class="rating text-warning">
-                    
-                 
-                  
+
+
+
                 </div>
                 </div>
               </div>
@@ -646,7 +666,7 @@
 
         <div class="container mt-5 ">
           <h5>Cheap Vacation Pakages Deals </h5>
-          
+
           <hr>
           <div class="row mt-5">
             <div class="col-8">
@@ -673,7 +693,7 @@
           <div class="col-12">
           <div class="populardestination">
 
-          
+
             <div>hjgjhghj</div>
         <div>hjgjhghj</div>
         <div>hjgjhghj</div>
@@ -682,10 +702,10 @@
         <div>hjgjhghj</div>
         <div>hjgjhghj</div>
           </div>
-          
+
           <div class="populardestination">
 
-          
+
             <div>hjgjhghj</div>
         <div>hjgjhghj</div>
         <div>hjgjhghj</div>
@@ -694,10 +714,10 @@
         <div>hjgjhghj</div>
         <div>hjgjhghj</div>
           </div>
-          
+
           <div class="populardestination">
 
-          
+
             <div>hjgjhghj</div>
         <div>hjgjhghj</div>
         <div>hjgjhghj</div>
@@ -706,10 +726,10 @@
         <div>hjgjhghj</div>
         <div>hjgjhghj</div>
           </div>
-          
+
           <div class="populardestination">
 
-          
+
             <div > hjgjhghj</div>
         <div>hjgjhghj</div>
         <div>hjgjhghj</div>
@@ -719,7 +739,7 @@
         <div>hjgjhghj</div>
           </div>
         </div> --}}
-        </div>  
+        </div>
         </main>
 
 

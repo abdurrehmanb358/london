@@ -5,6 +5,11 @@
 
 
 <section style="padding-top: 100px">
+    @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+             @endif
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-7 col-xs-12">
