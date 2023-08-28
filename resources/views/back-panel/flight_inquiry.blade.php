@@ -30,36 +30,36 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($flightInquiry as $hotel)
+            @foreach ($flightInquiry as $flight)
 
                 <tr>
                     <td>{{ $loop->index + 1 }}</td>
 
-                    <td><a href="/layouts/{{ $hotel->id}}/show" class="text-dark">{{ $hotel->fname }}</a></td>
+                    <td><a href="/layouts/{{ $flight->id}}/show" class="text-dark">{{ $flight->fname }}</a></td>
 
-                    <td>{{ $hotel->lname }}</td>
+                    <td>{{ $flight->lname }}</td>
 
-                    <td>{{ $hotel->email }}</td>
+                    <td>{{ $flight->email }}</td>
 
-                    <td>{{ $hotel->phone }}</td>
+                    <td>{{ $flight->phone }}</td>
 
-                    <td>{{ $hotel->destination }}</td>
+                    <td>{{ $flight->destination }}</td>
 
-                    <td>{{ $hotel->form }}</td>
+                    <td>{{ $flight->form }}</td>
 
-                    <td>{{ $hotel->dateOfDeparture }}</td>
+                    <td>{{ $flight->dateOfDeparture }}</td>
 
-                    <td>{{ $hotel->dateOfArival }}</td>
+                    <td>{{ $flight->dateOfArival }}</td>
 
-                    <td>{{ $hotel->airline }}</td>
+                    <td>{{ $flight->airline }}</td>
 
-                    <td>{{ $hotel->noOfPassenger }}</td>
+                    <td>{{ $flight->noOfPassenger }}</td>
 
-                    <td>{{ $hotel->class }}</td>
+                    <td>{{ $flight->class }}</td>
 
-                    <td>{{ $hotel->message }}</td>
+                    <td>{{ $flight->message }}</td>
 
-                    <td>{{ $hotel->flying_from }} to {{ $hotel->flying_to }}</td>
+                    <td>{{ $flight->flying_from }} to {{ $flight->flying_to }}</td>
 
                 </tr>
             @endforeach

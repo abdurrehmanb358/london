@@ -104,6 +104,30 @@ id="sidenav-main">
           <span class="nav-link-text ms-1">Umrah Inquiry</span>
         </a>
       </li>
+      
+      <li class="nav-item">
+        <a class="nav-link text-white " href="{{route('insurance.index')}}">
+
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-kaaba"></i>
+          </div>
+
+          <span class="nav-link-text ms-1"> Insurance</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link text-white " href="{{route('umrah.inquiry')}}">
+
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fas fa-kaaba"></i>
+          </div>
+
+          <span class="nav-link-text ms-1">Insurance Inqiry</span>
+        </a>
+      </li>
+
+
 
     {{-- <li class="nav-item">
       <a class="nav-link text-white " href="{{route('flight')}}">
@@ -120,9 +144,9 @@ id="sidenav-main">
 
 <div class="sidenav-footer position-absolute w-100 bottom-0 ">
   <div class="mx-3">
-    <a class="btn btn-outline-primary mt-4 w-100"
+    {{-- <a class="btn btn-outline-primary mt-4 w-100"
       href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree"
-      type="button">Documentation</a>
+      type="button">Documentation</a> --}}
     <a class="btn bg-gradient-primary w-100"
       href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to
       pro</a>

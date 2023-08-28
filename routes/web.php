@@ -1,15 +1,16 @@
 <?php
 
+use App\Models\umrah_inquiries;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\umrah_pakages;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\hotelController;
 use App\Http\Controllers\FlightController;
+use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\FlightInquiryController;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\showImageScrollerController;
-use App\Http\Controllers\umrah_pakages;
-use App\Models\umrah_inquiries;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,9 @@ Route::get('insurancesearch', function () {
 });
 Route::get('holidays', function () {
     return view('layouts.holidays');
+});
+Route::get('create', function () {
+    return view('back-panel.insurance.create');
 });
 
 
@@ -168,3 +172,10 @@ require('admin.php');
 
 // Email
 Route::POST('send-mail',[MailController::class,'index']);
+
+
+
+
+// insurance curd
+Route::get('/back-panel/insurance', [InsuranceController::class, 'index'])->name('insurance.index');
+Route::get('/back-panel/insurance_create', [InsuranceController::class, 'create'])->name('insurance.create');
