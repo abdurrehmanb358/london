@@ -135,7 +135,9 @@
                      </tr>
                  </table>
                  <p style="width: 78%;">{{ $flight->message }} </p>
-                 <div>
+                 
+                 
+                 <div >
 
                      <h3 class="top">Flight Inquery!</h3>
 
@@ -252,4 +254,5 @@ var iconHtml = flight.trip_type === 'oneway' ? '<i class="fas fa-arrow-right"></
     //  </script>
 
  </main>
- {{-- @include('layouts.footer') --}}
+
+ @include('layouts.footer')

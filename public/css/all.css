@@ -2013,11 +2013,11 @@ p {
     }
   } */
 
-@media (max-width: 767.8px) {
+/* @media (max-width: 767.8px) {
     main {
         padding-top: 100px
     }
-}
+} */
 
 ::-webkit-input-placeholder {
     color: #999999;

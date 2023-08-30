@@ -87,7 +87,7 @@ element.style {}
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 13px;
   margin-top: 50px;
-  text-align: center;
+ 
 }
 
 .bb {
@@ -221,3 +221,34 @@ element.style {}
 }
 
 
+/* @media (max-width: 576px) { /* Adjust the max-width as needed */
+  .card1 {
+      text-align: center;
+  }
+  @media (max-width:600px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .col-lg-3,
+    .col-sm-3 {
+        width: 100%;
+        max-width: 300px; /* Optional: You can adjust the max-width as needed */
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 700px) {
+  input[type="text"],
+  input[type="email"],
+  textarea {
+      width: 100%;
+  }
+  
+  .button-group button {
+      width: 100%;
+  }
+}
