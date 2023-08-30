@@ -35,9 +35,11 @@
         <label for="roles">Roles</label>
         <select name="role_id" id="roles" class="form-control">
             @foreach($roles as $role)
-            <option class="text-uppercase" value="{{ $role->id }}">{{ strtoupper($role->name) }}</option>
-            
+                <option class="text-uppercase" value="{{ $role->id }}">{{ strtoupper($role->name) }}</option>
             @endforeach
+            <option value="data">Data</option>
+            <option value="manager">Manager</option>
+            <option value="admin">Admin</option>
         </select>
     </div>
 

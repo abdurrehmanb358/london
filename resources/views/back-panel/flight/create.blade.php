@@ -54,7 +54,7 @@
 
           <div class="form-group col-md-4">
             <label for="departing">Departing:</label>
-            <input type="text" class="datepicker" id="departing" name="departing">
+            <input type="date"  id="departing" name="departing">
             <i class="bi bi-calendar"></i>
 
           </div>
@@ -62,7 +62,7 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="returning">Ariving::</label>
-            <input type="text" class=" " id="returning" name="returning" class="datapicker">
+            <input type="date" id="returning" name="returning" >
           </div>
           
         <div class="form-group">

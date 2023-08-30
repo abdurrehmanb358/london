@@ -2,10 +2,10 @@
 
 
 <main class="home">
-    <div class="container-fluid">
+    <div class="container-fluid" style="display: contents">
     
            
-                <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
+            
                 <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 371px; width: 100%;"
                     class="img-fluid">
            
