@@ -11,6 +11,7 @@ use App\Http\Controllers\FlightController;
 use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
+use App\Http\Controllers\holidayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,33 +24,6 @@ use App\Http\Controllers\showImageScrollerController;
 |
 */
 // simple view return
-Route::get('flihgtlisting', function () {
-    return view('layouts.flihgtlisting');
-});
-Route::get('hotal', function () {
-    return view('layouts.hotal');
-});
-Route::get('holiday', function () {
-    return view('layouts.holilday');
-});
-Route::get('aboutus', function () {
-    return view('layouts.Aboutus');
-});
-Route::get('personal', function () {
-    return view('layouts.personal');
-});
-Route::get('insurance', function () {
-    return view('layouts.insurance');
-});
-Route::get('insurancesearch', function () {
-    return view('layouts.insurancesearch');
-});
-Route::get('holidays', function () {
-    return view('layouts.holidays');
-});
-Route::get('create', function () {
-    return view('back-panel.insurance.create');
-});
 
 
 
@@ -171,7 +145,7 @@ require('admin.php');
 
 
 // Email
-Route::POST('send-mail',[MailController::class,'index']);
+Route::any('send-mail',[MailController::class,'index'])->name('hotel.inquiries');
 
 
 
@@ -179,3 +153,16 @@ Route::POST('send-mail',[MailController::class,'index']);
 // insurance curd
 Route::get('/back-panel/insurance', [InsuranceController::class, 'index'])->name('insurance.index');
 Route::get('/back-panel/insurance_create', [InsuranceController::class, 'create'])->name('insurance.create');
+
+
+
+
+
+//Holidays CRUD
+Route::get('/back-panel/holiday', [holidayController::class, 'index'])->name('holiday.index');
+Route::get('/back-panel/holiday/create', [holidayController::class, 'create'])->name('holiday.create');
+Route::post('/back-panel/holiday/store', [holidayController::class, 'store'])->name('holiday.store');
+Route::get('/back-panel/holiday/{id}/edit',[holidayController::class,'edit'])->name('holiday.edit');
+Route::put('/back-panel/holiday/{id}/update',[holidayController::class,'update'])->name('holiday.update');
+Route::get('/back-panel/holiday/{id}/delete',[holidayController::class,'destroy']);
+Route::get('holidayListing',[holidayController::class, 'holidayListing'])->name('holidayListing');
