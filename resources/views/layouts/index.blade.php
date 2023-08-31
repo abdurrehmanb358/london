@@ -129,7 +129,7 @@
                                         </div>
                                     </div>
                                     <div class="controls">
-                                        <button type="submit" class="btn_submit_inquiry">Submit Your Inquiry</button>
+                                        <button type="submit" class="btn_submit_inquiry">search Flight </button>
                                     </div>
                                 </form>
                             </div>

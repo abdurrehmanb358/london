@@ -241,7 +241,7 @@ element.style {}
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 550px) {
   input[type="text"],
   input[type="email"],
   textarea {
