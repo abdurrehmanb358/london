@@ -2,11 +2,8 @@
 
 
 <main class="home">
-    <div class="container-fluid">
-    
-           
-                <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-                <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 371px; width: 100%;"
+    <div class="container-fluid" style="display: contents">
+      <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 371px; width: 100%;"
                     class="img-fluid">
            
         </div>
@@ -15,21 +12,19 @@
     <div class="content_wrapper ">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-12">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#flight"
+        <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#flight"
                                 style="background-color:#000654; color:white;    
-                        border: none; margin-top:-194px;    margin-left: 15px;
-                    ">Search
-                                Flights</a>
+                        border: none; margin-top:-194px;    margin-left: 15px;">      Search Flights</a>
                         </li>
 
 
 
                     </ul>
-
+                     
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
@@ -111,7 +106,7 @@
                 the best internatonal flight deals on internet.</p>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-lg-3">
                 <div class="card1">
                     <h3>
                         <div class="icon"><i class="fas fa-dollar-sign"></i></div>
@@ -154,7 +149,7 @@
 
 
         <div class="row">
-            <div class="col-3">
+            <div class="col-sm-3">
 
 
                 <img src="{{ asset('images/logo2.png') }}" alt="Bangkok"
@@ -165,7 +160,7 @@
 
 
 
-            <div class="col-9 mt-7" style="margin-top: 78px
+            <div class="col-sm-9 mt-7" style="margin-top: 78px
             ">
                 <h2>
                     Popular Flight

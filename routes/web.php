@@ -23,6 +23,24 @@ use App\Http\Controllers\holidayController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+
+// add roles
+Route::get('add-roles', function () {
+    $roles = [
+     [ 'name'=>'Admin' , 'guard_name'=>'web'],
+     [ 'name'=>'Data Enter' , 'guard_name'=>'web'],
+     [ 'name'=>'Mangner' , 'guard_name'=>'web'],
+    ];
+    $role = Role::insert($roles);
+    return 'success';
+});
+
+
+
+
 // simple view return
 
 
@@ -39,15 +57,7 @@ Route::get('/image-scroller', [showImageScrollerController::class, 'showImageScr
 
 Route::get('/', [FlightController:: class , 'getFlights'])->name('homepage');
 
-Route::get('add-roles', function () {
-    $roles = [
-     [ 'name'=>'Admin' , 'guard_name'=>'web'],
-     [ 'name'=>'Data Enter' , 'guard_name'=>'web'],
-     [ 'name'=>'Mangner' , 'guard_name'=>'web'],
-    ];
-    $role = Role::insert($roles);
-    return 'success';
-});
+
 
 // Users Curd//
 Route::get('back-panel/users', [userController ::class, 'index'])->name('user.index');
@@ -63,7 +73,7 @@ Route::get('back-panel/flight', [FlightController ::class, 'index'])->name('flig
 Route::get('back-panel/user1', [FlightController ::class, 'create'])->name('flight.create');
 Route::post('back-panel/flight/create', [FlightController ::class, 'store'])->name('flight.store');
 Route::get('back-panel/flight/{flight}/edit', [FlightController ::class, 'edit'])->name('flight.edit');
-Route::put('back-panel/flight/{flight}/edit', [FlightController ::class, 'update'])->name('flight.update');
+Route::put('back-panel/flight/{flight}/update', [FlightController ::class, 'update'])->name('flight.update');
 Route::delete('back-panel/flight/{flight}/delete', [FlightController ::class, 'destroy'])->name('flight.destroy');
 Route::get('flightdetail', function () {
     return view('layouts.flightdetail');
@@ -153,6 +163,10 @@ Route::any('send-mail',[MailController::class,'index'])->name('hotel.inquiries')
 // insurance curd
 Route::get('/back-panel/insurance', [InsuranceController::class, 'index'])->name('insurance.index');
 Route::get('/back-panel/insurance_create', [InsuranceController::class, 'create'])->name('insurance.create');
+Route::get('/back-panel/insurance_store', [InsuranceController::class, 'store'])->name('insurance.store');
+Route::get('/back-panel/insurance/{insurance}/edit',[InsuranceController::class,'edit'])->name('insurance.edit');
+Route::get('/back-panel/insurance/{insurance}/update', [InsuranceController::class, 'update'])->name('insurance.update');
+Route::delete('back-panel/insurance/{id}/delete', [InsuranceController ::class, 'destroy'])->name('insurance.destroy');
 
 
 

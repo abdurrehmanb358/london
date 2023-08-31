@@ -52,7 +52,7 @@ class FlightController extends Controller
         ]);
 
 
-        return redirect()->route('flight.index')->with('success', 'flight created successfully');
+        return redirect()->route('flight.index')->with('success', 'insurance created successfully');
 
 
     }

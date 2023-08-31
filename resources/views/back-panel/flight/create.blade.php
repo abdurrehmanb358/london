@@ -21,19 +21,19 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="flying_from">Airline image:</label>
-            <input type="file" class="form-control" id="images" name="images" placeholder="Enter departure city">
+            <input type="file" class="" id="images" name="images" placeholder="Enter departure city">
           </div> 
           <div class="form-group col-md-4">
             <label for="flying_from">Flying from:</label>
-            <input type="text" class="form-control" id="flying_from" name="flying_from" placeholder="Enter departure city">
+            <input type="text" class="" id="flying_from" name="flying_from" placeholder="Enter departure city">
           </div>
           <div class="form-group col-md-4">
             <label for="flying_to">Flying to:</label>
-            <input type="text" class="form-control" id="flying_to" name="flying_to" placeholder="Enter destination city">
+            <input type="text" class="" id="flying_to" name="flying_to" placeholder="Enter destination city">
           </div>
           <div class="form-group col-md-4">
             <label for="price">Price:</label>
-            <input type="text" class="form-control" id="price" name="price" placeholder="Enter price">
+            <input type="text" class="" id="price" name="price" placeholder="Enter price">
           </div>
         </div>
         <div class="form-row">
@@ -54,7 +54,7 @@
 
           <div class="form-group col-md-4">
             <label for="departing">Departing:</label>
-            <input type="date" class="form-control" id="departing" name="departing">
+            <input type="date"  id="departing" name="departing">
             <i class="bi bi-calendar"></i>
 
           </div>
@@ -62,12 +62,12 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="returning">Ariving::</label>
-            <input type="date" class="form-control" id="returning" name="returning">
+            <input type="date" id="returning" name="returning" >
           </div>
           
         <div class="form-group">
           <label for="class">Class:</label>
-          <select class="form-control" id="class" name="class">
+          <select class="" id="class" name="class">
             <option>Economy</option>
             <option>Business</option>
             <option>First Class</option>
@@ -90,6 +90,18 @@
     </div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.11.0/js/bootstrap-datepicker.min.js"></script>
+                        <script>
+                          $(document).ready(function () {
+                            $('.datepicker').datepicker({
+                              format: 'dd-mm-yyyy', // Change the format as needed
+                              autoclose: true,
+                              todayHighlight: true
+                            });
+                          });
+                        </script>
 
 
 @endsection

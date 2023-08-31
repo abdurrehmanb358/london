@@ -28,7 +28,7 @@ class userController extends Controller
 
     public function create()
     {
-
+            
         return view('back-panel.user.create')->with('roles', $this->roles);
     }
     public function store(Request $request)

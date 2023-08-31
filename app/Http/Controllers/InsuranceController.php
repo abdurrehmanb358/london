@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Insurance;
 use Illuminate\Http\Request;
 
 class InsuranceController extends Controller
@@ -10,8 +11,12 @@ class InsuranceController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
-        return view('back-panel.insurance.index');
+        $insurances =Insurance::all();
+    return view('back-panel.insurance.index', compact('insurances'));
+
+        
     }
 
     /**
@@ -27,7 +32,20 @@ class InsuranceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     $insurance = Insurance::create([
+            'imges' => $request->input('image'),
+            'days' => $request->input('days'),
+            'travel_plan_for'=> $request->input('travel'),
+           'insurance_charges'=>$request->input('insuranc_charges'),
+            
+           
+
+
+        ]);
+
+
+        return redirect()->route('insurance.index')->with('success', 'insurance created successfully');
+
     }
 
     /**
@@ -41,24 +59,29 @@ class InsuranceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Insurance $Insurance)
     {
-        //
+
+        return view('back-panel.insurance.edit', compact('Insurance'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Insurance $Insurance)
     {
         //
+  
+        $Insurance->update($request->all());
+        return redirect()->route('insurance.index')->with('success', ' updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( Insurance $Insurance)
     {
-        //
+        $Insurance->delete();
+        return redirect()->route('insurance.index')->with('success', ' deleted Successfully');
     }
 }

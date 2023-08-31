@@ -8,7 +8,7 @@
 @endif
 
 <div class="d-flex">
-    <a href="{{ route('insurance.create')}}" class="btn btn-primary rounded">Add insurance</a>
+    <a href="{{ route('insurance.create') }}" class="btn btn-primary rounded">Add iInsurance</a>
 </div>
 
 <h2>All insurance</h2>
@@ -17,36 +17,42 @@
     <table class="table table-hover" style="margin-bottom: 0;">
         <thead>
             <tr>
-                <th>sno.</th>
-                <th>images</th>
-                <th>days</th>
-                <th>travel_plan_for</th>
-                <th>insurance_Charges</th>
+                <th>image</th>
+                <th>Days</th>
+                <th>travel_plan_for	</th>
+                <th>insurance_charges</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            {{-- @forelse() --}}
+            @forelse($insurances as $insurance) 
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                {{-- <td>
+                    <img src="{{ asset('images/' . $flight->images) }}" alt="Flight Image" style="height:69px; width: 126px;">
+                  </td> --}}
+
+                <td> <img src="{{ asset('images/' . $insurance->imges) }}" alt="Flight Image" style="height:69px; width: 126px;"></td>
+                <td>{{$insurance->days}}</td>
+                <td> {{$insurance->travel_plan_for}}</td>
+                <td> RS {{$insurance->insurance_charges}}</td>
+              
+               
+
                 <td>
-                    <a href="" class="btn btn-warning btn-sm rounded">Edit</a>
-                    <form action="" method="POST" style="display: inline-block;">
+                    <a href="{{ route('insurance.edit', ['insurance' => $insurance->id]) }}" class="btn btn-warning btn-sm rounded">Edit</a>
+
+                    <form action="{{route('insurance.destroy' ,  ['insurance' => $insurance->id])}}" method="POST" style="display: inline-block;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm rounded" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                     </form>
                 </td>
             </tr>
-            {{-- @empty --}}
+            @empty
             <tr>
                 <td colspan="11">No insurance found</td>
             </tr>
-            {{-- @endforelse --}}
+            @endforelse
         </tbody>
     </table>
 </div>
