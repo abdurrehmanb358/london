@@ -54,59 +54,50 @@
     </head>
     <body>
 
-     <?php //include("loader.php"); ?>
 
-     <div class="topbar">
-        <p><a href="tel:021738929383"><i class="fas fa-phone"></i> 021738929383</a></p>
-        <span>|</span>
-        <p><a href="mailto:info@londontravel.com"><i class="fas fa-envelope"></i> Info@londontravel.com</a></p>
 
-    </div>
-
-    <div class="hamburgerIcon" id="hamburgerSideNav">
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <strong> Menu </strong>
-    </div>
-
-    <div class="sideBar" id="navSidebar">
-        <nav class="sideNav">
-             <ul>
-                <li> <a href="login.php">LOG IN </a> </li>
-                <li> <a class="scrollNav" href="#howItsWorkSec">HOW IT WORKS  </a></li>
-                <li> <a href="designers.php">DESIGNERS</a></li>
-                <li> <a href="designers.php">DESIGNERS</a></li>
-                <li> <a href="projects.php">PROJECTS</a></li>
-                <li> <a class="scrollNav" href="#pricingSec">PRICING </a></li>
-            </ul>
-            <a class="siteBtn fill" href="step-1a.php"> START YOUR PROJECT </a>
-        </nav>
-    </div>
-
-    <!-- <?php //$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-    //if (strpos($url,'index') !== false) { ?>
-           <main class="home">
-     <?php //} else if (strpos($url,'404') !== false) { ?>
-             <main class="page-404">
-    <?php //} else { ?>
-           <main>
-    <?php //} ?>  -->
-
-    <header class="siteHeader">
-
-        <div class="headerContainer clearfix">
-            <div class="siteLogo">
-                <a href="index.php"> <img src="{{ asset('images/logo1.png') }}" alt="London Travel"> </a>
-            </div>
-
-            @include('layouts.mainbar')
+        <div class="topbar">
+            <p><a href="tel:021738929383"><i class="fas fa-phone"></i> 021738929383</a></p>
+            <span>|</span>
+            <p><a href="mailto:info@londontravel.com"><i class="fas fa-envelope"></i> Info@londontravel.com</a></p>
         </div>
 
-    </header>
+        <div class="hamburgerIcon" id="hamburgerSideNav">
+            <span> </span>
+            <span> </span>
+            <span> </span>
+            <span> </span>
+            <span> </span>
+            <span> </span>
+            <strong> Menu </strong>
+        </div>
+
+        <div class="sideBar" id="navSidebar">
+            <nav class="sideNav">
+                <ul>
+                    <li> <a href="login.php">LOG IN </a> </li>
+                    <li> <a class="scrollNav" href="#howItsWorkSec">HOW IT WORKS  </a></li>
+                    <li> <a href="designers.php">DESIGNERS</a></li>
+                    <li> <a href="designers.php">DESIGNERS</a></li>
+                    <li> <a href="projects.php">PROJECTS</a></li>
+                    <li> <a class="scrollNav" href="#pricingSec">PRICING </a></li>
+                    </ul>
+                    <a class="siteBtn fill" href="step-1a.php">START YOUR PROJECT</a>
+            </nav>
+        </div>
 
 
-</html>
+        <header class="siteHeader">
+            <div class="headerContainer clearfix">
+                <div class="siteLogo">
+                    <a href="index.php"><img src="{{ asset('images/logo1.png') }}" alt="London Travel"></a>
+                </div>
+                @include('layouts.mainbar')
+            </div>
+        </header>
+
+
+    </body>
+    </html>
+
+

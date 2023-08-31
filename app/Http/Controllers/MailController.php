@@ -15,8 +15,8 @@ class MailController extends Controller
             'body' => 'this is a random email by the company',
         ];
         Mail::to($request->input('email'))->send(new DemoMail($mailData));
-        return redirect()->back();
-        // dd($request->input('email'));
+        // return redirect()->back();
+        dd($request->input('email'));
     }
 
 }
