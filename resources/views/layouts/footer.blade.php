@@ -200,6 +200,19 @@
                             });
                           });
                         </script>
+                        <script>
+                            $(document).ready(function () {
+                         // Smooth scroll animation
+                         $('a[href^="#"]').on('click', function (event) {
+                             event.preventDefault();
+                     
+                             $('html, body').animate({
+                                 scrollTop: $($.attr(this, 'href')).offset().top
+                             }, ); // Adjust the animation duration as needed
+                         });
+                     });
+                     
+                         </script>
 
 
 </body>

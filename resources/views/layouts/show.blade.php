@@ -74,7 +74,7 @@
                     </div>
 
                     <!-- SELECT button -->
-                    <button type="button" class="custom-button">SELECT</button>
+                    <button type="button" class="custom-button"><a href="#hotelInquiry" style="color: white">SELECT</a></button>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
                 </button>
             </div>
 
-            <p class="mt-4">important Notes</p>
+            <p class="mt-4" id="hotelInquiry">important Notes</p>
             <div class="custom-list ">
               {!!  $hotels->notes  !!}
           </div>
@@ -119,7 +119,7 @@
                     <div class="ccontainer">
                         <form action="{{ route('hotel.inquiries') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <h1><span class="h2">Hotel Inquiry!</span></h1>
+                            <h1><span class="h2" >Hotel Inquiry!</span></h1>
                             <div class="input-group">
                                 <div>
                                     <input type="hidden" value="{{ $hotels->id }}" name="hotelId">

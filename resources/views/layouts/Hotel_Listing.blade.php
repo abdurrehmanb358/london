@@ -83,7 +83,7 @@
 
                             <div class="col-md-3 col-sm-3 select-set">
                                 <h3 class="con-h3">${{ $hotel->price }}</h3>
-                                <button class="custom-button" style="width: 150px">Select</button>
+                                <button class="custom-button" style="width: 150px"><a href="/Hotel_listing/{{ $hotel->id}}/Hotel_details" style="color: white">Select</a></button>
                             </div>
                         </div>
                     </div>
