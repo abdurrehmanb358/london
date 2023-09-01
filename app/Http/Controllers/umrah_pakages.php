@@ -79,7 +79,7 @@ class umrah_pakages extends Controller
         return back()->withsuccess('hotel Deleted !!!');
     }
     public function Umrah_listing() {
-        return view('layouts.umrah_listing',['pakages'=> umrah::orderBy('created_at', 'desc')->simplePaginate(10)]);
+        return view('layouts.Umrah_Listing',['pakages'=> umrah::orderBy('created_at', 'desc')->simplePaginate(10)]);
     }
     public function Umrah_Detail($id){
         $hotel = umrah::where('id',$id)->first();
