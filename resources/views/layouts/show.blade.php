@@ -13,7 +13,7 @@
             
             <div class="col-md-7 ">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-                <img src="/hotels/{{ $hotels->image }}" alt="Bangkok" style="height: 320px;" class="img-fluid">
+                <img src="/hotels/{{ $hotels->image }}" alt="Bangkok" style="height: 320px; width:100%" class="img-fluid">
 
             </div>
             
