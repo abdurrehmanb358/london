@@ -136,6 +136,17 @@ font-size: 15px;
 
 
 
+.primary2{
+   
+    background-color: rgb(212,39,41);
+    color: white;
+    padding: 6px 17px 6px 20px;
+    margin-left: -15px;
+
+ 
+}
+
+
     @media (max-width: 600px) {
         .col-2 {
             width: 100%;
@@ -162,6 +173,7 @@ font-size: 15px;
     .col-md-6 {
         width: 100%; /* Make the columns full width on smaller screens */
         margin-bottom: 12px; /* Add some spacing between columns on smaller screens */
+        text-align: center;
     }
 }
      

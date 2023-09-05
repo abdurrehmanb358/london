@@ -137,14 +137,16 @@
         <div class="row">
             <div class="col-md-12"></div>
             <input type="text" class="lastinput" placeholder="Benificary Adress*">
+        
         </div>
-       
+        <button class="primary2">SUBMIT APPLICATION</button>
         </div>
-       
+        
        
         
     </div>
  </div>
+
 
 
 
