@@ -1,7 +1,7 @@
 @include('layouts.header')
 <main>
 
-    <div class="container-fluid    searchcontanier">
+    <div class="container-fluid mt-5">
 
         <div class="container insutance">
             <div class="row">
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col-2 inline-div1">
                 <img src="{{ asset('images/hotal.png') }}" alt="Flight Image" style="height:69px; width: 126px;">

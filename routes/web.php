@@ -42,10 +42,12 @@ Route::get('add-roles', function () {
 
 
 // simple view return
-
-
-
-
+Route::get('insurance', function () {
+    return view('layouts.insurance');
+});
+Route::get('insurancesearch', function () {
+    return view('layouts.insurancesearch');
+});
 
 //img controller
 // routes/web.php

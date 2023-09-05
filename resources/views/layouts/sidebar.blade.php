@@ -119,7 +119,7 @@ id="sidenav-main">
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-white " href="{{route('')}}">
+        <a class="nav-link text-white " href="">
 
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
           

@@ -14,105 +14,93 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-2 inline-div1">
-                <img src="{{ asset('images/hotal.png') }}" alt="Flight Image" style="height:69px; width: 126px;">
+            <div class="col-12 col-md-2 inline-div1">
+                <img src="{{ asset('images/hotel.png') }}" alt="Flight Image" style="height: 69px; width: 126px;">
             </div>
-            <div class="col-3 inline-div1">
-                Travel Plan:Basic
-                <p class="ab">Coverge for:15days</p>
-                <p class="aa">Filer type:filer</p>
-
+            <div class="col-12 col-md-3 inline-div1">
+                Travel Plan: Basic
+                <p class="ab">Coverage for: 15 days</p>
+                <p class="aa">Filter type: filter</p>
             </div>
-            <div class="col-2 inline-div1">
-                insurance
+            <div class="col-12 col-md-2 inline-div1">
+                Insurance
                 <p><button class="primary">Benefits</button></p>
-
             </div>
-            <div class="col-2 inline-div1" >
+            <div class="col-12 col-md-2 inline-div1">
                 Travel plan for
-                <p class="ab">indivdual</p>
-
-
+                <p class="ab">individual</p>
             </div>
-            <div class="col-3 inline-div1">
-                insurance Charges
+            <div class="col-12 col-md-3 inline-div1">
+                Insurance Charges
                 <p class="ab">20000</p>
             </div>
-
-
         </div>
- </div>
+    </div>
+    
+    
+    
  <div class="container mt-5">
     <h2>personal information</h2>
     <hr>
 
 
     <div class="container">
-        <div class="row">
-            
-            <div class="col-3 div-col">
-                <input type="text" placeholder="Constomer name:">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text"placeholder="CNIC:*" >
-            </div>
-            <div class="col-3 div-col"  >
-                <input type="text"placeholder="Date of Birth*">
-            </div>
-            <div class="col-3 div-col" >
-                <input type="text" placeholder="Father's Name">
-           
-        </div>
-        </div>
-        <div class="row">
-            
-            <div class="col-3 div-col">
-                <input type="text" placeholder="Mobile Number*">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text" placeholder="Email*">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text" placeholder="Gender*">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text" placeholder="purpose of visit*:">
-           
-        </div>
-        </div>
-        <div class="row">
-            
-            <div class="col-3 div-col">
-                <input type="text" placeholder="Adress*">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text" placeholder="passport*">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text"  placeholder="travel*:">
-            </div>
-            <div class="col-3 div-col ">
-                <input type="text" placeholder="Date of Birth*:">
-           
-        </div>
         
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" class="custom-input" placeholder="Customer name">
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="custom-input" placeholder="CNIC*" required>
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="custom-input" placeholder="Date of Birth*" required>
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="custom-input" placeholder="Father's Name">
+    </div>
+</div>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Customer name">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="CNIC*" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Date of Birth*" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Father's Name">
+            </div>
         </div>
         <div class="row">
-            
-            <div class="col-3 div-col" >
-                <input type="text">
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Customer name">
             </div>
-            <div class="col-3 div-col">
-                <input type="text">
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="CNIC*" required>
             </div>
-            <div class="col-3 div-col ">
-                <input type="text">
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Date of Birth*" required>
             </div>
-            <div class="col-3 div-col">
-                <input type="text">
-           
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Father's Name">
+            </div>
         </div>
-        
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Customer name">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="CNIC*" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Date of Birth*" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="custom-input" placeholder="Father's Name">
+            </div>
         </div>
     </div>
  </div>
@@ -124,53 +112,36 @@
     <div class="container">
         <div class="row">
             
-            <div class="col-3 div-col" >
-                <input type="text1" class="insurance-inputs">
+            <div class="col-md-6 " >
+                <input type="text" class="benifits1" placeholder="Beneficary Name*">
             </div>
-            <div class="col-3 div-col">
-                <input type="text" class="insurance-inputs" >
+            <div class="col-md-6 " >
+                <input type="text" class="benifits1" placeholder="Benificary Relation*">
             </div>
-            <div class="col-3 div-col">
-                <input type="text">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text">
-           
-        </div>
-        </div>
-        <div class="row">
             
-            <div class="col-3 div-col">
-                <input type="text">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text">
-           
-        </div>
-        </div>
-        <div class="row">
-            
-            <div class="col-3 div-col">
-                <input type="text">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text">
-            </div>
-            <div class="col-3 div-col">
-                <input type="text">
            
         </div>
         
         </div>
+        <div class="row">
+            
+            <div class="col-md-6 " >
+                <input type="text" class="benifits2" placeholder="Benificary CNIC*">
+            </div>
+            <div class="col-md-6 ">
+                <input type="text" class="benifits2" placeholder="Benificary Phone*">
+            </div>
+            
+           
+        </div>
+        <div class="row">
+            <div class="col-md-12"></div>
+            <input type="text" class="lastinput" placeholder="Benificary Adress*">
+        </div>
+       
+        </div>
+       
+       
         
     </div>
  </div>

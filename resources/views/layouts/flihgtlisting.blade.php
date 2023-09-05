@@ -65,7 +65,7 @@
                                         </div>
                                         <div class="form-group col-sm-3">
                                             <label for="" class="label">Departing</label>
-                                            <input type="text" name="departing" class="form-control" value=""
+                                            <input type="text" name="departing" class="form-control" value="{{ isset($data['departing']) ? $data['departing'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
                                         <div class="form-group col-sm-3">
@@ -291,6 +291,8 @@
                             });
                         });
                     });
+                
+                
                 </script>
 
 

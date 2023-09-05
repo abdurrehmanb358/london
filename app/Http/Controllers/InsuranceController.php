@@ -102,5 +102,3 @@ class InsuranceController extends Controller
 }
 
 
- // $Insurance->update($request->all());
-        // return redirect()->route('insurance.index')->with('success', ' updated Successfully');

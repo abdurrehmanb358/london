@@ -7,6 +7,7 @@
     width: 100%;
     height: 96px;
     background-color:rgb(0,6,84);
+    margin-top: 120px;
 
 
 }
@@ -36,24 +37,9 @@ display: flex;
     align-items: center !important;
     padding: 10px;
 }
-/* .col-3 {
-    float: left;
-    width: 25%;
 
-    padding: 10px;
-    
-  } */
 
-  .div-col  {
-    width: 100%;
-    height: 46px;
-    border: none;
-    border-bottom: 1px solid red;
-    outline: none;
-    background-color: rgb(246,246,246);
-    padding-left: 15px;
-   
-  }
+ 
   .searchinputs{
     width: 171px;
     outline: noun;
@@ -70,7 +56,13 @@ display: flex;
 font-size: 15px;
 }
 
+.primary{
+    background-color:rgb(0,6,84);
+    color: white;
+    padding: 5px 10px 6px 10px;
 
+ 
+}
 
 
 
@@ -85,6 +77,92 @@ font-size: 15px;
         background-color: rgb(0,6,84);
         
     }
+    .lastinput{
+        margin: 10px 0; /* Add margin to top and bottom */
+        padding: 12px; /* Add padding */
+        border: none; /* Remove the default border */
+        border-bottom: 1px solid red; /* Add a red bottom border */
+        outline: none; /* Remove the outline on focus */
+        width: 100%; /* Make the input fields full width */
+        background-color: rgb(246,246,246);
+    }
 
 
- 
+
+
+    
+
+    .custom-input {
+        margin: 10px 0; /* Add margin to top and bottom */
+        padding: 12px; /* Add padding */
+        border: none; /* Remove the default border */
+        border-bottom: 1px solid red; /* Add a red bottom border */
+        outline: none; /* Remove the outline on focus */
+        width: 100%; /* Make the input fields full width */
+        background-color: rgb(246,246,246);
+    }
+.benifits1{
+    width: 515px;
+    padding: 11px; /* Add padding */
+        border: none; /* Remove the default border */
+        border-bottom: 1px solid red; /* Add a red bottom border */
+        outline: none; /* Remove the outline on focus */
+
+        background-color: rgb(246,246,246);
+   margin-left: -23px;
+}
+.benifits1{
+    width: 515px;
+    padding: 11px; /* Add padding */
+        border: none; /* Remove the default border */
+        border-bottom: 1px solid red; /* Add a red bottom border */
+        outline: none; /* Remove the outline on focus */
+
+        background-color: rgb(246,246,246);
+   margin-left: -25px;
+}
+.benifits2{
+    width: 515px;
+    padding: 11px; /* Add padding */
+        border: none; /* Remove the default border */
+        border-bottom: 1px solid red; /* Add a red bottom border */
+        outline: none; /* Remove the outline on focus */
+
+        background-color: rgb(246,246,246);
+   margin-left: -17px;
+}
+
+
+
+
+
+    @media (max-width: 600px) {
+        .col-2 {
+            width: 100%;
+        }
+    }
+    /* Default styles for the form */
+.row {
+    margin-bottom: 20px; /* Add some spacing between rows */
+}
+
+.form-group {
+    margin-bottom: 10px; /* Add some spacing between form groups */
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+    .col-md-3 {
+        width: 100%; /* Make the columns full width on smaller screens */
+        margin-bottom: 10px; /* Add some spacing between columns on smaller screens */
+    }
+}
+      
+@media (max-width: 600px) {
+    .col-md-6 {
+        width: 100%; /* Make the columns full width on smaller screens */
+        margin-bottom: 12px; /* Add some spacing between columns on smaller screens */
+    }
+}
+     
+    
