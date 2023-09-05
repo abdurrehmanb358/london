@@ -10151,3 +10151,62 @@ a.text-dark:hover {
 .ui-slider-handle ui-corner-all{
     background: #FE0000;
 }
+@media (max-width: 1200px) {
+    #search-br{
+       width: 190px;
+    }
+    #search{
+        width: 100%;
+    }
+}
+@media (max-width: 992px) {
+    #search-br{
+       width: 150px;
+    }
+    #abc{
+        margin-left: 20px;
+    }
+    .star{
+        width: 150px;
+    }
+}
+@media (max-width: 768px) {
+    .con-img{
+        margin: 0;
+    }
+    .con-part{
+        margin: 0;
+    }
+    .select-set{
+        margin: 0;
+        margin-bottom: 0px !important;
+    }
+    #abc{
+        margin-left: 80px;
+    }
+    .con-img{
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    
+
+}
+@media (max-width:576px) {
+    .con-part{
+        text-align: center;
+    }
+            
+}
+@media (max-width:414px) {
+    #abc{
+        margin-left: 40px !important;
+    }
+    .img{
+        padding-left: 15px !important;
+    }
+    .select-set{
+        width: 280px !important;
+        margin-left: 13px !important;
+    }
+            
+}

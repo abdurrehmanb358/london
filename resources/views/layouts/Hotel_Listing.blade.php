@@ -41,13 +41,13 @@
         <div class="right-container" id="searchResult">
             @foreach ($hotels as $hotel)
                 <div class="row">
-                    <div class="col-12 pl-0" style="border: 1px solid #F0F0F0; margin-top:30px">
+                    <div class="col-12 pl-0" style="border: 1px solid #F0F0F0; margin-top:30px" id="abc">
                         <div class="row">
-                            <div class="col-md-3   con-img" style="display: flex">
-                                <img src="../hotels/{{ $hotel->image }}" style="width: inherit">
+                            <div class="col-sm-3   con-img" style="display: flex">
+                                <img src="../hotels/{{ $hotel->image }}" style="width: inherit" class="img">
                             </div>
 
-                            <div class="col-md-6 col-sm-7 con-part">
+                            <div class=" col-sm-6 con-part">
                                 <h2>
                                     <a href="/Hotel_listing/{{ $hotel->id}}/Hotel_details" class="text-dark">{{ $hotel->name }}</a>
                                 </h2>
@@ -81,9 +81,9 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-3 col-sm-3 select-set">
+                            <div class=" col-sm-3 select-set">
                                 <h3 class="con-h3">${{ $hotel->price }}</h3>
-                                <button class="custom-button" style="width: 150px">Select</button>
+                                <button class="custom-button" style="width: 100%">Select</button>
                             </div>
                         </div>
                     </div>

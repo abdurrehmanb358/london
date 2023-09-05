@@ -77,9 +77,9 @@
                 <ul>
                     <li> <a href="login.php">LOG IN </a> </li>
                     <li> <a class="scrollNav" href="#howItsWorkSec">HOW IT WORKS  </a></li>
-                    <li> <a href="designers.php">DESIGNERS</a></li>
-                    <li> <a href="designers.php">DESIGNERS</a></li>
-                    <li> <a href="projects.php">PROJECTS</a></li>
+                    <li> <a href="{{route('hotel_listing')}}">Hotels</a></li>
+                    <li> <a href="{{route('Umrah_listing')}}">Umrah</a></li>
+                    <li> <a href="{{route('flight_listing')}}">Flights</a></li>
                     <li> <a class="scrollNav" href="#pricingSec">PRICING </a></li>
                     </ul>
                     <a class="siteBtn fill" href="step-1a.php">START YOUR PROJECT</a>
