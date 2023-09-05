@@ -68,13 +68,28 @@ class InsuranceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Insurance $Insurance)
-    {
-        //
-  
-        $Insurance->update($request->all());
-        return redirect()->route('insurance.index')->with('success', ' updated Successfully');
-    }
+    public function update(request $request, $id){
+      
+ 
+         $insurance = insurance::where('id',$id)->first();
+ 
+         if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('hotels'), $imageName);
+            $insurance->imges = $imageName; // Make sure $insurance is an instance of your model.
+            $insurance->save(); // Save the model with the image filename.
+        }
+         // upload Image
+
+         $insurance->days = $request->days;
+         $insurance->travel_plan_for = $request->travel ;
+         $insurance->insurance_charges = $request->insuranc_charges;
+      
+ 
+         $insurance->save();
+ 
+         return redirect('/back-panel/insurance');
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -85,3 +100,7 @@ class InsuranceController extends Controller
         return redirect()->route('insurance.index')->with('success', ' deleted Successfully');
     }
 }
+
+
+ // $Insurance->update($request->all());
+        // return redirect()->route('insurance.index')->with('success', ' updated Successfully');

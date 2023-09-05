@@ -77,11 +77,32 @@ class FlightController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Flight $flight)
-    {
-        // $flight->update($request->all());
-        $flight->update($request->all());
-        return redirect()->route('flight.index')->with('success', ' updated Successfully');
+    public function update(request $request, $id){
+      
+ 
+        $Flight = Flight::where('id',$id)->first();
+
+        if(isset($request->image)){
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('hotels'), $imageName);
+            $Flight->image = $imageName;
+        }
+
+        // upload Image
+        
+        $Flight->flying_from = $request->flying_form;
+        $Flight->flying_to = $request->flying_to ;
+        $Flight->price = $request->price;
+        $Flight->type = $request->type;
+        $Flight->departing = $request->departing;
+        $Flight->returning = $request->returing;
+        $Flight->class = $request->class;
+        $Flight->message = $request->message;
+     
+
+        $Flight->save();
+
+        return redirect('/back-panel/flight');
     }
 
     /**
@@ -313,3 +334,10 @@ public function index1()
 }
 
 
+
+
+
+
+//   // $flight->update($request->all());
+//   $flight->update($request->all());
+//   return redirect()->route('flight.index')->with('success', ' updated Successfully');

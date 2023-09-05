@@ -166,7 +166,7 @@ Route::get('/back-panel/insurance_create', [InsuranceController::class, 'create'
 Route::get('/back-panel/insurance_store', [InsuranceController::class, 'store'])->name('insurance.store');
 Route::get('/back-panel/insurance/{insurance}/edit',[InsuranceController::class,'edit'])->name('insurance.edit');
 Route::get('/back-panel/insurance/{insurance}/update', [InsuranceController::class, 'update'])->name('insurance.update');
-Route::delete('back-panel/insurance/{id}/delete', [InsuranceController ::class, 'destroy'])->name('insurance.destroy');
+Route::delete('back-panel/insurance/{insurance}/delete', [InsuranceController ::class, 'destroy'])->name('insurance.destroy');
 
 
 

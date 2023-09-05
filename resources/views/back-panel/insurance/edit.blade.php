@@ -48,7 +48,7 @@
 
                     <div>
                         <label for="">Image</label>
-                        <input type="file" name="image" class="form-control" value="{{$Insurance->imges}}">
+                        <input type="file" name="image" class="form-control">
                         
                     </div>
 

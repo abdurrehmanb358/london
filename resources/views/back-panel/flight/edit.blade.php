@@ -23,24 +23,34 @@
             value="{{ $flight->flying_to }}" required>
     </div>
     <div class="form-group">
+      <label for="email">price	</label>
+      <input type="text" id="email" class="form-control" name="price" placeholder="Enter Departing"
+          value="{{ $flight->price}}" required>
+  </div>
+  <div class="form-group">
+    <label for="class">Type:</label>
+    <select class="form-control" id="class" name="type">
+      <option>Domestic</option>
+      <option>Inter</option>
+    </select>
+  </div>
+    <div class="form-group">
         <label for="email">Departing	</label>
-        <input type="text" id="email" class="form-control" name="Departing	" placeholder="Enter Departing"
-            value="{{ $flight->departing}}" required>
+        <input type="text" id="email" class="form-control" name="departing" placeholder="Enter Departing"
+            value="{{ $flight->departing}}" >
     </div>
     <div class="form-group">
         <label for="email">Returing</label>
-        <input type="text" id="email" class="form-control" name="Returing" placeholder="Enter Returing"
-            value="{{ $flight->returning }}" required>
+        <input type="text" id="email" class="form-control" name="returing" placeholder="Enter Returing"
+            value="{{ $flight->returning }}" >
     </div>
+    <div class="form-group">
+      <label for="email">image</label>
+      <input type="file" id="email" class="form-control" name="image">
+  </div>
    
     
-    <div class="form-group">
-        <label for="class">Type:</label>
-        <select class="form-control" id="class" name="type">
-          <option>Domestic</option>
-          <option>Inter</option>
-        </select>
-      </div>
+  
       
 
 
