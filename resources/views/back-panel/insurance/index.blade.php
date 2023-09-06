@@ -34,14 +34,15 @@
                 <td> <img src="{{ asset('images/' . $insurance->imges) }}" alt="Flight Image" style="height:69px; width: 126px;"></td>
                 <td>{{$insurance->days}}</td>
                 <td> {{$insurance->travel_plan_for}}</td>
-                <td> RS {{$insurance->insurance_charges}}</td>
+                <td> Rs {{$insurance->insurance_charges}}</td>
               
                
 
                 <td>
                     <a href="{{ route('insurance.edit', ['insurance' => $insurance->id]) }}" class="btn btn-warning btn-sm rounded">Edit</a>
 
-                    <form action="{{route('insurance.destroy' ,  ['insurance' => $insurance->id])}}" method="POST" style="display: inline-block;">
+                    <form action="{{ route('insurance.destroy',$insurance->id ) }}" method="POST" style="display: inline-block;">
+
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm rounded" onclick="return confirm('Are you sure you want to delete?')">Delete</button>

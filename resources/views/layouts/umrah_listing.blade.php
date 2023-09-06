@@ -1,15 +1,15 @@
 @include("layouts.header")
 
 <section class="banner">
-    <div class="banner_slider owl-carousel owl-theme">
+    <div class="banner_slider owl-carousel owl-theme owl-loaded owl-drag">
         <div class="item">
             <div class="bannerImage">
-                <img src="{{asset('images/madinah.jpg')}}" alt="image">
-                <div class="content_wrapper">
+                <img src="{{asset('images/madinah.jpg')}}" alt="image" class="img1122">                
+                <div class="content_wrapper1122">
                     <div class="container">
                         <div class="row">
-                            <div class="col align-center11" >
-                                <h1 class="">Best Umrah Pakage</h1>
+                            <div class="col align-center11">
+                                <h1 id="h1hh">Offering Best Umrah Services</h1>
                                 <p class="c-white">Just one step away</p>
                                 <a href="#book" class="btn btn-primary btn-lg dec1">Booking Now</a>
                             </div>
@@ -17,15 +17,16 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="item">
             <div class="bannerImage">
-                <img src= "{{asset('images/Makkah.jpg')}}" alt="image">
-                <div class="content_wrapper">
+                <img src= "{{asset('images/Makkah.jpg')}}" alt="image" class="img1122">
+                <div class="content_wrapper1122">
                     <div class="container">
                         <div class="row">
                             <div class="col align-center11">
-                                <h1>Offering Best Umrah Services</h1>
+                                <h1 id="h1hh">Offering Best Umrah Services</h1>
                                 <p class="c-white">Just one step away</p>
                                 <a href="#book" class="btn btn-primary btn-lg dec1">Booking Now</a>
                             </div>
@@ -38,10 +39,9 @@
     </div>
     <!-- Only for Mobile and tab -->
     {{-- <div class="mobile_caption d-block d-lg-none">
-        <p class="title">Exclusive Phone Only</p>
-        <p class="subtitle">Flight Deals!</p>
-        <p class="phone_no"><i class="fas fa-phone"></i> (042) 3578 1551</p>
-        <span>Call our travel expert now</span>
+        <h1>Offering Best Umrah Services</h1>
+        <p class="c-white">Just one step away</p>
+        <a href="#book" class="btn btn-primary btn-lg dec1">Booking Now</a>
     </div> --}}
     <!-- Only for Mobile and tab -->
 
@@ -55,6 +55,7 @@
         </div>
     </div> --}}
 </section>
+
     <div class="container con-dis1" id="book" >
         <div class="row">
             <div class="col-12">

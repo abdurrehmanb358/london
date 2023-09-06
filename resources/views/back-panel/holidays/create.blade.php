@@ -66,12 +66,19 @@
                     </div>
 
                     <div>
-                        <label for="">Type</label>
-                        <input type="text" name="type" placeholder="Type"  value="{{ old('type') }}">
+                        <label for="type">Type</label>
+                        <select name="type" id="type">
+                            <option value="Romantic" {{ old('type') === 'Romantic' ? 'selected' : '' }}>Romantic</option>
+                            <option value="Special" {{ old('type') === 'Special' ? 'selected' : '' }}>Special</option>
+                            <option value="weekendGetaways" {{ old('type') === 'weekendGetaways' ? 'selected' : '' }}>weekendGetaways</option>
+                            <option value="cultural" {{ old('type') === 'cultural' ? 'selected' : '' }}>cultural</option>
+                            <option value="adventure" {{ old('type') === 'adventure' ? 'selected' : '' }}>adventure</option>
+                        </select>
                         @if ($errors->has('type'))
                             <span class="text-danger">{{ $errors->first('type') }}</span>
                         @endif
                     </div>
+                    
 
                     <button class="btn btn-dark sm" type="submit">Submit</button>
                 </form>

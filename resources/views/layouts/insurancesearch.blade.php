@@ -1,11 +1,16 @@
-@include('layouts.header')
-<main>
 
-    <div class="container-fluid    searchcontanier">
+    @include('layouts.header')
+    <main>
+    
+        <div class="container-fluid insur">
+    
+            
+
+    <div class="container-fluid">
 
         <div class="container insutance">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 result" >
 
                     Insurance Search Result              
                   </div>
@@ -17,33 +22,60 @@
                       </div>
             </div>
         </div>
-    </div>
+    </div> -
+        </div>
+    
+        <div class="container">
+            @if ($insurances->isEmpty())
+   <h1 style="text-align: center"> No insurance records found </h1>
+@else
+            @foreach ($insurances as $insur)
+            <div class="row">
+                <div class="col-12 col-md-2 inline-div1">
+                    <img src="{{ asset('images/hotel.png') }}" alt="Flight Image" style="height: 69px; width: 126px;">
+                </div>
+                <div class="col-12 col-md-2 inline-div1">
+                    Travel Plan: Basic
+                    <p class="ab"> Coverage for:{{$insur->days}}days</p>
+                    <p class="aa">Filter type: filter</p>
+                </div>
+                <div class="col-12 col-md-2 inline-div1">
+                    Insurance
+                    <p><button class="primary">Benefits</button></p>
+                </div>
+                <div class="col-12 col-md-2 inline-div1">
+                    Travel plan for
+                    <p class="ab">{{$insur->travel_plan_for}}</p>
+                </div>
+                <div class="col-12 col-md-2 inline-div1">
+                    Insurance Charges
+                    <p class="ab">{{$insur->insurance_charges}}</p>
+                </div>
+                <div class="col-12 col-md-2 inline-div1">
+                    <a href="" class="primary3">Apply Now</a>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-2 inline-div1">
-                <img src="{{ asset('images/hotal.png') }}" alt="Flight Image" style="height:69px; width: 126px;">
-            </div>
-            <div class="col-3 inline-div1">
-                Travel Plan:Basic
-                <p class="ab">Coverge for:15days</p>
-                <p class="aa">Filer type:filer</p>
+                </div>
+               
+             
+                
+ 
 
-            </div>
-            <div class="col-2 inline-div1">
-                insurance
-                <p><button class="primary">Benefits</button></p>
-
-            </div>
-            <div class="col-2 inline-div1" >
-                Travel plan for
-                <p class="ab">indivdual</p>
 
 
             </div>
-            <div class="col-3 inline-div1">
-                insurance Charges
-                <p class="ab">20000</p>
-            </div>
-</main>
-@include('layouts.footer')
+            @endforeach
+            @endif
+        </div>
+        <div class="centered-div">
+            {{ $insurances->links() }}
+        </div>
+      
+        
+        
+        
+   
+        
+    
+    
+    </main>
+    @include('layouts.footer')

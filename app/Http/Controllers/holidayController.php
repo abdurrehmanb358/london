@@ -87,7 +87,7 @@ class holidayController extends Controller
          return back()->withsuccess('holiday Deleted !!!');
      }
      public function holidayListing() {
-        return view('layouts/holidayListing',['holidays'=> holiday::orderBy('created_at', 'desc')->simplePaginate(10)]);
+        return view('layouts/holidayListing',['holidays'=> holiday::orderBy('created_at', 'desc')->get()]);
     }
 
 }

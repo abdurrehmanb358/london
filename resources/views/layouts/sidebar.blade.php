@@ -109,15 +109,21 @@ id="sidenav-main">
         <a class="nav-link text-white " href="{{route('insurance.index')}}">
 
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-       
+     
+
           </div>
+<<<<<<< HEAD
           <i class="fa-thin fa-house-water"></i>
+=======
+
+
+>>>>>>> develop
           <span class="nav-link-text ms-1"> Insurance</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-white " href="{{route('umrah.inquiry')}}">
+        <a class="nav-link text-white " href="">
 
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
           

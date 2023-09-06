@@ -1,21 +1,10 @@
 .align-center11{
     text-align: center;
     color: white;
+    justify-content: center;
 }
 
-@media (max-width: 919px) {
-    .align-center11 {
-        text-align: left;
-        /* Adjust alignment as needed */
-        color: black;
-    }
 
-    /* Additional styling to move button below images */
-    .align-center11  {
-        text-align: center; /* Center align the button */
-        margin-top: 10px; /* Add some spacing between images and button */
-    }
-}
 .c-white{
     color: white;
 }
@@ -91,7 +80,16 @@
 .umrah-date{
     color: #D42729 ;
 }
-
+.content_wrapper1122{
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 
 
 
@@ -100,7 +98,7 @@
 
 .holidayImage{
     width: 100%;
-    height: 230px;
+    height: 150px;
     display: block;
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
@@ -110,5 +108,74 @@
     border-radius: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    margin-bottom: 25px;
+}
+#cardHoliday{
+    margin: 0;
+    padding: 0;
+    max-width:255px;
+    text-align:start;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+}
+#cardHoliday p{
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.card-btn-star{
+    padding-top:0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    display: inline-flex;
+    justify-content: inherit;
+}
+.limited-lines {
+    font-size: 14px;
+    font-weight: 700;
+}
+.image-con{
+    position: relative; 
+    display: inline-block;
+}
+.image-text1{
+    position: absolute; 
+    top: 5px; 
+    left: 5px; 
+    color: white; /* Text color */
+    padding: 5px 10px; /* Padding around the text */
+    font-size: 13px;
+}
+.image-text2 p{
+    position: absolute; 
+    bottom: 5px; 
+    right: 10px; 
+    color: white; /* Text color */
+    font-size: 18px;
+    margin-bottom: 0px !important;
+}
+.btn-danger{
+    background: #D42729 !important;
+    border: none;
+}
+.holidayHeader{
+    color: #103552;
+    font-weight: 300;
+    margin-top: 30px;
+    padding-left: 15px;
+}
+.hrHoliday{
+    width: 200px; 
+    margin-left:15px; 
+    border: 1px solid #103552;
+}
+.linkholiday{
+    display: flex;
+    justify-content: right;
+    margin-top: 50px;
+    padding-right: 15px;
+    color: #103552;
+}
+.imgHoliday{
+    margin-top: 120px;
+    width: 100%;
 }
