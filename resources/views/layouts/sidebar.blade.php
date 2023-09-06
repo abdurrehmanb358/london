@@ -112,12 +112,8 @@ id="sidenav-main">
      
 
           </div>
-<<<<<<< HEAD
-          <i class="fa-thin fa-house-water"></i>
-=======
 
 
->>>>>>> develop
           <span class="nav-link-text ms-1"> Insurance</span>
         </a>
       </li>
