@@ -19,7 +19,8 @@
             </div>
             <div class="col-12 col-md-3 inline-div1">
                 Travel Plan: Basic
-                <p class="ab">Coverage for: 15 days</p>
+                <p class="ab">Coverage for: {{$insurances->days}}days
+                </p>
                 <p class="aa">Filter type: filter</p>
             </div>
             <div class="col-12 col-md-2 inline-div1">
@@ -28,11 +29,11 @@
             </div>
             <div class="col-12 col-md-2 inline-div1">
                 Travel plan for
-                <p class="ab">individual</p>
+                <p class="ab">{{$insurances->travel_plan_for}}</p>
             </div>
             <div class="col-12 col-md-3 inline-div1">
                 Insurance Charges
-                <p class="ab">20000</p>
+                <p class="ab">{{$insurances->insurance_charges}}</p>
             </div>
         </div>
     </div>

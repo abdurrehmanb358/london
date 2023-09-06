@@ -114,12 +114,18 @@ class InsuranceController extends Controller
       
 
     }
+     public function applyinsurance($id){
 
-
-
-
+        $insurances = insurance::where ('id', $id)->first();
+        return view('layouts.insurance', compact("insurances"));
+     }
 
 }
+
+
+
+
+
 
 
 

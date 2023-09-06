@@ -52,7 +52,7 @@
                     <p class="ab">{{$insur->insurance_charges}}</p>
                 </div>
                 <div class="col-12 col-md-2 inline-div1">
-                    <a href="" class="primary3">Apply Now</a>
+                    <a href="{{ route('layouts.subinsurance', ['id' => $insur->id]) }}" class="primary3">Apply Now</a>
 
                 </div>
                

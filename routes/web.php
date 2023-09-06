@@ -178,6 +178,7 @@ Route::get('insurance', [InsuranceController ::class, 'simple'])->name('layouts.
 Route::get('Aboutus', [InsuranceController ::class, 'Aboutus'])->name('layouts.aboutus');
  Route::get('all_insurance', [InsuranceController ::class,'getinsurance'])->name('layouts.allinsurance');
 
+ Route::get('sab_insurance{id}', [InsuranceController ::class,'applyinsurance'])->name('layouts.subinsurance');
 
 
 
