@@ -1,22 +1,4 @@
 
-{{-- 
-    <div class="container-fluid mt-5">
-
-        <div class="container insutance">
-            <div class="row">
-                <div class="col-12">
-
-                    Insurance Search Result              
-                  </div>
-                  <div>
-                <input type="text" class="searchinputs">
-                  </div>
-                  <div>
-                    <input type="text" class="searchinputss">
-                      </div>
-            </div>
-        </div>
-    </div> --}}
     @include('layouts.header')
     <main>
     
