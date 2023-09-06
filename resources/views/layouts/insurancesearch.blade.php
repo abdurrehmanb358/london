@@ -73,10 +73,21 @@
                     <a href="" class="primary3">Apply Now</a>
 
                 </div>
+               
+             
+                
+ 
+
+
+
             </div>
             @endforeach
             @endif
         </div>
+        <div class="centered-div">
+            {{ $insurances->links() }}
+        </div>
+      
         
         
         
@@ -85,4 +96,4 @@
     
     
     </main>
-    {{-- @include('layouts.footer') --}}
+    @include('layouts.footer')

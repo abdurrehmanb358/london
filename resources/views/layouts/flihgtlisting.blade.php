@@ -218,14 +218,16 @@
                                             </td>
                                             <td style="padding: 8px; text-align: center;">
                                                 ${flight.flying_from}
-                                                <p style="margin: 0; font-size: 12px;">${flight.departing}</p>
+                                                <p style="margin: 0; font-size: 12px;"><p style="margin: 0; font-size: 12px;">${new Date(flight.departing).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+</p>
                                         </td>
                                         <td style="padding: 8px; text-align: center;">
                                             ${iconHtml}
                                         </td>
                                         <td style="padding: 8px; text-align: center;">
                                             ${flight.flying_to}
-                                            <p style="margin: 0; font-size: 12px;">${flight.returning}</p>
+                                            <p style="margin: 0; font-size: 12px;">${new Date(flight.returning ).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                                                </p>
                                         </td>
                                         <td style="padding: 8px; text-align: center;">
                                             ${flight.price}

@@ -109,7 +109,7 @@ class InsuranceController extends Controller
     }
 
     public function getinsurance(){
-        $insurances = insurance::all();
+        $insurances = insurance::simplepaginate(10);
        return view('layouts.insurancesearch', compact("insurances"));
       
 
