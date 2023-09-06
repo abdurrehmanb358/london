@@ -83,7 +83,7 @@ class umrah_pakages extends Controller
     }
     public function Umrah_Detail($id){
         $hotel = umrah::where('id',$id)->first();
-        return view('layouts.Umrah_Detail', ['hotel'=> $hotel]);
+        return view('layouts.umrah_detail', ['hotel'=> $hotel]);
     }
     public function register(Request $request )
     {

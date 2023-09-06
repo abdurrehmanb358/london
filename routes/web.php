@@ -136,7 +136,7 @@ Route::get('/back-panel/umrah_pakage/{id}/delete',[umrah_pakages::class,'destroy
 Route::get('umrah_listing',[umrah_pakages::class, 'Umrah_listing'])->name('Umrah_listing');
 
 
-Route::get('/layouts/{id}/umrah_Detail',[umrah_pakages::class,'Umrah_Detail']);
+Route::get('/layouts/{id}/umrah_detail',[umrah_pakages::class,'Umrah_Detail']);
 
 
 Route::post('/register/inquiries',[umrah_pakages::class,'register'])->name('umrah.inquiries');

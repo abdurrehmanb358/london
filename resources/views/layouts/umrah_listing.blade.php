@@ -71,7 +71,7 @@
         <div class="row">
             @foreach ($pakages as $pakage)
            <div class="col-lg-4 col-md-6 col-sm-12  ">
-            <a href="/layouts/{{ $pakage->id}}/Umrah_Detail"><img class="img-set" src="../hotels/{{ $pakage->image }}" alt="image"></a>
+            <a href="/layouts/{{ $pakage->id}}/umrah_detail"><img class="img-set" src="../hotels/{{ $pakage->image }}" alt="image"></a>
                 <div class="setting13">
                     <div class="rating text-warning">
                         <li class="fa fa-star yellow-star"></li>
