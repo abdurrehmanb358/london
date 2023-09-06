@@ -453,7 +453,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img src={{asset("images/insurance_banner.jpg")}} alt="" class="img-fluid">
+                    <img src={{asset("images/insurance_banner.jpg")}} alt="" class="img-fluid" style="width:100%">
                 </div>
             </div>
         </div>
@@ -514,7 +514,7 @@
     <!-- Section Subscribe -->
 
     <!-- Section Partners Starts Here -->
-    <section class="partners">
+    {{-- <section class="partners">
         <div class="container">
 
             <h2 class="section_main_heading"> Our Partners </h2>
@@ -555,7 +555,7 @@
             </ul>
 
         </div>
-</section>
+</section> --}}
 <!-- Section Partners Starts Here -->
 </main>
      @include('layouts.footer')

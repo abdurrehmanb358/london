@@ -10171,6 +10171,9 @@ a.text-dark:hover {
     }
 }
 @media (max-width: 768px) {
+    .img1122{
+        margin-top: 100px !important;
+    }
     .con-img{
         margin: 0;
     }
@@ -10194,6 +10197,11 @@ a.text-dark:hover {
 @media (max-width:576px) {
     .con-part{
         text-align: center;
+    }
+    #h1hh{
+        margin-top: 15px;
+        font-size: medium;
+        margin-top: -50px;
     }
             
 }
