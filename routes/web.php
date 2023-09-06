@@ -43,11 +43,16 @@ Route::get('add-roles', function () {
 
 // simple view return
 Route::get('insurance', function () {
-    return view('layouts.insurance');
+    return view('layouts.insurance')->name('layouts.insurance');
 });
+
 Route::get('insurancesearch', function () {
     return view('layouts.insurancesearch');
 });
+Route::get('holiii', function () {
+    return view('layouts.holidayDetail');
+});
+
 
 //img controller
 // routes/web.php
@@ -169,7 +174,9 @@ Route::get('/back-panel/insurance_store', [InsuranceController::class, 'store'])
 Route::get('/back-panel/insurance/{insurance}/edit',[InsuranceController::class,'edit'])->name('insurance.edit');
 Route::get('/back-panel/insurance/{insurance}/update', [InsuranceController::class, 'update'])->name('insurance.update');
 Route::delete('back-panel/insurance/{insurance}/delete', [InsuranceController ::class, 'destroy'])->name('insurance.destroy');
-
+Route::get('insurance', [InsuranceController ::class, 'simple'])->name('layouts.insurance');
+Route::get('Aboutus', [InsuranceController ::class, 'Aboutus'])->name('layouts.aboutus');
+ Route::get('all_insurance', [InsuranceController ::class,'getinsurance'])->name('layouts.allinsurance');
 
 
 

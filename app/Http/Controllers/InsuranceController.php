@@ -99,6 +99,29 @@ class InsuranceController extends Controller
         $Insurance->delete();
         return redirect()->route('insurance.index')->with('success', ' deleted Successfully');
     }
+    public function simple()
+    {
+        return view('layouts.insurancesearch');
+    }
+    public function Aboutus()
+    {
+        return view('layouts.Aboutus');
+    }
+
+    public function getinsurance(){
+        $insurances = insurance::all();
+       return view('layouts.insurancesearch', compact("insurances"));
+      
+
+    }
+
+
+
+
+
 }
+
+
+
 
 

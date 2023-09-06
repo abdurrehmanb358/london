@@ -5,7 +5,7 @@
     margin-right: auto;
     margin-left: auto;
     width: 100%;
-    height: 96px;
+    height: 123px;
     background-color:rgb(0,6,84);
     margin-top: 120px;
 
@@ -45,7 +45,9 @@ display: flex;
     outline: noun;
     outline: none; 
     margin-left: 14px;
-    font-size: 15px;
+    font-size: 16px;
+    padding: 8px 0px 0px 0px;
+
  }
 
  .searchinputss{
@@ -54,6 +56,7 @@ display: flex;
     outline: none;
     margin-left: 12px; 
 font-size: 15px;
+padding: 4px;
 }
 
 .primary{
@@ -147,6 +150,11 @@ font-size: 15px;
 }
 
 
+.result{
+    font-size: 22px;
+}
+
+
     @media (max-width: 600px) {
         .col-2 {
             width: 100%;
@@ -177,4 +185,14 @@ font-size: 15px;
     }
 }
      
-    
+/*     
+
+insurance search page */
+
+.primary3{
+
+    color: white;
+    padding: 5px 10px 6px 10px;
+    background-color: rgb(212,39,41) ;
+    margin-bottom: 34px;
+}
