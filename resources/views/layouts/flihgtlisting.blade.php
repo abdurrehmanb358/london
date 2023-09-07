@@ -105,8 +105,10 @@
             <p>Travelling internationally can be stressful because of high ticket price.Vist our website to find some of
                 the best internatonal flight deals on internet.</p>
         </div>
+    </div>
+    <div class="container ">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-sm-3 ">
                 <div class="card1">
                     <h3>
                         <div class="icon"><i class="fas fa-dollar-sign"></i></div>

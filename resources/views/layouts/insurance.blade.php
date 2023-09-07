@@ -33,7 +33,7 @@
             </div>
             <div class="col-12 col-md-3 inline-div1">
                 Insurance Charges
-                <p class="ab">{{$insurances->insurance_charges}}</p>
+                <p class="ab">{{$insurances->insurance_charges}} Rs</p>
             </div>
         </div>
     </div>

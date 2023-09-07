@@ -30,7 +30,7 @@ display: flex;
 .inline-div1 {
     display: flex;
     flex-direction: column;
-    margin-top: 38px;
+    margin-top: 15px;
     background-color: rgb(246,246,246);
     text-align: center;
     justify-content: center !important;
@@ -98,7 +98,7 @@ padding: 4px;
     
 
     .custom-input {
-        margin: 10px 0; /* Add margin to top and bottom */
+        margin: 10px -16px; /* Add margin to top and bottom */
         padding: 12px; /* Add padding */
         border: none; /* Remove the default border */
         border-bottom: 1px solid red; /* Add a red bottom border */

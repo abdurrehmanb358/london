@@ -5,12 +5,12 @@
     <div class="container-fluid">
       <img src="{{ asset('images/Untitled-1.png') }}" alt="Bangkok" style="height: 471px; width: 100%;"
                     class="img-fluid">
-        <div class="text-layer">
+        {{-- <div class="text-layer">
           <h1>About Us</h1>
           <p class="white-text">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, mollitia.
           </p>
-        </div>
+        </div> --}}
       </div>
       
       
@@ -29,15 +29,13 @@
             </p>
           </div>
           
-          <h4>Why to choose London Travel</h4>
+          <h4 style="text-align: center">Why to choose London Travel</h4>
 <hr>
       
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <div class="card">
-        <h3>
-          <div class="icon">&#128722;</div>
-        </h3>
+        <h3>Card 1</h3>
         <p>This is the content of Card 1.</p>
       </div>
     </div>
