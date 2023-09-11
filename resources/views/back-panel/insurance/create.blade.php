@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-8">
             <div class="card mt-3 p-3">
-                <form method="" action="{{route('insurance.store')}}" enctype="multipart/form-data">
+                <form method="" action="{{route('insurance.store')}} " enctype="multipart/form-data">
                     @csrf
                     <div>
                         <label for="">Days</label>

@@ -69,17 +69,17 @@ class InsuranceController extends Controller
      * Update the specified resource in storage.
      */
     public function update(request $request, $id){
-      
- 
+
          $insurance = insurance::where('id',$id)->first();
  
          if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('hotels'), $imageName);
-            $insurance->imges = $imageName; // Make sure $insurance is an instance of your model.
-            $insurance->save(); // Save the model with the image filename.
+        } else {
+            // Handle the case where no image is uploaded.
+            $imageName = null; // You can set a default value or handle this differently.
         }
-         // upload Image
+
 
          $insurance->days = $request->days;
          $insurance->travel_plan_for = $request->travel ;

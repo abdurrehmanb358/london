@@ -3,7 +3,7 @@
 
 <main class="home">
     <div class="container-fluid" style="display: contents">
-      <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 371px; width: 100%;"
+      <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 500px; width: 100%;"
                     class="img-fluid">
            
         </div>
@@ -18,7 +18,7 @@
         <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#flight"
                                 style="background-color:#000654; color:white;    
-                        border: none; margin-top:-194px;    margin-left: 15px;">      Search Flights</a>
+                        border: none;margin-top: -292px;margin-left: 59px">      Search Flights</a>
                         </li>
 
 
@@ -27,7 +27,8 @@
                      
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
+                        <div class="tab-pane container active" id="flight" style="margin-top: -248px;
+                        width: 92%;">
                             <form id="searchForm">
                                 @csrf
                                 <div class="form-row">
@@ -155,7 +156,8 @@
 
 
                 <img src="{{ asset('images/logo2.png') }}" alt="Bangkok"
-                    style="height: 664px;float:right;margin-top:153px; " class="img-fluid">
+                    style="height: 664px;float:right;    margin-top: 119px;
+                    " class="img-fluid">
 
             </div>
 
@@ -164,7 +166,7 @@
 
             <div class="col-sm-9 mt-7" style="margin-top: 78px
             ">
-                <h2>
+                <h2 class="pop">
                     Popular Flight
                     {{-- <hr class="h2"> --}}
                 </h2>
@@ -211,7 +213,7 @@
                                 var iconHtml = flight.trip_type === 'oneway' ?
                                     '<i class="fas fa-long-arrow-alt-right"></i>' :
                                     '<i class="fas fa-exchange-alt"></i>';
-                                var imageUrl = '{{ asset('images') }}/' + flight.images;
+                                var imageUrl = '{{ asset('hotels') }}/' + flight.images;
 
                                 var flightHtml = `
                                         <tr>

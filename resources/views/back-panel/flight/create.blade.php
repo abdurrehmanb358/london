@@ -16,12 +16,12 @@
   <div class="card form-container">
     <div class="card-body">
       <h2 class="card-title text-center">Flight Booking Form</h2>
-      <form action="{{ route('flight.store') }}" method="POST">
+      <form action="{{ route('flight.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="flying_from">Airline image:</label>
-            <input type="file" class="" id="images" name="images" placeholder="Enter departure city">
+            <input type="file" class="" id="images" name="image" >
           </div> 
           <div class="form-group col-md-4">
             <label for="flying_from">Flying from:</label>
@@ -46,24 +46,28 @@
           </div>
           <div class="form-group col-md-4">
           <label for="class">roundtrip:</label>
-          <select class="form-control" id="class" name="round_trip">
+          <select class="form-control" id="class" name="trip_type">
             <option>oneway</option>
             <option>roundtrip</option>
           </select>
         </div>
-
+        {{-- <div class="form-group col-md-4">
+          <label for="price">Price:</label>
+          <input type="text" class="" id="price" name="price" placeholder="Enter price">
+        </div> --}}
           <div class="form-group col-md-4">
             <label for="departing">Departing:</label>
             <input type="date"  id="departing" name="departing">
             <i class="bi bi-calendar"></i>
 
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-4">
+    
+          <div class="">
             <label for="returning">Ariving::</label>
             <input type="date" id="returning" name="returning" >
           </div>
+        
+        
           
         <div class="form-group">
           <label for="class">Class:</label>
@@ -74,10 +78,11 @@
           </select>
         </div>
         <div>
-        <textarea name="message" id=""
-        style="width: 174%; height: 169px; margin-top: -11px;  border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-        rows="30" cols="50" placeholder="message"></textarea>
-        </div>
+          <textarea name="message" id="message"
+              style="width: 100%; height: 169px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
+              placeholder="Message" rows="4" cols="50"></textarea>
+      </div>
+      
         
         <div>
            <div class="text-center from-control" >

@@ -1,24 +1,21 @@
  @include('layouts.header')
  <main class="home">
-    <div class="container-fluid">
-        <div class="row">
-           
-                <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-               
-                    <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 371px; width: 100%;"
-                    class="img-fluid">
-            </div>
+    <div class="container-fluid" style="display: contents">
+        <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 500px; width: 100%;"
+                      class="img-fluid">
+             
+          </div>
         </div>
      <div class="content_wrapper ">
          <div class="container">
              <div class="row">
-                 <div class="col-sm-12">
+                 <div claszs="col-sm-12">
                      <!-- Nav tabs -->
                      <ul class="nav nav-tabs">
                          <li class="nav-item">
                              <a class="nav-link active" data-toggle="tab" href="#flight"
                                  style="background-color:#000654; color:white;
-                        border: none; margin-top:-194px;    margin-left: 15px;
+                        border: none; margin-top:-311px;    margin-left: 15px;
                     ">Search
                                  Flights</a>
                          </li>
@@ -31,7 +28,7 @@
 
 
                     <div class="tab-content">
-                         <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
+                         <div class="tab-pane container active" id="flight" style="margin-top:-268px;">
                              <form action="{{route('flight_listing')}}">
                                  @csrf
                                  <div class="form-row">
@@ -89,9 +86,9 @@
              <div class="col-4">
                  <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                  <img src="{{ asset('images/logo2.png') }}" alt="Bangkok"
-                     style="height: 664px;float:right;margin-top:172px; " class="img-fluid">
+                     style="height: 664px;float:right;margin-top:81px; " class="img-fluid">
              </div>
-             <div class="col-8">
+             <div class="col-md-8">
                  <h2 class="b22">Flight Detail</h2>
 
                  <table style="width: 80%; border-collapse: collapse; border: 1px solid #ddd;">
@@ -104,7 +101,7 @@
                      </tr>
                      <tr>
                          <td style="padding: 8px;  text-align: center;">
-                             <img src="{{ asset('images/' . $flight->images) }}" alt="Flight Image"
+                             <img src="{{ asset('hotels/' . $flight->images) }}" alt="Flight Image"
                                  style="height:69px; width: 126px;">
                          </td>
                          <td style="padding: 8px;  text-align: center;">
@@ -134,7 +131,7 @@
                          <td style="padding: 8px;  text-align: center;">{{ $flight->price }}</td>
                      </tr>
                  </table>
-                 <p style="width: 78%;">{{ $flight->message }} </p>
+                 <p style="width: 78%;">{!!$flight->message !!} </p>
                  
                  
                  <div >
@@ -178,7 +175,7 @@
 
                              </div>
                              <div class="button-group">
-                                 <button>SUBMIT</button>
+                                 <button class="inquery">search</button>
 
                              </div>
 

@@ -34,7 +34,7 @@
             @forelse($flights as $flight)
             <tr>
                 <td>
-                    <img src="{{ asset('images/' . $flight->images) }}" alt="Flight Image" style="height:69px; width: 126px;">
+                    <img src="{{ asset('../hotels/' . $flight->images) }}" alt="Flight Image" style="height:69px; width: 126px;">
                   </td>
 
                 <td>{{ $flight->flying_from }}</td>
@@ -45,7 +45,7 @@
                 <td>{{ $flight->departing }}</td>
                 <td>{{ $flight->returning }}</td>
                 <td>{{ $flight->class }}</td>
-                <td>{{ $flight->message }}</td>
+                <td>{!! $flight->message !!}</td>
                
 
                 <td>

@@ -36,23 +36,70 @@ class FlightController extends Controller
      */
     public function store(Request $request)
     {
-        $flight = Flight::create([
-            'images' => $request->input('images'),
-            'flying_from' => $request->input('flying_from'),
-            'flying_to' => $request->input('flying_to'),
-            'price' => $request->input('price'),
-            'type' => $request->input('type'),
-            'trip_type' => $request->input('round_trip'),
-            'departing' => $request->input('departing'),
-            'returning' => $request->input('returning'),
-          'class' => $request->input('class'),
-            'message' => $request->input('message'),
+        
+
+        // Validate Data
+        // $request->validate([
+            
+        //     'flying_from' => 'required',
+        //     'flying_to' => 'required',
+        //     'image' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
+        //     'price' => 'required',
+        //     'type' => 'required',
+            
+        //     'trip_type' => 'required',
+        //     'departing' => 'required',
+        //     'returning' => 'required',
+        //     'class' => 'required',
+            
+        //     'message' => 'required',
+        //    
+            
+        //     ]);
+
+            
+
+                // upload Image
+                if ($request->hasFile('image')) {
+                    $imageName = time() . '.' . $request->image->extension();
+                    $request->image->move(public_path('hotels'), $imageName);
+                } else {
+                    // Handle the case where no image is uploaded.
+                    $imageName = null; // You can set a default value or handle this differently.
+                }
+
+                $flight = new Flight;
+                $flight->images = $imageName;
+             $flight->flying_from = $request->flying_from;
+                $flight->flying_to = $request->flying_to;
+                $flight->price = $request->price;
+                $flight->type = $request->type;
+                $flight->trip_type = $request->trip_type;
+                $flight->departing = $request->departing;
+                $flight->returning = $request->returning;
+                $flight->class = $request->class;
+                $flight->message = $request->message;
+                $flight->save();
+
+                return redirect('/back-panel/flight')->with('success', 'flight Created !!!');
+
+        // $flight = Flight::create([
+        //     'images' => $request->input('images'),
+        //     'flying_from' => $request->input('flying_from'),
+        //     'flying_to' => $request->input('flying_to'),
+        //     'price' => $request->input('price'),
+        //     'type' => $request->input('type'),
+        //     'trip_type' => $request->input('round_trip'),
+        //     'departing' => $request->input('departing'),
+        //     'returning' => $request->input('returning'),
+        //   'class' => $request->input('class'),
+        //     'message' => $request->input('message'),
 
 
-        ]);
+        // ]);
 
 
-        return redirect()->route('flight.index')->with('success', 'insurance created successfully');
+        // return redirect()->route('flight.index')->with('success', 'insurance created successfully');
 
 
     }
@@ -78,18 +125,31 @@ class FlightController extends Controller
      * Update the specified resource in storage.
      */
     public function update(request $request, $id){
-      
  
         $Flight = Flight::where('id',$id)->first();
-
-        if(isset($request->image)){
+        
+        if ($request->hasFile('image')) {
+            // Check if a file named 'image' was uploaded in the request.
+        
             $imageName = time() . '.' . $request->image->extension();
+            // Generate a unique file name by concatenating the current timestamp with the file extension.
+        
             $request->image->move(public_path('hotels'), $imageName);
-            $Flight->image = $imageName;
+            // Move the uploaded file to the 'hotels' directory with the generated file name.
+        
+            $Flight->images = $imageName;
+            // Set the 'images' property (or column) of the $Flight object to the generated file name.
+        } else {
+            // If no image is uploaded in the request.
+        
+            $Flight->images = null;
+            // Set the 'images' property (or column) of the $Flight object to null (or handle it as needed).
         }
+        
+      
 
         // upload Image
-        
+       
         $Flight->flying_from = $request->flying_form;
         $Flight->flying_to = $request->flying_to ;
         $Flight->price = $request->price;

@@ -7,7 +7,7 @@
 </div>
 
 <h3 class="text-center">Update flight </h3>
-<form action="{{ route('flight.update', [$flight->id]) }}" method="POST">
+<form action="{{ route('flight.update', [$flight->id]) }}" enctype="multipart/form-data " method="POST">
     @csrf
     @method('PUT')
 
@@ -45,7 +45,7 @@
             value="{{ $flight->returning }}" >
     </div>
     <div class="form-group">
-      <label for="email">image</label>
+      <label for="email"> </label>
       <input type="file" id="email" class="form-control" name="image">
   </div>
    
@@ -64,7 +64,7 @@
         </select>
       </div>
       <textarea name="message" id=""
-      style="width: 174%; height: 169px; margin-top: -11px;  border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
+      style="width: 100%; height: 169px; margin-top: -11px;  border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
       rows="30" cols="50" placeholder="message">{{ $flight->message}}</textarea>
       </div>
 
