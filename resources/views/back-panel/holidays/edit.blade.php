@@ -60,8 +60,8 @@
                     </div>
 
                     <div>
-                        <label for="">Category</label>
-                        <input type="text" name="category" placeholder="Category"  value="{{ old('category',$holidays->category) }}">
+                        <label for="">City</label>
+                        <input type="text" name="category" placeholder="City"  value="{{ old('category',$holidays->category) }}">
                         @if ($errors->has('category'))
                             <span class="text-danger">{{ $errors->first('category') }}</span>
                         @endif

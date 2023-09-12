@@ -19,7 +19,9 @@
         <thead>
           <tr>
             <th>Sno.</th>
-            <th>Image</th>
+            <th>Image1</th>
+            <th>Image2</th>
+            <th>Image3</th>
             <th>Days</th>
             <th>Nights</th>
             <th>Action</th>
@@ -27,12 +29,20 @@
         </thead>
         <tbody>
             @foreach ($pakages as $umrah)
-
+        <?php $imgs = explode(',',$umrah->image);?>
                 <tr>
                     <td>{{ $loop->index + 1 }}</td>
 
                     <td>
-                        <img src="../hotels/{{ $umrah->image }}" class="rounded-circle" width="50px" height="50px">
+                        <img src="../hotels/{{ isset($imgs[0]) ? $imgs[0] : '' }}" class="rounded-circle" width="50px" height="50px">
+                    </td>
+
+                    <td>
+                        <img src="../hotels/{{ isset($imgs[1]) ? $imgs[1] : '' }}" class="rounded-circle" width="50px" height="50px">
+                    </td>
+
+                    <td>
+                        <img src="../hotels/{{ isset($imgs[2]) ? $imgs[2] : '' }}" class="rounded-circle" width="50px" height="50px">
                     </td>
 
                     <td>{{ $umrah->days }}</td>

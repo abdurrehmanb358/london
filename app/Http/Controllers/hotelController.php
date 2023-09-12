@@ -102,15 +102,16 @@ class hotelController extends Controller
     public function search(Request $request){
 
         $priceSearch = $request->input('newSearch');
-        $nameSearch = $request['inputSearch'];
+        $nameSearch1 = $request['inputSearch1'];
+        $nameSearch2 = $request['inputSearch2'];
 
         list($minPrice, $maxPrice) = explode(' - ', str_replace('$', '', $priceSearch));
 
 
         if($priceSearch){
-            $hotels = hotel::where('name','Like','%'.$nameSearch.'%')->whereBetween('price', [$minPrice, $maxPrice])->orderBy('created_at', 'desc')->get();
+            $hotels = hotel::where('name','Like','%'.$nameSearch1.'%')->where('name','Like','%'.$nameSearch2.'%')->whereBetween('price', [$minPrice, $maxPrice])->orderBy('created_at', 'desc')->get();
         }else{
-            $hotels = hotel::where('name','Like','%'.$nameSearch.'%')->orderBy('created_at', 'desc')->get();
+            $hotels = hotel::where('name','Like','%'.$nameSearch1.'%')->orderBy('created_at', 'desc')->get();
         }
 
         echo $hotels;

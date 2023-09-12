@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-md-7 mt-4">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
-                <img src="{{ asset('images/Untitled-3.png') }}" alt="Bangkok" style="height:320px;" class="img-fluid">
+                <img src="/hotels/{{ $holidays->image }}"  style="height:320px;width:100%" class="img-fluid">
 
             </div>
             <div class="col-md-5 mt-4">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <div class="card-body bg-gray">
-                    <h6 class="card-title">Al Raya Hotal Apartments</h6>
+                    <h6 class="card-title">{{$holidays->name}}</h6>
                     <div class="rating text-warning">
                         <!-- Rating stars -->
                         <i class="fas fa-star"></i>
@@ -36,7 +36,7 @@
                         <div>
                             <p class="starting-form">
                                 Starting From <sup class="price-superscript">
-                                    <span class="starting-price">$1299</span>
+                                    <span class="starting-price">{{ $holidays->price }}</span>
                                 </sup>
                             </p>
                         </div>
@@ -65,7 +65,7 @@
                     </div>
 
                     <!-- SELECT button -->
-                    <button type="button" class="custom-button">Book Now</button>
+                    <button type="button" class="custom-button"><a href="#book" style="color: white">Book Now</a></button>
                 </div>
             </div>
         </div>
@@ -83,26 +83,13 @@
 
     <div class="container bbbg-gray">
         <div>
-            <span><b>Grand Cayman Vacation Package</b></span>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, necessitatibus ratione totam saepe
-                rem minima, sit autem facere, ullam consequuntur sunt similique alias culpa explicabo adipisci?
-                Necessitatibus odit dolor aliquam quaerat dolore mollitia, in natus incidunt similique ipsum eius amet,
-                harum inventore sint porro iusto, omnis perspiciatis ea. Blanditiis explicabo modi cumque
-            </p>
+
+            <p>{!!$holidays->description !!}</p>
         </div>
-        <div>
-            <span><b>bookOtrip's Grand Cayman Vacation Package</b></span>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, necessitatibus ratione totam saepe
-                rem minima, sit autem facere, ullam consequuntur sunt similique alias culpa explicabo adipisci?
-                Necessitatibus odit dolor aliquam quaerat dolore mollitia, in natus incidunt similique ipsum eius amet,
-                harum inventore sint porro iusto, omnis perspiciatis ea. Blanditiis explicabo modi cumque
-            </p>
-        </div>
+        
         <p><b>Highlight:</b></p>
         <div>
-            <a href="#" class="ccustom-button ">
+            <a href="#" class="ccustom-button " >
                 <i class="fas fa-check"></i> Accommodation
             </a>
 
@@ -124,8 +111,8 @@
                     <th class="custom-hotel">Hotel</th>
                 </tr>
                 <tr>
-                    <td class="custom-description">George Town</td>
-                    <td class="custom-description-gray">Grand Cayman Marriott Beach Resort - Double Room Or Similar</td>
+                    <td class="custom-description">{{$holidays->category}}</td>
+                    <td class="custom-description-gray">{{ $holidays->name }} - Double Room Or Similar</td>
                 </tr>
             </table>
 
@@ -197,7 +184,7 @@
                 <tr>
                     <th
                         style="width: 5%; background-color: #CF2828; text-align: center; color: white; padding:10px; font-size:15px;">
-                        Day1:</th>
+                        Day2:</th>
                     <th
                         style="width: 50%; background-color: #000559; padding-left: 35px; color: white; font-size:15px;">
                         Arrive Grand
@@ -235,7 +222,7 @@
                 <th class="add">inquire</th>
             </tr>
             <tr>
-                <td class="ee">$1299</td>
+                <td class="ee">{{ $holidays->price }}</td>
                 <td class="ee">Delux</td>
                 <td class="ee">per person on twin sharing</td>
                 <td class="ee">
@@ -247,32 +234,18 @@
 
         </table>
         <div>
-            <p class="mt-4">important Notes</p>
+            <p class="mt-4" id="book">important Notes</p>
             <div class="custom-list ">
-                <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, et cum at libero odio
-                        consectetur fugit quo quidem</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, et cum at libero odio
-                        consectetur fugit quo quidem</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, et cum at libero odio
-                        consectetur fugit quo quidem </li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, et cum at libero odio
-                        consectetur fugit quo quidem </li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, et cum at libero odio
-                        consectetur fugit quo quidem </li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, et cum at libero odio
-                        consectetur fugit quo quidem </li>
-                </ul>
+                {!! $holidays->notes !!}
             </div>
 
         </div>
 
     </div>
 
-    < class="container">
         <div class="container ">
             <form action="">
-                <h1><span class="h2">Hotel Inquiry!</span></h1>
+                <h1 ><span class="h2">Holiday Inquiry!</span></h1>
                 <div class="input-group">
 
 
@@ -307,7 +280,7 @@
                         placeholder="Share your requirment in details"></textarea>
                 </div>
                 <div class="button-group">
-                    <button>SUBMIT APPLICATION</button>
+                    <button class="btn btn-danger">SUBMIT APPLICATION</button>
 
 
                 </div>
@@ -318,3 +291,5 @@
             </form>
         </div>
     
+
+        @include("layouts.footer")

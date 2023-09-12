@@ -284,8 +284,9 @@ select {
 [type=reset],
 [type=submit],
 button,
-html [type=button] {
-    -webkit-appearance: button
+html[type=button] {
+    appearance: button;
+    -webkit-appearance: button;
 }
 
 [type=button]::-moz-focus-inner,
@@ -306,7 +307,8 @@ input[type=date],
 input[type=datetime-local],
 input[type=month],
 input[type=time] {
-    -webkit-appearance: listbox
+    -webkit-appearance: listbox;
+    appearance: listbox; /* Standard appearance property */
 }
 
 textarea {
@@ -342,9 +344,10 @@ progress {
     height: auto
 }
 
-[type=search] {
+input[type=search] {
     outline-offset: -2px;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    appearance: none; /* Standard appearance property */
 }
 
 [type=search]::-webkit-search-cancel-button,
@@ -5794,7 +5797,8 @@ button.close {
     padding: 0;
     background-color: transparent;
     border: 0;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    appearance: none; /* Standard appearance property */
 }
 
 .modal-open {
@@ -10004,9 +10008,10 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
-.img-set{
-    width: 100%;
-    height: 100%;
+.img-set11{
+    width: 100% !important;
+    height: 100% !important;
+    margin-top: 100px !important;
     padding: 0;
 }
 .margin-set{
@@ -10111,24 +10116,7 @@ a.text-dark:hover {
 }
 
 @media (max-width: 768px) {
-    .con-img{
-        margin-left: 60px ;
-        margin-top: 50pxFmt;
-    }
-    .con-part{
-        text-align: left;
-        margin-left: 60px ;
-    }
-    .con-h3{
-        color: black;
-    }
-    .con-star{
-        display: block !important;
-    }
-    .con-upper{
-        text-align: left;
-        display: none;
-    }
+    
   }
 
 /* Customize the slider track color */
@@ -10144,12 +10132,22 @@ a.text-dark:hover {
     width: 20px !important;
     height: 20px !important;
 }
-#slider-3{
-    background-color: #323876;
+.slider-3{
+    background-color: #323876 !important;
     height: 10px !important;
 }
 .ui-slider-handle ui-corner-all{
     background: #FE0000;
+}
+
+#abc{
+    border: 1px solid #F0F0F0; 
+    margin-top:30px; 
+    height:168px;
+}
+.con-img{
+    display: flex;
+    width: 100%;
 }
 @media (max-width: 1200px) {
     #search-br{
@@ -10171,11 +10169,27 @@ a.text-dark:hover {
     }
 }
 @media (max-width: 768px) {
+    .con-img{
+        margin-left: 60px ;
+        margin-top: 50px;
+    }
+    .con-part{
+        text-align: left;
+        margin-left: 60px ;
+    }
+    .con-h3{
+        color: black;
+    }
+    .con-star{
+        display: block !important;
+    }
+    .con-upper{
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+    }
     .img1122{
         margin-top: 100px !important;
-    }
-    .con-img{
-        margin: 0;
     }
     .con-part{
         margin: 0;
@@ -10184,37 +10198,73 @@ a.text-dark:hover {
         margin: 0;
         margin-bottom: 0px !important;
     }
-    #abc{
-        margin-left: 80px;
+    #searchResult{
+        width: 90% !important;
+        justify-content: center !important;
     }
+    #abc{
+        height: 155px !important;
+        margin: 30px;
+    }
+    
     .con-img{
         margin: 0px !important;
         padding: 0px !important;
     }
+    #search-slider{
+        display: none !important;
+    }
+    .hidden-container {
+        display: block !important;
+    }
+    #search-br{
+        width: 100%;
+        height: 115px;
+    }
+    
     
 
 }
+.hidden-container {
+    display: none;
+}
+
+
+
 @media (max-width:576px) {
+    #abc{
+        max-width: 350px;
+    }
     .con-part{
         text-align: center;
+        margin-bottom: 15px;
     }
     #h1hh{
         margin-top: 15px;
         font-size: medium;
         margin-top: -50px;
     }
+    .row-container{
+        display: flex;
+        flex-direction: row !important;
+    }
             
 }
 @media (max-width:414px) {
     #abc{
-        margin-left: 40px !important;
+        width: auto;
     }
     .img{
-        padding-left: 15px !important;
+        padding: 0 15px !important;
     }
     .select-set{
-        width: 280px !important;
-        margin-left: 13px !important;
+        width: 91% !important;
     }
-            
+         
+
+}
+#search-slider{
+    display: flex;
+    flex-direction: column;
+    float: left;
 }

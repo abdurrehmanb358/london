@@ -111,10 +111,9 @@ Route::get('/back-panel/hotels/{id}/edit',[hotelController::class,'edit'])->name
 Route::put('/back-panel/hotel/{id}/update',[hotelController::class,'update'])->name('hotel.update');
 Route::get('/back-panel/hotel/{id}/delete',[hotelController::class,'destroy']);
 
-Route::get('Hotel_listing',[hotelController::class, 'Hotel_listing'])->name('hotel_listing');
+Route::get('hotel',[hotelController::class, 'Hotel_listing'])->name('hotel');
 
-
-Route::get('/Hotel_listing/{id}/Hotel_details',[hotelController::class,'show']);
+Route::get('/hotel/details/{id}',[hotelController::class,'show']);
 
 // search rout
 Route::post('/search', [hotelController::class, 'search']);
@@ -133,10 +132,10 @@ Route::get('/back-panel/umrah_pakage/{id}/edit',[umrah_pakages::class,'edit'])->
 Route::put('/back-panel/umrah_pakage/{id}/update',[umrah_pakages::class,'update'])->name('umrah.update');
 Route::get('/back-panel/umrah_pakage/{id}/delete',[umrah_pakages::class,'destroy']);
 
-Route::get('umrah_listing',[umrah_pakages::class, 'Umrah_listing'])->name('Umrah_listing');
+Route::get('umrah',[umrah_pakages::class, 'Umrah_listing'])->name('umrah');
 
 
-Route::get('/layouts/{id}/umrah_detail',[umrah_pakages::class,'Umrah_Detail']);
+Route::get('/umrah/detail/{id}',[umrah_pakages::class,'Umrah_Detail']);
 
 
 Route::post('/register/inquiries',[umrah_pakages::class,'register'])->name('umrah.inquiries');
@@ -188,4 +187,6 @@ Route::post('/back-panel/holiday/store', [holidayController::class, 'store'])->n
 Route::get('/back-panel/holiday/{id}/edit',[holidayController::class,'edit'])->name('holiday.edit');
 Route::put('/back-panel/holiday/{id}/update',[holidayController::class,'update'])->name('holiday.update');
 Route::get('/back-panel/holiday/{id}/delete',[holidayController::class,'destroy']);
-Route::get('holidayListing',[holidayController::class, 'holidayListing'])->name('holidayListing');
+Route::get('/holiday',[holidayController::class, 'holidayListing'])->name('holiday');
+Route::get('/holiday/all',[holidayController::class, 'holidayListing2'])->name('holiday/all');
+Route::get('/holiday/detail/{id}',[holidayController::class,'Holiday_Detail']);

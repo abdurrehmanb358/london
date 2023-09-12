@@ -234,7 +234,7 @@
                         <div class="content_wrapper">
                             <title>Umra</title>
                             <span class="subtitle">Special Offer</span>
-                            <a class="btn_link" href="Umrah_listing">Book Now</a>
+                            <a class="btn_link" href="umrah_listing">Book Now</a>
                         </div>
                         <img src="{{ asset('images/ummrah-offer.jpg') }}" alt="" class="img-fluid">
                     </div>
@@ -398,48 +398,25 @@
                 <div class="col-lg-4">
                     <h6 class="heading">Holidays</h6>
                     <p class="detail">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit </p>
-                    <a href="" class="btn_link">View All</a>
+                    <a href="/holiday" class="btn_link">View All</a>
                 </div>
                 <div class="col-lg-8">
 
                     <div class="holidays_offer_slider owl-carousel owl-theme">
+                        @foreach ($holidays as $holiday)
                         <div class="item">
                             <div class="offerHover">
                                 <div class="offertop">4 nights</div>
                                 <div class="offerBottom">
-                                    <title>Kuala Lumpur</title>
-                                    <price>From 72,161* PKR</price>
+                                    <title>{{ $holiday->name }}</title>
+                                    <price>From {{ $holiday->price}} PKR</price>
                                     <span>Private Car, Full Breakfast, Ticket, Visa</span>
                                 </div>
                             </div>
-                            <img src="images/bankok.jpg">
+                            <img src="/hotels/{{ $holiday->image }}">
                         </div>
 
-                        <div class="item">
-                            <div class="offerHover">
-
-                                <div class="offertop">4 nights</div>
-                                <div class="offerBottom">
-                                    <title>Kuala Lumpur</title>
-                                    <price>From 72,161* PKR</price>
-                                    <span>Private Car, Full Breakfast, Ticket, Visa</span>
-                                </div>
-                            </div>
-                            <img src={{asset("images/bankok.jpg")}}>
-                        </div>
-                        <div class="item">
-                            <div class="offerHover">
-
-                                <div class="offertop">4 nights</div>
-                                <div class="offerBottom">
-                                    <title>Kuala Lumpur</title>
-                                    <price>From 72,161* PKR</price>
-                                    <span>Private Car, Full Breakfast, Ticket, Visa</span>
-                                </div>
-                            </div>
-                            <img src={{asset("images/bankok.jpg")}}>
-                        </div>
-
+                        @endforeach
                     </div>
 
                 </div>

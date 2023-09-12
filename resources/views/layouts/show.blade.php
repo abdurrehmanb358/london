@@ -20,7 +20,7 @@
             <div class="col-md-5">
                 <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <div class="card-body bg-gray">
-                    <h6 class="card-title">{{$hotels->name}}</h6>
+                    <h5 class="card-title" id="same-col">{{$hotels->name}}</h5>
                     <div class="rating text-warning">
                         <!-- Rating stars -->
                         <i class="fas fa-star"></i>
@@ -84,7 +84,7 @@
     
            <div class="container mt-5">
             <div class="row">
-            <div class="col-12">
+            <div class="col-12" id="same-col">
                 <b> Hotal Details </b>
             </div>
            </div>
@@ -94,7 +94,7 @@
             <div>
                 {!! $hotels->description !!}
             </div>
-            <p><b>Highlight:</b></p>
+            <p id="same-col"><b>Highlight:</b></p>
             <div>
                 <button type="button" class="ccustom-button">
                     <i class="fas fa-check"></i> Car Park
@@ -109,10 +109,10 @@
                 </button>
             </div>
 
-            <p class="mt-4" id="hotelInquiry">important Notes</p>
+            <p class="mt-4" id="hotelInquiry "><b id="same-col">Important Notes</b></p>
             <div class="custom-list ">
               {!!  $hotels->notes  !!}
-          </div>
+            </div>
         </div>
 
                           <div class="container">

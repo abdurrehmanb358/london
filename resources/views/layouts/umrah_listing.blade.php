@@ -70,8 +70,9 @@
     <div class="container con-dis1" >
         <div class="row">
             @foreach ($pakages as $pakage)
+            <?php $imgs = explode(',',$pakage->image);?>
            <div class="col-lg-4 col-md-6 col-sm-12  ">
-            <a href="/layouts/{{ $pakage->id}}/umrah_detail"><img class="img-set" src="../hotels/{{ $pakage->image }}" alt="image"></a>
+            <a href="/umrah/detail/{{ $pakage->id}}"><img class="img-set" src="../hotels/{{ $imgs[0] }}" alt="image"></a>
                 <div class="setting13">
                     <div class="rating text-warning">
                         <li class="fa fa-star yellow-star"></li>

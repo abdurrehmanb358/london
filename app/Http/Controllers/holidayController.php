@@ -87,7 +87,13 @@ class holidayController extends Controller
          return back()->withsuccess('holiday Deleted !!!');
      }
      public function holidayListing() {
-        return view('layouts/holidayListing',['holidays'=> holiday::orderBy('created_at', 'desc')->get()]);
+                return view('layouts/holidayListing',['holidays'=> holiday::orderBy('created_at', 'desc')->get()]);
     }
-
+    public function holidayListing2() {
+        return view('layouts/holidayListing2',['holidays'=> holiday::orderBy('created_at', 'desc')->get()]);
+    }
+    public function Holiday_Detail($id){
+        $hotel = holiday::where('id',$id)->first();
+        return view('layouts.holidayDetail', ['holidays'=> $hotel]);
+    }
 }

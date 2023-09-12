@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\DB;
 class umrah_pakages extends Controller
 {
     public function index() {
-        return view('/back-panel/umrah_pakage/index',['pakages'=> umrah::orderBy('created_at', 'desc')->get()]);
+        $umrah = umrah::orderBy('created_at', 'desc')->get();
+        return view('/back-panel/umrah_pakage/index',['pakages'=> $umrah ]);
     }
     public function create(){
         return view('back-panel.umrah_pakage.create');
@@ -22,17 +23,31 @@ class umrah_pakages extends Controller
         // Validate Data
         $request->validate([
             'discription' => 'required',
-            'image' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
+            'image1' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
+            'image2' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
+            'image3' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
             'days' => 'required',
             'nights' => 'required'
         ]);
 
+    
 
         // upload Image
-        $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('hotels'), $imageName);
+        $imageName = time() . '.' . $request->image1->extension();
+        $request->image1->move(public_path('hotels'), $imageName);
+
+        $imageName1 = time() . '.' . $request->image2->extension();
+        $request->image2->move(public_path('hotels'), $imageName1);
+
+        $imageName2 = time() . '.' . $request->image3->extension();
+        $request->image3->move(public_path('hotels'), $imageName2);
+
+
+        $finalImage = $imageName . ',' . $imageName1 . ',' . $imageName2;
+
+
         $umrah = new umrah;
-        $umrah->image = $imageName;
+        $umrah->image = $finalImage;
         $umrah->discription = $request->discription;
         $umrah->days = $request->days;
         $umrah->nights = $request->nights;
@@ -57,14 +72,38 @@ class umrah_pakages extends Controller
          ]);
 
          $umrah = umrah::where('id',$id)->first();
+         $slide = explode(',',$umrah->image);
+         $img1 =isset($slide[0])?$slide[0]:'';
+         $img2 =isset($slide[1])?$slide[1]:'';
+         $img3 =isset($slide[2])?$slide[2]:'';
+         
+        // upload Image
+        if(isset($request->image1)){
+            $imageName1 = time() . '_image1.' . $request->image1->extension();
+            $request->image1->move(public_path('hotels'), $imageName1);
+            $img1 = $imageName1;
+            $finalImage = $img1 ;
+            $umrah->image = $finalImage;
+           
+        }
+        if(isset($request->image2)){
+            $imageName2 = time() . '_image2.' . $request->image2->extension();
+            $request->image2->move(public_path('hotels'), $imageName2);
+            $img2 = $imageName2;
+            $finalImage = $img1 . ',' . $img2 ;
+        $umrah->image = $finalImage;
+        }
+        if(isset($request->image3)){
+            $imageName3 = time()  . '_image3.' . $request->image3->extension();
+            $request->image3->move(public_path('hotels'), $imageName3);
+            $img3 = $imageName3;
+            $finalImage = $img1 . ',' . $img2 . ',' . $img3;
+        $umrah->image = $finalImage;
+        
+        
 
-         if(isset($request->image)){
-             $imageName = time() . '.' . $request->image->extension();
-             $request->image->move(public_path('hotels'), $imageName);
-             $umrah->image = $imageName;
-         }
+        }
 
-         // upload Image
          $umrah->discription = $request->discription;
          $umrah->days = $request->days;
          $umrah->nights = $request->nights;
@@ -82,8 +121,9 @@ class umrah_pakages extends Controller
         return view('layouts.umrah_listing',['pakages'=> umrah::orderBy('created_at', 'desc')->simplePaginate(10)]);
     }
     public function Umrah_Detail($id){
-        $hotel = umrah::where('id',$id)->first();
-        return view('layouts.umrah_detail', ['hotel'=> $hotel]);
+        $umra = umrah::where('id',$id)->first();
+        $slides = explode(',',$umra->image);
+        return view('layouts.umrah_detail', ['umra'=> $umra,'slide'=>$slides]);
     }
     public function register(Request $request )
     {

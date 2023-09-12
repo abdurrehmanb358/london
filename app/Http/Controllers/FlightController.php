@@ -137,7 +137,7 @@ class FlightController extends Controller
 
     public function getFlights()
     {
-
+        $holidays = DB::table('holidays')->orderBy('created_at', 'desc')->get();
         $hotels = DB::table('hotels')->orderBy('created_at', 'desc')->paginate(4);
         $domesticFlights = Flight::where('type', 'Domestic')->get();
         $interFlights = Flight::where('type', 'inter')->get();
@@ -145,7 +145,8 @@ class FlightController extends Controller
       return view('layouts.index', [
             'domesticFlights' => $domesticFlights,
             'interFlights' => $interFlights,
-            'hotels' => $hotels
+            'hotels' => $hotels,
+            'holidays' => $holidays,
         ]);
     }
     public function show1(Flight $flight)

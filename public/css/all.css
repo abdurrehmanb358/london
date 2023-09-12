@@ -3314,6 +3314,7 @@ section.partners .partners_list a {
 .bg-gray {
     background-color: #f0f0f0; /* Grey background color */
     width: 350px;
+    height: 320px;
   }
   .bbg-gray {
     background-color: #f0f0f0; /* Grey background color */
@@ -3324,6 +3325,9 @@ section.partners .partners_list a {
     display: inline-flex;
     align-items: center;
   
+}
+#same-col{
+    color: #010657;
 }
 
 .custom-card i {
@@ -3862,7 +3866,7 @@ table {
 /* Styles for screens with a width greater than 768px (e.g., desktops) */
 @media (min-width: 769px) {
     .ccustom-button {
-        font-size: 16px;
+        font-size: 14px;
         padding: 10px;
     }
 }
@@ -4048,7 +4052,7 @@ element.style {
         /* Add your button styles here */
         /* For example: */
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     /* Media query for screens with a maximum width of 600px */
@@ -4111,5 +4115,8 @@ element.style {
 
 .additional-info {
   margin: 0;
+}
+#buttonDetail{
+    font-size: 14px;
 }
 

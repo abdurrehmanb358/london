@@ -44,10 +44,26 @@
                     </div>
 
                     <div>
-                        <label for="">Image</label>
-                        <input type="file" name="image" class="form-control" value="{{ old('image') }}">
-                        @if ($errors->has('image'))
-                            <span class="text-danger">{{ $errors->first('image') }}</span>
+                        <label for="">Image1</label>
+                        <input type="file" name="image1" class="form-control" value="{{ old('image1') }}">
+                        @if ($errors->has('image1'))
+                            <span class="text-danger">{{ $errors->first('image1') }}</span>
+                        @endif
+                    </div>
+
+                    <div>
+                        <label for="">Image2</label>
+                        <input type="file" name="image2" class="form-control" value="{{ old('image2') }}">
+                        @if ($errors->has('image2'))
+                            <span class="text-danger">{{ $errors->first('image2') }}</span>
+                        @endif
+                    </div>
+
+                    <div>
+                        <label for="">Image3</label>
+                        <input type="file" name="image3" class="form-control" value="{{ old('image3') }}">
+                        @if ($errors->has('image3'))
+                            <span class="text-danger">{{ $errors->first('image3') }}</span>
                         @endif
                     </div>
 
@@ -83,7 +99,7 @@
                         @endif
                     </div> --}}
 
-                    <button class="btn btn-dark sm" type="submit">Submit</button>
+                    <button class="btn btn-dark sm" type="submit" value="upload">Submit</button>
                 </form>
             </div>
         </div>
