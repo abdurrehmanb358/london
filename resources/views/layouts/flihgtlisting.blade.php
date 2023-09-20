@@ -5,7 +5,6 @@
     <div class="container-fluid" style="display: contents">
       <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 500px; width: 100%;"
                     class="img-fluid">
-           
         </div>
    
 
@@ -51,25 +50,25 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="row">
-                                        <div class="form-group col-sm-3">
+                                        <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Flying from</label>
-                                            <input type="text" name="flying_from" class="form-control"
+                                            <input type="search" name="flying_from" class="form-control"
                                                 value="{{ isset($data['flying_from']) ? $data['flying_from'] : '' }}"
                                                 placeholder="City / Airport">
 
                                         </div>
-                                        <div class="form-group col-sm-3">
+                                        <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Flying to</label>
-                                            <input type="text" name="flying_to" class="form-control"
+                                            <input type="search" name="flying_to" class="form-control"
                                                 value="{{ isset($data['flying_to']) ? $data['flying_to'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
-                                        <div class="form-group col-sm-3">
+                                        <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Departing</label>
-                                            <input type="text" name="departing" class="form-control" value="{{ isset($data['departing']) ? $data['departing'] : '' }}"
+                                            <input type="search" name="departing" class="form-control" value="{{ isset($data['departing']) ? $data['departing'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
-                                        <div class="form-group col-sm-3">
+                                        <div class="col-md-3">
 
                                             <button class="controle" name="search" type="submit"
                                                 id="search">Search</button>
@@ -88,7 +87,7 @@
 
 
 
-                        <div class="tab-pane container fade" id="vacations">...</div>
+                        
                     </div>
 
                 </div>
@@ -107,9 +106,9 @@
                 the best internatonal flight deals on internet.</p>
         </div>
     </div>
-    <div class="container ">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-3 ">
+            <div class="col-sm-3">
                 <div class="card1">
                     <h3>
                         <div class="icon"><i class="fas fa-dollar-sign"></i></div>
@@ -118,13 +117,13 @@
                     <p>we always Guranteed you travel for less with then best price on flight,Hotal & vacation</p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-3 ">
                 <div class="card1">
                     <h3>
                         <div class="icon">&#128722;</div>
                     </h3>
                     <p class="bb">Statisfied Customers</p>
-                    <p>we hold our values tight we have Millons of Satatfied Costomer worldwide</p>
+                    <p>we hold our values tight we have Millons of Satatfied Costomer worldwide offer and exshiment</p>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -152,11 +151,11 @@
 
 
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-3 ">
 
 
                 <img src="{{ asset('images/logo2.png') }}" alt="Bangkok"
-                    style="height: 664px;float:right;    margin-top: 119px;
+                    style="height: 664px; margin-left:-27px; margin-top: 119px;
                     " class="img-fluid">
 
             </div>
@@ -164,7 +163,7 @@
 
 
 
-            <div class="col-sm-9 mt-7" style="margin-top: 78px
+            <div class="col-md-9 mt-7 pop1" style="margin-top: 78px
             ">
                 <h2 class="pop">
                     Popular Flight

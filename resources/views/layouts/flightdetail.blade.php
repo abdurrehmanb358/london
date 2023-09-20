@@ -1,4 +1,8 @@
  @include('layouts.header')
+
+
+
+
  <main class="home">
     <div class="container-fluid" style="display: contents">
         <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 500px; width: 100%;"
@@ -8,8 +12,8 @@
         </div>
      <div class="content_wrapper ">
          <div class="container">
-             <div class="row">
-                 <div claszs="col-sm-12">
+             <div class="row ">
+                 <div class="col-sm-12">
                      <!-- Nav tabs -->
                      <ul class="nav nav-tabs">
                          <li class="nav-item">
@@ -47,18 +51,18 @@
                                      </div>
                                  </div>
                                  <div class="form-row">
-                                     <div class="row">
-                                         <div class="form-group col-sm-3">
+                                     <div class="row srarchform">
+                                         <div class="form-group col-md-3">
                                              <label for="" class="label">Flying from</label>
                                              <input type="search" name="flying_from" class="form-control" value=""
                                                  name="" placeholder="City / Airport">
                                          </div>
-                                         <div class="form-group col-sm-3">
+                                         <div class="form-group col-md-3">
                                              <label for="" class="label">Flying to</label>
                                              <input type="search" name="flying_to" class="form-control" value=""
                                                  name="" placeholder="City / Airport">
                                          </div>
-                                         <div class="form-group col-sm-3">
+                                         <div class="form-group col-md-3">
                                              <label for="" class="label">Departing</label>
                                              <input type="" name="departing" class="form-control" value=""
                                                  name="" placeholder="City / Airport">
@@ -71,7 +75,7 @@
                              </form>
                          </div>
 
-                         <div class="tab-pane container fade" id="vacations">...</div>
+                         
                      </div>
                  </div>
              </div>
@@ -81,9 +85,9 @@
      </section>
 
      <div class="hidden" ></div>
-     <div class="contanier">
+     <div class="container">
          <div class="row">
-             <div class="col-4">
+             <div class="col-md-4 logo44">
                  <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                  <img src="{{ asset('images/logo2.png') }}" alt="Bangkok"
                      style="height: 664px;float:right;margin-top:81px; " class="img-fluid">
@@ -91,7 +95,7 @@
              <div class="col-md-8">
                  <h2 class="b22">Flight Detail</h2>
 
-                 <table style="width: 80%; border-collapse: collapse; border: 1px solid #ddd;">
+                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
                      <tr>
                          <th class="th1"> Airline</th>
                          <th class="th2">Departure</th>
@@ -131,39 +135,42 @@
                          <td style="padding: 8px;  text-align: center;">{{ $flight->price }}</td>
                      </tr>
                  </table>
-                 <p style="width: 78%;">{!!$flight->message !!} </p>
+                 <p style="width: 100%;">{!!$flight->message !!} </p>
                  
                  
-                 <div >
+                 <div class="row">
+                    <div class="container-fluid">
+          <div class="col-md-12">
+                     <h2 class="top">Flight Inquery!</h2>
 
-                     <h3 class="top">Flight Inquery!</h3>
-
-                     <form action="{{ route('flights.inquiry') }}" method="POST">
+                     <form action="{{ route('flights.inquiry') }}" method="POST" >
                          @csrf
-                         <div class="">
+                         <div>
                              <div style="margin-bottom: 20px;">
+                       
                                 <input type="hidden" value="{{ $flight->id }}" name="flightId">
-                                 <input type="text" name="first_name" class="row1" placeholder="First Name">
+                                 <input type="text" name="first_name" class="row1" placeholder="First Name" >
                                  <input type="text" name="last_name" id="" class="row1"
-                                     placeholder="Last Name">
+                                     placeholder="Last Name" >
                                  <input type="email" name="email" id="" class="row1"
-                                     placeholder="Email">
+                                     placeholder="Email" >
+                                    
                              </div>
 
-                             <div style="margin-bottom: 20px;">
+                             <div style="margin-bottom: 20px; ">
                                  <input type="text" name="phone" id="" class="row2"
                                      placeholder="Phone Number">
                                  <input type="text" name="destination" id="" class="row2"
                                      placeholder="Destination">
                              </div>
-                             <div style="margin-bottom: 20px;">
+                             <div style="margin-bottom: 20px;  ">
                                  <input type="text" name="form" class="row3" placeholder="Form">
                                  <input type="text" name="date_of_departure" id="" class="row3 datepicker"
                                      placeholder="Date of Departure">
                                  <input type="text" name="date_of_arrivel" id="" class="row3 datepicker"
                                      placeholder="Date of Arrivel">
                              </div>
-                             <div style="margin-bottom: 20px;">
+                             <div style="margin-bottom: 20px;  ">
                                  <input type="text" name="airline" class="row4"placeholder="Airline">
                                  <input type="text" name="noOfPassenger" id="" class="row4"
                                      placeholder="number_of_passenger">
@@ -184,6 +191,8 @@
                      </form>
 
                  </div>
+                </div>
+                </div>
              </div>
 
          </div>

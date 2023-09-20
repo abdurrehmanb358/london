@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('images');
             $table->string('flying_from');
             $table->string('flying_to');
-            $table->decimal('price', 8, 2);
+            $table->decimal('price' );
             $table->string('type');
             $table->string('trip_type')->nullable()->after('type');
             $table->date('departing');

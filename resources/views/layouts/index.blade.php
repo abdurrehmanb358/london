@@ -307,8 +307,8 @@
                                                 <span class="destination">From</span>
                                                 <span class="fare">PKR {{ $flight->price }}</span>
                                             </div>
-                                            <div class="col-sm-4">
-                                                <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-small">Book Now</a>
+                                            <div class="col-sm-4" style="margin-top:15px;">
+                                                <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-small" style="margin-top:3px">Book Now</a>
                                             </div>
                                         </div>
                                     </div>

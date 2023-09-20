@@ -18,6 +18,11 @@
                 <form method="" action="{{route('insurance.store')}} " enctype="multipart/form-data">
                     @csrf
                     <div>
+                        <label for="">Image</label>
+                        <input type="file" name="image" class="form-control" value="">
+                        
+                    </div>
+                    <div>
                         <label for="">Days</label>
                         <input type="text" name="days"  value="">
                        
@@ -41,16 +46,18 @@
                     </div>
 
                     <div>
-                        <label for="">insurance_charges</label>
-                        <input type="text" name="insuranc_charges"  value="">
+                        <label for="">insurance_charges</label> 
+                        <input type="text" name="insurance_charges"  value="">
                      
                     </div>
-
                     <div>
-                        <label for="">Image</label>
-                        <input type="file" name="image" class="form-control" value="">
-                        
+                        <label for="message">Insurance_banefits</label>
+                        <textarea name="message" id="message"
+                            style="width: 100%; height: 169px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
+                             rows="4" cols="50"   ></textarea>
                     </div>
+
+                   
 
 
 

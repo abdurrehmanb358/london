@@ -38,25 +38,7 @@ class FlightController extends Controller
     {
         
 
-        // Validate Data
-        // $request->validate([
-            
-        //     'flying_from' => 'required',
-        //     'flying_to' => 'required',
-        //     'image' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
-        //     'price' => 'required',
-        //     'type' => 'required',
-            
-        //     'trip_type' => 'required',
-        //     'departing' => 'required',
-        //     'returning' => 'required',
-        //     'class' => 'required',
-            
-        //     'message' => 'required',
-        //    
-            
-        //     ]);
-
+   
             
 
                 // upload Image
@@ -82,27 +64,7 @@ class FlightController extends Controller
                 $flight->save();
 
                 return redirect('/back-panel/flight')->with('success', 'flight Created !!!');
-
-        // $flight = Flight::create([
-        //     'images' => $request->input('images'),
-        //     'flying_from' => $request->input('flying_from'),
-        //     'flying_to' => $request->input('flying_to'),
-        //     'price' => $request->input('price'),
-        //     'type' => $request->input('type'),
-        //     'trip_type' => $request->input('round_trip'),
-        //     'departing' => $request->input('departing'),
-        //     'returning' => $request->input('returning'),
-        //   'class' => $request->input('class'),
-        //     'message' => $request->input('message'),
-
-
-        // ]);
-
-
-        // return redirect()->route('flight.index')->with('success', 'insurance created successfully');
-
-
-    }
+ }
 
     /**
      * Display the specified resource.

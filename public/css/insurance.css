@@ -160,11 +160,11 @@ padding: 4px;
 }
 
 
-    @media (max-width: 700px) {
+    /* @media (max-width: 700px) {
         .col-2 {
             width: 100%;
         }
-    }
+    } */
     /* Default styles for the form */
 .row {
     margin-bottom: 20px; /* Add some spacing between rows */
@@ -175,20 +175,8 @@ padding: 4px;
 }
 
 /* Media query for screens smaller than 600px */
-@media (max-width: 700px) {
-    .col-md-3 {
-        width: 100%; /* Make the columns full width on smaller screens */
-        margin-bottom: 10px; /* Add some spacing between columns on smaller screens */
-    }
-}
-      
-@media (max-width: 700px) {
-    .col-md-6 {
-        width: 100%; /* Make the columns full width on smaller screens */
-        margin-bottom: 12px; /* Add some spacing between columns on smaller screens */
-        text-align: center;
-    }
-}
+
+     
      
 /*     
 
@@ -201,3 +189,26 @@ insurance search page */
     background-color: rgb(212,39,41) ;
     margin-bottom: 34px;
 }
+@media screen and (max-width: 800px) {
+    /* Adjust the width of various input elements and textarea */
+    .custom-input,
+    .custom-input1,
+    .benifits1,
+    .benifits2,
+    .lastinput,
+    textarea {
+      width: 100%;
+      
+    }
+    
+    /* Adjust the width of buttons within .button-group */
+    .button-group button {
+      width: 100%;
+    }
+  
+    /* Adjust the width of elements with class .inline-div1 */
+    .inline-div1 {
+      width: 100%;
+    }
+  }
+  

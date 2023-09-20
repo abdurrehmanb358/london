@@ -25,7 +25,7 @@
             </div>
             <div class="col-12 col-md-2 inline-div1">
                 Insurance
-                <p><button class="primary">Benefits</button></p>
+                <button class="primary" type="button" data-toggle="modal" data-target="#myModal">Benefits</button>
             </div>
             <div class="col-12 col-md-2 inline-div1">
                 Travel plan for
@@ -33,12 +33,31 @@
             </div>
             <div class="col-12 col-md-3 inline-div1">
                 Insurance Charges
-                <p class="ab">{{$insurances->insurance_charges}} Rs</p>
+                <p class="ab"> {{$insurances->insurance_charges}} Rs</p>
             </div>
         </div>
     </div>
     
     
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">insurance Benifits</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                
+                                {!!$insurances->Insurance_benefits!!}
+                            
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
     
  <div class="container mt-5">
     <h2>personal information</h2>
@@ -48,16 +67,16 @@
     <div class="container">
         
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 ">
         <input type="text" class="custom-input" placeholder="Customer name">
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 ">
         <input type="text" class="custom-input" placeholder="CNIC*" required>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 ">
         <input type="text" class="custom-input" placeholder="Date of Birth*" required>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 ">
         <input type="text" class="custom-input" placeholder="Father's Name">
     </div>
 </div>
@@ -76,30 +95,30 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 custom-input1">
                 <input type="text" class="custom-input" placeholder="Customer name">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 custom-input1" >
                 <input type="text" class="custom-input" placeholder="CNIC*" required>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 custom-input1">
                 <input type="text" class="custom-input" placeholder="Date of Birth*" required>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 custom-input1">
                 <input type="text" class="custom-input" placeholder="Father's Name">
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 ">
                 <input type="text" class="custom-input" placeholder="Customer name">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 ">
                 <input type="text" class="custom-input" placeholder="CNIC*" required>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 custom-input1">
                 <input type="text" class="custom-input" placeholder="Date of Birth*" required>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 custom-input1">
                 <input type="text" class="custom-input" placeholder="Father's Name">
             </div>
         </div>
@@ -113,7 +132,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="col-md-6 " >
+            <div class="col-md-6 custom-input2 " >
                 <input type="text" class="benifits1" placeholder="Beneficary Name*">
             </div>
             <div class="col-md-6 " >

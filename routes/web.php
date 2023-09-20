@@ -12,6 +12,7 @@ use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
 use App\Http\Controllers\holidayController;
+use App\Http\Controllers\PopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -190,3 +191,14 @@ Route::get('/back-panel/holiday/{id}/edit',[holidayController::class,'edit'])->n
 Route::put('/back-panel/holiday/{id}/update',[holidayController::class,'update'])->name('holiday.update');
 Route::get('/back-panel/holiday/{id}/delete',[holidayController::class,'destroy']);
 Route::get('holidayListing',[holidayController::class, 'holidayListing'])->name('holidayListing');
+
+
+
+// insurance benifits curds//
+Route::get('back-panel/pop', [PopController::class, 'index'])->name('pop.index');
+Route::get('back-panel/pop/create', [PopController ::class, 'create'])->name('pop.create');
+Route::post('back-panel/pop/store', [PopController ::class, 'store'])->name('pop.store');
+Route::get('back-panel/pop/{pop}/edit', [PopController ::class, 'edit'])->name('pop.edit');
+Route::put('back-panel/pop/{pop}/update', [PopController ::class, 'update'])->name('pop.update');
+Route::delete('back-panel/pop/{pop}/delete', [PopController ::class, 'destroy'])->name('pop.destroy');
+Route::delete('insurance/benefits', [PopController ::class, 'shownbenifits'])->name('pop.benefits');

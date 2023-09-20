@@ -32,20 +32,26 @@ class InsuranceController extends Controller
      */
     public function store(Request $request)
     {
-     $insurance = Insurance::create([
-            'imges' => $request->input('image'),
-            'days' => $request->input('days'),
-            'travel_plan_for'=> $request->input('travel'),
-           'insurance_charges'=>$request->input('insuranc_charges'),
-            
-           
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('hotels'), $imageName);
+        } else {
+            // Handle the case where no image is uploaded.
+            $imageName = null; // You can set a default value or handle this differently.
+        }
+        
+        $insurance = new Insurance;
+        
+        $insurance->imges = $imageName;
+    
+        
+        $insurance->days = $request->days;
+        $insurance-> travel_plan_for= $request->travel;
+        $insurance->insurance_charges = $request->insurance_charges;
+        $insurance->insurance_benefits = $request->message;
+        $insurance ->save();
 
-
-        ]);
-
-
-        return redirect()->route('insurance.index')->with('success', 'insurance created successfully');
-
+        return redirect('/back-panel/insurance')->with('success', 'insurance Created !!!');
     }
 
     /**
@@ -84,7 +90,7 @@ class InsuranceController extends Controller
          $insurance->days = $request->days;
          $insurance->travel_plan_for = $request->travel ;
          $insurance->insurance_charges = $request->insuranc_charges;
-      
+         $insurance->Insurance_benefits =$request->message;
  
          $insurance->save();
  
