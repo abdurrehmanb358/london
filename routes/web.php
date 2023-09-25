@@ -40,7 +40,7 @@ Route::get('add-roles', function () {
 });
 
 // simple view return
-
+Route::get('/layouts.flights',[FlightController::class, 'flight'])->name('flighths');
 
 
 // simple view return

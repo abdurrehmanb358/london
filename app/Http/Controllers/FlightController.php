@@ -17,7 +17,16 @@ class FlightController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
+     * 
+     * 
+     * 
      */
+
+     public function flight() {
+        
+        return view("layouts.flihgtlisting");
+    }
     public function index() {
         $flights = Flight::all();
         return view('back-panel.flight.index', compact('flights'));
