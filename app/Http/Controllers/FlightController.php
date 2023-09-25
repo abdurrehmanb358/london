@@ -37,11 +37,7 @@ class FlightController extends Controller
     public function store(Request $request)
     {
         
-
-   
-            
-
-                // upload Image
+       // upload Image
                 if ($request->hasFile('image')) {
                     $imageName = time() . '.' . $request->image->extension();
                     $request->image->move(public_path('hotels'), $imageName);
@@ -52,7 +48,7 @@ class FlightController extends Controller
 
                 $flight = new Flight;
                 $flight->images = $imageName;
-             $flight->flying_from = $request->flying_from;
+               $flight->flying_from = $request->flying_from;
                 $flight->flying_to = $request->flying_to;
                 $flight->price = $request->price;
                 $flight->type = $request->type;
@@ -91,21 +87,13 @@ class FlightController extends Controller
         $Flight = Flight::where('id',$id)->first();
         
         if ($request->hasFile('image')) {
-            // Check if a file named 'image' was uploaded in the request.
+            $imageFile = $request->file('image'); // Get the uploaded file object
         
-            $imageName = time() . '.' . $request->image->extension();
-            // Generate a unique file name by concatenating the current timestamp with the file extension.
+            $imageName = time() . '.' . $imageFile->getClientOriginalExtension();
         
-            $request->image->move(public_path('hotels'), $imageName);
-            // Move the uploaded file to the 'hotels' directory with the generated file name.
+            $imageFile->move(public_path('hotels'), $imageName);
         
             $Flight->images = $imageName;
-            // Set the 'images' property (or column) of the $Flight object to the generated file name.
-        } else {
-            // If no image is uploaded in the request.
-        
-            $Flight->images = null;
-            // Set the 'images' property (or column) of the $Flight object to null (or handle it as needed).
         }
         
       

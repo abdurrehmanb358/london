@@ -15,8 +15,13 @@
     <div class="row justify-content-center">
         <div class="col-sm-8">
             <div class="card mt-3 p-3">
-                <form method="" action="{{route('insurance.update' , [$Insurance->id])}}">
+                <form method="POST" action="{{route('insurance.update' , [$Insurance->id])}} " enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
+                    <div class="form-group">
+                    <label for="email">image</label>
+                    <input type="file" id="email" class="form-control" name="image">
+                </div>
                     <div>
                         <label for="">Days</label>
                         <input type="text" name="days"  value="{{$Insurance->days}}">
@@ -24,12 +29,7 @@
 
 
                     </div>
-                    {{-- <th>sno.</th>
-                    <th>images</th>
-                    <th>days</th>
-                    <th>travel_plan_for</th>
-                    <th>insurance_Charges</th>
-                    <th>Action</th> --}}
+                   
                     <div>
                         <label for="travel">Travel Plan</label>
                  <select name="travel" id="travel">
@@ -39,6 +39,13 @@
 </select>
                        
                     </div>
+                    <div>
+                        <label for="message">Insurance_banefits</label>
+                        <textarea name="message" id="message"
+                            style="width: 100%; height: 169px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
+                             rows="4" cols="50">{{$Insurance->Insurance_benefits}}</textarea>
+                    </div>
+
 
                     <div>
                         <label for="">insurance_charges</label>
@@ -46,11 +53,7 @@
                      
                     </div>
 
-                    <div>
-                        <label for="">Image</label>
-                        <input type="file" name="image" class="form-control">
-                        
-                    </div>
+                    
 
 
 

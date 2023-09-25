@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-2 inline-div1">
-                <img src="{{ asset('images/hotel.png') }}" alt="Flight Image" style="height: 69px; width: 126px;">
+                <img src="../hotels/{{$insurances->imges }}" alt="Flight Image" style="height: 69px; width: 126px;">
             </div>
             <div class="col-12 col-md-3 inline-div1">
                 Travel Plan: Basic
@@ -65,108 +65,115 @@
 
 
     <div class="container">
-        
-<div class="row">
-    <div class="col-md-3 ">
-        <input type="text" class="custom-input" placeholder="Customer name">
-    </div>
-    <div class="col-md-3 ">
-        <input type="text" class="custom-input" placeholder="CNIC*" required>
-    </div>
-    <div class="col-md-3 ">
-        <input type="text" class="custom-input" placeholder="Date of Birth*" required>
-    </div>
-    <div class="col-md-3 ">
-        <input type="text" class="custom-input" placeholder="Father's Name">
-    </div>
-</div>
-        <div class="row">
-            <div class="col-md-3">
-                <input type="text" class="custom-input" placeholder="Customer name">
-            </div>
-            <div class="col-md-3">
-                <input type="text" class="custom-input" placeholder="CNIC*" required>
-            </div>
-            <div class="col-md-3">
-                <input type="text" class="custom-input" placeholder="Date of Birth*" required>
-            </div>
-            <div class="col-md-3">
-                <input type="text" class="custom-input" placeholder="Father's Name">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 custom-input1">
-                <input type="text" class="custom-input" placeholder="Customer name">
-            </div>
-            <div class="col-md-3 custom-input1" >
-                <input type="text" class="custom-input" placeholder="CNIC*" required>
-            </div>
-            <div class="col-md-3 custom-input1">
-                <input type="text" class="custom-input" placeholder="Date of Birth*" required>
-            </div>
-            <div class="col-md-3 custom-input1">
-                <input type="text" class="custom-input" placeholder="Father's Name">
-            </div>
-        </div>
+       <form action="{{route('insurance.inquiry')}}" method="post">
+        @csrf
         <div class="row">
             <div class="col-md-3 ">
-                <input type="text" class="custom-input" placeholder="Customer name">
+                <input type="hidden" name="insurance_id" value="{{$insurances->id}}">
+                <input type="text" class="custom-input" placeholder="Customer name" name="costomer_name">
             </div>
             <div class="col-md-3 ">
-                <input type="text" class="custom-input" placeholder="CNIC*" required>
+                <input type="text" class="custom-input" placeholder="CNIC*" name="CNIC" required>
             </div>
-            <div class="col-md-3 custom-input1">
-                <input type="text" class="custom-input" placeholder="Date of Birth*" required>
+            <div class="col-md-3 ">
+                <input type="text" class="custom-input " placeholder="Date of Birth*" 
+                name="data_of_birth"
+                required>
             </div>
-            <div class="col-md-3 custom-input1">
-                <input type="text" class="custom-input" placeholder="Father's Name">
+            <div class="col-md-3 ">
+                <input type="text" class="custom-input" placeholder="Father's Name"
+                name="father_name">
             </div>
         </div>
-    </div>
- </div>
- <div class="container mt-5">
-    <h2>Add Beneficiary</h2>
-    <hr>
-
-
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-md-6 custom-input2 " >
-                <input type="text" class="benifits1" placeholder="Beneficary Name*">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="text" class="custom-input" placeholder="Mobil Number" name="Mobile_number">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="email" class="custom-input" placeholder="Email*" required name="Email">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="custom-input" placeholder="Gender" required name="gender">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="custom-input" placeholder="purppose_of_vist" name="purppose_of_vist">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 custom-input1">
+                        <input type="text" class="custom-input" placeholder="Adress*"  name="adress">
+                    </div>
+                    <div class="col-md-3 custom-input1" >
+                        <input type="text" class="custom-input" placeholder="Passport*" required name="passport">
+                    </div>
+                    <div class="col-md-3 custom-input1">
+                        <input type="text" class="custom-input " placeholder="Depature_date" name="Depature_date" required>
+                    </div>
+                    <div class="col-md-3 custom-input1">
+                        <input type="text" class="custom-input" placeholder="Select country travel"  name="select_country_travel">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 ">
+                        <input type="text" class="custom-input" placeholder="Airline" name="airline" required>
+                    </div>
+                    <div class="col-md-3 ">
+                        <input type="text" class="custom-input" placeholder="Number_of passenger*" required name="number_of_passengers">
+                    </div>
+                    <div class="col-md-3 custom-input1">
+                        <input type="text" class="custom-input" placeholder="class*" required  name="class">
+                    </div>
+                    <div class="col-md-3 custom-input1">
+                        <input type="text" class="custom-input" placeholder="price*" name="price">
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 " >
-                <input type="text" class="benifits1" placeholder="Benificary Relation*">
-            </div>
-            
+         </div>
+         <div class="container mt-5">
+            <h2>Add Beneficiary</h2>
+            <hr>
+        
+        
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-6 custom-input2 " >
+                        <input type="text" class="benifits1" placeholder="Beneficary Name*" name="beneficiary_name" required67yhjy>
+                    </div>
+                    <div class="col-md-6 " >
+                        <input type="text" class="benifits1" placeholder="Benificary Relation*" name="beneficiary_relation" required>
+                    </div>
+                    
+                   
+                </div>
+                
+                </div>
+                <div class="row">
+                    
+                    <div class="col-md-6 " >
+                        <input type="text" class="benifits2" placeholder="Benificary CNIC*" name="beneficiary_CNIC" required>
+                    </div>
+                    <div class="col-md-6 ">
+                        <input type="text" class="benifits2" placeholder="Benificary Phone*" name="beneficiary_phone" required>
+                    </div>
+                    
+                   
+                </div>
+                <div class="row">
+                    <div class="col-md-12"></div>
+                    <input type="text" class="lastinput" placeholder="Benificary Adress*" name="beneficiary_adress" required>
+                
+                </div>
+                <button class="primary2">SUBMIT APPLICATION</button>
+                </div>
+        
+      
+    </form>
            
-        </div>
-        
-        </div>
-        <div class="row">
-            
-            <div class="col-md-6 " >
-                <input type="text" class="benifits2" placeholder="Benificary CNIC*">
-            </div>
-            <div class="col-md-6 ">
-                <input type="text" class="benifits2" placeholder="Benificary Phone*">
-            </div>
-            
-           
-        </div>
-        <div class="row">
-            <div class="col-md-12"></div>
-            <input type="text" class="lastinput" placeholder="Benificary Adress*">
-        
-        </div>
-        <button class="primary2">SUBMIT APPLICATION</button>
-        </div>
-        
-       
-        
-    </div>
- </div>
 
+   
+        
+  
 
 
 

@@ -32,7 +32,8 @@
             @foreach ($insurances as $insur)
             <div class="row">
                 <div class="col-12 col-md-2 inline-div1">
-                    <img src="{{ asset('images/hotel.png') }}" alt="Flight Image" style="height: 69px; width: 126px;">
+                    <img src="../hotels/{{ $insur->imges }}" alt="Flight Image" style="height: 69px; width: 126px;">
+               
                 </div>
                 <div class="col-12 col-md-2 inline-div1">
                     Travel Plan: Basic

@@ -33,7 +33,13 @@
                     <img src="{{ asset('images/' . $flight->images) }}" alt="Flight Image" style="height:69px; width: 126px;">
                   </td> --}}
 
-                <td> <img src="{{ asset('../hotels/'. $insurance->imges) }}" alt="Flight Image" style="height:69px; width: 126px;"></td>
+                  
+                    <td>
+                        <img src="{{ asset('./hotels/' . $insurance->imges) }}" alt="Flight Image" style="height:69px; width: 126px;">
+                    </td>
+                    
+                  </td>
+                
                 <td>{{$insurance->days}}</td>
                 <td> {{$insurance->travel_plan_for}}</td>
                 <td> Rs {{ $insurance->insurance_charges}}</td>

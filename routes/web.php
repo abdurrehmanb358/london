@@ -12,7 +12,7 @@ use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
 use App\Http\Controllers\holidayController;
-use App\Http\Controllers\PopController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +39,7 @@ Route::get('add-roles', function () {
     return 'success';
 });
 
+// simple view return
 
 
 
@@ -81,7 +82,7 @@ Route::get('back-panel/flight', [FlightController ::class, 'index'])->name('flig
 Route::get('back-panel/user1', [FlightController ::class, 'create'])->name('flight.create');
 Route::post('back-panel/flight/create', [FlightController ::class, 'store'])->name('flight.store');
 Route::get('back-panel/flight/{flight}/edit', [FlightController ::class, 'edit'])->name('flight.edit');
-Route::put('back-panel/flight/{flight}/update', [FlightController ::class, 'update'])->name('flight.update');
+Route::PUT('back-panel/flight/{flight}/update', [FlightController ::class, 'update'])->name('flight.update');
 Route::delete('back-panel/flight/{flight}/delete', [FlightController ::class, 'destroy'])->name('flight.destroy');
 Route::get('flightdetail', function () {
     return view('layouts.flightdetail');
@@ -157,7 +158,9 @@ Route::get('/back-panel/umrah_inquiry', [umrah_pakages::class, 'umrah_inquiry'])
 Route::get('/back-panel/hotel_inquiry', [umrah_pakages::class, 'hotel_inquiry'])->name('hotel.inquiry');
 Route::get('/back-panel/flight_inquiry', [FlightController::class, 'flight_inquiry'])->name('flight.inquiries');
 
-require('admin.php');
+Route::post('/insurance/inquiry',[InsuranceController::class,'insuranceInquiries'])->name('insurance.inquiry');
+
+
 
 
 
@@ -171,9 +174,9 @@ Route::any('send-mail',[MailController::class,'index'])->name('hotel.inquiries')
 // insurance curd
 Route::get('/back-panel/insurance', [InsuranceController::class, 'index'])->name('insurance.index');
 Route::get('/back-panel/insurance_create', [InsuranceController::class, 'create'])->name('insurance.create');
-Route::get('/back-panel/insurance_store', [InsuranceController::class, 'store'])->name('insurance.store');
+Route::post('/back-panel/insurance_store', [InsuranceController::class, 'store'])->name('insurance.store');
 Route::get('/back-panel/insurance/{insurance}/edit',[InsuranceController::class,'edit'])->name('insurance.edit');
-Route::get('/back-panel/insurance/{insurance}/update', [InsuranceController::class, 'update'])->name('insurance.update');
+Route::put('/back-panel/insurance/{insurance}/update', [InsuranceController::class, 'update'])->name('insurance.update');
 Route::delete('back-panel/insurance/{insurance}/delete', [InsuranceController ::class, 'destroy'])->name('insurance.destroy');
 Route::get('insurance', [InsuranceController ::class, 'simple'])->name('layouts.insurance');
 Route::get('Aboutus', [InsuranceController ::class, 'Aboutus'])->name('layouts.aboutus');
@@ -194,11 +197,6 @@ Route::get('holidayListing',[holidayController::class, 'holidayListing'])->name(
 
 
 
-// insurance benifits curds//
-Route::get('back-panel/pop', [PopController::class, 'index'])->name('pop.index');
-Route::get('back-panel/pop/create', [PopController ::class, 'create'])->name('pop.create');
-Route::post('back-panel/pop/store', [PopController ::class, 'store'])->name('pop.store');
-Route::get('back-panel/pop/{pop}/edit', [PopController ::class, 'edit'])->name('pop.edit');
-Route::put('back-panel/pop/{pop}/update', [PopController ::class, 'update'])->name('pop.update');
-Route::delete('back-panel/pop/{pop}/delete', [PopController ::class, 'destroy'])->name('pop.destroy');
-Route::delete('insurance/benefits', [PopController ::class, 'shownbenifits'])->name('pop.benefits');
+
+
+require('admin.php');
