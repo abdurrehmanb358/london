@@ -65,7 +65,16 @@
 
 
     <div class="container">
-       <form action="{{route('insurance.inquiry')}}" method="post">
+        <ul>  
+        @foreach ($errors->all() as $error )
+         
+        <li>          
+              {{$error}}
+        </li>   
+     
+        @endforeach
+    </ul>
+       <form action="{{route('insurance.inquiry')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-md-3 ">
@@ -107,7 +116,7 @@
                         <input type="text" class="custom-input" placeholder="Passport*" required name="passport">
                     </div>
                     <div class="col-md-3 custom-input1">
-                        <input type="text" class="custom-input " placeholder="Depature_date" name="Depature_date" required>
+                        <input type="text" class="custom-input " placeholder="Depature_" name="Depature_date" required>
                     </div>
                     <div class="col-md-3 custom-input1">
                         <input type="text" class="custom-input" placeholder="Select country travel"  name="select_country_travel">
@@ -166,10 +175,11 @@
                 </div>
                 <button class="primary2">SUBMIT APPLICATION</button>
                 </div>
-        
+           
       
     </form>
-           
+   
+
 
    
         

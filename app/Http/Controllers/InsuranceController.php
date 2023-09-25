@@ -155,7 +155,7 @@ class InsuranceController extends Controller
             'CNIC' => 'required|unique:insurance_inquiries', 
             'data_of_birth' => 'required|date',
             'father_name' => 'required',
-            'mobil_name' => 'required',
+            'Mobile_number' => 'required',
             'Email' => 'required|email|unique:insurance_inquiries', 
             'gender' => 'required',
             'purppose_of_vist' => 'required',
@@ -175,19 +175,20 @@ class InsuranceController extends Controller
             'beneficiary_adress' => 'required',
            
         ]);
+
         
 
         $costomer_name = $request->input('costomer_name');
         $CNIC = $request->input('CNIC');
         $dataOfBirth = $request->input('data_of_birth');
         $fatherName = $request->input('father_name');
-        $phone = $request->input('mobil_name');
+        $phone = $request->input('Mobile_number');
         $email = $request->input('Email');
         $gender = $request->input('gender');
         $destination = $request->input('purppose_of_vist');
         $address = $request->input('adress');
         $startDate = $request->input('Depature_date');
-        $select_country = $request->input('Select country travel');
+        $select_country = $request->input('select_country_travel');
         $airline = $request->input('airline');
          $noOfPassenger = $request->input('number_of_passengers');
         $class = $request->input('class');
@@ -205,12 +206,12 @@ class InsuranceController extends Controller
             
         $isInserSuccess = insurance_inquires::create([
         
-
+         
             'costomer_name'=>$costomer_name,
             'CNIC'=>$CNIC,
             'data_of_birth'=> $dataOfBirth,
             'father_name'=>$fatherName,
-            'mobil_name'=>$phone,
+            'Mobile_number'=>$phone,
             'Email'=>$email,
             'gender'=>$gender,
             'purppose_of_vist'=>$destination,
@@ -229,13 +230,11 @@ class InsuranceController extends Controller
             'beneficiary_CNIC'=> $beneficiaryCNIC,
             'beneficiary_phone'=> $beneficiaryPhone,
             'beneficiary_adress'=>  $beneficiaryAddress,
-            'insuranceId'=> $insurancetId,
-
+            'insurance_Id'=> $insurancetId,
         ]);
-    //     if($isInserSuccess)
-    //     return redirect()->back();
-    // else
-    //     echo '<h1>Insert failed</h1>';
+
+        
+       
     }
    
 
