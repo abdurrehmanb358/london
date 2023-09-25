@@ -85,7 +85,7 @@
                 <input type="text" class="custom-input" placeholder="CNIC*" name="CNIC" required>
             </div>
             <div class="col-md-3 ">
-                <input type="text" class="custom-input " placeholder="Date of Birth*" 
+                <input type="text" class="custom-input datepicker" placeholder="Date of Birth*" 
                 name="data_of_birth"
                 required>
             </div>
@@ -116,7 +116,7 @@
                         <input type="text" class="custom-input" placeholder="Passport*" required name="passport">
                     </div>
                     <div class="col-md-3 custom-input1">
-                        <input type="text" class="custom-input " placeholder="Depature_" name="Depature_date" required>
+                        <input type="text" class="custom-input  datepicker" placeholder="Depature_" name="Depature_date" required>
                     </div>
                     <div class="col-md-3 custom-input1">
                         <input type="text" class="custom-input" placeholder="Select country travel"  name="select_country_travel">
@@ -178,8 +178,12 @@
            
       
     </form>
-   
-
+    @if(session('success'))
+    <div class="alert alert-success" style="text-align: center;">
+        {{ session('success') }}
+    </div>
+    @endif
+    
 
    
         
@@ -187,7 +191,14 @@
 
 
 
-
+    <script>
+        $(document).ready(function () {
+            $(".datepicker").datepicker({
+                dateFormat: 'yy-mm-dd' // Set the date format to match MySQL (YYYY-MM-DD)
+            });
+        });
+    </script>
+    
 
 
 </main>

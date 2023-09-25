@@ -234,7 +234,12 @@ class InsuranceController extends Controller
         ]);
 
         
-       
+        if ($isInserSuccess) {
+            return redirect()->back()->with('success', ' Congratulations your inquiry has been submitted ');
+        } else {
+            echo '<h1>Insert failed</h1>';
+        }
+        
     }
    
 
