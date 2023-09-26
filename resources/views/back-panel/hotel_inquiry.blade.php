@@ -22,6 +22,7 @@
             <th>End Date</th>
             <th>Description</th>
             <th>Hotel Name</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +46,10 @@
                     <td>{{ $hotel->descripyion }}</td>
 
                     <td>{{ $hotel->hname }}</td>
+
+                    <td>
+                        <a href="/hotelInquiry/{{ $hotel->id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
 
                 </tr>
             @endforeach

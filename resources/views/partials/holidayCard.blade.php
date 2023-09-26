@@ -19,7 +19,7 @@
                     </div>
                     <div class="card-btn-star">
                         <div>
-                            <button class="btn btn-danger" ><a href="/holidayListing/{{ $item->id}}/holidayDetail" style="color: white">BOOK NOW</a></button>
+                            <button class="btn btn-danger" ><a href="/holiday/detail/{{ $item->id}}" style="color: white">BOOK NOW</a></button>
                         </div>
                         <div class="rating text-warning">
                             <i class="fas fa-star"></i>

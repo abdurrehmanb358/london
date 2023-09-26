@@ -41,6 +41,7 @@
                             <p>{!! $umra->discription !!}</p>
                         </div>
             </div>
+            
             <div class="col-lg-4 col-md-5 col-xs-12">
                 <form action="{{ route('umrah.inquiries') }}" method="POST" class="umrah-bg" enctype="multipart/form-data">
                     @csrf
@@ -72,8 +73,9 @@
                                 <span class="text-danger">{{ $errors->first('date') }}</span>
                         @endif
                     </div>
+
                     <input type="hidden" value="{{ $umra->id }}" name="packageId">
-                    {{-- <input type="hidden" value="umra" name="type"> --}}
+
                     <div>
                         <input class="set-input11" type="text"  placeholder="Number of Person" name="nop" value="{{ old('nop') }}">
                         @if ($errors->has('nop'))

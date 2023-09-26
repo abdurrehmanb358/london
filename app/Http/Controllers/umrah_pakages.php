@@ -112,7 +112,7 @@ class umrah_pakages extends Controller
 
          return redirect('/back-panel/umrah_pakage');
      }
-     public function destroy($id){
+    public function destroy($id){
         $hotel = umrah::where('id',$id)->first();
         $hotel->delete();
         return back()->withsuccess('hotel Deleted !!!');
@@ -207,5 +207,12 @@ class umrah_pakages extends Controller
                     ->orderBy('created_at', 'desc')
                     ->get();
             return view('/back-panel/hotel_inquiry',['hotels'=> $show]);
+        }
+
+        
+        public function destroyUmrahInquiry($id){
+            $hotel = umrah_inquiries::where('id',$id)->first();
+            $hotel->delete();
+            return back()->withsuccess('Hotel Inquiry Deleted !!!');
         }
 }

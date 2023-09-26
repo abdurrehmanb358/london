@@ -1,15 +1,16 @@
 @include('layouts.header')
 
 <main class="home">
+
+
     <div class="container">
+        
         <div class="row">
             <div class="col-md-7 mt-4">
-                <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <img src="/hotels/{{ $holidays->image }}"  style="height:320px;width:100%" class="img-fluid">
-
             </div>
+
             <div class="col-md-5 mt-4">
-                <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                 <div class="card-body bg-gray">
                     <h6 class="card-title">{{$holidays->name}}</h6>
                     <div class="rating text-warning">
@@ -25,10 +26,10 @@
                     </div>
 
                     <div class="rating text-warning mt-2">
-                        <!-- Facilities -->
                         <div class="custom-card">
                             <p class="style" style="font-size: 12px;">Duration</p>
                         </div>
+
                         <div class="custom-card px-3" style="color: black;">
                             5Night/ 6Days
                         </div>
@@ -47,8 +48,8 @@
                             sharing basis</p>
                     </div>
 
-                    <!-- Share icons -->
                     <p class="share-text" style=" margin-top: -px;">Share</p>
+
                     <div class="icon-container">
                         <a href="https://www.facebook.com/yourpage" class="icon-link facebook-icon">
                             <i class="fab fa-facebook-f"></i>
@@ -64,16 +65,20 @@
                         </a>
                     </div>
 
-                    <!-- SELECT button -->
                     <button type="button" class="custom-button"><a href="#book" style="color: white">Book Now</a></button>
                 </div>
             </div>
         </div>
-
     </div>
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <b>
                     <h5>Package Overview</h5>
                 </b>
@@ -83,7 +88,6 @@
 
     <div class="container bbbg-gray">
         <div>
-
             <p>{!!$holidays->description !!}</p>
         </div>
         
@@ -101,6 +105,7 @@
                 <i class="fas fa-check"></i> All return taxes
             </a>
         </div>
+
         <div>
             <div style="margin-top:20px;">
                 <span><b>Acommadation</b></span>
@@ -118,7 +123,11 @@
 
         </div>
 
-        <pre><strong>  <span>Call@(042)3578 1551 to book Grand Cayman vacation (5 Night /6 Days) Package.</span></strong></pre>
+        <pre>
+            <strong>
+                <span>Call@(042)3578 1551 to book Grand Cayman vacation (5 Night /6 Days) Package.</span>
+            </strong>
+        </pre>
 
         <table style="margin-top: 35px;">
             <tr>
@@ -153,6 +162,7 @@
 
 
     </div>
+
     <div class="container mt-4">
         <div class="row">
             <div class="col-12">
@@ -166,41 +176,40 @@
     <div class="container mt-3 " style="background-color:#fcfcfc; padding:30px;">
         <table style="width: 100%;">
             <tr>
-                <th
-                    style="width: 5%; background-color: #CF2828; text-align: center; color: white; padding:10px; font-size:15px;">
+                <th style="width: 5%; background-color: #CF2828; text-align: center; color: white; padding:10px; font-size:15px;">
                     Day1:
                 </th>
+
                 <th style="width: 50%; background-color: #000559; padding-left: 35px; color: white;font-size:15px;">
                     Arrive Grand Cayman
                 </th>
-
             </tr>
-
         </table>
-        <p style="background-color: #ededed; padding:10px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Sequi vero aperiam maiores ipsam obcaecati illum?</p>
+
+        <p style="background-color: #ededed; padding:10px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Sequi vero aperiam maiores ipsam obcaecati illum?
+        </p>
+
         <div>
             <table style="width: 100%; mt-2 ">
                 <tr>
                     <th
                         style="width: 5%; background-color: #CF2828; text-align: center; color: white; padding:10px; font-size:15px;">
                         Day2:</th>
-                    <th
-                        style="width: 50%; background-color: #000559; padding-left: 35px; color: white; font-size:15px;">
+                    <th style="width: 50%; background-color: #000559; padding-left: 35px; color: white; font-size:15px;">
                         Arrive Grand
-                        Cayman</th>
-
+                        Cayman
+                    </th>
                 </tr>
-
             </table>
-            <p style="background-color: rgb(240, 240, 240); padding:10px;">Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Sequi vero aperiam maiores ipsam obcaecati illum?</p>
-
-
+            <p style="background-color: rgb(240, 240, 240); padding:10px;">
+                Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Sequi vero aperiam maiores ipsam obcaecati illum?
+            </p>
         </div>
-
-
     </div>
+
     <div class="container mt-4">
         <div class="row">
             <div class="col-12">
@@ -212,7 +221,7 @@
     </div>
 
 
-    </div>
+    
     <div class="container " style="background-color:#fcfcfc; padding:24px">
         <table>
             <tr>
@@ -221,18 +230,17 @@
                 <th class="add">Occupancy</th>
                 <th class="add">inquire</th>
             </tr>
+
             <tr>
                 <td class="ee">{{ $holidays->price }}</td>
                 <td class="ee">Delux</td>
                 <td class="ee">per person on twin sharing</td>
                 <td class="ee">
                     <button>inquire</button>
-
                 </td>
             </tr>
-
-
         </table>
+
         <div>
             <p class="mt-4" id="book">important Notes</p>
             <div class="custom-list ">
@@ -240,56 +248,80 @@
             </div>
 
         </div>
-
     </div>
 
-        <div class="container ">
-            <form action="">
-                <h1 ><span class="h2">Holiday Inquiry!</span></h1>
-                <div class="input-group">
-
-
-
-                    <input type="text" name="" id="" placeholder="Travelling From"
-                        class="red-bottom-border">
-                    <input type="text" name="" id="" placeholder="Travel Start Date*"
-                        class="red-bottom-border">
-                    <input type="text" name="" id="" placeholder="Travel End Date*"
-                        class="red-bottom-border">
-
-
-                </div>
-                <div class="input-group">
-                    <input type="text" name="" id="" placeholder="Adults"
-                        class="red-bottom-border">
-                    <input type="text" name="" id="" placeholder="Childern"
-                        class="red-bottom-border">
-                    <input type="text" name="" id="" placeholder="infacts"
-                        class="red-bottom-border">
-                </div>
-                <div class="input-group">
-                    <input type="text" name="" id="" placeholder="Lead passenger Name*"
-                        class="red-bottom-border">
-                    <input type="text" name="" id="" placeholder="Lead passenger Email Id*"
-                        class="red-bottom-border">
-                    <input type="text" name="" id="" placeholder="Lead passenger Contant Number*"
-                        class="red-bottom-border">
-                </div>
-                <div>
-                    <textarea class="textarea" name="" id="" cols="3" rows="7"
-                        placeholder="Share your requirment in details"></textarea>
-                </div>
-                <div class="button-group">
-                    <button class="btn btn-danger">SUBMIT APPLICATION</button>
-
-
-                </div>
-
-
-
-
-            </form>
-        </div>
     
 
-        @include("layouts.footer")
+    <div class="container ">
+        <form action="{{ route('holiday.inquiries') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <h1 ><span class="h2">Holiday Inquiry!</span></h1>
+            
+            <div class="input-group">
+
+                <input type="hidden" value="{{ $holidays->id }}" name="holidayId">
+
+                <div>
+                    <input type="text" name="pTravFrom" id="" placeholder="Travelling From"
+                    class="red-bottom-border" value="{{ old('pTravFrom') }}" required>
+                </div>
+
+                <div>
+                    <input type="text" name="pStarDate" id="" placeholder="Travel Start Date*"
+                        class="red-bottom-border datepicker" required>
+                </div>
+
+                <div>
+                    <input type="text" name="pEndDate" id="" placeholder="Travel End Date*"
+                        class="red-bottom-border datepicker" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <input type="text" name="adults" id="" placeholder="Adults"
+                    class="red-bottom-border" required>
+                </div>
+                
+                <div>
+                    <input type="text" name="children" id="" placeholder="Childern"
+                    class="red-bottom-border" required>
+                </div>
+                
+                <div>
+                    <input type="text" name="infants" id="" placeholder="infants"
+                    class="red-bottom-border" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div>
+                    <input type="text" name="passName" id="" placeholder="Lead passenger Name*"
+                    class="red-bottom-border" required>
+                </div>
+
+                <div>
+                    <input type="email" name="pEmail" id="" placeholder="Lead passenger Email Id*"
+                    class="red-bottom-border" required>
+                </div>
+                
+                <div>
+                    <input type="text" name="Contnumber" id="" placeholder="Lead passenger Contact Number*"
+                    class="red-bottom-border" required>
+                </div>
+            </div>
+
+            <div>
+                <textarea class="textarea" name="description" id="" cols="3" rows="7"
+                    placeholder="Share your requirment in details" required></textarea>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-danger">SUBMIT APPLICATION</button>
+            </div>
+        </form>
+    </div>
+    
+</main>
+
+@include("layouts.footer")

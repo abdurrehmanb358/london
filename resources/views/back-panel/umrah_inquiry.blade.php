@@ -20,6 +20,7 @@
             <th>Date</th>
             <th>No of Person</th>
             <th>Pakage Name</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -39,6 +40,10 @@
                     <td>{{ $hotel->noOfPerson }}</td>
 
                     <td>{{ $hotel->days }}</td>
+
+                    <td>
+                        <a href="/umrahInquiry/{{ $hotel->id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
 
                 </tr>
             @endforeach

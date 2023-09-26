@@ -326,6 +326,12 @@ public function index1()
         return view('/back-panel/flight_inquiry',['flightInquiry'=> $show]);
     }
 
+    public function destroyFlightInquiry($id){
+        $hotel = flight_inquiry::where('id',$id)->first();
+        $hotel->delete();
+        return back()->withsuccess('Flight Inquiry Deleted !!!');
+    }
+
 
 
 

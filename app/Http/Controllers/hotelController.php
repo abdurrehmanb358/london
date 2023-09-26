@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\hotel;
+use App\Models\hotelInquiries;
 use Illuminate\Http\Request;
 use DB;
 
@@ -135,6 +136,12 @@ class hotelController extends Controller
                        ->simplePaginate(10);
 
         return view('layouts.Hotel_listing', compact('hotels'));
+    }
+
+    public function destroyHotelInquiry($id){
+        $hotel = hotelInquiries::where('id',$id)->first();
+        $hotel->delete();
+        return back()->withsuccess('Hotel Inquiry Deleted !!!');
     }
 
 }

@@ -137,23 +137,23 @@ Route::get('umrah',[umrah_pakages::class, 'Umrah_listing'])->name('umrah');
 
 Route::get('/umrah/detail/{id}',[umrah_pakages::class,'Umrah_Detail']);
 
-
+// Inquiries
 Route::post('/register/inquiries',[umrah_pakages::class,'register'])->name('umrah.inquiries');
 Route::post('/hotel/inquiry',[umrah_pakages::class,'hotelInquiry'])->name('hotel.inquiries');
 Route::post('/flight/inquiry',[FlightController::class,'flightInquiries'])->name('flights.inquiry');
+Route::post('/holiday/inquiry',[holidayController::class,'holidayInquiry'])->name('holiday.inquiries');
 
-// // search rout
-// Route::post('/search', [umrah_pakages::class, 'search']);
-
-// Route::get('/Home',[umrah_pakages::class, 'Home'])->name('layouts.index');
-
-// Route::get('Inquairy',[umrah_pakages::class, 'searchHotels'])->name('layouts.Hotel_listing');
-
-
-//inquiries
+//inquiries Show
 Route::get('/back-panel/umrah_inquiry', [umrah_pakages::class, 'umrah_inquiry'])->name('umrah.inquiry');
 Route::get('/back-panel/hotel_inquiry', [umrah_pakages::class, 'hotel_inquiry'])->name('hotel.inquiry');
 Route::get('/back-panel/flight_inquiry', [FlightController::class, 'flight_inquiry'])->name('flight.inquiries');
+Route::get('/back-panel/holiday_inquiry', [holidayController::class, 'holiday_inquiry'])->name('holiday.inquiry');
+
+// Delete Inquiries
+Route::get('holidayInquiry/{id}/delete', [holidayController ::class, 'destroyHolidayInquiry']);
+Route::get('umrahInquiry/{id}/delete', [umrah_pakages ::class, 'destroyUmrahInquiry']);
+Route::get('hotelInquiry/{id}/delete', [hotelController ::class, 'destroyHotelInquiry']);
+Route::get('flightInquiry/{id}/delete', [FlightController ::class, 'destroyFlightInquiry']);
 
 require('admin.php');
 

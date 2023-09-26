@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\holiday;
+use App\Models\holidayInquiry;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class holidayController extends Controller
 {
@@ -95,5 +97,71 @@ class holidayController extends Controller
     public function Holiday_Detail($id){
         $hotel = holiday::where('id',$id)->first();
         return view('layouts.holidayDetail', ['holidays'=> $hotel]);
+    }
+
+    public function holidayInquiry(Request $request )
+        {
+            $request->validate([
+                'pTravFrom' => 'required',
+                'pStarDate' => 'required',
+                'pEndDate' =>  'required',
+                'adults' => 'required',
+                'children' => 'required',
+                'infants' => 'required',
+                'passName' => 'required',
+                'pEmail' => 'nullable|email',
+                'Contnumber' => 'required',
+                'description' => 'required',
+            ]);
+
+            $tFrom = $request->input('pTravFrom');
+            $sDate= $request->input('pStarDate');
+            $eDate = $request->input('pEndDate');
+            $adults = $request->input('adults');
+            $children = $request->input('children');
+            $infants = $request->input('infants');
+            $passName = $request->input('passName');
+            $pEmail = $request->input('pEmail');
+            $Contnumber = $request->input('Contnumber');
+            $description = $request->input('description');
+            $holidayId = $request->input('holidayId');
+
+
+
+            $isInserSuccess = holidayInquiry::create([
+                'pTravFrom' => $tFrom,
+                'pStarDate' => $sDate,
+                'pEndDate' => $eDate,
+                'adults' => $adults,
+                'children' => $children,
+                'infants' => $infants,
+                'description' => $description,
+                'passName' => $passName,
+                'pEmail' => $pEmail,
+                'Contnumber' => $Contnumber,
+                'holidayId' => $holidayId,
+
+            ]);
+
+            if($isInserSuccess)
+                return redirect()->back()->with('success', 'Inquiry Submitted !!!');
+            else
+                echo '<h1>Insert failed</h1>';
+
+        }
+
+    public function holiday_inquiry() {
+        $show = DB::table('holiday_inquiries as hi')
+                ->join('holidays as h','hi.holidayId','=','h.id')
+                ->select('h.name as hname','hi.pTravFrom','hi.pStarDate','hi.id','hi.pEndDate','hi.adults','children','hi.infants','hi.description','hi.passName','hi.pEmail','hi.Contnumber','hi.created_at')
+                ->orderBy('created_at', 'desc')
+                ->get();
+        return view('/back-panel/holiday_inquiry',['holidays'=> $show]);
+    }
+
+    public function destroyHolidayInquiry($id){
+        $hotel = holidayInquiry::where('id',$id)->first();
+        $hotel->delete();
+        return back()->withsuccess('holiday Inquiry Deleted !!!');
     }
 }

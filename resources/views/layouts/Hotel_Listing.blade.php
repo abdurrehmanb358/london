@@ -1,8 +1,12 @@
 @include("layouts.header")
 
 <main>
-    <div class="container-fluid" style="display: contents">
+    <div class="container-fluid" id="set-img-text">
         <img src="{{ asset('images/Hotel2.png') }}" class="img-set11">
+        <div class="col-6 h1-hotel">
+            <h1>Hotels</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus explicabo a quidem distinctio possimus minima delectus blanditiis beatae corrupti fuga.</p>
+        </div>
     </div>
 <div class="container" id="hotels-container">
 

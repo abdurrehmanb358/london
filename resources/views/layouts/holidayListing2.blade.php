@@ -3,6 +3,10 @@
 <main>
     <div class="container-fluid" style="display: contents">
         <img src="{{ asset('images/holidayListing.jpg') }}" class="imgHoliday">
+        <div class="col-6 h1-holiday">
+            <h1>Holidays</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus explicabo a quidem distinctio possimus minima delectus blanditiis beatae corrupti fuga.</p>
+        </div>
     </div>
 </main>
 <div class="main">

@@ -3,11 +3,7 @@
        
 
 <main class="home mt-4">
-    @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-             @endif
+    
     <div class="container">
         <div class="row">
             
@@ -115,63 +111,63 @@
             </div>
         </div>
 
-                          <div class="container">
-                    <div class="ccontainer">
-                        <form action="{{ route('hotel.inquiries') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <h1><span class="h2" >Hotel Inquiry!</span></h1>
-                            <div class="input-group">
-                                <div>
-                                    <input type="hidden" value="{{ $hotels->id }}" name="hotelId">
+        <div class="container">
+            <div class="ccontainer">
+                <form action="{{ route('hotel.inquiries') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <h1><span class="h2" >Hotel Inquiry!</span></h1>
 
-                                    <input type="text" name="travFrom" id="" placeholder="Travelling From" class="red-bottom-border" value="{{ old('travFrom') }}" required>
+                    <div class="input-group">
+                        <div>
+                            <input type="hidden" value="{{ $hotels->id }}" name="hotelId">
 
-                                </div>
+                            <input type="text" name="travFrom" id="" placeholder="Travelling From" class="red-bottom-border" value="{{ old('travFrom') }}" required>
 
-
-                                <div>
-                                    <input type="text" name="startDate" id="" placeholder="Travel Start Date*"
-                                    class="red-bottom-border datepicker" value="{{ old('startDate') }}" required autocomplete="off">
-
-                                </div>
-
-                                <div>
-                                    <input type="text" name="endDate" id="" placeholder="Travel End Date*"
-                                    class="red-bottom-border datepicker" value="{{ old('endDate') }}" required autocomplete="off">
-
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <div>
-                                    <input type="text" name="name" id="" placeholder="Name"
-                                    class="red-bottom-border" value="{{ old('name') }}" required>
-                                </div>
-
-                                <div>
-                                    <input type="tel" name="phone" id="" placeholder="Phone"
-                                    class="red-bottom-border" value="{{ old('phone') }}" required>
-                                </div>
-
-                                <div>
-                                    <input type="text" name="email" id="" placeholder="Email"
-                                    class="red-bottom-border">
-                                </div>
-
-                            </div>
-                            <div >
-                                <textarea  class="textarea1" name="description" id="" cols="3" rows="7" placeholder="Share your requirment in details" required></textarea>
-                            </div>
-                            <div class="button-group">
-                                <button class="btn btn-danger">SUBMIT APPLICATION</button>
-
-                            </div>
-
-
-
-
-                        </form>
                         </div>
+
+                        <div>
+                            <input type="text" name="startDate" id="" placeholder="Travel Start Date*"
+                            class="red-bottom-border datepicker" value="{{ old('startDate') }}" required autocomplete="off">
+
                         </div>
+                            
+                        <div>
+                            <input type="text" name="endDate" id="" placeholder="Travel End Date*"
+                            class="red-bottom-border datepicker" value="{{ old('endDate') }}" required autocomplete="off">
+
+                        </div>
+
+                    </div>
+                    
+                    <div class="input-group">
+                        <div>
+                            <input type="text" name="name" id="" placeholder="Name"
+                            class="red-bottom-border" value="{{ old('name') }}" required>
+                        </div>
+
+                        <div>
+                            <input type="tel" name="phone" id="" placeholder="Phone"
+                            class="red-bottom-border" value="{{ old('phone') }}" required>
+                        </div>
+
+                        <div>
+                            <input type="text" name="email" id="" placeholder="Email"
+                            class="red-bottom-border">
+                        </div>
+
+                    </div>
+
+                    <div >
+                        <textarea  class="textarea1" name="description" id="" cols="3" rows="7" placeholder="Share your requirment in details" required></textarea>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button class="btn btn-danger">SUBMIT APPLICATION</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
 
 
 

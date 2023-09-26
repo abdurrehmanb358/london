@@ -27,6 +27,7 @@
             <th>Class</th>
             <th>message</th>
             <th>Flight Name</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +61,10 @@
                     <td>{{ $flight->message }}</td>
 
                     <td>{{ $flight->flying_from }} to {{ $flight->flying_to }}</td>
+
+                    <td>
+                        <a href="/flightInquiry/{{ $flight->id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
 
                 </tr>
             @endforeach

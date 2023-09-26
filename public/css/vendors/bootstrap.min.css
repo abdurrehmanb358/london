@@ -10008,10 +10008,34 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
+#set-img-text{
+    position: relative;
+}
+.h1-hotel{
+    position: absolute;
+    top: 60%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.h1-hotel p{
+    color: white;
+}
+.h1-holiday{
+    position: absolute;
+    top: 46%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+.h1-holiday p{
+    color: white;
+}
 .img-set11{
-    width: 100% !important;
-    height: 100% !important;
-    margin-top: 100px !important;
+    width: 100% ;
+    height: 100% ;
+    margin-top: 100px ;
     padding: 0;
 }
 .margin-set{
