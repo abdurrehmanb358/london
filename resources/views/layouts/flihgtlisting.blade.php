@@ -169,7 +169,7 @@
                     Popular Flight
                     {{-- <hr class="h2"> --}}
                 </h2>
-                <table id="flight-table" style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                <table id="flight-table" style="width: 100%;  border: 1px solid #ddd;">
                     <thead>
                         <tr>
                             <th class="th1">Airline</th>

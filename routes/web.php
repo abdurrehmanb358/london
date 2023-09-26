@@ -183,7 +183,7 @@ Route::get('Aboutus', [InsuranceController ::class, 'Aboutus'])->name('layouts.a
  Route::get('all_insurance', [InsuranceController ::class,'getinsurance'])->name('layouts.allinsurance');
 
  Route::get('sab_insurance{id}', [InsuranceController ::class,'applyinsurance'])->name('layouts.subinsurance');
-
+ Route::get('insurance_detail', [InsuranceController ::class,'insurance'])->name('back-panel.insurance');
 
 
 //Holidays CRUD

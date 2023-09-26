@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Insurance;
 use App\Models\insurance_inquires;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 class InsuranceController extends Controller
 {
@@ -243,6 +244,10 @@ class InsuranceController extends Controller
     }
    
 
+    public function insurance(){
+        $details = insurance_inquires::all();
+        return view('back-panel.insurance_inquiry ' , compact('details'));
+    }
 
 
 

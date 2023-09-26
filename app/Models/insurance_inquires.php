@@ -15,7 +15,6 @@ class insurance_inquires extends Model
 'data_of_birth',
 'father_name',
 'Mobile_number',
-
 'Email',
 'gender',
 'purppose_of_vist',

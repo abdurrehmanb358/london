@@ -56,12 +56,12 @@
           <option>First Class</option>
         </select>
       </div>
-      <div>
-        <label for="message">Description</label>
-        <textarea name="message" id="message"
-                  style="width: 100%; height: 169px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
-                  rows="4" cols="50"> {!! $flight->message !!} </textarea>
-        
+      
+      <label for="message">Description</label>
+      <textarea name="message" 
+                style="width: 100%; height: 169px; border: none; border-bottom: 2px solid red; background-color: rgb(248, 248, 248); outline: none;"
+                rows="4" cols="50"> {!!$flight->message!!} </textarea>
+      
       
  
 
