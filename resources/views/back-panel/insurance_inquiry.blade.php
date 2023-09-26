@@ -37,15 +37,19 @@
            <th>Beneficary_CNIC</th>
            <th>Beneficary_phone</th>
             <th>Beneficary_adress</th>
-            <th>Insurance_id</th>
+            <th>Insurance pakcage</th>
+            <th>Action</th>
             
            
         </tr>
         </thead>
         <tbody>
+           
             @forelse($details as $detail)
+        
             <tr>
                 <td>{{ $loop->index + 1 }}</td>
+
              <td>{{$detail->costomer_name}}</td>
               <td>{{$detail->CNIC}}</td>
               <td>{{$detail->data_of_birth}}</td>
@@ -67,9 +71,13 @@
               <td>{{$detail->beneficiary_CNIC}}</td>
               <td>{{$detail->beneficiary_phone}}</td>
               <td>{{$detail->beneficiary_adress}}</td>
-              <td>{{$detail->insurance_Id}}</td>
+          
+              <td>{{$detail->travel_plan_for}}</td>
+              <td>
+ 
 
-             </tr>
+                </td>
+                         </tr>
             @empty
             <tr>
                 <td colspan="11">No inquires found</td>

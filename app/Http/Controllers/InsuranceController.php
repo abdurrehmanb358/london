@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Insurance;
-use App\Models\insurance_inquires;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\FuncCall;
+use App\Models\insurance_inquires;
+use Illuminate\Support\Facades\DB;
 
 class InsuranceController extends Controller
 {
@@ -231,7 +232,7 @@ class InsuranceController extends Controller
             'beneficiary_CNIC'=> $beneficiaryCNIC,
             'beneficiary_phone'=> $beneficiaryPhone,
             'beneficiary_adress'=>  $beneficiaryAddress,
-            'insurance_Id'=> $insurancetId,
+            'Insurance_Id'=> $insurancetId,
         ]);
 
         
@@ -244,16 +245,26 @@ class InsuranceController extends Controller
     }
    
 
-    public function insurance(){
-        $details = insurance_inquires::all();
-        return view('back-panel.insurance_inquiry ' , compact('details'));
+    public function insurance() {
+        $details = DB::table('insurance_inquiries as in')
+        ->join('insurances as i',  'in.insurance_Id' , '=', 'i.id')
+        ->select('i.travel_plan_for','in.costomer_name', 'in.CNIC', 'in.data_of_birth','in.father_name','in.Mobile_number','in.Email', 'in.Gender','in.purppose_of_vist' , 'in.adress' ,'in.passport' ,'in.Depature_date' , 'in.select_country_travel' ,'in.airline' ,'in.number_of_passengers' ,'in.class' ,'in.price' , 'in.beneficiary_name' ,'in.beneficiary_relation', 'in.beneficiary_CNIC' , 'in.beneficiary_phone' , 'in.beneficiary_adress' , 'in.Insurance_Id', 'in.created_at')
+        ->orderBy('created_at', 'desc')
+        ->get();
+           
+        return view('back-panel.insurance_inquiry', compact('details'));
     }
 
+    
 
 
-
-
-
+  public function delete(insurance_inquires $insurance_inquire)
+    {
+        $insurance_inquire->delete();
+        return redirect()->route('insurance.index')->with('success', ' deleted Successfully');
+    }
+    
+    
 
 
 

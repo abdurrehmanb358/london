@@ -160,6 +160,7 @@ Route::get('/back-panel/flight_inquiry', [FlightController::class, 'flight_inqui
 
 Route::post('/insurance/inquiry',[InsuranceController::class,'insuranceInquiries'])->name('insurance.inquiry');
 
+Route::delete('back-panel/insurance_inquiry/{insurance_inquires}/delete', [InsuranceController::class, 'delete'])->name('insuranceinquiry.delete');
 
 
 

@@ -31,7 +31,7 @@ class insurance_inquires extends Model
 'beneficiary_CNIC',
 'beneficiary_phone',
 'beneficiary_adress',
-'insurance_Id',
+'Insurance_Id',
     ];
     protected $table = 'insurance_inquiries'; // Table name in the database
 }
