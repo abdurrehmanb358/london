@@ -97,13 +97,7 @@
 </div>
 
 
-<script>
-  $(document).ready(function () {
-      $(".datepicker").datepicker({
-          dateFormat: 'yy-mm-dd' // Set the date format to match MySQL (YYYY-MM-DD)
-      });
-  });
-</script>
+
 
 
 @endsection
