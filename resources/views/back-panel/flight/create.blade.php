@@ -57,14 +57,14 @@
         </div> --}}
           <div class="form-group col-md-4">
             <label for="departing">Departing:</label>
-            <input type="date"  id="departing" name="departing">
+            <input type="text"  id="departing " name="departing" class="datepicker" placeholder="Departing">
             <i class="bi bi-calendar"></i>
 
           </div>
     
           <div class="">
             <label for="returning">Ariving::</label>
-            <input type="date" id="returning" name="returning" >
+            <input type="text" id="" name="returning" class="datepicker" placeholder="Ariving">
           </div>
         
         
@@ -96,17 +96,14 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.11.0/js/bootstrap-datepicker.min.js"></script>
-                        <script>
-                          $(document).ready(function () {
-                            $('.datepicker').datepicker({
-                              format: 'dd-mm-yyyy', // Change the format as needed
-                              autoclose: true,
-                              todayHighlight: true
-                            });
-                          });
-                        </script>
+
+<script>
+  $(document).ready(function () {
+      $(".datepicker").datepicker({
+          dateFormat: 'yy-mm-dd' // Set the date format to match MySQL (YYYY-MM-DD)
+      });
+  });
+</script>
 
 
 @endsection
