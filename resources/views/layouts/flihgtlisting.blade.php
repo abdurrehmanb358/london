@@ -27,7 +27,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane container active" id="flight" style="margin-top: -248px;
-                        width: 92%;">
+                        width: 92%; padding-bottom:10px;">
                             <form id="searchForm">
                                 @csrf
                                 <div class="form-row">
@@ -48,24 +48,24 @@
 
                                     </div>
                                 </div>
-                                <div class="form-row">
+                                <div class="from-row">
                                     <div class="row">
                                         <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Flying from</label>
-                                            <input type="search" name="flying_from" class="form-control"
+                                            <input type="search" name="flying_from" class="flying1"
                                                 value="{{ isset($data['flying_from']) ? $data['flying_from'] : '' }}"
                                                 placeholder="City / Airport">
 
                                         </div>
                                         <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Flying to</label>
-                                            <input type="search" name="flying_to" class="form-control"
+                                            <input type="search" name="flying_to" class="flying2"
                                                 value="{{ isset($data['flying_to']) ? $data['flying_to'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
                                         <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Departing</label>
-                                            <input type="search" name="departing" class="form-control" value="{{ isset($data['departing']) ? $data['departing'] : '' }}"
+                                            <input type="search" name="departing" class="flying3" value="{{ isset($data['departing']) ? $data['departing'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
                                         <div class="col-md-3">
@@ -107,8 +107,8 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
+        <div class="row ">
+            <div class="col-md-3">
                 <div class="card1">
                     <h3>
                         <div class="icon"><i class="fas fa-dollar-sign"></i></div>
@@ -117,7 +117,7 @@
                     <p>we always Guranteed you travel for less with then best price on flight,Hotal & vacation</p>
                 </div>
             </div>
-            <div class="col-sm-3 ">
+            <div class="col-md-3 ">
                 <div class="card1">
                     <h3>
                         <div class="icon">&#128722;</div>
@@ -126,7 +126,7 @@
                     <p>we hold our values tight we have Millons of Satatfied Costomer worldwide offer and exshiment</p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card1">
                     <h3>
                         <div class="icon">&#128722;</div>
@@ -135,7 +135,7 @@
                     <p>Exculsive Airfare Content , and insider Consolider Deals which no one else can offer. </p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card1">
                     <h3>
                         <div class="icon">&#128722;</div>

@@ -255,20 +255,19 @@ class InsuranceController extends Controller
         return view('back-panel.insurance_inquiry', compact('details'));
     }
 
-    
+    public function delete(){
+       
+    }
 
-
-  public function delete(insurance_inquires $insurance_inquire)
-    {
-        $insurance_inquire->delete();
-        return redirect()->route('insurance.index')->with('success', ' deleted Successfully');
+   
     }
     
+ 
     
 
 
 
-}
+
         
             
             

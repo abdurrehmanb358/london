@@ -87,11 +87,16 @@
      <div class="hidden" ></div>
      <div class="container">
          <div class="row">
-             <div class="col-md-4 logo44">
+            <div class="col-4 logo44">
+                <!-- Column that occupies 4 grid columns with a custom class "logo44" -->
+                <img src="{{ asset('images/logo2.png') }}" alt="Bangkok" class="img-fluid" id="logo-image">
+                <!-- Image element with the source, alt text, and class attributes -->
+            </div>
+             {{-- <div class="col-4 logo44">
                  <!-- Column that occupies 6 grid columns with an offset of 3 columns -->
                  <img src="{{ asset('images/logo2.png') }}" alt="Bangkok"
                      style="height: 664px;float:right;margin-top:81px; " class="img-fluid">
-             </div>
+             </div> --}}
              <div class="col-md-8">
                  <h2 class="b22">Flight Detail</h2>
 

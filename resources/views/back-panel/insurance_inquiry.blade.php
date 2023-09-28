@@ -46,7 +46,9 @@
         <tbody>
            
             @forelse($details as $detail)
-        
+          
+
+
             <tr>
                 <td>{{ $loop->index + 1 }}</td>
 
@@ -74,7 +76,12 @@
           
               <td>{{$detail->travel_plan_for}}</td>
               <td>
- 
+                <form action="" method="POST" style="display: inline-block;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm rounded" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
+                </form>
+                
 
                 </td>
                          </tr>
