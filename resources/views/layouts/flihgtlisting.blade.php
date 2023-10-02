@@ -3,9 +3,8 @@
 
 <main class="home">
     <div class="container-fluid" style="display: contents">
-      <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 371px; width: 100%;"
+      <img src="{{ asset('images/city.png') }}" alt="Bangkok" style="height: 500px; width: 100%;"
                     class="img-fluid">
-           
         </div>
    
 
@@ -18,7 +17,7 @@
         <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#flight"
                                 style="background-color:#000654; color:white;    
-                        border: none; margin-top:-194px;    margin-left: 15px;">      Search Flights</a>
+                        border: none;margin-top: -292px;margin-left: 59px">      Search Flights</a>
                         </li>
 
 
@@ -27,7 +26,8 @@
                      
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane container active" id="flight" style="margin-top:-154px;">
+                        <div class="tab-pane container active" id="flight" style="margin-top: -248px;
+                        width: 92%; padding-bottom:10px;">
                             <form id="searchForm">
                                 @csrf
                                 <div class="form-row">
@@ -48,27 +48,27 @@
 
                                     </div>
                                 </div>
-                                <div class="form-row">
+                                <div class="from-row">
                                     <div class="row">
-                                        <div class="form-group col-sm-3">
+                                        <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Flying from</label>
-                                            <input type="text" name="flying_from" class="form-control"
+                                            <input type="search" name="flying_from" class="flying1"
                                                 value="{{ isset($data['flying_from']) ? $data['flying_from'] : '' }}"
                                                 placeholder="City / Airport">
 
                                         </div>
-                                        <div class="form-group col-sm-3">
+                                        <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Flying to</label>
-                                            <input type="text" name="flying_to" class="form-control"
+                                            <input type="search" name="flying_to" class="flying2"
                                                 value="{{ isset($data['flying_to']) ? $data['flying_to'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
-                                        <div class="form-group col-sm-3">
+                                        <div class="col-md-3" id="from-controll">
                                             <label for="" class="label">Departing</label>
-                                            <input type="text" name="departing" class="form-control" value="{{ isset($data['departing']) ? $data['departing'] : '' }}"
+                                            <input type="search" name="departing" class="flying3" value="{{ isset($data['departing']) ? $data['departing'] : '' }}"
                                                 name="" placeholder="City / Airport">
                                         </div>
-                                        <div class="form-group col-sm-3">
+                                        <div class="col-md-3">
 
                                             <button class="controle" name="search" type="submit"
                                                 id="search">Search</button>
@@ -87,7 +87,7 @@
 
 
 
-                        <div class="tab-pane container fade" id="vacations">...</div>
+                        
                     </div>
 
                 </div>
@@ -105,8 +105,10 @@
             <p>Travelling internationally can be stressful because of high ticket price.Vist our website to find some of
                 the best internatonal flight deals on internet.</p>
         </div>
-        <div class="row">
-            <div class="col-lg-3">
+    </div>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-3">
                 <div class="card1">
                     <h3>
                         <div class="icon"><i class="fas fa-dollar-sign"></i></div>
@@ -115,16 +117,16 @@
                     <p>we always Guranteed you travel for less with then best price on flight,Hotal & vacation</p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3 ">
                 <div class="card1">
                     <h3>
                         <div class="icon">&#128722;</div>
                     </h3>
                     <p class="bb">Statisfied Customers</p>
-                    <p>we hold our values tight we have Millons of Satatfied Costomer worldwide</p>
+                    <p>we hold our values tight we have Millons of Satatfied Costomer worldwide offer and exshiment</p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card1">
                     <h3>
                         <div class="icon">&#128722;</div>
@@ -133,7 +135,7 @@
                     <p>Exculsive Airfare Content , and insider Consolider Deals which no one else can offer. </p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card1">
                     <h3>
                         <div class="icon">&#128722;</div>
@@ -149,24 +151,25 @@
 
 
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-3 ">
 
 
                 <img src="{{ asset('images/logo2.png') }}" alt="Bangkok"
-                    style="height: 664px;float:right;margin-top:153px; " class="img-fluid">
+                    style="height: 664px; margin-left:-27px; margin-top: 119px;
+                    " class="img-fluid">
 
             </div>
 
 
 
 
-            <div class="col-sm-9 mt-7" style="margin-top: 78px
+            <div class="col-md-9 mt-7 pop1" style="margin-top: 78px
             ">
-                <h2>
+                <h2 class="pop">
                     Popular Flight
                     {{-- <hr class="h2"> --}}
                 </h2>
-                <table id="flight-table" style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                <table id="flight-table" style="width: 100%;  border: 1px solid #ddd;">
                     <thead>
                         <tr>
                             <th class="th1">Airline</th>
@@ -209,7 +212,7 @@
                                 var iconHtml = flight.trip_type === 'oneway' ?
                                     '<i class="fas fa-long-arrow-alt-right"></i>' :
                                     '<i class="fas fa-exchange-alt"></i>';
-                                var imageUrl = '{{ asset('images') }}/' + flight.images;
+                                var imageUrl = '{{ asset('hotels') }}/' + flight.images;
 
                                 var flightHtml = `
                                         <tr>

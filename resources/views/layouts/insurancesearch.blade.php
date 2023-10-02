@@ -32,7 +32,8 @@
             @foreach ($insurances as $insur)
             <div class="row">
                 <div class="col-12 col-md-2 inline-div1">
-                    <img src="{{ asset('images/hotel.png') }}" alt="Flight Image" style="height: 69px; width: 126px;">
+                    <img src="../hotels/{{ $insur->imges }}" alt="Flight Image" style="height: 69px; width: 126px;">
+               
                 </div>
                 <div class="col-12 col-md-2 inline-div1">
                     Travel Plan: Basic
@@ -41,7 +42,9 @@
                 </div>
                 <div class="col-12 col-md-2 inline-div1">
                     Insurance
-                    <p><button class="primary">Benefits</button></p>
+                                              <p>  <button class="primary" type="button" data-toggle="modal" data-target="#myModal">Benefits</button>
+                                            </p>
+                                            
                 </div>
                 <div class="col-12 col-md-2 inline-div1">
                     Travel plan for
@@ -49,12 +52,32 @@
                 </div>
                 <div class="col-12 col-md-2 inline-div1">
                     Insurance Charges
-                    <p class="ab">{{$insur->insurance_charges}}</p>
+                    <p class="ab">{{$insur->insurance_charges}} Rs</p>
                 </div>
                 <div class="col-12 col-md-2 inline-div1">
-                    <a href="" class="primary3">Apply Now</a>
+                    <a href="{{ route('layouts.subinsurance', ['id' => $insur->id]) }}" class="primary3">Apply Now</a>
 
                 </div>
+
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">insurance Benifits</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                
+                                {!!$insur->Insurance_benefits!!}
+                            
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                
              
                 

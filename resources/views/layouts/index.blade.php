@@ -275,11 +275,11 @@
                                             </div>
                                             <div class="col-sm-4">
                                                 <span class="destination">From</span>
-                                                <span class="fare">PKR 70,0000*</span>
+                                                <span class="fare">PKR {{$flight->price}}</span>
                                             </div>
 
-                                            <div class="col-sm-4">
-                                                <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-small">Book Now</a>
+                                            <div class="col-sm-4 mt-3" >
+                                                <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-small" >Book Now</a>
                                             </div>
                                         </div>
 
@@ -307,8 +307,8 @@
                                                 <span class="destination">From</span>
                                                 <span class="fare">PKR {{ $flight->price }}</span>
                                             </div>
-                                            <div class="col-sm-4">
-                                                <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-small">Book Now</a>
+                                            <div class="col-sm-4" style="margin-top:15px;">
+                                                <a href="{{ route('flights.show', $flight->id) }}" class="btn btn-small" style="margin-top:3px">Book Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -319,7 +319,7 @@
                             </div>
                         </div>
 
-                        <a href="flihgtlisting" class="view_all_link">View All</a>
+                        <a href="{{route('flighths')}}" class="view_all_link">View All</a>
 
                     </div>
 
@@ -366,7 +366,7 @@
                 <div class="wrapper">
                     <img src="images/phuket.jpg" alt="" class="img-fluid">
                     <div class="content_wrap">
-                        <a href="" class="btn btn_link">Book Now</a>
+                        <a href="{{route('flighths')}}" class="btn btn_link">Book Now</a>
                         <div class="red_circle">
                             <span>Take off to</span>
                             <title>Istanbul</title>
@@ -379,7 +379,7 @@
                 <div class="wrapper">
                     <img src="images/phuket.jpg" alt="" class="img-fluid">
                     <div class="content_wrap">
-                        <a href="" class="btn btn_link">Book Now</a>
+                        <a href="{{route('flighths')}}" class="btn btn_link">Book Now</a>
                         <div class="red_circle">
                             <span>Take off to</span>
                             <title>Dubai</title>

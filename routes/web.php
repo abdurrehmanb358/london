@@ -12,7 +12,6 @@ use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
 use App\Http\Controllers\holidayController;
-use App\Http\Controllers\SpreadsheetExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +38,8 @@ Route::get('add-roles', function () {
     return 'success';
 });
 
-
+// simple view return
+Route::get('/layouts.flights',[FlightController::class, 'flight'])->name('flighths');
 
 
 // simple view return
@@ -81,7 +81,7 @@ Route::get('back-panel/flight', [FlightController ::class, 'index'])->name('flig
 Route::get('back-panel/user1', [FlightController ::class, 'create'])->name('flight.create');
 Route::post('back-panel/flight/create', [FlightController ::class, 'store'])->name('flight.store');
 Route::get('back-panel/flight/{flight}/edit', [FlightController ::class, 'edit'])->name('flight.edit');
-Route::put('back-panel/flight/{flight}/update', [FlightController ::class, 'update'])->name('flight.update');
+Route::PUT('back-panel/flight/{flight}/update', [FlightController ::class, 'update'])->name('flight.update');
 Route::delete('back-panel/flight/{flight}/delete', [FlightController ::class, 'destroy'])->name('flight.destroy');
 Route::get('flightdetail', function () {
     return view('layouts.flightdetail');
@@ -156,7 +156,10 @@ Route::get('umrahInquiry/{id}/delete', [umrah_pakages ::class, 'destroyUmrahInqu
 Route::get('hotelInquiry/{id}/delete', [hotelController ::class, 'destroyHotelInquiry']);
 Route::get('flightInquiry/{id}/delete', [FlightController ::class, 'destroyFlightInquiry']);
 
-require('admin.php');
+Route::post('/insurance/inquiry',[InsuranceController::class,'insuranceInquiries'])->name('insurance.inquiry');
+
+
+
 
 
 
@@ -170,15 +173,16 @@ Route::any('send-mail',[MailController::class,'index'])->name('hotel.inquiries')
 // insurance curd
 Route::get('/back-panel/insurance', [InsuranceController::class, 'index'])->name('insurance.index');
 Route::get('/back-panel/insurance_create', [InsuranceController::class, 'create'])->name('insurance.create');
-Route::get('/back-panel/insurance_store', [InsuranceController::class, 'store'])->name('insurance.store');
+Route::post('/back-panel/insurance_store', [InsuranceController::class, 'store'])->name('insurance.store');
 Route::get('/back-panel/insurance/{insurance}/edit',[InsuranceController::class,'edit'])->name('insurance.edit');
-Route::get('/back-panel/insurance/{insurance}/update', [InsuranceController::class, 'update'])->name('insurance.update');
+Route::put('/back-panel/insurance/{insurance}/update', [InsuranceController::class, 'update'])->name('insurance.update');
 Route::delete('back-panel/insurance/{insurance}/delete', [InsuranceController ::class, 'destroy'])->name('insurance.destroy');
 Route::get('insurance', [InsuranceController ::class, 'simple'])->name('layouts.insurance');
 Route::get('Aboutus', [InsuranceController ::class, 'Aboutus'])->name('layouts.aboutus');
  Route::get('all_insurance', [InsuranceController ::class,'getinsurance'])->name('layouts.allinsurance');
 
-
+ Route::get('sab_insurance{id}', [InsuranceController ::class,'applyinsurance'])->name('layouts.subinsurance');
+ Route::get('insurance_detail', [InsuranceController ::class,'insurance'])->name('back-panel.insurance');
 
 
 //Holidays CRUD
@@ -188,13 +192,4 @@ Route::post('/back-panel/holiday/store', [holidayController::class, 'store'])->n
 Route::get('/back-panel/holiday/{id}/edit',[holidayController::class,'edit'])->name('holiday.edit');
 Route::put('/back-panel/holiday/{id}/update',[holidayController::class,'update'])->name('holiday.update');
 Route::get('/back-panel/holiday/{id}/delete',[holidayController::class,'destroy']);
-Route::get('/holiday',[holidayController::class, 'holidayListing'])->name('holiday');
-Route::get('/holiday/all',[holidayController::class, 'holidayListing2'])->name('holiday/all');
-Route::get('/holiday/detail/{id}',[holidayController::class,'Holiday_Detail']);
-
-
-//Export Data From BackPanel
-Route::get('exportHotelInquiry', [SpreadsheetExportController::class, 'exportHotelInquiry']);
-Route::get('exportUmrahInquiry', [SpreadsheetExportController::class, 'exportUmrahInquiry']);
-Route::get('exportHolidayInquiry', [SpreadsheetExportController::class, 'exportHolidayInquiry']);
-Route::get('exportFlightInquiry', [SpreadsheetExportController::class, 'exportFlightInquiry']);
+Route::get('holidayListing',[holidayController::class, 'holidayListing'])->name('holidayListing');

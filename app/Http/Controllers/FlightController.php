@@ -17,7 +17,16 @@ class FlightController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
+     * 
+     * 
+     * 
      */
+
+     public function flight() {
+        
+        return view("layouts.flihgtlisting");
+    }
     public function index() {
         $flights = Flight::all();
         return view('back-panel.flight.index', compact('flights'));
@@ -36,26 +45,31 @@ class FlightController extends Controller
      */
     public function store(Request $request)
     {
-        $flight = Flight::create([
-            'images' => $request->input('images'),
-            'flying_from' => $request->input('flying_from'),
-            'flying_to' => $request->input('flying_to'),
-            'price' => $request->input('price'),
-            'type' => $request->input('type'),
-            'trip_type' => $request->input('round_trip'),
-            'departing' => $request->input('departing'),
-            'returning' => $request->input('returning'),
-          'class' => $request->input('class'),
-            'message' => $request->input('message'),
+        
+       // upload Image
+                if ($request->hasFile('image')) {
+                    $imageName = time() . '.' . $request->image->extension();
+                    $request->image->move(public_path('hotels'), $imageName);
+                } else {
+                    // Handle the case where no image is uploaded.
+                    $imageName = null; // You can set a default value or handle this differently.
+                }
 
+                $flight = new Flight;
+                $flight->images = $imageName;
+               $flight->flying_from = $request->flying_from;
+                $flight->flying_to = $request->flying_to;
+                $flight->price = $request->price;
+                $flight->type = $request->type;
+                $flight->trip_type = $request->trip_type;
+                $flight->departing = $request->departing;
+                $flight->returning = $request->returning;
+                $flight->class = $request->class;
+                $flight->message = $request->message;
+                $flight->save();
 
-        ]);
-
-
-        return redirect()->route('flight.index')->with('success', 'insurance created successfully');
-
-
-    }
+                return redirect('/back-panel/flight')->with('success', 'flight Created !!!');
+ }
 
     /**
      * Display the specified resource.
@@ -78,18 +92,23 @@ class FlightController extends Controller
      * Update the specified resource in storage.
      */
     public function update(request $request, $id){
-      
  
         $Flight = Flight::where('id',$id)->first();
-
-        if(isset($request->image)){
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('hotels'), $imageName);
-            $Flight->image = $imageName;
+        
+        if ($request->hasFile('image')) {
+            $imageFile = $request->file('image'); // Get the uploaded file object
+        
+            $imageName = time() . '.' . $imageFile->getClientOriginalExtension();
+        
+            $imageFile->move(public_path('hotels'), $imageName);
+        
+            $Flight->images = $imageName;
         }
+        
+      
 
         // upload Image
-        
+       
         $Flight->flying_from = $request->flying_form;
         $Flight->flying_to = $request->flying_to ;
         $Flight->price = $request->price;
