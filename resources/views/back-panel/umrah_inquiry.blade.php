@@ -9,7 +9,14 @@
 @endif
 
 <div class="container" id="umrahTableContainer">
-    <h2>All Umrah Inquiries</h2>
+    <div class="d-flex justify-content-between">
+        <div>
+            <h2>All Umrah Inquiries</h2>
+        </div>
+        <div>
+            <button class="btn btn-success "><a href="/exportUmrahInquiry" style="color: white">Export</a></button>
+        </div>
+    </div>
     <table class="table table-hover mt-3">
         <thead>
           <tr>

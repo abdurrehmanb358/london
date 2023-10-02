@@ -12,6 +12,7 @@ use App\Http\Controllers\InsuranceController;
 use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
 use App\Http\Controllers\holidayController;
+use App\Http\Controllers\SpreadsheetExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -190,3 +191,10 @@ Route::get('/back-panel/holiday/{id}/delete',[holidayController::class,'destroy'
 Route::get('/holiday',[holidayController::class, 'holidayListing'])->name('holiday');
 Route::get('/holiday/all',[holidayController::class, 'holidayListing2'])->name('holiday/all');
 Route::get('/holiday/detail/{id}',[holidayController::class,'Holiday_Detail']);
+
+
+//Export Data From BackPanel
+Route::get('exportHotelInquiry', [SpreadsheetExportController::class, 'exportHotelInquiry']);
+Route::get('exportUmrahInquiry', [SpreadsheetExportController::class, 'exportUmrahInquiry']);
+Route::get('exportHolidayInquiry', [SpreadsheetExportController::class, 'exportHolidayInquiry']);
+Route::get('exportFlightInquiry', [SpreadsheetExportController::class, 'exportFlightInquiry']);
