@@ -183,7 +183,6 @@ Route::get('Aboutus', [InsuranceController ::class, 'Aboutus'])->name('layouts.a
  Route::get('insurance_detail', [InsuranceController ::class,'insurance'])->name('back-panel.insurance');
 
 
-
 //Holidays CRUD
 Route::get('/back-panel/holiday', [holidayController::class, 'index'])->name('holiday.index');
 Route::get('/back-panel/holiday/create', [holidayController::class, 'create'])->name('holiday.create');
@@ -204,6 +203,21 @@ Route::get('exportFlightInquiry', [SpreadsheetExportController::class, 'exportFl
 Route::get('exportInsuranceInquiry', [SpreadsheetExportController::class, 'exportInsuranceInquiry']);
 
 
+Route::get('/admin', function () {
+    return view('back-panel.dashboard');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
 
 // 
 // Route::get('', function () {
