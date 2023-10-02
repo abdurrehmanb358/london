@@ -188,13 +188,10 @@ Route::post('/back-panel/holiday/store', [holidayController::class, 'store'])->n
 Route::get('/back-panel/holiday/{id}/edit',[holidayController::class,'edit'])->name('holiday.edit');
 Route::put('/back-panel/holiday/{id}/update',[holidayController::class,'update'])->name('holiday.update');
 Route::get('/back-panel/holiday/{id}/delete',[holidayController::class,'destroy']);
-Route::get('/holiday',[holidayController::class, 'holidayListing'])->name('holiday');
-Route::get('/holiday/all',[holidayController::class, 'holidayListing2'])->name('holiday/all');
-Route::get('/holiday/detail/{id}',[holidayController::class,'Holiday_Detail']);
+Route::get('holidayListing',[holidayController::class, 'holidayListing'])->name('holidayListing');
 
 
-//Export Data From BackPanel
-Route::get('exportHotelInquiry', [SpreadsheetExportController::class, 'exportHotelInquiry']);
-Route::get('exportUmrahInquiry', [SpreadsheetExportController::class, 'exportUmrahInquiry']);
-Route::get('exportHolidayInquiry', [SpreadsheetExportController::class, 'exportHolidayInquiry']);
-Route::get('exportFlightInquiry', [SpreadsheetExportController::class, 'exportFlightInquiry']);
+
+
+
+require('admin.php');
