@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\umrah_inquiries;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\umrah_pakages;
@@ -9,7 +8,6 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\hotelController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\InsuranceController;
-use App\Http\Controllers\FlightInquiryController;
 use App\Http\Controllers\showImageScrollerController;
 use App\Http\Controllers\holidayController;
 use App\Http\Controllers\SpreadsheetExportController;
@@ -26,7 +24,9 @@ use App\Http\Controllers\SpreadsheetExportController;
 */
 
 
-
+Route::get('admin',function(){
+    return view('back-panel.dashboard');
+});
 
 // add roles
 Route::get('add-roles', function () {
@@ -39,7 +39,7 @@ Route::get('add-roles', function () {
     return 'success';
 });
 
-Route::get('/layouts.flights',[FlightController::class, 'flight'])->name('flighths');
+
 
 
 // simple view return
@@ -60,7 +60,7 @@ Route::get('holiii', function () {
 
 
 Route::get('/image-scroller', [showImageScrollerController::class, 'showImageScroller'])->name('image.scroller');
-
+Route::get('/layouts.flight',[FlightController::class,'flight'])->name('flights');
 
 
 Route::get('/', [FlightController:: class , 'getFlights'])->name('homepage');
@@ -177,7 +177,8 @@ Route::delete('back-panel/insurance/{insurance}/delete', [InsuranceController ::
 Route::get('insurance', [InsuranceController ::class, 'simple'])->name('layouts.insurance');
 Route::get('Aboutus', [InsuranceController ::class, 'Aboutus'])->name('layouts.aboutus');
  Route::get('all_insurance', [InsuranceController ::class,'getinsurance'])->name('layouts.allinsurance');
-
+ Route::get('sab_insurance{id}', [InsuranceController ::class,'applyinsurance'])->name('layouts.subinsurance');
+ Route::get('insurance_detail', [InsuranceController ::class,'insurance'])->name('back-panel.insurance');
 
 
 
@@ -188,10 +189,30 @@ Route::post('/back-panel/holiday/store', [holidayController::class, 'store'])->n
 Route::get('/back-panel/holiday/{id}/edit',[holidayController::class,'edit'])->name('holiday.edit');
 Route::put('/back-panel/holiday/{id}/update',[holidayController::class,'update'])->name('holiday.update');
 Route::get('/back-panel/holiday/{id}/delete',[holidayController::class,'destroy']);
-Route::get('holidayListing',[holidayController::class, 'holidayListing'])->name('holidayListing');
+Route::get('/holiday',[holidayController::class, 'holidayListing'])->name('holiday');
+Route::get('/holiday/all',[holidayController::class, 'holidayListing2'])->name('holiday/all');
+Route::get('/holiday/detail/{id}',[holidayController::class,'Holiday_Detail']);
+
+
+//Export Data From BackPanel
+Route::get('exportHotelInquiry', [SpreadsheetExportController::class, 'exportHotelInquiry']);
+Route::get('exportUmrahInquiry', [SpreadsheetExportController::class, 'exportUmrahInquiry']);
+Route::get('exportHolidayInquiry', [SpreadsheetExportController::class, 'exportHolidayInquiry']);
+Route::get('exportFlightInquiry', [SpreadsheetExportController::class, 'exportFlightInquiry']);
 
 
 
+// 
+Route::get('/', function () {
+    return view('admin');
+});
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-require('admin.php');
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });

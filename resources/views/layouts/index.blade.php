@@ -366,7 +366,7 @@
                 <div class="wrapper">
                     <img src="images/phuket.jpg" alt="" class="img-fluid">
                     <div class="content_wrap">
-                        <a href="{{route('flighths')}}" class="btn btn_link">Book Now</a>
+                        <a href="{{route('flights')}}" class="btn btn_link">Book Now</a>
                         <div class="red_circle">
                             <span>Take off to</span>
                             <title>Istanbul</title>
@@ -379,7 +379,7 @@
                 <div class="wrapper">
                     <img src="images/phuket.jpg" alt="" class="img-fluid">
                     <div class="content_wrap">
-                        <a href="{{route('flighths')}}" class="btn btn_link">Book Now</a>
+                        <a href="{{route('flights')}}" class="btn btn_link">Book Now</a>
                         <div class="red_circle">
                             <span>Take off to</span>
                             <title>Dubai</title>
