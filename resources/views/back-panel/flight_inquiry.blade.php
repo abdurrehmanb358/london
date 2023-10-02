@@ -9,7 +9,11 @@
 @endif
 
 <div class="container" id="umrahTableContainer">
-    <h2>All Umrah Inquiries</h2>
+    <h2>All flight inquiry</h2>
+</div>
+<div>
+    <button class="btn btn-success "><a href="/exportFlightInquiry" style="color: white">Export</a></button>
+</div>
     <table class="table table-hover mt-3">
         <thead>
           <tr>

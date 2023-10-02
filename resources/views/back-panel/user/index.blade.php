@@ -12,10 +12,6 @@
 
 <div class="d-flex justify-content-between">
     <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm rounded">Create New User</a>
-    <div style="margin-right:60px ">
-        <a href="" class="btn btn-primary btn-sm rounded">Expot file</a>
-    
-    </div>
 </div>
 
 

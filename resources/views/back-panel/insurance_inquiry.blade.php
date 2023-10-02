@@ -10,6 +10,9 @@
 
 
 <h2>All insurance inquires</h2>
+<div>
+    <button class="btn btn-success "><a href="/exportInsuranceInquiry" style="color: white">Export</a></button>
+</div>
 
 <div class="scrollable-content" style="max-height: 400px; overflow-y: auto;">
     <table class="table table-hover" style="margin-bottom: 0;">
@@ -76,7 +79,7 @@
           
               <td>{{$detail->travel_plan_for}}</td>
               <td>
-                <form action="{{route('in')}}" method="POST" style="display: inline-block;">
+                <form action="" method="POST" style="display: inline-block;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm rounded" onclick="return confirm('Are you sure you want to delete?')">Delete</button>

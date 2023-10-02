@@ -143,12 +143,14 @@ Route::post('/register/inquiries',[umrah_pakages::class,'register'])->name('umra
 Route::post('/hotel/inquiry',[umrah_pakages::class,'hotelInquiry'])->name('hotel.inquiries');
 Route::post('/flight/inquiry',[FlightController::class,'flightInquiries'])->name('flights.inquiry');
 Route::post('/holiday/inquiry',[holidayController::class,'holidayInquiry'])->name('holiday.inquiries');
+Route::post('back-panel/insuranceinquiry', [InsuranceController ::class,'insuranceInquiries'])->name('insurance.inquiry');
 
 //inquiries Show
 Route::get('/back-panel/umrah_inquiry', [umrah_pakages::class, 'umrah_inquiry'])->name('umrah.inquiry');
 Route::get('/back-panel/hotel_inquiry', [umrah_pakages::class, 'hotel_inquiry'])->name('hotel.inquiry');
 Route::get('/back-panel/flight_inquiry', [FlightController::class, 'flight_inquiry'])->name('flight.inquiries');
 Route::get('/back-panel/holiday_inquiry', [holidayController::class, 'holiday_inquiry'])->name('holiday.inquiry');
+
 
 // Delete Inquiries
 Route::get('holidayInquiry/{id}/delete', [holidayController ::class, 'destroyHolidayInquiry']);
@@ -199,13 +201,14 @@ Route::get('exportHotelInquiry', [SpreadsheetExportController::class, 'exportHot
 Route::get('exportUmrahInquiry', [SpreadsheetExportController::class, 'exportUmrahInquiry']);
 Route::get('exportHolidayInquiry', [SpreadsheetExportController::class, 'exportHolidayInquiry']);
 Route::get('exportFlightInquiry', [SpreadsheetExportController::class, 'exportFlightInquiry']);
+Route::get('exportInsuranceInquiry', [SpreadsheetExportController::class, 'exportInsuranceInquiry']);
 
 
 
 // 
-Route::get('/', function () {
-    return view('admin');
-});
+// Route::get('', function () {
+//     return view('admin');
+// });
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
