@@ -151,7 +151,7 @@
 
 
         <div class="row">
-            <div class="col-sm-3 ">
+            <div class="col-md-3 ">
 
 
                 <img src="{{ asset('images/logo2.png') }}" alt="Bangkok"

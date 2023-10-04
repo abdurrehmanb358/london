@@ -346,8 +346,8 @@ public function index1()
     }
 
     public function destroyFlightInquiry($id){
-        $hotel = flight_inquiry::where('id',$id)->first();
-        $hotel->delete();
+        $flight = flight_inquiry::where('id',$id)->first();
+        $flight->delete();
         return back()->withsuccess('Flight Inquiry Deleted !!!');
     }
 

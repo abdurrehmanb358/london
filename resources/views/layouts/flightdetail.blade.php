@@ -87,9 +87,9 @@
      <div class="hidden" ></div>
      <div class="container">
          <div class="row">
-            <div class="col-4 logo44">
+            <div class="col-md-4 logo44">
                 <!-- Column that occupies 4 grid columns with a custom class "logo44" -->
-                <img src="{{ asset('images/logo2.png') }}" alt="Bangkok" class="img-fluid" id="logo-image">
+                <img src="{{ asset('images/logo2.png') }}" alt="Bangkok" class="img-fluid" id="logo-image" style="margin-top:83px ">
                 <!-- Image element with the source, alt text, and class attributes -->
             </div>
              {{-- <div class="col-4 logo44">
@@ -187,7 +187,7 @@
 
                              </div>
                              <div class="button-group">
-                                 <button class="inquery">search</button>
+                                 <button class="controle">search</button>
 
                              </div>
 

@@ -193,8 +193,8 @@ class SpreadsheetExportController extends Controller
         $sheet->setCellValue('J1', 'No of Person');
         $sheet->setCellValue('K1', 'Class');
         $sheet->setCellValue('L1', 'Message');
-        $sheet->setCellValue('M1', 'Flight from');
-        $sheet->setCellValue('N1', 'Flight to');
+        $sheet->setCellValue('M1', 'flying from');
+        $sheet->setCellValue('N1', 'flying to');
 
     
         // Loop through the data and add it to the sheet

@@ -319,7 +319,7 @@
                             </div>
                         </div>
 
-                        <a href="{{route('flighths')}}" class="view_all_link">View All</a>
+                        <a href="{{route('flights')}}" class="view_all_link">View All</a>
 
                     </div>
 

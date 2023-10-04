@@ -24,9 +24,7 @@ use App\Http\Controllers\SpreadsheetExportController;
 */
 
 
-Route::get('admin',function(){
-    return view('back-panel.dashboard');
-});
+
 
 // add roles
 Route::get('add-roles', function () {
@@ -68,13 +66,6 @@ Route::get('/', [FlightController:: class , 'getFlights'])->name('homepage');
 
 
 // Users Curd//
-Route::get('back-panel/users', [userController ::class, 'index'])->name('user.index');
-Route::get('back-panel/user', [userController ::class, 'create'])->name('user.create');
-Route::post('back-panel/users/create', [userController ::class, 'store'])->name('user.store');
-Route::get('back-panel/users/{user}/edit', [userController ::class, 'edit'])->name('user.edit');
-Route::put('back-panel/users/{user}/edit', [userController ::class, 'update'])->name('user.update');
-Route::delete('back-panel/users/{user}/delete', [userController ::class, 'destroy'])->name('user.destroy');
-
 
 /// Flight curd\\\
 Route::get('back-panel/flight', [FlightController ::class, 'index'])->name('flight.index');
@@ -157,8 +148,7 @@ Route::get('holidayInquiry/{id}/delete', [holidayController ::class, 'destroyHol
 Route::get('umrahInquiry/{id}/delete', [umrah_pakages ::class, 'destroyUmrahInquiry']);
 Route::get('hotelInquiry/{id}/delete', [hotelController ::class, 'destroyHotelInquiry']);
 Route::get('flightInquiry/{id}/delete', [FlightController ::class, 'destroyFlightInquiry']);
-
-require('admin.php');
+Route::get('insuranceInquiry/{id}/delete', [InsuranceController ::class, 'destroyinsuranceInquiry']);
 
 
 
@@ -219,17 +209,33 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-// 
+
 // Route::get('', function () {
 //     return view('admin');
 // });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::middleware('auth')->group(function () {
+
+    Route::get('admin',function(){
+        return view('back-panel.dashboard');
+    });
+    Route::get('back-panel/users', [userController ::class, 'index'])->name('user.index');
+    Route::get('back-panel/user', [userController ::class, 'create'])->name('user.create');
+    Route::post('back-panel/users/create', [userController ::class, 'store'])->name('user.store');
+    Route::get('back-panel/users/{user}/edit', [userController ::class, 'edit'])->name('user.edit');
+    Route::put('back-panel/users/{user}/edit', [userController ::class, 'update'])->name('user.update');
+    Route::delete('back-panel/users/{user}/delete', [userController ::class, 'destroy'])->name('user.destroy');
+    
+    
+
+
+
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});

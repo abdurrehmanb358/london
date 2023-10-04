@@ -255,18 +255,19 @@ class InsuranceController extends Controller
         return view('back-panel.insurance_inquiry', compact('details'));
     }
 
-    public function delete(){
-       
-    }
-
-   
+    public function destroyinsuranceInquiry($id) {
+        $hotel = insurance_inquires::find($id); 
+        if ($hotel) {
+            $hotel->delete();
+            return back()->withSuccess('Insurance Inquiry Deleted !!!');
+        }
     }
     
  
     
 
 
-
+}
 
         
             
@@ -280,8 +281,3 @@ class InsuranceController extends Controller
 
 
      
-
-       
-
-
-

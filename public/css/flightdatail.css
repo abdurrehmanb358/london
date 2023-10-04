@@ -245,14 +245,7 @@
     } 
 }
 
-@media (max-width: 550px) {
-  input[type="text"],
-  input[type="email"],
-  textarea {
-      width: 100%;
-  }
-  
-}
+
 
 .flying1{
   display: block;
@@ -302,5 +295,70 @@
   border: none;
   border-bottom: red;
 }
+
+
+@media (max-width: 1000px) {
+ 
+ .row1
+  {
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+ 
+  .row2
+   {
+     width: 100%;
+   }
+ }
+ @media (max-width: 1000px) {
+ 
+  .row3
+   {
+     width: 100%;
+   }
+ }
+ @media (max-width: 1000px) {
+ 
+  .row4
+   {
+     width: 100%;
+   }
+ }
+ @media (max-width: 1000px) {
+ 
+  textarea
+   {
+     width: 100%;
+   }
+ }
+
+
+ @media (max-width: 1000px) {
+ 
+  .form-control
+   {
+     width: 100%;
+   }
+ }
+ @media (max-width: 1000px) {
+ 
+  .label
+   {
+           text-align: center;
+  }
+ }
+@media  (max-width:700px){
+  .card1{
+    text-align:center;
+    width:auto;
+  }
+        
+  
+}
+
+
+
+
 
 
